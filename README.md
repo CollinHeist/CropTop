@@ -16,7 +16,6 @@ Team contract has been written
 
 For collaboration tools we will be using 
 
-
 - Full list of softwares, languages, packages, hardware, and programs were used in the prototype?
 - Problem statement, product requirements, specifications, and expected deliverables?
 - Ask for all past documentation, schematics, code
@@ -39,16 +38,31 @@ the meeting notes can be found here, but the most important takeaways were
 - three devices
 - team name has been decided
 - we can have a prototype device
+- From what I can tell, the device is organized somewhat like this
+- I've uploaded all these schematics online
 
 ## Tuesday, September 11th
-I have been thinking a lot about the GUI display, I posted on reddit
+
+Thinking back to the team meeting, it seems the order of priotiries are:
+Project goals, in order of importance
+1. Reduce production time
+1. Improve reliability
+1. Improve ease of use
+1. Reduce unit cost
+1. Improve device aesthetics
+
+I have been thinking a lot about the GUI display, I posted on reddit.
+
+put reddit post with > in here
 
 ## Wednesday, September 12th
 The reddit post has blown up, the full post can be found here, but the take aways are.
 
 I attened a workshop today on git, and have decided to port everything to github, for version control.
 
-Ryan and I also picked up the prototype device and I started to pick it apart
+Ryan and I also picked up the prototype device and I started to pick it apart. Here is a picture of the current prototype.
+
+I plan to do a more thorough breakdown of the device in the coming days, also looking through the 
 
 
 
