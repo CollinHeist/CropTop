@@ -1,5 +1,5 @@
 ## Tuesday, September 4th, 2018
-Ryan and I recieved out capstone project assignement today, entitled "Product Design for Manufacture and Reliability". We are the only two members on the team. During our 
+Ryan and I recieved out capstone project assignement today, entitled "*Product Design for Manufacture and Reliability*". Basic info on the project scope can be found here. We are the only two members on the team. During the class period, we decided how 
 
 ## Wednesday, September 5th
 
