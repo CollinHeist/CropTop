@@ -7,29 +7,14 @@ To do:
 - [x] Write team contract
 - [x] Decide on collaboration tools
 
+## Tuesday, September 4th
+
 ## Wednesday, September 5th
-I sent out a doodle poll, meeting time.
+In prepa
 
-Ryan and I wasn to call  team
+I sent out a Doodle poll to find a time this week when Ankit, Taylor, and Dr. Robertson could meet with Ryan and I. The meeting will be this Friday from 11:30AM-12:30PM. The agenda can be found [here](https://github.com/kcaisley/CropTop/blob/master/Meetings/notes-1.md).
 
-Team contract has been written
-
-For collaboration tools we will be using 
-
-- Full list of softwares, languages, packages, hardware, and programs were used in the prototype?
-- Problem statement, product requirements, specifications, and expected deliverables?
-- Ask for all past documentation, schematics, code
-- Who were all the past people involved in this project?
-- What is the available budget?
-- What is the imagined unit cost?
-- Breakdown of current unit cost
-- Who is the administrative assistant for our budget?
-- Can we submit our budget early and order parts?
-- What shop training will we need, set up training sessions
-- What do we do about a client interview?
-
-## Thursday, September 6th
-the agenda can be found here:
+Ryan and I have come up with the name *Team Crop Top*. We will check to make sure Dr. Robertson approves this Friday. The team contract has also been drafted and is stored on Ryan's OneDrive. For collaboration tools we will be using Slack for messaging, Doodle polls for meeting planning, and Google Docs and Microsoft OneDrive for file storage.
 
 ## Friday, September 7th
 First team meeting today.
@@ -42,7 +27,6 @@ the meeting notes can be found here, but the most important takeaways were
 - I've uploaded all these schematics online
 
 ## Tuesday, September 11th
-
 Thinking back to the team meeting, it seems the order of priotiries are:
 Project goals, in order of importance
 1. Reduce production time
