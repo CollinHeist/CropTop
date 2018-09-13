@@ -25,19 +25,22 @@ I sent out a Doodle poll to find a time this week when Ankit, Taylor, and Dr. Ro
 - What do we do about a client interview?
 
 ## Thursday, September 6th
-Based on the results from the Doodle poll, the meeting will be this Friday from 11:30AM-12:30PM. I created the agenda, which can be found [here](https://github.com/kcaisley/CropTop/blob/master/Meetings/notes-1.md).
+Based on the results from the Doodle poll, the meeting will be this Friday from 11:30AM-12:30PM. I created the agenda, which can be found [here](https://github.com/kcaisley/CropTop/blob/master/Meetings/agenda-1.md).
 
 Ryan and I have come up with the name *Team Crop Top*. We will check to make sure Dr. Robertson approves this Friday. The team contract has also been drafted and is stored on Ryan's OneDrive. For collaboration tools we will be using Slack for messaging, Doodle polls for meeting planning, and Google Docs and Microsoft OneDrive for file storage.
 
 ## Friday, September 7th
-First team meeting today.
+Our first team meeting went well. All were in attendance. The full meeting notes can be found [here](https://github.com/kcaisley/CropTop/blob/master/Meetings/notes-1.md), but the most important take-aways were:
 
-the meeting notes can be found here, but the most important takeaways were
-- three devices
-- team name has been decided
-- we can have a prototype device
-- From what I can tell, the device is organized somewhat like this
-- I've uploaded all these schematics online
+- There are actually three seperate devices, which can potentially be integrated.
+- The schematics, code, and documentation for the prototype have been shared with Ryan and I. I've made a copy of these [here](https://github.com/kcaisley/CropTop/tree/master/Documentation/Prototype).
+- We are allowed to pick up a prototype device from Ankit's lab. This, in combination with the schematics, will greatly speed up our ability to create a single integrated PCB solution.
+- Dr. Robertson has approved our name: *Team Crop Top*
+- Unit cost is less of a priority than expected
+
+From what I can tell, the device is organized somewhat like this:
+
+(photo)
 
 ## Tuesday, September 11th
 Thinking back to the team meeting, it seems the order of priotiries are:
