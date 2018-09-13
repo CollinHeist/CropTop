@@ -1,26 +1,26 @@
-Introductions
-Project history
-Formal problem statement
-Past and current individuals involved
-Software, languages, packages, and hardware used in prototype
-Past documentation, schematics, and code
-Product Requirements/Specifications
-Expected Deliverables
-Ideal Timeline
-Budget
-Breakdown of the current unit cost
-Target unit cost
-Available budget
-Administrative assistant for budget?
-Date for access to budget
-Miscellaneous
-Device name
-Collect contact info
-Team Name
-Workspace
-Shop training
-Next steps
-Research review
-Design mockup
-Future meetings planning
-Is this sponsor interview?
+* Introductions
+* Project history
+* Formal problem statement
+* Past and current individuals involved
+* Software, languages, packages, and hardware used in prototype
+* Past documentation, schematics, and code
+* Product Requirements/Specifications
+* Expected Deliverables
+* Ideal Timeline
+* Budget
+* Breakdown of the current unit cost
+* Target unit cost
+* Available budget
+* Administrative assistant for budget?
+* Date for access to budget
+* Miscellaneous
+* Device name
+* Collect contact info
+* Team Name
+* Workspace
+* Shop training
+* Next steps
+* Research review
+* Design mockup
+* Future meetings planning
+* Is this sponsor interview?
