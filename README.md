@@ -1,9 +1,9 @@
-#### Capstone Logbook
-### Product Design for Manufacture and Reliability
+# Capstone Logbook
+Product Design for Manufacture and Reliability
 
-## Kennedy Caisley
-## Team CropTop
-## Fall 2018 - Spring 2019
+Kennedy Caisley
+Team CropTop
+Fall 2018 - Spring 2019
 
 
 # Tuesday, September 4th, 2018
