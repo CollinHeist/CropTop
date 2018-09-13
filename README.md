@@ -35,7 +35,10 @@ the agenda can be found here:
 ## Friday, September 7th
 First team meeting today.
 
-the meeting notes can be found here:
+the meeting notes can be found here, but the most important takeaways were
+- three devices
+- team name has been decided
+- we can have a prototype device
 
 ## Tuesday, September 11th
 I have been thinking a lot about the GUI display, I posted on reddit
@@ -44,6 +47,8 @@ I have been thinking a lot about the GUI display, I posted on reddit
 The reddit post has blown up, the full post can be found here, but the take aways are.
 
 I attened a workshop today on git, and have decided to port everything to github, for version control.
+
+Ryan and I also picked up the prototype device and I started to pick it apart
 
 
 
