@@ -1,0 +1,19 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: BiAxialLoadCell.CMPcbDoc   6/5/2017  3:55:08 AM
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : BiAxialLoadCell.TXT
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        0.7112mm (28mil)         Round          1                0.00 mm (0.00 Inch)
+T2        1mm (39.37mil)           Round          230              1155.39 mm (45.49 Inch)
+T3        1.1mm (43.307mil)        Round          6                23.08 mm (0.91 Inch)
+T4        2.2mm (86.614mil)        Round          2                20.32 mm (0.80 Inch)
+T5        2.55mm (100.394mil)      Round          8                124.35 mm (4.90 Inch)
+T6        2.75mm (108.268mil)      Round          4                173.93 mm (6.85 Inch)
+---------------------------------------------------------------------------
+Totals                                            251              1497.07 mm (58.94 Inch)
+
+Total Processing Time (hh:mm:ss) : 00:00:00
