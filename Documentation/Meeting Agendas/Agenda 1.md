@@ -1,10 +1,10 @@
 # Meeting Agenda 1
 
-Date: Friday, September 7th, 2018
+**Date:** Friday, September 7th, 2018
 
-Time: 11:30AM-12:30AM
+**Time:** 11:30AM-12:30AM
 
-Location: ME Conference Room, EP
+**Location:** ME Conference Room, EP
 
 * Introductions
 * Project history
