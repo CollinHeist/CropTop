@@ -7,12 +7,25 @@ To do:
 - [x] Write team contract
 - [x] Decide on collaboration tools
 
-## Tuesday, September 4th
+
 
 ## Wednesday, September 5th
-In prepa
+I sent out a Doodle poll to find a time this week when Ankit, Taylor, and Dr. Robertson could meet with Ryan and I. In preparation for the meeting, I've come up with a list of questions/topics. 
 
-I sent out a Doodle poll to find a time this week when Ankit, Taylor, and Dr. Robertson could meet with Ryan and I. The meeting will be this Friday from 11:30AM-12:30PM. The agenda can be found [here](https://github.com/kcaisley/CropTop/blob/master/Meetings/notes-1.md).
+- Full list of softwares, languages, packages, hardware, and programs that were used in the prototype
+- Past documentation, schematics, code
+- Problem statement, product requirements, specifications, and expected deliverables
+- Who were all the past people involved in this project?
+- What is the available budget?
+- What is the imagined unit cost?
+- What is a breakdown of the current unit cost?
+- Who is the administrative assistant for our budget?
+- Can we submit our budget early and order parts?
+- What shop training will we need?
+- What do we do about a client interview?
+
+## Thursday, September 6th
+Based on the results from the Doodle poll, the meeting will be this Friday from 11:30AM-12:30PM. I created the agenda, which can be found [here](https://github.com/kcaisley/CropTop/blob/master/Meetings/notes-1.md).
 
 Ryan and I have come up with the name *Team Crop Top*. We will check to make sure Dr. Robertson approves this Friday. The team contract has also been drafted and is stored on Ryan's OneDrive. For collaboration tools we will be using Slack for messaging, Doodle polls for meeting planning, and Google Docs and Microsoft OneDrive for file storage.
 
