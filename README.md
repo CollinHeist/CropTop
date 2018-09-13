@@ -7,3 +7,6 @@ Young University and New York University have recently created a patented tool t
 to develop greatly improved crop varieties that are highly resistant to wind induced stalk failure. The device
 employs load cells, rotational sensors, accelerometers and a standalone computing center. It is able to predict
 plant strength without permanently damaging the plant, thereby enabling temporal analysis of plant strength.
+
+This repository contains the development process of 
+
