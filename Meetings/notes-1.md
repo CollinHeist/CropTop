@@ -14,7 +14,7 @@
   * Schematics and Code will be shared
   * Arduino runs sensors and captures data, sends it to the Rpi via I2c
   * RPI saved data and ran the screen
-  * $500 of parts (not including)  +hundreds in labor
+  * $500 of parts (not including force sensor) plus hundreds in labor
 * Screen
   * Resistive vs capacitive undecided
   * Screen must be readable  in sunlight
