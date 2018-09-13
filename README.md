@@ -1,8 +1,23 @@
-# Project CropTop
+#### Capstone Logbook
+### Product Design for Manufacture and Reliability
 
-The goal of this project is take a 
+## Kennedy Caisley
+## Team CropTop
+## Fall 2018 - Spring 2019
 
-After more than a century of research, wind induced crop failure (breaking of plants) remains an unsolved problem of international scope. Conservative estimates predict wind induced crop failure results in economic losses on the order of tens of billions of dollars annually. Researchers from the University of Idaho, Brigham Young University and New York University have recently created a patented tool that will allow plant breeders to develop greatly improved crop varieties that are highly resistant to wind induced stalk failure. The device employs load cells, rotational sensors, accelerometers and a standalone computing center. It is able to predict plant strength without permanently damaging the plant, thereby enabling temporal analysis of plant strength.
+
+# Tuesday, September 4th, 2018
+
+Ryan and I recieved out project assignement today,Sent out Doodle poll.
+
+# Wednesday, September 5th, 2018
+
+Sent out
+
+# Thursday, September 6th, 2018
+
+# Friday, September 7th, 2018
+First team meeting today. 
 
 
 
