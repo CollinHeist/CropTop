@@ -1,9 +1,4 @@
-# Capstone Logbook
-Product Design for Manufacture and Reliability
-Kennedy Caisley
-Team CropTop
-Fall 2018 - Spring 2019
-
+The following is my logbook used throughout the semester.
 
 ## Tuesday, September 4th, 2018
 
