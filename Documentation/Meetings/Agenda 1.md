@@ -6,6 +6,8 @@
 
 **Location:** ME Conference Room, EP
 
+**Attendees:** Kennedy Caisley, Ryan Donahue, Dr. Daniel Robertson, Ankit Gupta, Taylor Spence
+
 * Introductions
 * Project history
   * Formal problem statement
