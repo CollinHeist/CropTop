@@ -29,7 +29,7 @@ Based on the results from the Doodle poll, the meeting will be this Friday from 
 
 Ryan and I have come up with the name *Team Crop Top*. We will check to make sure Dr. Robertson approves this Friday. The team contract has also been drafted and is stored on Ryan's OneDrive. For collaboration tools we will be using Slack for messaging, Doodle polls for meeting planning, and Google Docs and Microsoft OneDrive for file storage.
 
-## Friday, September 7th`
+## Friday, September 7th
 Our first team meeting went well. All were in attendance. The full meeting notes can be found [here](https://github.com/kcaisley/CropTop/blob/master/Meetings/notes-1.md), but the most important take-aways were:
 
 - There are actually three seperate devices, which can potentially be integrated.
@@ -41,7 +41,7 @@ Our first team meeting went well. All were in attendance. The full meeting notes
 From what I can tell, the device is organized somewhat like this:
 
 <p align="center">
-  <img src="https://github.com/kcaisley/CropTop/blob/master/Documentation/Prototype/Electronics%20Block%20Diagram%20Resize.png" alt="Sublime's custom image" height="42" width="42"/>
+  <img src="https://github.com/kcaisley/CropTop/blob/master/Documentation/Prototype/Electronics%20Block%20Diagram%20Resize.png" alt="Sublime's custom image" height="420" width="420"/>
 </p>
 
 ## Tuesday, September 11th
