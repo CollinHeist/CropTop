@@ -41,7 +41,7 @@ Our first team meeting went well. All were in attendance. The full meeting notes
 From what I can tell, the device is organized somewhat like this:
 
 <p align="center">
-  <img src="https://github.com/kcaisley/CropTop/blob/master/Documentation/Prototype/Electronics%20Block%20Diagram%20Resize.png" alt="Sublime's custom image"/>
+  <img src="https://github.com/kcaisley/CropTop/blob/master/Documentation/Prototype/Electronics%20Block%20Diagram%20Resize.png" alt="Sublime's custom image" height="42" width="42"/>
 </p>
 
 ## Tuesday, September 11th
