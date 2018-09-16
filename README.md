@@ -29,7 +29,7 @@ Based on the results from the Doodle poll, the meeting will be this Friday from 
 
 Ryan and I have come up with the name *Team Crop Top*. We will check to make sure Dr. Robertson approves this Friday. The team contract has also been drafted and is stored on Ryan's OneDrive. For collaboration tools we will be using Slack for messaging, Doodle polls for meeting planning, and Google Docs and Microsoft OneDrive for file storage.
 
-## Friday, September 7th
+## Friday, September 7th`
 Our first team meeting went well. All were in attendance. The full meeting notes can be found [here](https://github.com/kcaisley/CropTop/blob/master/Meetings/notes-1.md), but the most important take-aways were:
 
 - There are actually three seperate devices, which can potentially be integrated.
@@ -56,9 +56,9 @@ I have been thinking a lot about the GUI display, I posted on reddit.
 put reddit post with > in here
 
 ## Wednesday, September 12th
-The reddit post has blown up, the full post can be found here, but the take aways are.
+The reddit post has blown up, the full post can be found [here](link), but the take aways are.
 
-I attened a workshop today on git, and have decided to port everything to github, for version control.
+I attended a UI Library workshop today on Git. I have used Git before in the past, but never quite realized how useful it was as a collaboration tool. For documenting my end of the project, I have decided to port everything to github, for version control. I'm going to be keeping my personal logbook in a markdown file, which should make professional formatting intuitive.  
 
 Ryan and I also picked up the prototype device and I started to pick it apart. Here is a picture of the current prototype.
 
