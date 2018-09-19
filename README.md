@@ -67,20 +67,7 @@ Ryan and I also picked up the prototype device and I started to pick it apart. H
 I plan to do a more thorough breakdown of the device in the coming days, also looking through the
 
 ## Tuesday, September 18th
-First Header | Second Header
------------- | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
-First Header | Second Header
------------- | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
-
-
-
-
-
-
-
-
-
+First Header | Second Header | First Header | Second Header
+------------ | ------------- | ------------ | -------------
+Content from cell 1 | Content from cell 2 | Content from cell 1 | Content from cell 2 
+Content in the first column | Content in the second columnn
