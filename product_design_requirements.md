@@ -57,6 +57,10 @@ On Current | ? | Medium
 Off Current | ? | Medium
 Component Cost | <$35.00 | Low
 
+### Force Sensor Interface:
+-Requires Gain stage (amplifiers)
+-Requires offboard connection (terminal blocks)
+
 #### Board Requirements:
 Dimesions
 P
