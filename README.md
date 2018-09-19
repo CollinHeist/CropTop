@@ -11,7 +11,7 @@ Relative Humidity Resolution | <0.1 %RH | High
 Temperature Accuracy | <±0.1 °C | High
 Range of Accurate Operation | >-40 to 125 °C | High
 Relative Humidity Resolution | <0.1 °C | High
-Communication Protocol | I2C or SPI | High
+Communication Protocol | I2C or SPI | Medium
 Supply Voltage | 3.3V | Medium
 On Current | <10mA | Medium
 Off Current | <20uA | Medium
@@ -22,7 +22,8 @@ Component Cost | <$30.00 | Low
 Requirements | Measurement | Priority
 :------------: | :-------------: | :------------:
 Position Accuracy | <2 meters | High
-Communication Protocol | I2C or SPI | High
+Reception | ? | High
+Communication Protocol | I2C or SPI | Medium
 Supply Voltage | 3.3V | Medium
 On Current | <25mA | Medium
 Off Current | <20uA | Medium
