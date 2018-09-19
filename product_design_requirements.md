@@ -1,7 +1,7 @@
 # Product Design Requirements
 
-### Peripheral Board
-#### Microcontroller:
+### 1 Peripheral Subsystem
+#### 1.1 Microcontroller:
 Requirements | Measurement | Priority
 :------------: | :-------------: | :------------:
 Micocontroller Architecture | 32 bit | High
@@ -15,7 +15,7 @@ Off Current | <1uA | Medium
 Clock Speed | >20MHz | Medium
 Component Cost | <$10.00| Low
 
-#### Temperature and Humidity Sensor:
+#### 1.2 Temperature and Humidity Sensor:
 Requirements | Measurement | Priority
 :------------: | :-------------: | :------------:
 Relative Humidity Accuracy | <±2 %RH | High
@@ -31,7 +31,7 @@ Off Current | <20uA | Medium
 Data Sampling Rate | >2Hz | Low
 Component Cost | <$30.00 | Low
 
-#### GPS Module:
+#### 1.3 GPS Module:
 Requirements | Measurement | Priority
 :------------: | :-------------: | :------------:
 Position Accuracy | <2 meters | High
@@ -43,7 +43,7 @@ Off Current | <20uA | Medium
 Data Sampling Rate | >1Hz | Low
 Component Cost | <$40.00 | Low
 
-#### SoM Graphics Processing:
+#### 1.4 SoM Graphics Processing:
 Requirements | Measurement | Priority
 :------------: | :-------------: | :------------:
 Python Compatible | Linux Compatible | High
@@ -55,6 +55,29 @@ Supply Voltage | 3.3V | Medium
 On Current | ? | Medium
 Off Current | ? | Medium
 Component Cost | <$35.00 | Low
+
+#### 1.5-1.7:
+- Accelerometer/Position Sensor
+- Motor Control for Linear Actuator
+- Force Sensor Interface
+
+### 2 Display Subsystem
+#### 2.1 Display Screen:
+Requirements | Measurement | Priority
+:------------: | :-------------: | :------------:
+Resolution | >800x480 pixels | Medium
+Dimensions | >7 inch | Medium
+Ruggedness | Scratch, Drop, and Water Proof | Medium
+Integration | OEM Component | Medium
+Component Cost | <$100 | Low
+
+#### Display Driver:
+Requirements | Measurement | Priority
+:------------: | :-------------: | :------------:
+Connectivity | HDMI/MicroHDMI | Medium
+Compatibility | Linux and Display | Medium
+
+
 
 #### Battery:
 Requirements | Measurement | Priority
@@ -75,20 +98,19 @@ RF Penetrable | ? | High
 Waterproof | ? | High
 Dimensions | ? | Medium
 Modifiable | Can drill through | Medium
-Component Cost | 
+Component Cost | ? $ | Low
 
-
-
-
-### Force Sensor Interface:
--Requires Gain stage (amplifiers)
--Requires offboard connection (terminal blocks)
-
-#### Board Requirements:
-Dimesions
-P
+#### Barcode Scanner:
+Requirements | Measurement | Priority
+:------------: | :-------------: | :------------:
+Barcode Compatibility | 1D Reflective | High
+Connectivity | Wireless USB | High
+Battery Life | ? hrs | Medium
+Device Cost | < $100 | Low
 
 
 Questions 
 - Data/Programming/OS interface?
 - Battery Interface
+- How does the force sensor amplifiers work?
+- What is the extra opamp for
