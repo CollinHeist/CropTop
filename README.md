@@ -1,6 +1,19 @@
 ## Tuesday, September 18th
 
 ### Peripheral Board
+#### Microcontroller:
+Requirements | Measurement | Priority
+:------------: | :-------------: | :------------:
+ADC Count | >4 ADCs | High
+ADC Resolution | >16bit | High
+ADC Sampling Rate | ? | High
+I2C Pin Count | >6 | High
+Supply Voltage | 3.3V | Medium
+On Current | <25mA | Medium
+Off Current | <20uA | Medium
+Clock Speed | >20MHz | Medium
+Component Cost | <$10.00| Low
+
 
 #### Temperature and Humidity Sensor:
 Requirements | Measurement | Priority
