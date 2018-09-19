@@ -2,23 +2,34 @@
 
 ### Peripheral Board
 
-#### Humidity Sensor:
+#### Temperature and Humidity Sensor:
 Requirements | Measurement | Priority
 :------------: | :-------------: | :------------:
 Relative Humidity Accuracy | <±2 %RH | High
-Range of Accurate Operation | >10%-90% %RH | High
+Range of Accurate Operation | >10 to 90 %RH | High
 Relative Humidity Resolution | <0.1 %RH | High
-Communication Protocol | I2C or SPI | High
-Component Cost | <$30.00 | Low
-
-#### Temperature Sensor:
-Requirements | Measurement | Priority
-:------------: | :-------------: | :------------:
 Temperature Accuracy | <±0.1 °C | High
 Range of Accurate Operation | >-40 to 125 °C | High
 Relative Humidity Resolution | <0.1 °C | High
 Communication Protocol | I2C or SPI | High
+Supply Voltage | 3.3V | Medium
+On Current | <10mA | Medium
+Off Current | <20uA | Medium
+Data Sampling Rate | >2Hz | Low
 Component Cost | <$30.00 | Low
+
+#### GPS Module:
+Requirements | Measurement | Priority
+:------------: | :-------------: | :------------:
+Position Accuracy | <2 meters | High
+Communication Protocol | I2C or SPI | High
+Supply Voltage | 3.3V | Medium
+On Current | <25mA | Medium
+Off Current | <20uA | Medium
+Data Sampling Rate | >1Hz | Low
+Component Cost | <$40.00 | Low
+
+
 
 ## Tuesday, September 4th, 2018
 Ryan and I recieved our capstone project assignment today, entitled "*Product Design for Manufacture and Reliability*". Basic info on the project scope can be found [here](https://github.com/kcaisley/CropTop/blob/master/Documentation/project-statement.pdf). We are the only two members on the team. Ryan and I decided how the various project roles would be divided amongst us. I will be responsible for scheduling, planning, and running meetings. Ryan will be largely responsible for the project budget and timeline. Many of the other tasks, including client communication, assembling the portfolio, and technical design will be shared. A more defined division of labor will develop as the semester progresses.
