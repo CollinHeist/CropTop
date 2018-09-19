@@ -15,7 +15,6 @@ Off Current | <1uA | Medium
 Clock Speed | >20MHz | Medium
 Component Cost | <$10.00| Low
 
-
 #### Temperature and Humidity Sensor:
 Requirements | Measurement | Priority
 :------------: | :-------------: | :------------:
@@ -57,6 +56,30 @@ On Current | ? | Medium
 Off Current | ? | Medium
 Component Cost | <$35.00 | Low
 
+#### Battery:
+Requirements | Measurement | Priority
+:------------: | :-------------: | :------------:
+Capacity | ? mAh | High
+Water Proof | ? | High
+Weight | ? lbs | Medium
+Availability | Amazon? | Medium
+Connection | USB | Medium
+Voltage | 3.3-5V? | Medium
+Component Cost | ? $ | Low
+
+#### Case:
+Requirements | Measurement | Priority
+:------------: | :-------------: | :------------:
+Weight | ? lbs | Medium
+RF Penetrable | ? | High
+Waterproof | ? | High
+Dimensions | ? | Medium
+Modifiable | Can drill through | Medium
+Component Cost | 
+
+
+
+
 ### Force Sensor Interface:
 -Requires Gain stage (amplifiers)
 -Requires offboard connection (terminal blocks)
@@ -64,3 +87,8 @@ Component Cost | <$35.00 | Low
 #### Board Requirements:
 Dimesions
 P
+
+
+Questions 
+- Data/Programming/OS interface?
+- Battery Interface
