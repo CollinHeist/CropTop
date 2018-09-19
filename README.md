@@ -4,13 +4,14 @@
 #### Microcontroller:
 Requirements | Measurement | Priority
 :------------: | :-------------: | :------------:
-ADC Count | >4 ADCs | High
-ADC Resolution | >16bit | High
-ADC Sampling Rate | ? | High
+Micocontroller Architecture | 32 bit | High
+A to D Converter Count | >4 ADCs | High
+A to D Converter Resolution | >16bit | High
+Ato D Converter Sampling Rate | ? | High
 I2C Pin Count | >6 | High
 Supply Voltage | 3.3V | Medium
-On Current | <25mA | Medium
-Off Current | <20uA | Medium
+On Current | <1mA | Medium
+Off Current | <1uA | Medium
 Clock Speed | >20MHz | Medium
 Component Cost | <$10.00| Low
 
@@ -42,6 +43,7 @@ On Current | <25mA | Medium
 Off Current | <20uA | Medium
 Data Sampling Rate | >1Hz | Low
 Component Cost | <$40.00 | Low
+
 
 
 
