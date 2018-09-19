@@ -56,10 +56,11 @@ On Current | ? | Medium
 Off Current | ? | Medium
 Component Cost | <$35.00 | Low
 
-#### 1.5-1.7:
+#### 1.5-1.8:
 - Accelerometer/Position Sensor
 - Motor Control for Linear Actuator
 - Force Sensor Interface
+- 3rd System?
 
 ### 2 Display Subsystem
 #### 2.1 Display Screen:
@@ -71,11 +72,30 @@ Ruggedness | Scratch, Drop, and Water Proof | Medium
 Integration | OEM Component | Medium
 Component Cost | <$100 | Low
 
-#### Display Driver:
+#### 2.2 Display Driver:
 Requirements | Measurement | Priority
 :------------: | :-------------: | :------------:
 Connectivity | HDMI/MicroHDMI | Medium
 Compatibility | Linux and Display | Medium
+Component Cost | <$40 | Low
+
+#### 2.3 Touch Screen:
+Requirements | Measurement | Priority
+:------------: | :-------------: | :------------:
+Screen Type | Capacitive or Resistive? | High
+Dimensions | Same as Display Screen | High
+Integration | With Screen | Medium
+Connectivity | USB/I2C/PMP | Medium
+Component Cost | <$100 | Low
+
+#### 2.4 Touch Screen Driver:
+Requirements | Measurement | Priority
+:------------: | :-------------: | :------------:
+Screen Type | Capacitive or Resistive? | High
+Dimensions | Same as Display Screen | High
+Integration | With Screen | Medium
+Connectivity | USB/I2C/PMP | Medium
+Component Cost | <$100 | Low
 
 
 
@@ -107,7 +127,6 @@ Barcode Compatibility | 1D Reflective | High
 Connectivity | Wireless USB | High
 Battery Life | ? hrs | Medium
 Device Cost | < $100 | Low
-
 
 Questions 
 - Data/Programming/OS interface?
