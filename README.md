@@ -64,7 +64,14 @@ I attended a UI Library workshop today on Git. I have used Git before in the pas
 
 Ryan and I also picked up the prototype device and I started to pick it apart. Here is a picture of the current prototype.
 
-I plan to do a more thorough breakdown of the device in the coming days, also looking through the 
+I plan to do a more thorough breakdown of the device in the coming days, also looking through the
+
+## Tuesday, September 18th
+First Header | Second Header
+------------ | -------------
+Content from cell 1 | Content from cell 2
+Content in the first column | Content in the second column
+
 
 
 
