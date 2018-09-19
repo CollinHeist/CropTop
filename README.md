@@ -7,7 +7,7 @@ Requirements | Measurement | Priority
 Micocontroller Architecture | 32 bit | High
 A to D Converter Count | >4 ADCs | High
 A to D Converter Resolution | >16bit | High
-Ato D Converter Sampling Rate | ? | High
+A to D Converter Sampling Rate | ? | High
 I2C/SPI Pin Count | >6 | High
 Supply Voltage | 3.3V | Medium
 On Current | <1mA | Medium
