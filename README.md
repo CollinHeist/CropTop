@@ -86,9 +86,18 @@ I brought up several suggestions for replacing elements of the project with chea
 I listened to several podcasts on embedded electronics, on the topics of USB
 
 In the USB pocast, I learned the following things:
--There are USB hosts and devices. Our project should probably be a device.
--Rated max power, after config, is up to 500mA from host.
--A device has to be designed so it can work in both floated and grounded states.
+- There are USB hosts and devices. Our project should probably be a device.
+- Rated max power, after config, is up to 500mA from host.
+- A device has to be designed so it can work in both floated and grounded states.
+- 5V supply, put a ferrite bead on your VBUS to filter out high frequency noise.
+- Put decoupling capacitors on 5V supply
+- ESD diodes on datalines (D+ and D-)
+- For USB2: Low speed 1.5Mbit/s, High speed 12Mbit/s, Full speed 480Mbit/s
+- Differential pair should be 90ohm impedance
+- Three options for USB
+  - FTDI Chip (USB to serial TTL UART, 3Mega Baud), Can add a EEPROM to give Vendor ID
+  - Embedded USB Phy: Microchip, NXP, ST, TI
+    - USB Stack: MStack, Officil Microchip stack
 
 
 
