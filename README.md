@@ -100,6 +100,10 @@ In the USB pocast, I learned the following things:
     - USB Stack: MStack, Official Microchip Stack, Dangerous Prototypes (only for PIC18 and 24)
     - You have to make sure that you meet the hosts timing requirements
   - Discrete USB Phy: Maxim 2320, Ti TUSB111
+  
+In the power supply podcast, I learned the following things:
+- Creepage and Clearance in AC to DC conversion
+- Use a switch-mode to do 12V-4V and LDO reg to do 4V-3.3V
 
 
 
