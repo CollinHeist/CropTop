@@ -82,4 +82,14 @@ I brought up several suggestions for replacing elements of the project with chea
 - Course Work Submission/Grading
 - Next steps & schedule
 
+## Thursday, September 20th
+I listened to several podcasts on embedded electronics, on the topics of USB
+
+In the USB pocast, I learned the following things:
+-There are USB hosts and devices. Our project should probably be a device.
+-Rated max power, after config, is up to 500mA from host.
+-A device has to be designed so it can work in both floated and grounded states.
+
+
+
 
