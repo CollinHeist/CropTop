@@ -97,7 +97,9 @@ In the USB pocast, I learned the following things:
 - Three options for USB
   - FTDI Chip (USB to serial TTL UART, 3Mega Baud), Can add a EEPROM to give Vendor ID
   - Embedded USB Phy: Microchip, NXP, ST, TI
-    - USB Stack: MStack, Officil Microchip stack
+    - USB Stack: MStack, Official Microchip Stack, Dangerous Prototypes (only for PIC18 and 24)
+    - You have to make sure that you meet the hosts timing requirements
+  - Maxim 2320, Ti TUSB111
 
 
 
