@@ -72,9 +72,14 @@ I plan to do a more thorough breakdown of the device in the coming days, also lo
 I created a rough draft of our Product Design Requirments (PDR) today. It can be found [here](https://github.com/kcaisley/CropTop/blob/master/Documentation/product_design_requirements.md). We will be workshoping it in our team meeting tomorrow at 2:30pm. One of the biggest questions I have about this document is whether or not I should be including requirements like the voltage of components and the communication protocols used. It seems these sorts of details are not something that matter to client; instead they are up to the engineer to decide. Perhaps in the final revision, they will be removed.
 
 ## Wednesday, September 19th
-Dr. Robertson, Ryan, and I were present at the meeting today. We primarily discussed the following topics:
--Product Design Requirements Review
--Preliminary Budget Review
--Course Work Submission/Grading
--Next steps & schedule
+Dr. Robertson, Ryan, and I were present at the meeting today. We primarily discussed the draft Product Design Requirements document, the draft of the budget, submission and grading of our coursework, and the schedule/next steps:
+
+##### Product Design Requirements
+I brought up several suggestions for replacing elements of the project with cheaper or more intergrated solutions. Dr. Robertson commented that any changes should be primarily motivated by improving manufacturability, reliability, and performance of the device and should not modify the behavior of the device without good reason. Morever, Dr. Robertson emphasized that cost and asthetics should not be prioritized when redesigning the device.
+
+##### Project Budget
+  - It may be several weeks before funding from the capstone course is available. To that end, Dr. Robertson allowed funding directly available via him, and has encouraged us to to use that funding to acquire any components or equipment we need soon.
+- Course Work Submission/Grading
+- Next steps & schedule
+
 
