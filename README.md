@@ -108,6 +108,9 @@ In the power supply podcast, I learned the following things:
 - LDO solves the above issue
 - Double check the pinout of the TO-220 package!
 
+In the baremetal vs RTOS podcast, I learned the following things:
+- 
+
 
 
 
