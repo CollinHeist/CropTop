@@ -104,6 +104,9 @@ In the USB pocast, I learned the following things:
 In the power supply podcast, I learned the following things:
 - Creepage and Clearance in AC to DC conversion
 - Use a switch-mode to do 12V-4V and LDO reg to do 4V-3.3V
+- Don't trust switch mode power supplies on their load regulation graph
+- LDO solves the above issue
+- Double check the pinout of the TO-220 package!
 
 
 
