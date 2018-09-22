@@ -120,7 +120,11 @@ I listened to two podcasts on PCB layout:
 - USB jacks can heat up a lot
 - Either use a heatsink or give components enough space for board copper to be easy
 - Use a four layer board, with ground and power plane
-- Layout power before signals
+- Layout power before signals, right after major groupings
+- Consider a seperate analog ground from digital ground
+- Think about power loops and ground loops (make them small)
+- Research PCB copper thieving
+- Use multiple vias if you have high current
 
   
 
