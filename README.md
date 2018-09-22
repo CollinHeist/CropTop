@@ -83,7 +83,7 @@ I brought up several suggestions for replacing elements of the project with chea
 - Next steps & schedule
 
 ## Thursday, September 20th
-I listened to several podcasts on embedded electronics, on the topics of USB
+I listened to two podcasts on embedded electronics, on the topics of USB and power supplies:
 
 In the USB pocast, I learned the following things:
 - There are USB hosts and devices. Our project should probably be a device.
@@ -108,8 +108,23 @@ In the power supply podcast, I learned the following things:
 - LDO solves the above issue
 - Double check the pinout of the TO-220 package!
 
-In the baremetal vs RTOS podcast, I learned the following things:
-- 
+## Friday, September 21st
+I listened to two podcasts on PCB layout:
+- Stack up (Look at traps podcast)
+- Plan out the placement of components in building blocks
+- Place decoupling capacitors very close to their pin
+  - Place capacitors before signals
+- Heat from components rises, bottom board parts heat board much more
+- Don't place power supplies on edge of the board
+- Components that generate heat should be spaced from other components
+- USB jacks can heat up a lot
+- Either use a heatsink or give components enough space for board copper to be easy
+- Use a four layer board, with ground and power plane
+- Layout power before signals
+
+  
+
+
 
 
 
