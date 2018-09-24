@@ -125,6 +125,8 @@ I listened to two podcasts on PCB layout:
 - Think about power loops and ground loops (make them small)
 - Research PCB copper thieving
 - Use multiple vias if you have high current
+- Rounding corners
+- Don't forget mounting holes
 
   
 
