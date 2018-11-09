@@ -192,7 +192,7 @@ NoConn ~ 8550 2000
 NoConn ~ 8550 2100
 NoConn ~ 8550 2300
 $Comp
-L croptop:A2235-H U?
+L croptop_rev1-rescue:A2235-H-croptop U?
 U 1 1 5BB203CF
 P 11250 2200
 F 0 "U?" H 11500 3150 50  0000 C CNN
@@ -254,7 +254,7 @@ Self Start
 NoConn ~ 8550 2400
 NoConn ~ 8550 1600
 $Comp
-L croptop:LIS3DH U?
+L croptop_rev1-rescue:LIS3DH-croptop U?
 U 1 1 5BB0F111
 P 7900 2000
 F 0 "U?" H 8200 2700 50  0000 C CNN
@@ -387,7 +387,7 @@ F 3 "~" H 10200 3050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:AD7799 U?
+L croptop_rev1-rescue:AD7799-croptop U?
 U 1 1 5BB55419
 P 15050 4650
 F 0 "U?" H 15350 5350 50  0000 C CNN
@@ -398,7 +398,7 @@ F 3 "" H 14950 4350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:HDC2010 U?
+L croptop_rev1-rescue:HDC2010-croptop U?
 U 1 1 5BB55482
 P 10300 4950
 F 0 "U?" H 10500 5400 50  0000 C CNN
@@ -518,7 +518,7 @@ NoConn ~ 1250 2150
 NoConn ~ 1250 2250
 NoConn ~ 850  2450
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BC8C1A4
 P 2400 3100
 F 0 "#PWR?" H 2400 2850 50  0001 C CNN
@@ -529,7 +529,7 @@ F 3 "" H 2400 3100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:AGND #PWR?
+L croptop_rev1-rescue:AGND-croptop #PWR?
 U 1 1 5BC8C21D
 P 4250 2000
 F 0 "#PWR?" H 4250 1750 50  0001 C CNN
@@ -540,7 +540,7 @@ F 3 "" H 4250 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:AVDD #PWR?
+L croptop_rev1-rescue:AVDD-croptop #PWR?
 U 1 1 5BC8C2AB
 P 5350 1400
 F 0 "#PWR?" H 5350 1250 50  0001 C CNN
@@ -551,7 +551,7 @@ F 3 "" H 5350 1400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:AZ1117 U?
+L croptop_rev1-rescue:AZ1117-croptop U?
 U 1 1 5BC4F9E7
 P 2400 2700
 F 0 "U?" H 2400 2950 50  0000 C CNN
@@ -617,7 +617,7 @@ F 3 "~" H 2400 1000 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BD4739A
 P 2400 2000
 F 0 "#PWR?" H 2400 1750 50  0001 C CNN
@@ -639,7 +639,7 @@ F 3 "~" H 4850 1800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:AGND #PWR?
+L croptop_rev1-rescue:AGND-croptop #PWR?
 U 1 1 5BD47453
 P 4850 2000
 F 0 "#PWR?" H 4850 1750 50  0001 C CNN
@@ -650,7 +650,7 @@ F 3 "" H 4850 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:AGND #PWR?
+L croptop_rev1-rescue:AGND-croptop #PWR?
 U 1 1 5BD474A4
 P 5300 2000
 F 0 "#PWR?" H 5300 1750 50  0001 C CNN
@@ -683,7 +683,7 @@ F 3 "~" H 2950 2900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:MC74HC125A U?
+L croptop_rev1-rescue:MC74HC125A-croptop U?
 U 1 1 5BD492F6
 P 12850 4550
 F 0 "U?" H 13120 4800 50  0000 C CNN
@@ -694,7 +694,7 @@ F 3 "" H 13850 4550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BD4AC16
 P 1850 3100
 F 0 "#PWR?" H 1850 2850 50  0001 C CNN
@@ -705,7 +705,7 @@ F 3 "" H 1850 3100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BD4AD7D
 P 2950 3100
 F 0 "#PWR?" H 2950 2850 50  0001 C CNN
@@ -716,7 +716,7 @@ F 3 "" H 2950 3100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:REG71055 U?
+L croptop_rev1-rescue:REG71055-croptop U?
 U 1 1 5BD468CD
 P 2400 1550
 F 0 "U?" H 2650 1900 50  0000 L CNN
@@ -735,7 +735,7 @@ Wire Wire Line
 Wire Wire Line
 	2450 1100 2600 1100
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BD98D9E
 P 1750 2000
 F 0 "#PWR?" H 1750 1750 50  0001 C CNN
@@ -746,7 +746,7 @@ F 3 "" H 1750 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BD98DF9
 P 3050 2000
 F 0 "#PWR?" H 3050 1750 50  0001 C CNN
@@ -757,7 +757,7 @@ F 3 "" H 3050 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:AGND #PWR?
+L croptop_rev1-rescue:AGND-croptop #PWR?
 U 1 1 5BDACF2C
 P 3650 2000
 F 0 "#PWR?" H 3650 1750 50  0001 C CNN
@@ -768,7 +768,7 @@ F 3 "" H 3650 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BDCA966
 P 950 2500
 F 0 "#PWR?" H 950 2250 50  0001 C CNN
@@ -779,7 +779,7 @@ F 3 "" H 950 2500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BDCA9C1
 P 1850 3700
 F 0 "#PWR?" H 1850 3450 50  0001 C CNN
@@ -790,7 +790,7 @@ F 3 "" H 1850 3700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:AGND #PWR?
+L croptop_rev1-rescue:AGND-croptop #PWR?
 U 1 1 5BDCAA1C
 P 2150 3700
 F 0 "#PWR?" H 2150 3450 50  0001 C CNN
@@ -822,7 +822,7 @@ Wire Wire Line
 Wire Wire Line
 	2950 2700 2950 2750
 $Comp
-L croptop:TC1014 U?
+L croptop_rev1-rescue:TC1014-croptop U?
 U 1 1 5BE2F182
 P 4250 1450
 F 0 "U?" H 4250 1717 50  0000 C CNN
@@ -902,7 +902,7 @@ Wire Wire Line
 Text Notes 1450 1200 0    50   ~ 0
 5V
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BF83E0B
 P 2050 8850
 F 0 "#PWR?" H 2050 8600 50  0001 C CNN
@@ -913,7 +913,7 @@ F 3 "" H 2050 8850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BF841ED
 P 7950 5150
 F 0 "#PWR?" H 7950 4900 50  0001 C CNN
@@ -924,7 +924,7 @@ F 3 "" H 7950 5150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BF845F6
 P 1400 10300
 F 0 "#PWR?" H 1400 10050 50  0001 C CNN
@@ -935,7 +935,7 @@ F 3 "" H 1400 10300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BF93D20
 P 1850 10300
 F 0 "#PWR?" H 1850 10050 50  0001 C CNN
@@ -946,7 +946,7 @@ F 3 "" H 1850 10300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BFB2B9C
 P 2300 10300
 F 0 "#PWR?" H 2300 10050 50  0001 C CNN
@@ -957,7 +957,7 @@ F 3 "" H 2300 10300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BFC22C6
 P 2750 10300
 F 0 "#PWR?" H 2750 10050 50  0001 C CNN
@@ -968,7 +968,7 @@ F 3 "" H 2750 10300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BFD19F0
 P 3200 10300
 F 0 "#PWR?" H 3200 10050 50  0001 C CNN
@@ -979,7 +979,7 @@ F 3 "" H 3200 10300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BFE125B
 P 1450 4700
 F 0 "#PWR?" H 1450 4450 50  0001 C CNN
@@ -990,7 +990,7 @@ F 3 "" H 1450 4700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BFF0AC6
 P 7800 2850
 F 0 "#PWR?" H 7800 2600 50  0001 C CNN
@@ -1001,7 +1001,7 @@ F 3 "" H 7800 2850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5C0003D2
 P 10200 3250
 F 0 "#PWR?" H 10200 3000 50  0001 C CNN
@@ -1012,7 +1012,7 @@ F 3 "" H 10200 3250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5C00FAFC
 P 10900 3500
 F 0 "#PWR?" H 10900 3250 50  0001 C CNN
@@ -1023,7 +1023,7 @@ F 3 "" H 10900 3500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5C01F24F
 P 10550 3000
 F 0 "#PWR?" H 10550 2750 50  0001 C CNN
@@ -1034,7 +1034,7 @@ F 3 "" H 10550 3000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5C02EA43
 P 10300 5500
 F 0 "#PWR?" H 10300 5250 50  0001 C CNN
@@ -1045,7 +1045,7 @@ F 3 "" H 10300 5500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5C03E16D
 P 10800 5050
 F 0 "#PWR?" H 10800 4800 50  0001 C CNN
@@ -1056,7 +1056,7 @@ F 3 "" H 10800 5050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DVDD #PWR?
+L croptop_rev1-rescue:DVDD-croptop #PWR?
 U 1 1 5C04DE21
 P 7950 4950
 F 0 "#PWR?" H 7950 4800 50  0001 C CNN
@@ -1067,7 +1067,7 @@ F 3 "" H 7950 4950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DVDD #PWR?
+L croptop_rev1-rescue:DVDD-croptop #PWR?
 U 1 1 5C05D7CC
 P 1300 9700
 F 0 "#PWR?" H 1300 9550 50  0001 C CNN
@@ -1078,7 +1078,7 @@ F 3 "" H 1300 9700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DVDD #PWR?
+L croptop_rev1-rescue:DVDD-croptop #PWR?
 U 1 1 5C08BF5A
 P 2450 4650
 F 0 "#PWR?" H 2450 4500 50  0001 C CNN
@@ -1089,7 +1089,7 @@ F 3 "" H 2450 4650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DVDD #PWR?
+L croptop_rev1-rescue:DVDD-croptop #PWR?
 U 1 1 5C10B094
 P 800 7500
 F 0 "#PWR?" H 800 7350 50  0001 C CNN
@@ -1100,7 +1100,7 @@ F 3 "" H 800 7500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DVDD #PWR?
+L croptop_rev1-rescue:DVDD-croptop #PWR?
 U 1 1 5C11B1A9
 P 10300 4400
 F 0 "#PWR?" H 10300 4250 50  0001 C CNN
@@ -1111,7 +1111,7 @@ F 3 "" H 10300 4400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DVDD #PWR?
+L croptop_rev1-rescue:DVDD-croptop #PWR?
 U 1 1 5C12B0DC
 P 10800 4850
 F 0 "#PWR?" H 10800 4700 50  0001 C CNN
@@ -1122,7 +1122,7 @@ F 3 "" H 10800 4850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DVDD #PWR?
+L croptop_rev1-rescue:DVDD-croptop #PWR?
 U 1 1 5C13B218
 P 7850 1150
 F 0 "#PWR?" H 7850 1000 50  0001 C CNN
@@ -1133,7 +1133,7 @@ F 3 "" H 7850 1150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DVDD #PWR?
+L croptop_rev1-rescue:DVDD-croptop #PWR?
 U 1 1 5C14B2B4
 P 11250 1150
 F 0 "#PWR?" H 11250 1000 50  0001 C CNN
@@ -1144,7 +1144,7 @@ F 3 "" H 11250 1150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DVDD #PWR?
+L croptop_rev1-rescue:DVDD-croptop #PWR?
 U 1 1 5C15B800
 P 7450 4450
 F 0 "#PWR?" H 7450 4300 50  0001 C CNN
@@ -1287,7 +1287,7 @@ F 3 "" H 10150 7800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DVDD #PWR?
+L croptop_rev1-rescue:DVDD-croptop #PWR?
 U 1 1 5C2D6F39
 P 10500 6700
 F 0 "#PWR?" H 10500 6550 50  0001 C CNN
@@ -1525,7 +1525,7 @@ Wire Wire Line
 Text Notes 12050 8200 0    50   ~ 0
 Check: Resistor Values
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BDD990D
 P 11650 8100
 F 0 "#PWR?" H 11650 7850 50  0001 C CNN
@@ -1536,7 +1536,7 @@ F 3 "" H 11650 8100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BDD9B59
 P 9100 8100
 F 0 "#PWR?" H 9100 7850 50  0001 C CNN
@@ -1576,7 +1576,7 @@ GPS Antenna and Reciever
 Wire Notes Line width 10 style solid
 	10050 850  12150 850 
 $Comp
-L croptop:AVDD #PWR?
+L croptop_rev1-rescue:AVDD-croptop #PWR?
 U 1 1 5BFF7410
 P 15200 3800
 F 0 "#PWR?" H 15200 3650 50  0001 C CNN
@@ -1587,7 +1587,7 @@ F 3 "" H 15200 3800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DVDD #PWR?
+L croptop_rev1-rescue:DVDD-croptop #PWR?
 U 1 1 5BFF74DB
 P 14400 3750
 F 0 "#PWR?" H 14400 3600 50  0001 C CNN
@@ -1655,7 +1655,7 @@ F 3 "~" H 16550 5050 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L croptop:AVDD #PWR?
+L croptop_rev1-rescue:AVDD-croptop #PWR?
 U 1 1 5C0A0315
 P 16150 4050
 F 0 "#PWR?" H 16150 3900 50  0001 C CNN
@@ -1720,7 +1720,7 @@ Wire Wire Line
 	16150 5050 16350 5050
 Connection ~ 16150 4600
 $Comp
-L croptop:AGND #PWR?
+L croptop_rev1-rescue:AGND-croptop #PWR?
 U 1 1 5C36BE0D
 P 15000 5500
 F 0 "#PWR?" H 15000 5250 50  0001 C CNN
@@ -1786,7 +1786,7 @@ F 3 "~" H 13750 4950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5C438E53
 P 12850 5300
 F 0 "#PWR?" H 12850 5050 50  0001 C CNN
@@ -1797,7 +1797,7 @@ F 3 "" H 12850 5300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5C438EEB
 P 12300 5300
 F 0 "#PWR?" H 12300 5050 50  0001 C CNN
@@ -1808,7 +1808,7 @@ F 3 "" H 12300 5300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5C439092
 P 13400 5300
 F 0 "#PWR?" H 13400 5050 50  0001 C CNN
@@ -1839,7 +1839,7 @@ Connection ~ 12300 5000
 Wire Wire Line
 	12300 5000 12300 5300
 $Comp
-L croptop:DVDD #PWR?
+L croptop_rev1-rescue:DVDD-croptop #PWR?
 U 1 1 5C69C185
 P 12850 4200
 F 0 "#PWR?" H 12850 4050 50  0001 C CNN
@@ -1852,7 +1852,7 @@ $EndComp
 Wire Wire Line
 	12850 4200 12850 4250
 $Comp
-L croptop:DVDD #PWR?
+L croptop_rev1-rescue:DVDD-croptop #PWR?
 U 1 1 5BC8C7AB
 P 15300 6600
 F 0 "#PWR?" H 15300 6450 50  0001 C CNN
@@ -1863,7 +1863,7 @@ F 3 "" H 15300 6600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BCA894F
 P 14950 8050
 F 0 "#PWR?" H 14950 7800 50  0001 C CNN
@@ -1878,7 +1878,7 @@ Force Sensor Interface w/ ADC and Buffer
 Wire Notes Line width 10 style solid
 	13750 6300 16500 6300
 $Comp
-L croptop:DVDD_UNREG #PWR?
+L croptop_rev1-rescue:DVDD_UNREG-croptop #PWR?
 U 1 1 5BD8DB06
 P 1500 1450
 F 0 "#PWR?" H 1500 1300 50  0001 C CNN
@@ -1903,7 +1903,7 @@ F 3 "~" H 16100 7350 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BDAA50B
 P 15800 8050
 F 0 "#PWR?" H 15800 7800 50  0001 C CNN
@@ -1970,7 +1970,7 @@ Check: R Values
 Text Notes 1800 3550 0    50   ~ 0
 DGND & AGND\nStar Ground
 $Comp
-L croptop:PIC32MX575F512H U?
+L croptop_rev1-rescue:PIC32MX575F512H-croptop U?
 U 1 1 5C14D1A6
 P 2200 6750
 F 0 "U?" H 2850 8700 50  0000 C CNN
@@ -2135,7 +2135,7 @@ Wire Wire Line
 Wire Wire Line
 	14800 3800 14950 3800
 $Comp
-L croptop:DVDD #PWR?
+L croptop_rev1-rescue:DVDD-croptop #PWR?
 U 1 1 5C8E27B8
 P 7100 1750
 F 0 "#PWR?" H 7100 1600 50  0001 C CNN
@@ -2204,7 +2204,7 @@ Wire Wire Line
 	15950 2150 15850 2150
 Connection ~ 15850 2150
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5DDB5481
 P 15850 2300
 F 0 "#PWR?" H 15850 2050 50  0001 C CNN
@@ -2217,7 +2217,7 @@ $EndComp
 Wire Wire Line
 	15850 2150 15850 2300
 $Comp
-L croptop:DVDD_UNREG #PWR?
+L croptop_rev1-rescue:DVDD_UNREG-croptop #PWR?
 U 1 1 5BDAA17C
 P 16300 6600
 F 0 "#PWR?" H 16300 6450 50  0001 C CNN
@@ -2265,7 +2265,7 @@ Wire Wire Line
 Text Notes 15850 6900 0    50   ~ 0
 Connected w/\n0 ohm resistors
 $Comp
-L croptop:MC74HC125A U?
+L croptop_rev1-rescue:MC74HC125A-croptop U?
 U 1 1 5BCACF73
 P 14950 7300
 F 0 "U?" H 14650 7550 50  0000 C CNN
@@ -2302,7 +2302,7 @@ Wire Wire Line
 	15550 7750 15550 8050
 Connection ~ 15550 7750
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BF67C86
 P 14350 8050
 F 0 "#PWR?" H 14350 7800 50  0001 C CNN
@@ -2313,7 +2313,7 @@ F 3 "" H 14350 8050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BF67D39
 P 15550 8050
 F 0 "#PWR?" H 15550 7800 50  0001 C CNN
@@ -2328,7 +2328,7 @@ Wire Wire Line
 Wire Wire Line
 	15800 7550 15800 8050
 $Comp
-L croptop:TPS2115A U?
+L croptop_rev1-rescue:TPS2115A-croptop U?
 U 1 1 5BD0489C
 P 5100 2750
 F 0 "U?" H 5100 3165 50  0000 C CNN
@@ -2350,7 +2350,7 @@ F 3 "~" V 3750 3360 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BD31D92
 P 3750 3450
 F 0 "#PWR?" H 3750 3200 50  0001 C CNN
@@ -2363,7 +2363,7 @@ $EndComp
 Wire Wire Line
 	3750 3400 3750 3450
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BD8C440
 P 4600 3250
 F 0 "#PWR?" H 4600 3000 50  0001 C CNN
@@ -2374,7 +2374,7 @@ F 3 "" H 4600 3250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DVDD #PWR?
+L croptop_rev1-rescue:DVDD-croptop #PWR?
 U 1 1 5BE43C3A
 P 4600 2500
 F 0 "#PWR?" H 4600 2350 50  0001 C CNN
@@ -2413,7 +2413,7 @@ F 3 "~" H 3400 2900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5C13C939
 P 4250 3450
 F 0 "#PWR?" H 4250 3200 50  0001 C CNN
@@ -2426,7 +2426,7 @@ $EndComp
 Wire Wire Line
 	4250 3200 4250 3450
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5C16B2DD
 P 3400 3100
 F 0 "#PWR?" H 3400 2850 50  0001 C CNN
@@ -2445,7 +2445,7 @@ Connection ~ 4250 2800
 Wire Wire Line
 	4250 2800 4650 2800
 $Comp
-L croptop:DVDD #PWR?
+L croptop_rev1-rescue:DVDD-croptop #PWR?
 U 1 1 5C25AB94
 P 5850 2250
 F 0 "#PWR?" H 5850 2100 50  0001 C CNN
@@ -2462,7 +2462,7 @@ Wire Wire Line
 Wire Wire Line
 	5550 2800 5700 2800
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5C44F12A
 P 5600 3300
 F 0 "#PWR?" H 5600 3050 50  0001 C CNN
@@ -2630,7 +2630,7 @@ F 3 "~" H 15550 1500 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L croptop:DRV8872 U?
+L croptop_rev1-rescue:DRV8872-croptop U?
 U 1 1 5BF1204D
 P 14250 1950
 F 0 "U?" H 14250 2325 50  0000 C CNN
@@ -2647,7 +2647,7 @@ DRV_IN2
 Text GLabel 13700 2000 0    39   Input ~ 0
 DRV_FLT
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BF12E4B
 P 13700 2200
 F 0 "#PWR?" H 13700 1950 50  0001 C CNN
@@ -2662,7 +2662,7 @@ Wire Wire Line
 Wire Wire Line
 	13700 2100 13700 2200
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5BF6EB5C
 P 14800 2200
 F 0 "#PWR?" H 14800 1950 50  0001 C CNN
@@ -2751,7 +2751,7 @@ Wire Wire Line
 	15500 2000 15500 2050
 Connection ~ 15500 2000
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5C398E5D
 P 15050 2400
 F 0 "#PWR?" H 15050 2150 50  0001 C CNN
@@ -2762,7 +2762,7 @@ F 3 "" H 15050 2400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DGND #PWR?
+L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 5C398F0C
 P 15500 2400
 F 0 "#PWR?" H 15500 2150 50  0001 C CNN
@@ -2845,7 +2845,7 @@ Connection ~ 3850 5950
 Wire Wire Line
 	3850 5950 3950 5950
 $Comp
-L croptop:DVDD #PWR?
+L croptop_rev1-rescue:DVDD-croptop #PWR?
 U 1 1 5CF332A2
 P 3600 5550
 F 0 "#PWR?" H 3600 5400 50  0001 C CNN
@@ -2856,7 +2856,7 @@ F 3 "" H 3600 5550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L croptop:DVDD #PWR?
+L croptop_rev1-rescue:DVDD-croptop #PWR?
 U 1 1 5CF33354
 P 3850 5550
 F 0 "#PWR?" H 3850 5400 50  0001 C CNN
@@ -2889,14 +2889,8 @@ NoConn ~ 3000 6650
 NoConn ~ 3000 6550
 NoConn ~ 3000 6450
 NoConn ~ 3000 6350
-Text GLabel 4700 4850 0    39   Input ~ 0
-RPI_CS
-Text GLabel 4700 4550 0    39   Input ~ 0
-SCLK_1
-Text GLabel 4700 4650 0    39   Input ~ 0
-MOSI_1
-Text GLabel 4700 4750 0    39   Input ~ 0
-MISO_1
+Text GLabel 16300 2650 0    39   Input ~ 0
+LIN_VOLT
 NoConn ~ 1400 6750
 NoConn ~ 1400 7450
 Wire Wire Line
@@ -2918,22 +2912,14 @@ Wire Wire Line
 $Comp
 L Connector:Conn_01x04_Male J?
 U 1 1 5D6DE4AB
-P 5000 4650
-F 0 "J?" H 4973 4623 50  0000 R CNN
-F 1 "Conn_01x04_Male" H 4973 4532 50  0000 R CNN
-F 2 "" H 5000 4650 50  0001 C CNN
-F 3 "~" H 5000 4650 50  0001 C CNN
-	1    5000 4650
+P 16650 2550
+F 0 "J?" H 16623 2523 50  0000 R CNN
+F 1 "Linear Encoder" H 16623 2432 50  0000 R CNN
+F 2 "" H 16650 2550 50  0001 C CNN
+F 3 "~" H 16650 2550 50  0001 C CNN
+	1    16650 2550
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	4700 4550 4800 4550
-Wire Wire Line
-	4700 4650 4800 4650
-Wire Wire Line
-	4700 4750 4800 4750
-Wire Wire Line
-	4700 4850 4800 4850
 Text GLabel 5850 7650 0    39   Input ~ 0
 ROT_A
 Text GLabel 5850 7300 0    39   Input ~ 0
@@ -3318,4 +3304,147 @@ F 3 "~" H 6150 7400 50  0001 C CNN
 	1    6150 7400
 	-1   0    0    -1  
 $EndComp
+Text GLabel 14550 9200 0    39   Input ~ 0
+SD_CD
+Text GLabel 14550 8900 0    39   Input ~ 0
+SD_MOSI
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 5BF60FD0
+P 14550 9950
+F 0 "#PWR?" H 14550 9700 50  0001 C CNN
+F 1 "DGND" H 14554 9795 50  0000 C CNN
+F 2 "" H 14550 9950 50  0001 C CNN
+F 3 "" H 14550 9950 50  0001 C CNN
+	1    14550 9950
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DVDD-croptop #PWR?
+U 1 1 5C03CBAF
+P 14100 9300
+F 0 "#PWR?" H 14100 9150 50  0001 C CNN
+F 1 "DVDD" H 14115 9473 50  0000 C CNN
+F 2 "" H 14100 9300 50  0001 C CNN
+F 3 "" H 14100 9300 50  0001 C CNN
+	1    14100 9300
+	1    0    0    -1  
+$EndComp
+Text GLabel 14550 8800 0    39   Input ~ 0
+SD_CLK
+Text GLabel 14550 9000 0    39   Input ~ 0
+SD_MISO
+$Comp
+L croptop_rev1-rescue:Micro_SD_Card_Det J?
+U 1 1 5C24A173
+P 15550 9350
+F 0 "J?" H 16380 9396 50  0000 L CNN
+F 1 "Micro_SD_Card_Det" H 16380 9305 50  0000 L CNN
+F 2 "" H 17600 10050 50  0001 C CNN
+F 3 "https://www.hirose.com/product/en/download_file/key_name/DM3/category/Catalog/doc_file_id/49662/?file_category_id=4&item_id=195&is_series=1" H 15550 9450 50  0001 C CNN
+	1    15550 9350
+	1    0    0    -1  
+$EndComp
+Text GLabel 14550 9100 0    39   Input ~ 0
+SD_CS
+$Comp
+L Device:R R?
+U 1 1 5C2931E4
+P 14400 9600
+F 0 "R?" V 14300 9600 50  0000 C CNN
+F 1 "10k" V 14400 9600 50  0000 C CNN
+F 2 "" V 14330 9600 50  0001 C CNN
+F 3 "~" H 14400 9600 50  0001 C CNN
+	1    14400 9600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C293900
+P 14200 9600
+F 0 "R?" V 14100 9600 50  0000 C CNN
+F 1 "10k" V 14200 9600 50  0000 C CNN
+F 2 "" V 14130 9600 50  0001 C CNN
+F 3 "~" H 14200 9600 50  0001 C CNN
+	1    14200 9600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	14650 9500 14550 9500
+Wire Wire Line
+	14550 9500 14550 9600
+Wire Wire Line
+	14650 9600 14550 9600
+Connection ~ 14550 9600
+Wire Wire Line
+	14550 9600 14550 9950
+Wire Wire Line
+	14650 9400 14400 9400
+Wire Wire Line
+	14100 9400 14100 9300
+Wire Wire Line
+	14650 9800 14400 9800
+Wire Wire Line
+	14400 9800 14400 9750
+Wire Wire Line
+	14650 9900 14200 9900
+Wire Wire Line
+	14200 9900 14200 9750
+Wire Wire Line
+	14400 9450 14400 9400
+Connection ~ 14400 9400
+Wire Wire Line
+	14400 9400 14200 9400
+Wire Wire Line
+	14200 9450 14200 9400
+Connection ~ 14200 9400
+Wire Wire Line
+	14200 9400 14100 9400
+Wire Wire Line
+	14550 8800 14650 8800
+Wire Wire Line
+	14550 8900 14650 8900
+Wire Wire Line
+	14550 9000 14650 9000
+Wire Wire Line
+	14550 9100 14650 9100
+Wire Wire Line
+	14550 9200 14650 9200
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 5C6EF893
+P 16350 2800
+F 0 "#PWR?" H 16350 2550 50  0001 C CNN
+F 1 "DGND" H 16354 2645 50  0000 C CNN
+F 2 "" H 16350 2800 50  0001 C CNN
+F 3 "" H 16350 2800 50  0001 C CNN
+	1    16350 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DVDD-croptop #PWR?
+U 1 1 5C6EFDFD
+P 16250 2500
+F 0 "#PWR?" H 16250 2350 50  0001 C CNN
+F 1 "DVDD" H 16265 2673 50  0000 C CNN
+F 2 "" H 16250 2500 50  0001 C CNN
+F 3 "" H 16250 2500 50  0001 C CNN
+	1    16250 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	16450 2750 16350 2750
+Wire Wire Line
+	16350 2750 16350 2800
+Wire Wire Line
+	16350 2750 16350 2450
+Wire Wire Line
+	16350 2450 16450 2450
+Connection ~ 16350 2750
+Wire Wire Line
+	16450 2650 16300 2650
+Wire Wire Line
+	16250 2500 16250 2550
+Wire Wire Line
+	16250 2550 16450 2550
 $EndSCHEMATC
