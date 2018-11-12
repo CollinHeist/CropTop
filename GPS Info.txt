@@ -9,3 +9,8 @@ No signal lines should pass under or near the antenna
 Inductor to ground for >2dbic antenna
 
 
+Notes from 11/9/2018:
+Chip antennas are cheapest, and multidirectional. They will work best for application. Ceramic patch antennas, while better performing, are directional, larger, and cost more. (They also look less cool.)
+
+
+
