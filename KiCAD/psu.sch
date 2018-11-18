@@ -1,0 +1,906 @@
+EESchema Schematic File Version 4
+LIBS:croptop_rev1-cache
+EELAYER 26 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 3 8
+Title "CropTop"
+Date ""
+Rev "Revision 1"
+Comp "University of Idaho"
+Comment1 "Designer 1: Kennedy Caisley"
+Comment2 "Designer 2: Ryan Donahue"
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:USB_B_Micro J?
+U 1 1 6480A5F0
+P 3350 3100
+F 0 "J?" H 3350 3600 50  0000 C CNN
+F 1 "5V USB" H 3350 3500 50  0000 C CNN
+F 2 "" H 3500 3050 50  0001 C CNN
+F 3 "~" H 3500 3050 50  0001 C CNN
+	1    3350 3100
+	1    0    0    -1  
+$EndComp
+NoConn ~ 3650 3100
+NoConn ~ 3650 3200
+NoConn ~ 3650 3300
+$Comp
+L croptop_rev1-rescue:AGND-croptop #PWR?
+U 1 1 6480A5FA
+P 6400 3050
+F 0 "#PWR?" H 6400 2800 50  0001 C CNN
+F 1 "AGND" H 6405 2877 50  0000 C CNN
+F 2 "" H 6400 3050 50  0001 C CNN
+F 3 "" H 6400 3050 50  0001 C CNN
+	1    6400 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:AVDD-croptop #PWR?
+U 1 1 6480A600
+P 7500 2450
+F 0 "#PWR?" H 7500 2300 50  0001 C CNN
+F 1 "AVDD" H 7515 2623 50  0000 C CNN
+F 2 "" H 7500 2450 50  0001 C CNN
+F 3 "" H 7500 2450 50  0001 C CNN
+	1    7500 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 6480A606
+P 4100 2850
+F 0 "C?" H 4215 2896 50  0000 L CNN
+F 1 "1uF" H 4215 2805 50  0000 L CNN
+F 2 "" H 4138 2700 50  0001 C CNN
+F 3 "~" H 4100 2850 50  0001 C CNN
+	1    4100 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 6480A60D
+P 5400 2850
+AR Path="/6480A60D" Ref="C?"  Part="1" 
+AR Path="/64809F0C/6480A60D" Ref="C?"  Part="1" 
+F 0 "C?" H 5515 2896 50  0000 L CNN
+F 1 "1uF" H 5515 2805 50  0000 L CNN
+F 2 "" H 5438 2700 50  0001 C CNN
+F 3 "~" H 5400 2850 50  0001 C CNN
+	1    5400 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 6480A614
+P 5800 2850
+AR Path="/6480A614" Ref="C?"  Part="1" 
+AR Path="/64809F0C/6480A614" Ref="C?"  Part="1" 
+F 0 "C?" H 5915 2896 50  0000 L CNN
+F 1 "1uF" H 5915 2805 50  0000 L CNN
+F 2 "" H 5838 2700 50  0001 C CNN
+F 3 "~" H 5800 2850 50  0001 C CNN
+	1    5800 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 6480A61B
+P 7450 2850
+F 0 "C?" H 7565 2896 50  0000 L CNN
+F 1 "1uF" H 7565 2805 50  0000 L CNN
+F 2 "" H 7488 2700 50  0001 C CNN
+F 3 "~" H 7450 2850 50  0001 C CNN
+	1    7450 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 6480A622
+P 4750 2050
+AR Path="/6480A622" Ref="C?"  Part="1" 
+AR Path="/64809F0C/6480A622" Ref="C?"  Part="1" 
+F 0 "C?" V 4498 2050 50  0000 C CNN
+F 1 "0.1uF" V 4589 2050 50  0000 C CNN
+F 2 "" H 4788 1900 50  0001 C CNN
+F 3 "~" H 4750 2050 50  0001 C CNN
+	1    4750 2050
+	0    1    1    0   
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 6480A629
+P 4750 3050
+F 0 "#PWR?" H 4750 2800 50  0001 C CNN
+F 1 "DGND" H 4754 2895 50  0000 C CNN
+F 2 "" H 4750 3050 50  0001 C CNN
+F 3 "" H 4750 3050 50  0001 C CNN
+	1    4750 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 6480A62F
+P 7000 2850
+AR Path="/6480A62F" Ref="C?"  Part="1" 
+AR Path="/64809F0C/6480A62F" Ref="C?"  Part="1" 
+F 0 "C?" H 7115 2896 50  0000 L CNN
+F 1 "470pF" H 7115 2805 50  0000 L CNN
+F 2 "" H 7038 2700 50  0001 C CNN
+F 3 "~" H 7000 2850 50  0001 C CNN
+	1    7000 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:AGND-croptop #PWR?
+U 1 1 6480A636
+P 7000 3050
+F 0 "#PWR?" H 7000 2800 50  0001 C CNN
+F 1 "AGND" H 7005 2877 50  0000 C CNN
+F 2 "" H 7000 3050 50  0001 C CNN
+F 3 "" H 7000 3050 50  0001 C CNN
+	1    7000 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:AGND-croptop #PWR?
+U 1 1 6480A63C
+P 7450 3050
+F 0 "#PWR?" H 7450 2800 50  0001 C CNN
+F 1 "AGND" H 7455 2877 50  0000 C CNN
+F 2 "" H 7450 3050 50  0001 C CNN
+F 3 "" H 7450 3050 50  0001 C CNN
+	1    7450 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:REG71055-croptop U?
+U 1 1 6480A642
+P 4750 2600
+AR Path="/6480A642" Ref="U?"  Part="1" 
+AR Path="/64809F0C/6480A642" Ref="U?"  Part="1" 
+F 0 "U?" H 5000 2950 50  0000 L CNN
+F 1 "REG71055" H 4850 2850 50  0000 L CNN
+F 2 "" H 4750 2600 50  0001 C CNN
+F 3 "" H 4750 2600 50  0001 C CNN
+	1    4750 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4700 2200 4700 2150
+Wire Wire Line
+	4550 2150 4700 2150
+Wire Wire Line
+	4800 2200 4800 2150
+Wire Wire Line
+	4800 2150 4950 2150
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 6480A64D
+P 4100 3050
+F 0 "#PWR?" H 4100 2800 50  0001 C CNN
+F 1 "DGND" H 4104 2895 50  0000 C CNN
+F 2 "" H 4100 3050 50  0001 C CNN
+F 3 "" H 4100 3050 50  0001 C CNN
+	1    4100 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 6480A653
+P 5400 3050
+F 0 "#PWR?" H 5400 2800 50  0001 C CNN
+F 1 "DGND" H 5404 2895 50  0000 C CNN
+F 2 "" H 5400 3050 50  0001 C CNN
+F 3 "" H 5400 3050 50  0001 C CNN
+	1    5400 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:AGND-croptop #PWR?
+U 1 1 6480A659
+P 5800 3050
+F 0 "#PWR?" H 5800 2800 50  0001 C CNN
+F 1 "AGND" H 5805 2877 50  0000 C CNN
+F 2 "" H 5800 3050 50  0001 C CNN
+F 3 "" H 5800 3050 50  0001 C CNN
+	1    5800 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 6480A65F
+P 3300 3600
+F 0 "#PWR?" H 3300 3350 50  0001 C CNN
+F 1 "DGND" H 3304 3445 50  0000 C CNN
+F 2 "" H 3300 3600 50  0001 C CNN
+F 3 "" H 3300 3600 50  0001 C CNN
+	1    3300 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 6480A665
+P 7600 4000
+F 0 "#PWR?" H 7600 3750 50  0001 C CNN
+F 1 "DGND" H 7604 3845 50  0000 C CNN
+F 2 "" H 7600 4000 50  0001 C CNN
+F 3 "" H 7600 4000 50  0001 C CNN
+	1    7600 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:AGND-croptop #PWR?
+U 1 1 6480A66B
+P 7900 4000
+F 0 "#PWR?" H 7900 3750 50  0001 C CNN
+F 1 "AGND" H 7905 3827 50  0000 C CNN
+F 2 "" H 7900 4000 50  0001 C CNN
+F 3 "" H 7900 4000 50  0001 C CNN
+	1    7900 4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7600 3900 7900 3900
+$Comp
+L croptop_rev1-rescue:TC1014-croptop U?
+U 1 1 6480A672
+P 6400 2500
+AR Path="/6480A672" Ref="U?"  Part="1" 
+AR Path="/64809F0C/6480A672" Ref="U?"  Part="1" 
+F 0 "U?" H 6400 2767 50  0000 C CNN
+F 1 "TC1014" H 6400 2676 50  0000 C CNN
+F 2 "" H 6400 2500 50  0001 C CNN
+F 3 "" H 6400 2500 50  0001 C CNN
+	1    6400 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 2600 5400 2600
+Wire Wire Line
+	5800 2600 5800 2500
+Wire Wire Line
+	5800 2500 5900 2500
+Wire Wire Line
+	5800 2600 5900 2600
+Connection ~ 5800 2600
+Wire Wire Line
+	5800 2600 5800 2700
+Wire Wire Line
+	5800 3000 5800 3050
+Wire Wire Line
+	5400 2700 5400 2600
+Wire Wire Line
+	5400 3050 5400 3000
+Wire Wire Line
+	4750 3050 4750 3000
+Wire Wire Line
+	4100 3050 4100 3000
+Wire Wire Line
+	4100 2650 4100 2700
+Connection ~ 4100 2650
+Wire Wire Line
+	4100 2650 4250 2650
+Wire Wire Line
+	4100 2650 4100 2550
+Wire Wire Line
+	4100 2550 4250 2550
+Wire Wire Line
+	7450 2500 7450 2700
+Wire Wire Line
+	7450 2500 7500 2500
+Wire Wire Line
+	7500 2500 7500 2450
+Connection ~ 7450 2500
+Wire Wire Line
+	6900 2600 7000 2600
+Wire Wire Line
+	7000 2600 7000 2700
+Wire Wire Line
+	7000 3000 7000 3050
+Wire Wire Line
+	6400 3050 6400 2900
+Wire Wire Line
+	7450 3000 7450 3050
+Text Notes 5350 2500 0    50   ~ 0
+5.5V
+Text Notes 7450 2200 0    50   ~ 0
+5V
+Connection ~ 3900 2900
+Text Notes 3850 2250 0    50   ~ 0
+5V
+Text Notes 4850 1650 0    98   ~ 20
+Digital & Analog Power Supply
+$Comp
+L croptop_rev1-rescue:DVDD_UNREG-croptop #PWR?
+U 1 1 6480A698
+P 3900 2500
+F 0 "#PWR?" H 3900 2350 50  0001 C CNN
+F 1 "DVDD_UNREG" H 3915 2673 50  0000 C CNN
+F 2 "" H 3900 2500 50  0001 C CNN
+F 3 "" H 3900 2500 50  0001 C CNN
+	1    3900 2500
+	1    0    0    -1  
+$EndComp
+Text Notes 7550 3850 0    50   ~ 0
+DGND & AGND\nStar Ground
+Wire Wire Line
+	4550 2150 4550 2050
+Wire Wire Line
+	4550 2050 4600 2050
+Wire Wire Line
+	4900 2050 4950 2050
+Wire Wire Line
+	4950 2050 4950 2150
+Text GLabel 7400 3950 0    39   Input ~ 0
+TP_DGND
+Text GLabel 8100 3950 2    39   Input ~ 0
+TP_AGND
+Wire Wire Line
+	7900 3900 7900 3950
+Wire Wire Line
+	7600 3900 7600 3950
+Wire Wire Line
+	7400 3950 7600 3950
+Connection ~ 7600 3950
+Wire Wire Line
+	7600 3950 7600 4000
+Wire Wire Line
+	7900 3950 8100 3950
+Connection ~ 7900 3950
+Wire Wire Line
+	7900 3950 7900 4000
+$Comp
+L croptop_rev1-rescue:DVDD-croptop #PWR?
+U 1 1 6480A6AD
+P 6700 3650
+F 0 "#PWR?" H 6700 3500 50  0001 C CNN
+F 1 "DVDD" H 6715 3823 50  0000 C CNN
+F 2 "" H 6700 3650 50  0001 C CNN
+F 3 "" H 6700 3650 50  0001 C CNN
+	1    6700 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 2900 3900 2900
+Wire Wire Line
+	6900 2500 7450 2500
+Text Notes 6650 3400 0    50   ~ 0
+3.3V
+Wire Wire Line
+	3900 2500 3900 2650
+Wire Wire Line
+	3900 2650 4100 2650
+Connection ~ 3900 2650
+Wire Wire Line
+	3900 2650 3900 2900
+Wire Wire Line
+	5400 2600 5800 2600
+Connection ~ 5400 2600
+$Comp
+L Device:C C?
+U 1 1 6480A6BC
+P 4200 4000
+F 0 "C?" H 4315 4046 50  0000 L CNN
+F 1 "4.7uF" H 4315 3955 50  0000 L CNN
+F 2 "" H 4238 3850 50  0001 C CNN
+F 3 "~" H 4200 4000 50  0001 C CNN
+	1    4200 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 6480A6C3
+P 6300 3900
+F 0 "C?" H 6415 3946 50  0000 L CNN
+F 1 "4.7uF" H 6415 3855 50  0000 L CNN
+F 2 "" H 6338 3750 50  0001 C CNN
+F 3 "~" H 6300 3900 50  0001 C CNN
+	1    6300 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:MIC23050 U?
+U 1 1 6480A6CA
+P 5150 3850
+AR Path="/6480A6CA" Ref="U?"  Part="1" 
+AR Path="/64809F0C/6480A6CA" Ref="U?"  Part="1" 
+F 0 "U?" H 5150 4267 50  0000 C CNN
+F 1 "MIC23050" H 5150 4176 50  0000 C CNN
+F 2 "" H 5100 3900 50  0001 C CNN
+F 3 "" H 5100 3900 50  0001 C CNN
+	1    5150 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 3700 6700 3650
+$Comp
+L Device:L L?
+U 1 1 6480A6D2
+P 5800 3700
+AR Path="/6480A6D2" Ref="L?"  Part="1" 
+AR Path="/64809F0C/6480A6D2" Ref="L?"  Part="1" 
+F 0 "L?" V 5990 3700 50  0000 C CNN
+F 1 "1uH" V 5899 3700 50  0000 C CNN
+F 2 "" H 5800 3700 50  0001 C CNN
+F 3 "~" H 5800 3700 50  0001 C CNN
+	1    5800 3700
+	0    1    -1   0   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 6480A6D9
+P 5800 4000
+AR Path="/6480A6D9" Ref="C?"  Part="1" 
+AR Path="/64809F0C/6480A6D9" Ref="C?"  Part="1" 
+F 0 "C?" H 5685 3954 50  0000 R CNN
+F 1 "560pF" H 5685 4045 50  0000 R CNN
+F 2 "" H 5838 3850 50  0001 C CNN
+F 3 "~" H 5800 4000 50  0001 C CNN
+	1    5800 4000
+	-1   0    0    1   
+$EndComp
+NoConn ~ 5600 3900
+Wire Wire Line
+	5600 4000 5650 4000
+Wire Wire Line
+	5650 4000 5650 4200
+Wire Wire Line
+	5600 3700 5650 3700
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 6480A6E4
+P 4600 4250
+F 0 "#PWR?" H 4600 4000 50  0001 C CNN
+F 1 "DGND" H 4604 4095 50  0000 C CNN
+F 2 "" H 4600 4250 50  0001 C CNN
+F 3 "" H 4600 4250 50  0001 C CNN
+	1    4600 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 6480A6EA
+P 4200 4250
+F 0 "#PWR?" H 4200 4000 50  0001 C CNN
+F 1 "DGND" H 4204 4095 50  0000 C CNN
+F 2 "" H 4200 4250 50  0001 C CNN
+F 3 "" H 4200 4250 50  0001 C CNN
+	1    4200 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 6480A6F0
+P 6300 4150
+F 0 "#PWR?" H 6300 3900 50  0001 C CNN
+F 1 "DGND" H 6304 3995 50  0000 C CNN
+F 2 "" H 6300 4150 50  0001 C CNN
+F 3 "" H 6300 4150 50  0001 C CNN
+	1    6300 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 3700 4200 3700
+Wire Wire Line
+	4600 3700 4600 3800
+Wire Wire Line
+	4600 3800 4700 3800
+Connection ~ 4600 3700
+Wire Wire Line
+	4600 3700 4700 3700
+Wire Wire Line
+	4700 3900 4600 3900
+Wire Wire Line
+	4600 3900 4600 4000
+Wire Wire Line
+	4700 4000 4600 4000
+Connection ~ 4600 4000
+Wire Wire Line
+	4600 4000 4600 4250
+Wire Wire Line
+	4200 4250 4200 4150
+Wire Wire Line
+	4200 3850 4200 3700
+Connection ~ 4200 3700
+Wire Wire Line
+	4200 3700 4600 3700
+Wire Wire Line
+	5950 3700 6100 3700
+Wire Wire Line
+	6300 4050 6300 4150
+Wire Wire Line
+	3250 3500 3250 3550
+Wire Wire Line
+	3350 3550 3350 3500
+Wire Wire Line
+	3250 3550 3300 3550
+Wire Wire Line
+	3300 3550 3300 3600
+Connection ~ 3300 3550
+Wire Wire Line
+	3300 3550 3350 3550
+Wire Wire Line
+	5600 3800 5800 3800
+Wire Wire Line
+	5800 3800 5800 3850
+Wire Wire Line
+	5650 4200 5800 4200
+Wire Wire Line
+	5800 4200 5800 4150
+Wire Wire Line
+	6100 3800 6100 3700
+Wire Wire Line
+	5800 3800 6100 3800
+Connection ~ 5800 3800
+Connection ~ 6100 3700
+$Comp
+L croptop_rev1-rescue:FAN5333BSX U?
+U 1 1 6480A714
+P 5450 5450
+AR Path="/6480A714" Ref="U?"  Part="1" 
+AR Path="/64809F0C/6480A714" Ref="U?"  Part="1" 
+F 0 "U?" H 5450 6000 50  0000 C CNN
+F 1 "FAN5333BSX" H 5450 5300 50  0000 C CNN
+F 2 "" H 5450 5450 50  0001 C CNN
+F 3 "" H 5450 5450 50  0001 C CNN
+	1    5450 5450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5100 5050 4950 5050
+Wire Wire Line
+	3900 4700 4200 4700
+$Comp
+L Device:C C?
+U 1 1 6480A71D
+P 4200 4950
+F 0 "C?" H 4315 4996 50  0000 L CNN
+F 1 "10uF" H 4315 4905 50  0000 L CNN
+F 2 "" H 4238 4800 50  0001 C CNN
+F 3 "~" H 4200 4950 50  0001 C CNN
+	1    4200 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 4700 4200 4800
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 6480A725
+P 4200 5200
+F 0 "#PWR?" H 4200 4950 50  0001 C CNN
+F 1 "DGND" H 4204 5045 50  0000 C CNN
+F 2 "" H 4200 5200 50  0001 C CNN
+F 3 "" H 4200 5200 50  0001 C CNN
+	1    4200 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 5100 4200 5200
+$Comp
+L Device:L L?
+U 1 1 6480A72C
+P 5450 4700
+AR Path="/6480A72C" Ref="L?"  Part="1" 
+AR Path="/64809F0C/6480A72C" Ref="L?"  Part="1" 
+F 0 "L?" V 5640 4700 50  0000 C CNN
+F 1 "10uH" V 5549 4700 50  0000 C CNN
+F 2 "" H 5450 4700 50  0001 C CNN
+F 3 "~" H 5450 4700 50  0001 C CNN
+	1    5450 4700
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	4950 5050 4950 4700
+Connection ~ 4950 4700
+Wire Wire Line
+	4950 4700 5300 4700
+Wire Wire Line
+	5800 5050 5950 5050
+Wire Wire Line
+	5950 5050 5950 4700
+Wire Wire Line
+	5950 4700 5600 4700
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 6480A739
+P 5900 5550
+F 0 "#PWR?" H 5900 5300 50  0001 C CNN
+F 1 "DGND" H 5904 5395 50  0000 C CNN
+F 2 "" H 5900 5550 50  0001 C CNN
+F 3 "" H 5900 5550 50  0001 C CNN
+	1    5900 5550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 5450 5900 5450
+Wire Wire Line
+	5900 5450 5900 5550
+$Comp
+L Device:C C?
+U 1 1 6480A741
+P 6700 4900
+F 0 "C?" H 6815 4946 50  0000 L CNN
+F 1 "1uF" H 6815 4855 50  0000 L CNN
+F 2 "" H 6738 4750 50  0001 C CNN
+F 3 "~" H 6700 4900 50  0001 C CNN
+	1    6700 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 6480A748
+P 6700 5100
+F 0 "#PWR?" H 6700 4850 50  0001 C CNN
+F 1 "DGND" H 6704 4945 50  0000 C CNN
+F 2 "" H 6700 5100 50  0001 C CNN
+F 3 "" H 6700 5100 50  0001 C CNN
+	1    6700 5100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 5100 6700 5050
+Wire Wire Line
+	5800 5250 6000 5250
+Wire Wire Line
+	6000 5250 6000 5400
+$Comp
+L Device:R R?
+U 1 1 6480A751
+P 6200 5600
+AR Path="/6480A751" Ref="R?"  Part="1" 
+AR Path="/64809F0C/6480A751" Ref="R?"  Part="1" 
+F 0 "R?" H 6270 5646 50  0000 L CNN
+F 1 "10" H 6270 5555 50  0000 L CNN
+F 2 "" V 6130 5600 50  0001 C CNN
+F 3 "~" H 6200 5600 50  0001 C CNN
+	1    6200 5600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6000 5400 6200 5400
+Wire Wire Line
+	6200 5400 6200 5450
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 6480A75A
+P 6200 5800
+AR Path="/6480A75A" Ref="#PWR?"  Part="1" 
+AR Path="/64809F0C/6480A75A" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 6200 5550 50  0001 C CNN
+F 1 "DGND" H 6204 5645 50  0000 C CNN
+F 2 "" H 6200 5800 50  0001 C CNN
+F 3 "" H 6200 5800 50  0001 C CNN
+	1    6200 5800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6200 5800 6200 5750
+$Comp
+L Device:D D?
+U 1 1 6480A761
+P 6150 4700
+AR Path="/6480A761" Ref="D?"  Part="1" 
+AR Path="/64809F0C/6480A761" Ref="D?"  Part="1" 
+F 0 "D?" H 6150 4484 50  0000 C CNN
+F 1 "MBR0540" H 6150 4575 50  0000 C CNN
+F 2 "" H 6150 4700 50  0001 C CNN
+F 3 "~" H 6150 4700 50  0001 C CNN
+	1    6150 4700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5950 4700 6000 4700
+Connection ~ 5950 4700
+$Comp
+L Device:D_Schottky D?
+U 1 1 6480A76A
+P 7450 5050
+F 0 "D?" V 7404 5129 50  0000 L CNN
+F 1 "3SMAJ5935B" V 7495 5129 50  0000 L CNN
+F 2 "" H 7450 5050 50  0001 C CNN
+F 3 "~" H 7450 5050 50  0001 C CNN
+	1    7450 5050
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 6480A771
+P 6850 5600
+F 0 "C?" H 6965 5646 50  0000 L CNN
+F 1 "0.1uF" H 6965 5555 50  0000 L CNN
+F 2 "" H 6888 5450 50  0001 C CNN
+F 3 "~" H 6850 5600 50  0001 C CNN
+	1    6850 5600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6850 5400 6850 5450
+$Comp
+L Device:C C?
+U 1 1 6480A779
+P 7300 5600
+F 0 "C?" H 7415 5646 50  0000 L CNN
+F 1 "27pF" H 7415 5555 50  0000 L CNN
+F 2 "" H 7338 5450 50  0001 C CNN
+F 3 "~" H 7300 5600 50  0001 C CNN
+	1    7300 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 6480A780
+P 6850 5800
+F 0 "#PWR?" H 6850 5550 50  0001 C CNN
+F 1 "DGND" H 6854 5645 50  0000 C CNN
+F 2 "" H 6850 5800 50  0001 C CNN
+F 3 "" H 6850 5800 50  0001 C CNN
+	1    6850 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 6480A786
+P 7300 5800
+F 0 "#PWR?" H 7300 5550 50  0001 C CNN
+F 1 "DGND" H 7304 5645 50  0000 C CNN
+F 2 "" H 7300 5800 50  0001 C CNN
+F 3 "" H 7300 5800 50  0001 C CNN
+	1    7300 5800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7300 5750 7300 5800
+Wire Wire Line
+	6850 5750 6850 5800
+Wire Wire Line
+	7300 5400 7300 5450
+Connection ~ 6850 5400
+$Comp
+L Device:C C?
+U 1 1 6480A790
+P 4600 4950
+F 0 "C?" H 4715 4996 50  0000 L CNN
+F 1 "27pF" H 4715 4905 50  0000 L CNN
+F 2 "" H 4638 4800 50  0001 C CNN
+F 3 "~" H 4600 4950 50  0001 C CNN
+	1    4600 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 6480A797
+P 4600 5200
+F 0 "#PWR?" H 4600 4950 50  0001 C CNN
+F 1 "DGND" H 4604 5045 50  0000 C CNN
+F 2 "" H 4600 5200 50  0001 C CNN
+F 3 "" H 4600 5200 50  0001 C CNN
+	1    4600 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 5100 4600 5200
+Wire Wire Line
+	4200 4700 4600 4700
+Connection ~ 4200 4700
+Wire Wire Line
+	4600 4700 4600 4800
+Connection ~ 4600 4700
+Wire Wire Line
+	4600 4700 4950 4700
+Wire Wire Line
+	6650 4700 6700 4700
+Wire Wire Line
+	6850 5400 7300 5400
+$Comp
+L Device:C C?
+U 1 1 6480A7A5
+P 7100 4900
+F 0 "C?" H 7215 4946 50  0000 L CNN
+F 1 "1uF" H 7215 4855 50  0000 L CNN
+F 2 "" H 7138 4750 50  0001 C CNN
+F 3 "~" H 7100 4900 50  0001 C CNN
+	1    7100 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 6480A7AC
+P 7100 5100
+F 0 "#PWR?" H 7100 4850 50  0001 C CNN
+F 1 "DGND" H 7104 4945 50  0000 C CNN
+F 2 "" H 7100 5100 50  0001 C CNN
+F 3 "" H 7100 5100 50  0001 C CNN
+	1    7100 5100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 5100 7100 5050
+Wire Wire Line
+	7100 4750 7100 4700
+Connection ~ 7100 4700
+Wire Wire Line
+	6700 4750 6700 4700
+Connection ~ 6700 4700
+Wire Wire Line
+	6700 4700 7100 4700
+Wire Wire Line
+	7300 5400 7450 5400
+Connection ~ 7300 5400
+Wire Wire Line
+	7100 4700 7450 4700
+Wire Wire Line
+	7450 4700 7450 4900
+Wire Wire Line
+	7450 5200 7450 5400
+Wire Wire Line
+	6100 3700 6300 3700
+Wire Wire Line
+	6300 3750 6300 3700
+Connection ~ 6300 3700
+Wire Wire Line
+	6300 3700 6700 3700
+Wire Wire Line
+	3900 2900 3900 3700
+Connection ~ 3900 3700
+Wire Wire Line
+	3900 3700 3900 4700
+Text GLabel 7550 5400 2    39   Input ~ 0
+LCD_LED-
+Text GLabel 7550 4700 2    39   Input ~ 0
+LCD_LED+
+Wire Wire Line
+	7450 4700 7550 4700
+Connection ~ 7450 4700
+Wire Wire Line
+	7450 5400 7550 5400
+Connection ~ 7450 5400
+Text GLabel 4850 5500 0    39   Input ~ 0
+BLK_PWM
+Wire Wire Line
+	4900 5450 4900 5500
+Wire Wire Line
+	4900 5500 4850 5500
+Wire Wire Line
+	4900 5450 5100 5450
+$Comp
+L Device:R R?
+U 1 1 6480A7CE
+P 6450 5600
+AR Path="/6480A7CE" Ref="R?"  Part="1" 
+AR Path="/64809F0C/6480A7CE" Ref="R?"  Part="1" 
+F 0 "R?" H 6520 5646 50  0000 L CNN
+F 1 "22" H 6520 5555 50  0000 L CNN
+F 2 "" V 6380 5600 50  0001 C CNN
+F 3 "~" H 6450 5600 50  0001 C CNN
+	1    6450 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 6480A7D5
+P 6450 5800
+AR Path="/6480A7D5" Ref="#PWR?"  Part="1" 
+AR Path="/64809F0C/6480A7D5" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 6450 5550 50  0001 C CNN
+F 1 "DGND" H 6454 5645 50  0000 C CNN
+F 2 "" H 6450 5800 50  0001 C CNN
+F 3 "" H 6450 5800 50  0001 C CNN
+	1    6450 5800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6450 5800 6450 5750
+Wire Wire Line
+	6450 5450 6450 5400
+Wire Wire Line
+	6200 5400 6450 5400
+Connection ~ 6200 5400
+Wire Wire Line
+	6450 5400 6850 5400
+Connection ~ 6450 5400
+$EndSCHEMATC

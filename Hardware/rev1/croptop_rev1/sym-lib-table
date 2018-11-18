@@ -1,4 +1,0 @@
-(sym_lib_table
-  (lib (name croptop_rev1-rescue)(type Legacy)(uri ${KIPRJMOD}/croptop_rev1-rescue.lib)(options "")(descr ""))
-  (lib (name PIC32MX795F512L)(type Legacy)(uri C:/Users/Kennedy/Desktop/CropTop/Hardware/rev1/croptop_rev1/PIC32MX795F512L.lib)(options "")(descr ""))
-)
