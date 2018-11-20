@@ -4,12 +4,12 @@ EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 2 8
+Sheet 2 7
 Title "CropTop"
-Date ""
-Rev "Revision 1"
+Date "2018-11-20"
+Rev "Revision 8"
 Comp "University of Idaho"
-Comment1 "Designer 1: Kennedy Caisley"
+Comment1 "Kennedy Caisley, Ryan Donahue"
 Comment2 "Designer 2: Ryan Donahue"
 Comment3 ""
 Comment4 ""
@@ -17,26 +17,26 @@ $EndDescr
 $Comp
 L Connector:Conn_01x06_Male J?
 U 1 1 65F75D3A
-P 8450 4850
+P 900 1850
 AR Path="/65F75D3A" Ref="J?"  Part="1" 
 AR Path="/64807BBC/65F75D3A" Ref="J?"  Part="1" 
-F 0 "J?" H 8600 5200 50  0000 R CNN
-F 1 "PICKit Header" H 8850 4450 50  0000 R CNN
-F 2 "" H 8450 4850 50  0001 C CNN
-F 3 "~" H 8450 4850 50  0001 C CNN
-	1    8450 4850
+F 0 "J?" H 1050 2200 50  0000 R CNN
+F 1 "PICKit Header" H 1300 1450 50  0000 R CNN
+F 2 "" H 900 1850 50  0001 C CNN
+F 3 "~" H 900 1850 50  0001 C CNN
+	1    900  1850
 	1    0    0    -1  
 $EndComp
-Text GLabel 8750 4950 2    39   Input ~ 0
+Text GLabel 1200 1950 2    39   Input ~ 0
 PKT_PGED
-Text GLabel 8750 5050 2    39   Input ~ 0
+Text GLabel 1200 2050 2    39   Input ~ 0
 PKT_PGEC
-NoConn ~ 8650 5150
+NoConn ~ 1100 2150
 Wire Wire Line
-	8650 5050 8750 5050
+	1100 2050 1200 2050
 Wire Wire Line
-	8650 4950 8750 4950
-Text GLabel 9400 4650 2    39   Input ~ 0
+	1100 1950 1200 1950
+Text GLabel 1850 1650 2    39   Input ~ 0
 PKT_MCLR
 Wire Wire Line
 	3800 1400 3650 1400
@@ -49,14 +49,14 @@ SCL_1
 $Comp
 L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 65F75D8E
-P 9300 5100
+P 1750 2100
 AR Path="/65F75D8E" Ref="#PWR?"  Part="1" 
 AR Path="/64807BBC/65F75D8E" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 9300 4850 50  0001 C CNN
-F 1 "DGND" H 9304 4945 50  0000 C CNN
-F 2 "" H 9300 5100 50  0001 C CNN
-F 3 "" H 9300 5100 50  0001 C CNN
-	1    9300 5100
+F 0 "#PWR?" H 1750 1850 50  0001 C CNN
+F 1 "DGND" H 1754 1945 50  0000 C CNN
+F 2 "" H 1750 2100 50  0001 C CNN
+F 3 "" H 1750 2100 50  0001 C CNN
+	1    1750 2100
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -303,7 +303,7 @@ Wire Wire Line
 Wire Wire Line
 	5500 6500 5400 6500
 $Comp
-L croptop_rev1-rescue:PIC32MX795F512L U?
+L croptop_rev1-rescue:PIC32MX795F512L-croptop_rev1-rescue U?
 U 1 1 65F75E35
 P 4500 4150
 AR Path="/65F75E35" Ref="U?"  Part="1" 
@@ -414,14 +414,14 @@ $EndComp
 $Comp
 L Connector:USB_A J?
 U 1 1 65F75E7B
-P 8525 2000
+P 9175 1450
 AR Path="/65F75E7B" Ref="J?"  Part="1" 
 AR Path="/64807BBC/65F75E7B" Ref="J?"  Part="1" 
-F 0 "J?" H 8580 2467 50  0000 C CNN
-F 1 "USB_A" H 8580 2376 50  0000 C CNN
-F 2 "" H 8675 1950 50  0001 C CNN
-F 3 " ~" H 8675 1950 50  0001 C CNN
-	1    8525 2000
+F 0 "J?" H 9230 1917 50  0000 C CNN
+F 1 "USB_A" H 9230 1826 50  0000 C CNN
+F 2 "" H 9325 1400 50  0001 C CNN
+F 3 " ~" H 9325 1400 50  0001 C CNN
+	1    9175 1450
 	1    0    0    -1  
 $EndComp
 Text GLabel 5500 3600 2    39   Input ~ 0
@@ -440,35 +440,35 @@ Wire Wire Line
 $Comp
 L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 65F75E89
-P 8475 2500
+P 9125 1950
 AR Path="/65F75E89" Ref="#PWR?"  Part="1" 
 AR Path="/64807BBC/65F75E89" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 8475 2250 50  0001 C CNN
-F 1 "DGND" H 8479 2345 50  0000 C CNN
-F 2 "" H 8475 2500 50  0001 C CNN
-F 3 "" H 8475 2500 50  0001 C CNN
-	1    8475 2500
+F 0 "#PWR?" H 9125 1700 50  0001 C CNN
+F 1 "DGND" H 9129 1795 50  0000 C CNN
+F 2 "" H 9125 1950 50  0001 C CNN
+F 3 "" H 9125 1950 50  0001 C CNN
+	1    9125 1950
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8425 2400 8425 2450
+	9075 1850 9075 1900
 Wire Wire Line
-	8425 2450 8475 2450
+	9075 1900 9125 1900
 Wire Wire Line
-	8475 2450 8475 2500
+	9125 1900 9125 1950
 Wire Wire Line
-	8475 2450 8525 2450
+	9125 1900 9175 1900
 Wire Wire Line
-	8525 2450 8525 2400
-Connection ~ 8475 2450
-Text GLabel 8925 2000 2    39   Input ~ 0
+	9175 1900 9175 1850
+Connection ~ 9125 1900
+Text GLabel 9575 1450 2    39   Input ~ 0
 USB_D+
-Text GLabel 8925 2100 2    39   Input ~ 0
+Text GLabel 9575 1550 2    39   Input ~ 0
 USB_D-
 Wire Wire Line
-	8825 2000 8925 2000
+	9475 1450 9575 1450
 Wire Wire Line
-	8825 2100 8925 2100
+	9475 1550 9575 1550
 Text GLabel 5500 5350 2    39   Input ~ 0
 RES_INT
 Wire Wire Line
@@ -489,9 +489,9 @@ Wire Wire Line
 	5400 5850 5500 5850
 Wire Wire Line
 	5400 5950 5500 5950
-Text Notes 7825 1400 0    98   ~ 20
+Text Notes 8350 700  0    98   ~ 20
 Peripheral USB Port
-Text Notes 3700 925  0    98   ~ 20
+Text Notes 2700 700  0    98   ~ 20
 PIC32 Microcontroller
 Text GLabel 1400 5700 0    39   Input ~ 0
 LCD_B5
@@ -528,63 +528,63 @@ LCD_R4
 $Comp
 L Device:C C?
 U 1 1 65F75EDB
-P 9300 4850
+P 1750 1850
 AR Path="/65F75EDB" Ref="C?"  Part="1" 
 AR Path="/64807BBC/65F75EDB" Ref="C?"  Part="1" 
-F 0 "C?" H 9415 4896 50  0000 L CNN
-F 1 "0.1uF" H 9415 4805 50  0000 L CNN
-F 2 "" H 9338 4700 50  0001 C CNN
-F 3 "~" H 9300 4850 50  0001 C CNN
-	1    9300 4850
+F 0 "C?" H 1865 1896 50  0000 L CNN
+F 1 "0.1uF" H 1865 1805 50  0000 L CNN
+F 2 "" H 1788 1700 50  0001 C CNN
+F 3 "~" H 1750 1850 50  0001 C CNN
+	1    1750 1850
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8650 4850 9150 4850
+	1100 1850 1600 1850
 Wire Wire Line
-	9150 5050 9300 5050
+	1600 2050 1750 2050
 Wire Wire Line
-	9300 4650 9300 4700
-Connection ~ 9300 4650
+	1750 1650 1750 1700
+Connection ~ 1750 1650
 Wire Wire Line
-	9300 5100 9300 5050
+	1750 2100 1750 2050
 Wire Wire Line
-	9300 5000 9300 5050
-Connection ~ 9300 5050
+	1750 2000 1750 2050
+Connection ~ 1750 2050
 Wire Wire Line
-	8650 4650 9300 4650
+	1100 1650 1750 1650
 $Comp
 L Device:R R?
 U 1 1 65F75EEB
-P 9000 4550
+P 1450 1550
 AR Path="/65F75EEB" Ref="R?"  Part="1" 
 AR Path="/64807BBC/65F75EEB" Ref="R?"  Part="1" 
-F 0 "R?" V 9100 4500 50  0000 L CNN
-F 1 "10k" V 8995 4480 50  0000 L CNN
-F 2 "" V 8930 4550 50  0001 C CNN
-F 3 "~" H 9000 4550 50  0001 C CNN
-	1    9000 4550
+F 0 "R?" V 1550 1500 50  0000 L CNN
+F 1 "10k" V 1445 1480 50  0000 L CNN
+F 2 "" V 1380 1550 50  0001 C CNN
+F 3 "~" H 1450 1550 50  0001 C CNN
+	1    1450 1550
 	0    -1   -1   0   
 $EndComp
 $Comp
 L croptop_rev1-rescue:DVDD-croptop #PWR?
 U 1 1 65F75EF2
-P 8750 4500
+P 1200 1500
 AR Path="/65F75EF2" Ref="#PWR?"  Part="1" 
 AR Path="/64807BBC/65F75EF2" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 8750 4350 50  0001 C CNN
-F 1 "DVDD" H 8765 4673 50  0000 C CNN
-F 2 "" H 8750 4500 50  0001 C CNN
-F 3 "" H 8750 4500 50  0001 C CNN
-	1    8750 4500
+F 0 "#PWR?" H 1200 1350 50  0001 C CNN
+F 1 "DVDD" H 1215 1673 50  0000 C CNN
+F 2 "" H 1200 1500 50  0001 C CNN
+F 3 "" H 1200 1500 50  0001 C CNN
+	1    1200 1500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8650 4750 8750 4750
+	1100 1750 1200 1750
 Wire Wire Line
-	8750 4750 8750 4550
+	1200 1750 1200 1550
 Wire Wire Line
-	9300 4650 9400 4650
-Text Notes 9650 4925 0    50   ~ 0
+	1750 1650 1850 1650
+Text Notes 2100 1925 0    50   ~ 0
 Possibly\nD.N.P.
 $Comp
 L Device:R R?
@@ -622,10 +622,10 @@ Wire Wire Line
 	6850 4700 6850 4750
 Wire Wire Line
 	6450 3950 6850 3950
-Text GLabel 8925 1800 2    39   Input ~ 0
+Text GLabel 9575 1250 2    39   Input ~ 0
 VBUS
 Wire Wire Line
-	8825 1800 8925 1800
+	9475 1250 9575 1250
 Text GLabel 5500 3350 2    39   Input ~ 0
 VBUS
 Wire Wire Line
@@ -670,14 +670,14 @@ Wire Wire Line
 	4250 1400 4250 1500
 Connection ~ 4350 1400
 Wire Wire Line
-	9150 4550 9300 4550
+	1600 1550 1750 1550
 Wire Wire Line
-	9300 4550 9300 4650
+	1750 1550 1750 1650
 Wire Wire Line
-	8850 4550 8750 4550
+	1300 1550 1200 1550
 Wire Wire Line
-	8750 4500 8750 4550
-Connection ~ 8750 4550
+	1200 1500 1200 1550
+Connection ~ 1200 1550
 NoConn ~ 5400 2800
 NoConn ~ 5400 2900
 $Comp
@@ -1259,12 +1259,12 @@ Wire Wire Line
 Connection ~ 6450 4350
 Wire Wire Line
 	6450 4350 6450 4400
-Text Notes 6950 4400 0    50   ~ 0
+Text Notes 6200 5200 0    50   ~ 0
 Consider increasing caps\nto compensate for \nstray capacitance
-Text Notes 8500 4200 0    98   ~ 20
+Text Notes 550  700  0    98   ~ 20
 PICKit3 Header
 Wire Wire Line
-	9150 4850 9150 5050
+	1600 1850 1600 2050
 Wire Notes Line
 	5700 4300 5750 4300
 Wire Notes Line
@@ -1273,4 +1273,343 @@ Wire Notes Line
 	5750 5150 5700 5150
 Text Notes 5800 4750 0    50   ~ 0
 Temporary
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 5CC1B25C
+P 9750 6400
+AR Path="/5CC1B25C" Ref="#PWR?"  Part="1" 
+AR Path="/66A12209/5CC1B25C" Ref="#PWR?"  Part="1" 
+AR Path="/64807BBC/5CC1B25C" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 9750 6150 50  0001 C CNN
+F 1 "DGND" H 9754 6245 50  0000 C CNN
+F 2 "" H 9750 6400 50  0001 C CNN
+F 3 "" H 9750 6400 50  0001 C CNN
+	1    9750 6400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9750 6350 9750 6400
+Text Notes 9850 6450 0    50   ~ 0
+Pin 75
+Wire Wire Line
+	9750 5900 9750 6050
+$Comp
+L Device:C C?
+U 1 1 5CC1B265
+P 9750 6200
+AR Path="/5CC1B265" Ref="C?"  Part="1" 
+AR Path="/66A12209/5CC1B265" Ref="C?"  Part="1" 
+AR Path="/64807BBC/5CC1B265" Ref="C?"  Part="1" 
+F 0 "C?" H 9865 6246 50  0000 L CNN
+F 1 "0.1uF" H 9865 6155 50  0000 L CNN
+F 2 "" H 9788 6050 50  0001 C CNN
+F 3 "~" H 9750 6200 50  0001 C CNN
+	1    9750 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 5CC1B26C
+P 9300 6400
+AR Path="/5CC1B26C" Ref="#PWR?"  Part="1" 
+AR Path="/66A12209/5CC1B26C" Ref="#PWR?"  Part="1" 
+AR Path="/64807BBC/5CC1B26C" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 9300 6150 50  0001 C CNN
+F 1 "DGND" H 9304 6245 50  0000 C CNN
+F 2 "" H 9300 6400 50  0001 C CNN
+F 3 "" H 9300 6400 50  0001 C CNN
+	1    9300 6400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9300 6350 9300 6400
+Text Notes 9400 6450 0    50   ~ 0
+Pin 65
+Text Notes 9400 6050 0    50   ~ 0
+Pin 62
+Wire Wire Line
+	9300 5900 9750 5900
+Connection ~ 9300 5900
+Wire Wire Line
+	9300 5900 9300 6050
+$Comp
+L Device:C C?
+U 1 1 5CC1B278
+P 9300 6200
+AR Path="/5CC1B278" Ref="C?"  Part="1" 
+AR Path="/66A12209/5CC1B278" Ref="C?"  Part="1" 
+AR Path="/64807BBC/5CC1B278" Ref="C?"  Part="1" 
+F 0 "C?" H 9415 6246 50  0000 L CNN
+F 1 "0.1uF" H 9415 6155 50  0000 L CNN
+F 2 "" H 9338 6050 50  0001 C CNN
+F 3 "~" H 9300 6200 50  0001 C CNN
+	1    9300 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DVDD-croptop #PWR?
+U 1 1 5CC1B27F
+P 6500 5800
+AR Path="/5CC1B27F" Ref="#PWR?"  Part="1" 
+AR Path="/66A12209/5CC1B27F" Ref="#PWR?"  Part="1" 
+AR Path="/64807BBC/5CC1B27F" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 6500 5650 50  0001 C CNN
+F 1 "DVDD" H 6515 5973 50  0000 C CNN
+F 2 "" H 6500 5800 50  0001 C CNN
+F 3 "" H 6500 5800 50  0001 C CNN
+	1    6500 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 5CC1B285
+P 8850 6400
+AR Path="/5CC1B285" Ref="#PWR?"  Part="1" 
+AR Path="/66A12209/5CC1B285" Ref="#PWR?"  Part="1" 
+AR Path="/64807BBC/5CC1B285" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 8850 6150 50  0001 C CNN
+F 1 "DGND" H 8854 6245 50  0000 C CNN
+F 2 "" H 8850 6400 50  0001 C CNN
+F 3 "" H 8850 6400 50  0001 C CNN
+	1    8850 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 5CC1B28B
+P 8400 6400
+AR Path="/5CC1B28B" Ref="#PWR?"  Part="1" 
+AR Path="/66A12209/5CC1B28B" Ref="#PWR?"  Part="1" 
+AR Path="/64807BBC/5CC1B28B" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 8400 6150 50  0001 C CNN
+F 1 "DGND" H 8404 6245 50  0000 C CNN
+F 2 "" H 8400 6400 50  0001 C CNN
+F 3 "" H 8400 6400 50  0001 C CNN
+	1    8400 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 5CC1B291
+P 7950 6400
+AR Path="/5CC1B291" Ref="#PWR?"  Part="1" 
+AR Path="/66A12209/5CC1B291" Ref="#PWR?"  Part="1" 
+AR Path="/64807BBC/5CC1B291" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7950 6150 50  0001 C CNN
+F 1 "DGND" H 7954 6245 50  0000 C CNN
+F 2 "" H 7950 6400 50  0001 C CNN
+F 3 "" H 7950 6400 50  0001 C CNN
+	1    7950 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 5CC1B297
+P 7500 6400
+AR Path="/5CC1B297" Ref="#PWR?"  Part="1" 
+AR Path="/66A12209/5CC1B297" Ref="#PWR?"  Part="1" 
+AR Path="/64807BBC/5CC1B297" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7500 6150 50  0001 C CNN
+F 1 "DGND" H 7504 6245 50  0000 C CNN
+F 2 "" H 7500 6400 50  0001 C CNN
+F 3 "" H 7500 6400 50  0001 C CNN
+	1    7500 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 5CC1B29D
+P 7050 6400
+AR Path="/5CC1B29D" Ref="#PWR?"  Part="1" 
+AR Path="/66A12209/5CC1B29D" Ref="#PWR?"  Part="1" 
+AR Path="/64807BBC/5CC1B29D" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7050 6150 50  0001 C CNN
+F 1 "DGND" H 7054 6245 50  0000 C CNN
+F 2 "" H 7050 6400 50  0001 C CNN
+F 3 "" H 7050 6400 50  0001 C CNN
+	1    7050 6400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7500 6350 7500 6400
+Wire Wire Line
+	7950 6350 7950 6400
+Wire Wire Line
+	8400 6350 8400 6400
+Wire Wire Line
+	8850 6350 8850 6400
+Text Notes 8500 6450 0    50   ~ 0
+Pin 36
+Text Notes 8500 6050 0    50   ~ 0
+Pin 37
+Text Notes 8950 6450 0    50   ~ 0
+Pin 45
+Text Notes 8950 6050 0    50   ~ 0
+Pin 46
+Text Notes 8050 6450 0    50   ~ 0
+Pin 31\n
+Text Notes 8050 6050 0    50   ~ 0
+Pin 30
+Text Notes 7600 6450 0    50   ~ 0
+Pin 15
+Text Notes 7600 6050 0    50   ~ 0
+Pin 16
+Wire Wire Line
+	8400 5900 8400 6050
+Connection ~ 8400 5900
+Wire Wire Line
+	7950 5900 8400 5900
+Wire Wire Line
+	7950 5900 7950 6050
+Connection ~ 7950 5900
+Wire Wire Line
+	7500 5900 7950 5900
+Wire Wire Line
+	8850 5900 9300 5900
+Wire Wire Line
+	8400 5900 8850 5900
+Connection ~ 8850 5900
+Wire Wire Line
+	8850 5900 8850 6050
+Wire Wire Line
+	7500 5900 7500 6050
+Wire Wire Line
+	7050 6350 7050 6400
+Connection ~ 7500 5900
+Wire Wire Line
+	7050 5900 7500 5900
+Wire Wire Line
+	7050 5900 7050 6050
+Text Notes 7150 6050 0    50   ~ 0
+Pin 2
+Text Notes 7150 6450 0    50   ~ 0
+No Pin
+$Comp
+L Device:C C?
+U 1 1 5CC1B2C0
+P 8850 6200
+AR Path="/5CC1B2C0" Ref="C?"  Part="1" 
+AR Path="/66A12209/5CC1B2C0" Ref="C?"  Part="1" 
+AR Path="/64807BBC/5CC1B2C0" Ref="C?"  Part="1" 
+F 0 "C?" H 8965 6246 50  0000 L CNN
+F 1 "0.1uF" H 8965 6155 50  0000 L CNN
+F 2 "" H 8888 6050 50  0001 C CNN
+F 3 "~" H 8850 6200 50  0001 C CNN
+	1    8850 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5CC1B2C7
+P 8400 6200
+AR Path="/5CC1B2C7" Ref="C?"  Part="1" 
+AR Path="/66A12209/5CC1B2C7" Ref="C?"  Part="1" 
+AR Path="/64807BBC/5CC1B2C7" Ref="C?"  Part="1" 
+F 0 "C?" H 8515 6246 50  0000 L CNN
+F 1 "0.1uF" H 8515 6155 50  0000 L CNN
+F 2 "" H 8438 6050 50  0001 C CNN
+F 3 "~" H 8400 6200 50  0001 C CNN
+	1    8400 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5CC1B2CE
+P 7950 6200
+AR Path="/5CC1B2CE" Ref="C?"  Part="1" 
+AR Path="/66A12209/5CC1B2CE" Ref="C?"  Part="1" 
+AR Path="/64807BBC/5CC1B2CE" Ref="C?"  Part="1" 
+F 0 "C?" H 8065 6246 50  0000 L CNN
+F 1 "0.1uF" H 8065 6155 50  0000 L CNN
+F 2 "" H 7988 6050 50  0001 C CNN
+F 3 "~" H 7950 6200 50  0001 C CNN
+	1    7950 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5CC1B2D5
+P 7500 6200
+AR Path="/5CC1B2D5" Ref="C?"  Part="1" 
+AR Path="/66A12209/5CC1B2D5" Ref="C?"  Part="1" 
+AR Path="/64807BBC/5CC1B2D5" Ref="C?"  Part="1" 
+F 0 "C?" H 7615 6246 50  0000 L CNN
+F 1 "0.1uF" H 7615 6155 50  0000 L CNN
+F 2 "" H 7538 6050 50  0001 C CNN
+F 3 "~" H 7500 6200 50  0001 C CNN
+	1    7500 6200
+	1    0    0    -1  
+$EndComp
+Connection ~ 7050 5900
+Wire Wire Line
+	6500 5900 6500 5800
+$Comp
+L Device:C C?
+U 1 1 5CC1B2E0
+P 7050 6200
+AR Path="/5CC1B2E0" Ref="C?"  Part="1" 
+AR Path="/66A12209/5CC1B2E0" Ref="C?"  Part="1" 
+AR Path="/64807BBC/5CC1B2E0" Ref="C?"  Part="1" 
+F 0 "C?" H 7165 6246 50  0000 L CNN
+F 1 "0.1uF" H 7165 6155 50  0000 L CNN
+F 2 "" H 7088 6050 50  0001 C CNN
+F 3 "~" H 7050 6200 50  0001 C CNN
+	1    7050 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5CC429B9
+P 6600 6200
+AR Path="/5CC429B9" Ref="C?"  Part="1" 
+AR Path="/66A12209/5CC429B9" Ref="C?"  Part="1" 
+AR Path="/64807BBC/5CC429B9" Ref="C?"  Part="1" 
+F 0 "C?" H 6715 6246 50  0000 L CNN
+F 1 "10uF" H 6715 6155 50  0000 L CNN
+F 2 "" H 6638 6050 50  0001 C CNN
+F 3 "~" H 6600 6200 50  0001 C CNN
+	1    6600 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 5CC42A29
+P 6600 6400
+AR Path="/5CC42A29" Ref="#PWR?"  Part="1" 
+AR Path="/66A12209/5CC42A29" Ref="#PWR?"  Part="1" 
+AR Path="/64807BBC/5CC42A29" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 6600 6150 50  0001 C CNN
+F 1 "DGND" H 6604 6245 50  0000 C CNN
+F 2 "" H 6600 6400 50  0001 C CNN
+F 3 "" H 6600 6400 50  0001 C CNN
+	1    6600 6400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 6400 6600 6350
+Wire Wire Line
+	6600 6050 6600 5900
+Wire Wire Line
+	6600 5900 7050 5900
+Wire Wire Line
+	6600 5900 6500 5900
+Connection ~ 6600 5900
+Text Notes 9500 2200 0    79   ~ 16
+Supply \nmust\nbe 5V\nnot 3V3
+Wire Notes Line width 20
+	500  2600 2600 2600
+Wire Notes Line width 20
+	2600 2600 2600 500 
+Wire Notes Line width 20
+	8300 550  8300 2600
+Wire Notes Line width 20
+	8300 2600 10500 2600
+Text Notes 4100 1300 0    79   ~ 16
+Inductor
+Text Notes 7450 5800 0    79   ~ 16
+Need new caps for GPA PIC
+Text Notes 6300 3850 0    79   ~ 16
+Replace
+Text Notes 5000 1100 0    79   ~ 16
+Replace\nw/ New
 $EndSCHEMATC

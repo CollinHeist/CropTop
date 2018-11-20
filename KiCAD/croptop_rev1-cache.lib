@@ -717,11 +717,11 @@ X PGND 8 -450 -150 197 R 50 50 1 1 B
 ENDDRAW
 ENDDEF
 #
-# croptop_rev1-rescue_PIC32MX795F512L
+# croptop_rev1-rescue_PIC32MX795F512L-croptop_rev1-rescue
 #
-DEF croptop_rev1-rescue_PIC32MX795F512L U 0 40 Y Y 1 F N
+DEF croptop_rev1-rescue_PIC32MX795F512L-croptop_rev1-rescue U 0 40 Y Y 1 F N
 F0 "U" 0 -100 50 H V C CNN
-F1 "croptop_rev1-rescue_PIC32MX795F512L" 0 100 50 H V C CNN
+F1 "croptop_rev1-rescue_PIC32MX795F512L-croptop_rev1-rescue" 0 100 50 H V C CNN
 F2 "MODULE" 0 0 50 H I C CNN
 F3 "DOCUMENTATION" 0 0 50 H I C CNN
 DRAW

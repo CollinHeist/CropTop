@@ -4,12 +4,12 @@ EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 8 8
+Sheet 7 7
 Title "CropTop"
-Date ""
-Rev "Revision 1"
+Date "2018-11-20"
+Rev "Revision 8"
 Comp "University of Idaho"
-Comment1 "Designer 1: Kennedy Caisley"
+Comment1 "Kennedy Caisley, Ryan Donahue"
 Comment2 "Designer 2: Ryan Donahue"
 Comment3 ""
 Comment4 ""
@@ -239,25 +239,6 @@ Wire Wire Line
 	3700 4400 3800 4400
 Wire Wire Line
 	3700 4650 3800 4650
-Wire Wire Line
-	4200 5050 4200 5100
-Wire Wire Line
-	4200 5100 4450 5100
-Wire Wire Line
-	4950 5100 4950 5050
-Wire Wire Line
-	4450 5050 4450 5100
-Connection ~ 4450 5100
-Wire Wire Line
-	4450 5100 4700 5100
-Wire Wire Line
-	4700 5050 4700 5100
-Connection ~ 4700 5100
-Wire Wire Line
-	4700 5100 4950 5100
-Wire Wire Line
-	4200 5100 4200 5150
-Connection ~ 4200 5100
 $Comp
 L Device:R R?
 U 1 1 66A25AB8
@@ -394,25 +375,6 @@ Wire Wire Line
 	7200 4650 7200 4750
 Wire Wire Line
 	7550 4650 7550 4750
-Wire Wire Line
-	6500 5050 6500 5100
-Wire Wire Line
-	6500 5100 6850 5100
-Wire Wire Line
-	7550 5100 7550 5050
-Connection ~ 6500 5100
-Wire Wire Line
-	6500 5100 6500 5150
-Wire Wire Line
-	7200 5100 7200 5050
-Connection ~ 7200 5100
-Wire Wire Line
-	7200 5100 7550 5100
-Wire Wire Line
-	6850 5100 6850 5050
-Connection ~ 6850 5100
-Wire Wire Line
-	6850 5100 7200 5100
 $Comp
 L croptop_rev1-rescue:DGND-croptop #PWR?
 U 1 1 66A25B0B
@@ -454,4 +416,98 @@ Wire Wire Line
 Connection ~ 4200 4650
 Wire Wire Line
 	4100 4400 4450 4400
+Wire Wire Line
+	6500 5050 6500 5150
+Wire Wire Line
+	4200 5050 4200 5150
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 5D3B0B56
+P 4450 5150
+AR Path="/5D3B0B56" Ref="#PWR?"  Part="1" 
+AR Path="/66A201BE/5D3B0B56" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 4450 4900 50  0001 C CNN
+F 1 "DGND" H 4454 4995 50  0000 C CNN
+F 2 "" H 4450 5150 50  0001 C CNN
+F 3 "" H 4450 5150 50  0001 C CNN
+	1    4450 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 5D3B0B89
+P 4700 5150
+AR Path="/5D3B0B89" Ref="#PWR?"  Part="1" 
+AR Path="/66A201BE/5D3B0B89" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 4700 4900 50  0001 C CNN
+F 1 "DGND" H 4704 4995 50  0000 C CNN
+F 2 "" H 4700 5150 50  0001 C CNN
+F 3 "" H 4700 5150 50  0001 C CNN
+	1    4700 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 5D3B0BBC
+P 4950 5150
+AR Path="/5D3B0BBC" Ref="#PWR?"  Part="1" 
+AR Path="/66A201BE/5D3B0BBC" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 4950 4900 50  0001 C CNN
+F 1 "DGND" H 4954 4995 50  0000 C CNN
+F 2 "" H 4950 5150 50  0001 C CNN
+F 3 "" H 4950 5150 50  0001 C CNN
+	1    4950 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 5D3B0BEF
+P 6850 5150
+AR Path="/5D3B0BEF" Ref="#PWR?"  Part="1" 
+AR Path="/66A201BE/5D3B0BEF" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 6850 4900 50  0001 C CNN
+F 1 "DGND" H 6854 4995 50  0000 C CNN
+F 2 "" H 6850 5150 50  0001 C CNN
+F 3 "" H 6850 5150 50  0001 C CNN
+	1    6850 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 5D3B0C22
+P 7200 5150
+AR Path="/5D3B0C22" Ref="#PWR?"  Part="1" 
+AR Path="/66A201BE/5D3B0C22" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7200 4900 50  0001 C CNN
+F 1 "DGND" H 7204 4995 50  0000 C CNN
+F 2 "" H 7200 5150 50  0001 C CNN
+F 3 "" H 7200 5150 50  0001 C CNN
+	1    7200 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L croptop_rev1-rescue:DGND-croptop #PWR?
+U 1 1 5D3B0C55
+P 7550 5150
+AR Path="/5D3B0C55" Ref="#PWR?"  Part="1" 
+AR Path="/66A201BE/5D3B0C55" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7550 4900 50  0001 C CNN
+F 1 "DGND" H 7554 4995 50  0000 C CNN
+F 2 "" H 7550 5150 50  0001 C CNN
+F 3 "" H 7550 5150 50  0001 C CNN
+	1    7550 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4450 5050 4450 5150
+Wire Wire Line
+	4700 5050 4700 5150
+Wire Wire Line
+	4950 5050 4950 5150
+Wire Wire Line
+	6850 5050 6850 5150
+Wire Wire Line
+	7200 5050 7200 5150
+Wire Wire Line
+	7550 5050 7550 5150
 $EndSCHEMATC
