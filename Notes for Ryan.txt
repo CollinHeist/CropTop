@@ -1,4 +1,0 @@
-Changed to a cheaper, higher quantity Buffer
-Changed to a slightly more expensive, but higher current motor driver (8a)
-We need bulk capacitance on the motor driver for sure
-Changed to much cheaper gps
