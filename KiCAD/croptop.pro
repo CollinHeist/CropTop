@@ -1,4 +1,4 @@
-update=11/20/2018 12:53:39 AM
+update=11/27/2018 9:21:59 PM
 version=1
 last_client=kicad
 [general]
@@ -33,7 +33,7 @@ LibDir=
 [eeschema/libraries]
 [schematic_editor]
 version=1
-PageLayoutDescrFile=better_layout.kicad_wks
+PageLayoutDescrFile=croptop.kicad_wks
 PlotDirectoryName=
 SubpartIdSeparator=0
 SubpartFirstId=65
