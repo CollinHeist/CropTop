@@ -22,7 +22,7 @@ AR Path="/65F75D3A" Ref="J?"  Part="1"
 AR Path="/64807BBC/65F75D3A" Ref="J1"  Part="1" 
 F 0 "J1" H 750 1900 50  0000 R CNN
 F 1 "PICKit Header" H 1000 1150 50  0000 R CNN
-F 2 "" H 600 1550 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 600 1550 50  0001 C CNN
 F 3 "~" H 600 1550 50  0001 C CNN
 	1    600  1550
 	1    0    0    -1  
@@ -220,33 +220,8 @@ Wire Wire Line
 	5500 6400 5400 6400
 Wire Wire Line
 	5500 6500 5400 6500
-Text GLabel 3500 4000 0    39   Input ~ 0
-SRAM_CS
 NoConn ~ 5400 5650
 NoConn ~ 5400 5550
-NoConn ~ 5400 5450
-Text GLabel 1900 4300 0    39   Input ~ 0
-LCD_CS
-Text GLabel 3500 4250 0    39   Input ~ 0
-BLK_PWM
-Text GLabel 1900 4600 0    39   Input ~ 0
-LCD_SHIFT
-Text GLabel 1900 4750 0    39   Input ~ 0
-LCD_DEN
-Text GLabel 1900 4150 0    39   Input ~ 0
-LCD_VSYNC
-Text GLabel 1900 4000 0    39   Input ~ 0
-LCD_HSYNC
-Text GLabel 1900 4450 0    39   Input ~ 0
-LCD_RESET
-Wire Wire Line
-	3500 4250 3600 4250
-Text GLabel 3500 4100 0    39   Input ~ 0
-PMPWR
-Wire Wire Line
-	3500 4000 3600 4000
-Wire Wire Line
-	3500 4100 3600 4100
 Text GLabel 5500 2100 2    39   Input ~ 0
 ROT_Y1
 Text GLabel 5500 2200 2    39   Input ~ 0
@@ -271,7 +246,7 @@ AR Path="/65F75E60" Ref="Y?"  Part="1"
 AR Path="/64807BBC/65F75E60" Ref="Y1"  Part="1" 
 F 0 "Y1" V 6404 4431 50  0000 L CNN
 F 1 "CXO" V 6495 4431 50  0000 L CNN
-F 2 "" H 6450 4300 50  0001 C CNN
+F 2 "croptop:ABLS_OX" H 6450 4300 50  0001 C CNN
 F 3 "~" H 6450 4300 50  0001 C CNN
 	1    6450 4300
 	0    1    1    0   
@@ -310,7 +285,7 @@ AR Path="/65F75E7B" Ref="J?"  Part="1"
 AR Path="/64807BBC/65F75E7B" Ref="J2"  Part="1" 
 F 0 "J2" H 8800 1875 50  0000 C CNN
 F 1 "USB_A" H 8800 1800 50  0000 C CNN
-F 2 "" H 8950 1400 50  0001 C CNN
+F 2 "croptop:USB_A_Assmann_Horizontal" H 8950 1400 50  0001 C CNN
 F 3 " ~" H 8950 1400 50  0001 C CNN
 	1    8800 1450
 	1    0    0    -1  
@@ -343,10 +318,6 @@ Text GLabel 9500 1450 2    39   Input ~ 0
 USB_D+
 Text GLabel 9500 1550 2    39   Input ~ 0
 USB_D-
-Text GLabel 5500 5350 2    39   Input ~ 0
-RES_INT
-Wire Wire Line
-	5400 5350 5500 5350
 Text GLabel 5500 6050 2    39   Input ~ 0
 NAND_HOLD
 Text GLabel 5500 6150 2    39   Input ~ 0
@@ -367,38 +338,6 @@ Text Notes 8350 700  0    98   ~ 20
 Peripheral USB Port
 Text Notes 2700 700  0    98   ~ 20
 PIC32 Microcontroller
-Text GLabel 1400 5700 0    39   Input ~ 0
-LCD_B5
-Text GLabel 1400 5100 0    39   Input ~ 0
-LCD_B1
-Text GLabel 1400 5250 0    39   Input ~ 0
-LCD_B2
-Text GLabel 1400 5400 0    39   Input ~ 0
-LCD_B3
-Text GLabel 1400 5550 0    39   Input ~ 0
-LCD_B4
-Text GLabel 1400 6600 0    39   Input ~ 0
-LCD_G6
-Text GLabel 1400 5850 0    39   Input ~ 0
-LCD_G1
-Text GLabel 1400 6000 0    39   Input ~ 0
-LCD_G2
-Text GLabel 1400 6150 0    39   Input ~ 0
-LCD_G3
-Text GLabel 1400 6300 0    39   Input ~ 0
-LCD_G4
-Text GLabel 1400 6450 0    39   Input ~ 0
-LCD_G5
-Text GLabel 1400 7350 0    39   Input ~ 0
-LCD_R5
-Text GLabel 1400 6750 0    39   Input ~ 0
-LCD_R1
-Text GLabel 1400 6900 0    39   Input ~ 0
-LCD_R2
-Text GLabel 1400 7050 0    39   Input ~ 0
-LCD_R3
-Text GLabel 1400 7200 0    39   Input ~ 0
-LCD_R4
 $Comp
 L Device:C C?
 U 1 1 65F75EDB
@@ -502,544 +441,6 @@ Text GLabel 5500 5750 2    39   Input ~ 0
 GPS_INT
 Wire Wire Line
 	5400 5750 5500 5750
-Text GLabel 3500 1850 0    39   Input ~ 0
-SRAM_A0
-Text GLabel 3500 1950 0    39   Input ~ 0
-SRAM_A1
-Text GLabel 3500 2050 0    39   Input ~ 0
-SRAM_A2
-Text GLabel 3500 2150 0    39   Input ~ 0
-SRAM_A3
-Text GLabel 3500 2250 0    39   Input ~ 0
-SRAM_A4
-Text GLabel 3500 2350 0    39   Input ~ 0
-SRAM_A5
-Text GLabel 3500 2450 0    39   Input ~ 0
-SRAM_A6
-Text GLabel 3500 2550 0    39   Input ~ 0
-SRAM_A7
-Text GLabel 3500 2650 0    39   Input ~ 0
-SRAM_A8
-Text GLabel 3500 2750 0    39   Input ~ 0
-SRAM_A9
-Text GLabel 3500 2850 0    39   Input ~ 0
-SRAM_A10
-Text GLabel 3500 2950 0    39   Input ~ 0
-SRAM_A11
-Text GLabel 3500 3050 0    39   Input ~ 0
-SRAM_A12
-Text GLabel 3500 3150 0    39   Input ~ 0
-SRAM_A13
-Text GLabel 3500 3250 0    39   Input ~ 0
-SRAM_A14
-Text GLabel 3500 3350 0    39   Input ~ 0
-SRAM_A15
-Text GLabel 3500 3450 0    39   Input ~ 0
-SRAM_A16
-Text GLabel 3500 3550 0    39   Input ~ 0
-SRAM_A17
-Text GLabel 3500 3650 0    39   Input ~ 0
-SRAM_A18
-Wire Wire Line
-	3500 1850 3600 1850
-Wire Wire Line
-	3500 1950 3600 1950
-Wire Wire Line
-	3500 2050 3600 2050
-Wire Wire Line
-	3500 2150 3600 2150
-Wire Wire Line
-	3500 2250 3600 2250
-Wire Wire Line
-	3500 2350 3600 2350
-Wire Wire Line
-	3500 2450 3600 2450
-Wire Wire Line
-	3500 2550 3600 2550
-Wire Wire Line
-	3500 2650 3600 2650
-Wire Wire Line
-	3500 2750 3600 2750
-Wire Wire Line
-	3500 2850 3600 2850
-Wire Wire Line
-	3500 2950 3600 2950
-Wire Wire Line
-	3500 3050 3600 3050
-Wire Wire Line
-	3500 3150 3600 3150
-Wire Wire Line
-	3500 3250 3600 3250
-Wire Wire Line
-	3500 3350 3600 3350
-Wire Wire Line
-	3500 3450 3600 3450
-Wire Wire Line
-	3500 3550 3600 3550
-Wire Wire Line
-	3500 3650 3600 3650
-$Comp
-L Device:R R?
-U 1 1 661B8915
-P 2350 4000
-AR Path="/661B8915" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661B8915" Ref="R21"  Part="1" 
-F 0 "R21" V 2275 4000 50  0000 C CNN
-F 1 "10" V 2350 4000 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 2280 4000 50  0001 C CNN
-F 3 "~" H 2350 4000 50  0001 C CNN
-	1    2350 4000
-	0    -1   1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661B89EC
-P 2150 4150
-AR Path="/661B89EC" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661B89EC" Ref="R18"  Part="1" 
-F 0 "R18" V 2075 4150 50  0000 C CNN
-F 1 "10" V 2150 4150 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 2080 4150 50  0001 C CNN
-F 3 "~" H 2150 4150 50  0001 C CNN
-	1    2150 4150
-	0    -1   1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661B8A24
-P 2350 4300
-AR Path="/661B8A24" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661B8A24" Ref="R22"  Part="1" 
-F 0 "R22" V 2275 4300 50  0000 C CNN
-F 1 "10" V 2350 4300 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 2280 4300 50  0001 C CNN
-F 3 "~" H 2350 4300 50  0001 C CNN
-	1    2350 4300
-	0    -1   1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661B8B73
-P 2150 4450
-AR Path="/661B8B73" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661B8B73" Ref="R19"  Part="1" 
-F 0 "R19" V 2075 4450 50  0000 C CNN
-F 1 "10" V 2150 4450 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 2080 4450 50  0001 C CNN
-F 3 "~" H 2150 4450 50  0001 C CNN
-	1    2150 4450
-	0    -1   1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661B8B7A
-P 2350 4600
-AR Path="/661B8B7A" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661B8B7A" Ref="R23"  Part="1" 
-F 0 "R23" V 2275 4600 50  0000 C CNN
-F 1 "10" V 2350 4600 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 2280 4600 50  0001 C CNN
-F 3 "~" H 2350 4600 50  0001 C CNN
-	1    2350 4600
-	0    -1   1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661BE50D
-P 2150 4750
-AR Path="/661BE50D" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661BE50D" Ref="R20"  Part="1" 
-F 0 "R20" V 2075 4750 50  0000 C CNN
-F 1 "10" V 2150 4750 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 2080 4750 50  0001 C CNN
-F 3 "~" H 2150 4750 50  0001 C CNN
-	1    2150 4750
-	0    -1   1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661BE514
-P 1650 5100
-AR Path="/661BE514" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661BE514" Ref="R2"  Part="1" 
-F 0 "R2" V 1575 5100 50  0000 C CNN
-F 1 "10" V 1650 5100 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 1580 5100 50  0001 C CNN
-F 3 "~" H 1650 5100 50  0001 C CNN
-	1    1650 5100
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661BE51B
-P 1850 5250
-AR Path="/661BE51B" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661BE51B" Ref="R10"  Part="1" 
-F 0 "R10" V 1775 5250 50  0000 C CNN
-F 1 "10" V 1850 5250 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 1780 5250 50  0001 C CNN
-F 3 "~" H 1850 5250 50  0001 C CNN
-	1    1850 5250
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661BE522
-P 1650 5400
-AR Path="/661BE522" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661BE522" Ref="R3"  Part="1" 
-F 0 "R3" V 1575 5400 50  0000 C CNN
-F 1 "10" V 1650 5400 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 1580 5400 50  0001 C CNN
-F 3 "~" H 1650 5400 50  0001 C CNN
-	1    1650 5400
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661C982E
-P 1850 5550
-AR Path="/661C982E" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661C982E" Ref="R11"  Part="1" 
-F 0 "R11" V 1775 5550 50  0000 C CNN
-F 1 "10" V 1850 5550 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 1780 5550 50  0001 C CNN
-F 3 "~" H 1850 5550 50  0001 C CNN
-	1    1850 5550
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661C9835
-P 1650 5700
-AR Path="/661C9835" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661C9835" Ref="R4"  Part="1" 
-F 0 "R4" V 1575 5700 50  0000 C CNN
-F 1 "10" V 1650 5700 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 1580 5700 50  0001 C CNN
-F 3 "~" H 1650 5700 50  0001 C CNN
-	1    1650 5700
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661C983C
-P 1850 5850
-AR Path="/661C983C" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661C983C" Ref="R12"  Part="1" 
-F 0 "R12" V 1775 5850 50  0000 C CNN
-F 1 "10" V 1850 5850 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 1780 5850 50  0001 C CNN
-F 3 "~" H 1850 5850 50  0001 C CNN
-	1    1850 5850
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661C9843
-P 1650 6000
-AR Path="/661C9843" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661C9843" Ref="R5"  Part="1" 
-F 0 "R5" V 1575 6000 50  0000 C CNN
-F 1 "10" V 1650 6000 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 1580 6000 50  0001 C CNN
-F 3 "~" H 1650 6000 50  0001 C CNN
-	1    1650 6000
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661C984A
-P 1850 6150
-AR Path="/661C984A" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661C984A" Ref="R13"  Part="1" 
-F 0 "R13" V 1775 6150 50  0000 C CNN
-F 1 "10" V 1850 6150 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 1780 6150 50  0001 C CNN
-F 3 "~" H 1850 6150 50  0001 C CNN
-	1    1850 6150
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661C9851
-P 1650 6300
-AR Path="/661C9851" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661C9851" Ref="R6"  Part="1" 
-F 0 "R6" V 1575 6300 50  0000 C CNN
-F 1 "10" V 1650 6300 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 1580 6300 50  0001 C CNN
-F 3 "~" H 1650 6300 50  0001 C CNN
-	1    1650 6300
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661C9858
-P 1850 6450
-AR Path="/661C9858" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661C9858" Ref="R14"  Part="1" 
-F 0 "R14" V 1775 6450 50  0000 C CNN
-F 1 "10" V 1850 6450 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 1780 6450 50  0001 C CNN
-F 3 "~" H 1850 6450 50  0001 C CNN
-	1    1850 6450
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661D5A86
-P 1650 6600
-AR Path="/661D5A86" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661D5A86" Ref="R7"  Part="1" 
-F 0 "R7" V 1575 6600 50  0000 C CNN
-F 1 "10" V 1650 6600 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 1580 6600 50  0001 C CNN
-F 3 "~" H 1650 6600 50  0001 C CNN
-	1    1650 6600
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661D5A8D
-P 1850 6750
-AR Path="/661D5A8D" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661D5A8D" Ref="R15"  Part="1" 
-F 0 "R15" V 1775 6750 50  0000 C CNN
-F 1 "10" V 1850 6750 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 1780 6750 50  0001 C CNN
-F 3 "~" H 1850 6750 50  0001 C CNN
-	1    1850 6750
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661D5A94
-P 1650 6900
-AR Path="/661D5A94" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661D5A94" Ref="R8"  Part="1" 
-F 0 "R8" V 1575 6900 50  0000 C CNN
-F 1 "10" V 1650 6900 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 1580 6900 50  0001 C CNN
-F 3 "~" H 1650 6900 50  0001 C CNN
-	1    1650 6900
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661D5A9B
-P 1850 7050
-AR Path="/661D5A9B" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661D5A9B" Ref="R16"  Part="1" 
-F 0 "R16" V 1775 7050 50  0000 C CNN
-F 1 "10" V 1850 7050 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 1780 7050 50  0001 C CNN
-F 3 "~" H 1850 7050 50  0001 C CNN
-	1    1850 7050
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661D5AA2
-P 1650 7200
-AR Path="/661D5AA2" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661D5AA2" Ref="R9"  Part="1" 
-F 0 "R9" V 1575 7200 50  0000 C CNN
-F 1 "10" V 1650 7200 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 1580 7200 50  0001 C CNN
-F 3 "~" H 1650 7200 50  0001 C CNN
-	1    1650 7200
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 661D5AA9
-P 1850 7350
-AR Path="/661D5AA9" Ref="R?"  Part="1" 
-AR Path="/64807BBC/661D5AA9" Ref="R17"  Part="1" 
-F 0 "R17" V 1775 7350 50  0000 C CNN
-F 1 "10" V 1850 7350 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 1780 7350 50  0001 C CNN
-F 3 "~" H 1850 7350 50  0001 C CNN
-	1    1850 7350
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	2300 5550 2300 5300
-Wire Wire Line
-	2400 5700 2400 5400
-Wire Wire Line
-	2500 5850 2500 5500
-Wire Wire Line
-	2600 6000 2600 5600
-Wire Wire Line
-	2700 6150 2700 5700
-Wire Wire Line
-	2800 6300 2800 5800
-Wire Wire Line
-	2900 6450 2900 5900
-Wire Wire Line
-	3000 6600 3000 6000
-Wire Wire Line
-	3100 6750 3100 6100
-Wire Wire Line
-	3200 6900 3200 6200
-Wire Wire Line
-	3300 7050 3300 6300
-Wire Wire Line
-	3400 7200 3400 6400
-Wire Wire Line
-	3500 7350 3500 6500
-Wire Wire Line
-	3500 6500 3600 6500
-Wire Wire Line
-	3400 6400 3600 6400
-Wire Wire Line
-	3300 6300 3600 6300
-Wire Wire Line
-	3200 6200 3600 6200
-Wire Wire Line
-	3100 6100 3600 6100
-Wire Wire Line
-	3000 6000 3600 6000
-Wire Wire Line
-	2900 5900 3600 5900
-Wire Wire Line
-	2800 5800 3600 5800
-Wire Wire Line
-	2700 5700 3600 5700
-Wire Wire Line
-	2200 5400 2200 5200
-Wire Wire Line
-	2100 5250 2100 5100
-Wire Wire Line
-	2000 5100 2000 5000
-Wire Wire Line
-	2000 5000 3600 5000
-Wire Wire Line
-	2100 5100 3600 5100
-Wire Wire Line
-	2200 5200 3600 5200
-Wire Wire Line
-	2300 5300 3600 5300
-Wire Wire Line
-	2400 5400 3600 5400
-Wire Wire Line
-	2500 5500 3600 5500
-Wire Wire Line
-	2600 5600 3600 5600
-Wire Wire Line
-	2000 7350 3500 7350
-Wire Wire Line
-	1800 7200 3400 7200
-Wire Wire Line
-	1400 5100 1500 5100
-Wire Wire Line
-	1800 5100 2000 5100
-Wire Wire Line
-	2100 5250 2000 5250
-Wire Wire Line
-	1700 5250 1400 5250
-Wire Wire Line
-	1500 5400 1400 5400
-Wire Wire Line
-	1800 5400 2200 5400
-Wire Wire Line
-	2000 5550 2300 5550
-Wire Wire Line
-	1700 5550 1400 5550
-Wire Wire Line
-	1400 5700 1500 5700
-Wire Wire Line
-	1800 5700 2400 5700
-Wire Wire Line
-	2000 5850 2500 5850
-Wire Wire Line
-	1700 5850 1400 5850
-Wire Wire Line
-	1500 6000 1400 6000
-Wire Wire Line
-	1800 6000 2600 6000
-Wire Wire Line
-	2000 6150 2700 6150
-Wire Wire Line
-	1700 6150 1400 6150
-Wire Wire Line
-	1500 6300 1400 6300
-Wire Wire Line
-	1800 6300 2800 6300
-Wire Wire Line
-	2000 6450 2900 6450
-Wire Wire Line
-	1700 6450 1400 6450
-Wire Wire Line
-	1500 6600 1400 6600
-Wire Wire Line
-	1800 6600 3000 6600
-Wire Wire Line
-	2000 6750 3100 6750
-Wire Wire Line
-	1700 6750 1400 6750
-Wire Wire Line
-	1400 6900 1500 6900
-Wire Wire Line
-	1800 6900 3200 6900
-Wire Wire Line
-	2000 7050 3300 7050
-Wire Wire Line
-	1700 7050 1400 7050
-Wire Wire Line
-	1500 7200 1400 7200
-Wire Wire Line
-	1400 7350 1700 7350
-Wire Wire Line
-	2500 4850 2500 4750
-Wire Wire Line
-	2500 4750 2300 4750
-Wire Wire Line
-	2600 4750 2600 4600
-Wire Wire Line
-	2600 4600 2500 4600
-Wire Wire Line
-	2700 4650 2700 4450
-Wire Wire Line
-	2700 4450 2300 4450
-Wire Wire Line
-	2800 4550 2800 4300
-Wire Wire Line
-	2800 4300 2500 4300
-Wire Wire Line
-	2900 4450 2900 4150
-Wire Wire Line
-	2900 4150 2300 4150
-Wire Wire Line
-	3000 4350 3000 4000
-Wire Wire Line
-	3000 4000 2500 4000
-Wire Wire Line
-	2200 4000 1900 4000
-Wire Wire Line
-	1900 4150 2000 4150
-Wire Wire Line
-	2200 4300 1900 4300
-Wire Wire Line
-	1900 4450 2000 4450
-Wire Wire Line
-	2200 4600 1900 4600
-Wire Wire Line
-	1900 4750 2000 4750
-Wire Wire Line
-	3000 4350 3600 4350
-Wire Wire Line
-	3600 4450 2900 4450
-Wire Wire Line
-	2800 4550 3600 4550
-Wire Wire Line
-	3600 4650 2700 4650
-Wire Wire Line
-	2600 4750 3600 4750
-Wire Wire Line
-	3600 4850 2500 4850
 Wire Wire Line
 	6300 4100 6450 4100
 Connection ~ 6450 4100
@@ -1272,7 +673,7 @@ AR Path="/64809F0C/5C076B8A" Ref="L?"  Part="1"
 AR Path="/64807BBC/5C076B8A" Ref="L1"  Part="1" 
 F 0 "L1" V 4640 1300 50  0000 C CNN
 F 1 "10uH" V 4549 1300 50  0000 C CNN
-F 2 "" H 4450 1300 50  0001 C CNN
+F 2 "Inductor_SMD:L_1210_3225Metric" H 4450 1300 50  0001 C CNN
 F 3 "~" H 4450 1300 50  0001 C CNN
 	1    4450 1300
 	0    1    -1   0   
@@ -1563,7 +964,7 @@ U 1 1 5BF8FD1A
 P 8850 3250
 F 0 "H1" H 8950 3296 50  0000 L CNN
 F 1 "Top Left" H 8950 3205 50  0000 L CNN
-F 2 "" H 8850 3250 50  0001 C CNN
+F 2 "MountingHole:MountingHole_4mm" H 8850 3250 50  0001 C CNN
 F 3 "~" H 8850 3250 50  0001 C CNN
 	1    8850 3250
 	1    0    0    -1  
@@ -1574,7 +975,7 @@ U 1 1 5BF8FEEC
 P 9650 3250
 F 0 "H3" H 9750 3296 50  0000 L CNN
 F 1 "Top Right" H 9750 3205 50  0000 L CNN
-F 2 "" H 9650 3250 50  0001 C CNN
+F 2 "MountingHole:MountingHole_4mm" H 9650 3250 50  0001 C CNN
 F 3 "~" H 9650 3250 50  0001 C CNN
 	1    9650 3250
 	1    0    0    -1  
@@ -1585,7 +986,7 @@ U 1 1 5BF8FF6E
 P 8850 3450
 F 0 "H2" H 8950 3496 50  0000 L CNN
 F 1 "Bottom Left" H 8950 3405 50  0000 L CNN
-F 2 "" H 8850 3450 50  0001 C CNN
+F 2 "MountingHole:MountingHole_4mm" H 8850 3450 50  0001 C CNN
 F 3 "~" H 8850 3450 50  0001 C CNN
 	1    8850 3450
 	1    0    0    -1  
@@ -1596,7 +997,7 @@ U 1 1 5BF8FFF2
 P 9650 3450
 F 0 "H4" H 9750 3496 50  0000 L CNN
 F 1 "Bottom Right" H 9750 3405 50  0000 L CNN
-F 2 "" H 9650 3450 50  0001 C CNN
+F 2 "MountingHole:MountingHole_4mm" H 9650 3450 50  0001 C CNN
 F 3 "~" H 9650 3450 50  0001 C CNN
 	1    9650 3450
 	1    0    0    -1  
@@ -1607,7 +1008,7 @@ U 1 1 5BF90090
 P 8850 3800
 F 0 "FID1" H 8990 3803 60  0000 L CNN
 F 1 "FIDUCIAL" H 8990 3697 60  0000 L CNN
-F 2 "Fiducial:Fiducial_0.75mm_Dia_1.5mm_Outer" H 8850 3800 60  0001 C CNN
+F 2 "Fiducial:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 8850 3800 60  0001 C CNN
 F 3 "" H 8850 3800 60  0000 C CNN
 	1    8850 3800
 	1    0    0    -1  
@@ -1618,7 +1019,7 @@ U 1 1 5BF90139
 P 9650 3800
 F 0 "FID2" H 9790 3803 60  0000 L CNN
 F 1 "FIDUCIAL" H 9790 3697 60  0000 L CNN
-F 2 "" H 9650 3800 60  0001 C CNN
+F 2 "Fiducial:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 9650 3800 60  0001 C CNN
 F 3 "" H 9650 3800 60  0000 C CNN
 	1    9650 3800
 	1    0    0    -1  
@@ -1689,7 +1090,7 @@ U 1 1 5C1DE3C9
 P 2050 1600
 AR Path="/5C1DE3C9" Ref="R?"  Part="1" 
 AR Path="/64807BBC/5C1DE3C9" Ref="R70"  Part="1" 
-F 0 "R70" H 2150 1600 50  0000 C CNN
+F 0 "R70" H 2200 1600 50  0000 C CNN
 F 1 "0" V 2050 1600 50  0000 C CNN
 F 2 "Resistor_SMD:R_0402_1005Metric" V 1980 1600 50  0001 C CNN
 F 3 "~" H 2050 1600 50  0001 C CNN
@@ -1708,7 +1109,7 @@ U 1 1 5C445D5E
 P 9400 1900
 F 0 "U16" H 9400 1475 50  0000 C CNN
 F 1 "PUSBM5V5X4" H 9400 1575 50  0000 C CNN
-F 2 "" V 9650 1350 50  0001 C CNN
+F 2 "croptop:PUSBM5V5X4" V 9650 1350 50  0001 C CNN
 F 3 "" V 9650 1350 50  0001 C CNN
 	1    9400 1900
 	1    0    0    -1  
@@ -1804,4 +1205,71 @@ Wire Wire Line
 Connection ~ 9450 1250
 Wire Wire Line
 	9450 1250 9850 1250
+Text GLabel 3500 2350 0    39   Input ~ 0
+SCLK2
+Text GLabel 3500 2250 0    39   Input ~ 0
+SDIO2
+Text GLabel 3500 2150 0    39   Input ~ 0
+SDO2
+Text GLabel 3500 2050 0    39   Input ~ 0
+SS2
+Wire Wire Line
+	5400 5350 5500 5350
+Text GLabel 5500 5350 2    39   Input ~ 0
+LCD_INT
+Wire Wire Line
+	3500 2050 3600 2050
+Wire Wire Line
+	3500 2150 3600 2150
+Wire Wire Line
+	3500 2250 3600 2250
+Wire Wire Line
+	3500 2350 3600 2350
+NoConn ~ 3600 6500
+NoConn ~ 3600 6400
+NoConn ~ 3600 6300
+NoConn ~ 3600 6200
+NoConn ~ 3600 6100
+NoConn ~ 3600 6000
+NoConn ~ 3600 5900
+NoConn ~ 3600 5800
+NoConn ~ 3600 5700
+NoConn ~ 3600 5600
+NoConn ~ 3600 5500
+NoConn ~ 3600 5400
+NoConn ~ 3600 5300
+NoConn ~ 3600 5200
+NoConn ~ 3600 5100
+NoConn ~ 3600 5000
+NoConn ~ 3600 4850
+NoConn ~ 3600 4750
+NoConn ~ 3600 4650
+NoConn ~ 3600 4550
+NoConn ~ 3600 4450
+NoConn ~ 3600 4350
+NoConn ~ 3600 4250
+NoConn ~ 3600 4100
+NoConn ~ 3600 4000
+NoConn ~ 3600 3650
+NoConn ~ 3600 3550
+NoConn ~ 3600 3450
+NoConn ~ 3600 3350
+NoConn ~ 3600 3250
+NoConn ~ 3600 3150
+NoConn ~ 3600 3050
+NoConn ~ 3600 2950
+NoConn ~ 3600 2850
+NoConn ~ 3600 2750
+NoConn ~ 3600 2650
+NoConn ~ 3600 2550
+NoConn ~ 3600 2450
+NoConn ~ 3600 1850
+Text GLabel 5500 5450 2    39   Input ~ 0
+LCD_INT
+Text GLabel 3500 1950 0    39   Input ~ 0
+LCD_PD
+Wire Wire Line
+	3500 1950 3600 1950
+Wire Wire Line
+	5400 5450 5500 5450
 $EndSCHEMATC
