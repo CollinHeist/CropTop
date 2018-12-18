@@ -827,90 +827,6 @@ Wire Wire Line
 	1700 4650 1600 4650
 $Comp
 L Device:R R?
-U 1 1 5CA26B9A
-P 6150 5900
-AR Path="/5CA26B9A" Ref="R?"  Part="1" 
-AR Path="/66A201BE/5CA26B9A" Ref="R?"  Part="1" 
-AR Path="/66A12230/5CA26B9A" Ref="R60"  Part="1" 
-F 0 "R60" H 6200 5900 50  0000 L CNN
-F 1 "10k" V 6150 5830 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 6080 5900 50  0001 C CNN
-F 3 "~" H 6150 5900 50  0001 C CNN
-	1    6150 5900
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 5CA26BA1
-P 6400 5900
-AR Path="/5CA26BA1" Ref="R?"  Part="1" 
-AR Path="/66A201BE/5CA26BA1" Ref="R?"  Part="1" 
-AR Path="/66A12230/5CA26BA1" Ref="R61"  Part="1" 
-F 0 "R61" H 6450 5900 50  0000 L CNN
-F 1 "10k" V 6400 5830 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 6330 5900 50  0001 C CNN
-F 3 "~" H 6400 5900 50  0001 C CNN
-	1    6400 5900
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 5CA26BA8
-P 6650 5900
-AR Path="/5CA26BA8" Ref="R?"  Part="1" 
-AR Path="/66A201BE/5CA26BA8" Ref="R?"  Part="1" 
-AR Path="/66A12230/5CA26BA8" Ref="R62"  Part="1" 
-F 0 "R62" H 6700 5900 50  0000 L CNN
-F 1 "10k" V 6650 5830 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 6580 5900 50  0001 C CNN
-F 3 "~" H 6650 5900 50  0001 C CNN
-	1    6650 5900
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 5CA26BAF
-P 6900 5900
-AR Path="/5CA26BAF" Ref="R?"  Part="1" 
-AR Path="/66A201BE/5CA26BAF" Ref="R?"  Part="1" 
-AR Path="/66A12230/5CA26BAF" Ref="R63"  Part="1" 
-F 0 "R63" H 6950 5900 50  0000 L CNN
-F 1 "10k" V 6900 5830 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 6830 5900 50  0001 C CNN
-F 3 "~" H 6900 5900 50  0001 C CNN
-	1    6900 5900
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 5CA26BB6
-P 5900 5650
-AR Path="/5CA26BB6" Ref="R?"  Part="1" 
-AR Path="/66A201BE/5CA26BB6" Ref="R?"  Part="1" 
-AR Path="/66A12230/5CA26BB6" Ref="R59"  Part="1" 
-F 0 "R59" V 5800 5650 50  0000 C CNN
-F 1 "10k" V 5900 5650 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 5830 5650 50  0001 C CNN
-F 3 "~" H 5900 5650 50  0001 C CNN
-	1    5900 5650
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 5CA26BBD
-P 5900 5400
-AR Path="/5CA26BBD" Ref="R?"  Part="1" 
-AR Path="/66A201BE/5CA26BBD" Ref="R?"  Part="1" 
-AR Path="/66A12230/5CA26BBD" Ref="R58"  Part="1" 
-F 0 "R58" V 5800 5400 50  0000 C CNN
-F 1 "10k" V 5900 5400 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 5830 5400 50  0001 C CNN
-F 3 "~" H 5900 5400 50  0001 C CNN
-	1    5900 5400
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R?
 U 1 1 5CA26BC4
 P 5900 5150
 AR Path="/5CA26BC4" Ref="R?"  Part="1" 
@@ -940,59 +856,20 @@ $EndComp
 Wire Wire Line
 	7750 4750 7750 4900
 Wire Wire Line
-	7750 5650 7600 5650
-Wire Wire Line
-	7750 5400 7600 5400
-Connection ~ 7750 5400
-Wire Wire Line
-	7750 5400 7750 5650
-Wire Wire Line
 	7600 5150 7750 5150
-Connection ~ 7750 5150
-Wire Wire Line
-	7750 5150 7750 5400
 Wire Wire Line
 	7600 4900 7750 4900
 Connection ~ 7750 4900
 Wire Wire Line
 	7750 4900 7750 5150
-Wire Wire Line
-	7000 5650 6150 5650
-Wire Wire Line
-	7000 5150 6650 5150
-Wire Wire Line
-	6050 4900 6900 4900
-Wire Wire Line
-	6150 5650 6150 5750
-Wire Wire Line
-	6150 5650 6050 5650
-Wire Wire Line
-	6400 5750 6400 5400
-Connection ~ 6400 5400
-Wire Wire Line
-	6650 5750 6650 5150
-Connection ~ 6650 5150
-Wire Wire Line
-	6900 5750 6900 4900
-Connection ~ 6900 4900
-Wire Wire Line
-	6900 4900 7000 4900
 Text GLabel 5650 4900 0    39   Input ~ 0
 BTN_A
 Text GLabel 5650 5150 0    39   Input ~ 0
 BTN_B
-Text GLabel 5650 5400 0    39   Input ~ 0
-BTN_C
-Text GLabel 5650 5650 0    39   Input ~ 0
-BTN_D
 Wire Wire Line
 	5650 4900 5750 4900
 Wire Wire Line
 	5650 5150 5750 5150
-Wire Wire Line
-	5650 5400 5750 5400
-Wire Wire Line
-	5650 5650 5750 5650
 $Comp
 L Device:R R?
 U 1 1 5CA26C0D
@@ -1140,72 +1017,13 @@ Wire Wire Line
 Text Notes 4800 4100 0    98   ~ 20
 Debugging Buttons and LEDs
 Wire Wire Line
-	6400 5400 7000 5400
-Wire Wire Line
-	6650 5150 6050 5150
-Connection ~ 6150 5650
-Wire Wire Line
-	6050 5400 6400 5400
-Wire Wire Line
 	8850 6250 8850 6350
-Wire Wire Line
-	6150 6050 6150 6150
-Wire Wire Line
-	6400 6050 6400 6150
-Wire Wire Line
-	6650 6050 6650 6150
-Wire Wire Line
-	6900 6050 6900 6150
 Wire Wire Line
 	9200 6250 9200 6350
 Wire Wire Line
 	9550 6250 9550 6350
 Wire Wire Line
 	9900 6250 9900 6350
-$Comp
-L CropTop:DGND #PWR0167
-U 1 1 5CA26C65
-P 6150 6150
-F 0 "#PWR0167" H 6150 5900 50  0001 C CNN
-F 1 "DGND" H 6154 5995 50  0000 C CNN
-F 2 "" H 6150 6150 50  0001 C CNN
-F 3 "" H 6150 6150 50  0001 C CNN
-	1    6150 6150
-	1    0    0    -1  
-$EndComp
-$Comp
-L CropTop:DGND #PWR0169
-U 1 1 5CA26C6B
-P 6400 6150
-F 0 "#PWR0169" H 6400 5900 50  0001 C CNN
-F 1 "DGND" H 6404 5995 50  0000 C CNN
-F 2 "" H 6400 6150 50  0001 C CNN
-F 3 "" H 6400 6150 50  0001 C CNN
-	1    6400 6150
-	1    0    0    -1  
-$EndComp
-$Comp
-L CropTop:DGND #PWR0170
-U 1 1 5CA26C71
-P 6650 6150
-F 0 "#PWR0170" H 6650 5900 50  0001 C CNN
-F 1 "DGND" H 6654 5995 50  0000 C CNN
-F 2 "" H 6650 6150 50  0001 C CNN
-F 3 "" H 6650 6150 50  0001 C CNN
-	1    6650 6150
-	1    0    0    -1  
-$EndComp
-$Comp
-L CropTop:DGND #PWR0171
-U 1 1 5CA26C77
-P 6900 6150
-F 0 "#PWR0171" H 6900 5900 50  0001 C CNN
-F 1 "DGND" H 6904 5995 50  0000 C CNN
-F 2 "" H 6900 6150 50  0001 C CNN
-F 3 "" H 6900 6150 50  0001 C CNN
-	1    6900 6150
-	1    0    0    -1  
-$EndComp
 $Comp
 L CropTop:DGND #PWR0178
 U 1 1 5CA26C7D
@@ -1291,10 +1109,6 @@ Text GLabel 5250 5950 0    39   Input ~ 0
 BTN_A
 Text GLabel 5250 6100 0    39   Input ~ 0
 BTN_B
-Text GLabel 5250 6250 0    39   Input ~ 0
-BTN_C
-Text GLabel 5250 6400 0    39   Input ~ 0
-BTN_D
 Text GLabel 8050 5950 0    39   Input ~ 0
 LED_A
 Text GLabel 8050 6100 0    39   Input ~ 0
@@ -1328,10 +1142,6 @@ Wire Wire Line
 	5250 5950 5350 5950
 Wire Wire Line
 	5250 6100 5350 6100
-Wire Wire Line
-	5250 6250 5350 6250
-Wire Wire Line
-	5250 6400 5350 6400
 $Comp
 L Connector:TestPoint_Alt TP?
 U 1 1 5C1EC381
@@ -1398,61 +1208,35 @@ F 3 "~" H 5550 6100 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
+L CropTop:DGND #PWR?
+U 1 1 5C26D61B
+P 5250 6350
+AR Path="/64809F0C/5C26D61B" Ref="#PWR?"  Part="1" 
+AR Path="/66A12230/5C26D61B" Ref="#PWR0165"  Part="1" 
+F 0 "#PWR0165" H 5250 6100 50  0001 C CNN
+F 1 "DGND" H 5254 6195 50  0000 C CNN
+F 2 "" H 5250 6350 50  0001 C CNN
+F 3 "" H 5250 6350 50  0001 C CNN
+	1    5250 6350
+	1    0    0    -1  
+$EndComp
+$Comp
 L Connector:TestPoint_Alt TP?
-U 1 1 5C1EC3A4
+U 1 1 5C26D621
 P 5350 6250
-AR Path="/64809F0C/5C1EC3A4" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5C1EC3A4" Ref="TP93"  Part="1" 
-F 0 "TP93" V 5350 6430 50  0000 L CNN
+AR Path="/64809F0C/5C26D621" Ref="TP?"  Part="1" 
+AR Path="/66A12230/5C26D621" Ref="TP95"  Part="1" 
+F 0 "TP95" V 5350 6430 50  0000 L CNN
 F 1 "TestPoint_Alt" V 5385 6435 50  0001 L CNN
 F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 5550 6250 50  0001 C CNN
 F 3 "~" H 5550 6250 50  0001 C CNN
 	1    5350 6250
 	0    1    1    0   
 $EndComp
-$Comp
-L Connector:TestPoint_Alt TP?
-U 1 1 5C1EC3AB
-P 5350 6400
-AR Path="/64809F0C/5C1EC3AB" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5C1EC3AB" Ref="TP94"  Part="1" 
-F 0 "TP94" V 5350 6580 50  0000 L CNN
-F 1 "TestPoint_Alt" V 5385 6585 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 5550 6400 50  0001 C CNN
-F 3 "~" H 5550 6400 50  0001 C CNN
-	1    5350 6400
-	0    1    1    0   
-$EndComp
-$Comp
-L CropTop:DGND #PWR?
-U 1 1 5C26D61B
-P 5250 6650
-AR Path="/64809F0C/5C26D61B" Ref="#PWR?"  Part="1" 
-AR Path="/66A12230/5C26D61B" Ref="#PWR0165"  Part="1" 
-F 0 "#PWR0165" H 5250 6400 50  0001 C CNN
-F 1 "DGND" H 5254 6495 50  0000 C CNN
-F 2 "" H 5250 6650 50  0001 C CNN
-F 3 "" H 5250 6650 50  0001 C CNN
-	1    5250 6650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint_Alt TP?
-U 1 1 5C26D621
-P 5350 6550
-AR Path="/64809F0C/5C26D621" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5C26D621" Ref="TP95"  Part="1" 
-F 0 "TP95" V 5350 6730 50  0000 L CNN
-F 1 "TestPoint_Alt" V 5385 6735 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 5550 6550 50  0001 C CNN
-F 3 "~" H 5550 6550 50  0001 C CNN
-	1    5350 6550
-	0    1    1    0   
-$EndComp
 Wire Wire Line
-	5250 6650 5250 6550
+	5250 6350 5250 6250
 Wire Wire Line
-	5250 6550 5350 6550
+	5250 6250 5350 6250
 $Comp
 L CropTop:DGND #PWR?
 U 1 1 5C27C27E
@@ -1863,28 +1647,6 @@ F 3 "" H 7300 5200 50  0001 C CNN
 	1    7300 5000
 	1    0    0    -1  
 $EndComp
-$Comp
-L CropTop:SW_Push SW3
-U 1 1 5DF8489F
-P 7300 5250
-F 0 "SW3" H 7380 5190 50  0000 C CNN
-F 1 "BTNA" H 7300 5040 50  0000 C CNN
-F 2 "Button_Switch_SMD:SW_SPST_PTS645" H 7300 5450 50  0001 C CNN
-F 3 "" H 7300 5450 50  0001 C CNN
-	1    7300 5250
-	1    0    0    -1  
-$EndComp
-$Comp
-L CropTop:SW_Push SW4
-U 1 1 5DF8EB38
-P 7300 5500
-F 0 "SW4" H 7380 5440 50  0000 C CNN
-F 1 "BTNA" H 7300 5290 50  0000 C CNN
-F 2 "Button_Switch_SMD:SW_SPST_PTS645" H 7300 5700 50  0001 C CNN
-F 3 "" H 7300 5700 50  0001 C CNN
-	1    7300 5500
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	7000 4900 7000 4850
 Wire Wire Line
@@ -1904,42 +1666,6 @@ Wire Wire Line
 	7000 5200 7050 5200
 Connection ~ 7000 5150
 Wire Wire Line
-	7000 5400 7000 5350
-Wire Wire Line
-	7000 5350 7050 5350
-Wire Wire Line
-	7000 5400 7000 5450
-Wire Wire Line
-	7000 5450 7050 5450
-Connection ~ 7000 5400
-Wire Wire Line
-	7000 5650 7000 5600
-Wire Wire Line
-	7000 5600 7050 5600
-Wire Wire Line
-	7000 5650 7000 5700
-Wire Wire Line
-	7000 5700 7050 5700
-Connection ~ 7000 5650
-Wire Wire Line
-	7550 5700 7600 5700
-Wire Wire Line
-	7600 5700 7600 5650
-Wire Wire Line
-	7550 5600 7600 5600
-Wire Wire Line
-	7600 5600 7600 5650
-Connection ~ 7600 5650
-Wire Wire Line
-	7550 5450 7600 5450
-Wire Wire Line
-	7600 5450 7600 5400
-Wire Wire Line
-	7600 5400 7600 5350
-Wire Wire Line
-	7600 5350 7550 5350
-Connection ~ 7600 5400
-Wire Wire Line
 	7550 5200 7600 5200
 Wire Wire Line
 	7600 5200 7600 5150
@@ -1957,4 +1683,72 @@ Wire Wire Line
 Wire Wire Line
 	7600 4850 7600 4900
 Connection ~ 7600 4900
+$Comp
+L CropTop:DGND #PWR0171
+U 1 1 5CA26C77
+P 6750 5650
+F 0 "#PWR0171" H 6750 5400 50  0001 C CNN
+F 1 "DGND" H 6754 5495 50  0000 C CNN
+F 2 "" H 6750 5650 50  0001 C CNN
+F 3 "" H 6750 5650 50  0001 C CNN
+	1    6750 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L CropTop:DGND #PWR0170
+U 1 1 5CA26C71
+P 6500 5650
+F 0 "#PWR0170" H 6500 5400 50  0001 C CNN
+F 1 "DGND" H 6504 5495 50  0000 C CNN
+F 2 "" H 6500 5650 50  0001 C CNN
+F 3 "" H 6500 5650 50  0001 C CNN
+	1    6500 5650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 5550 6750 5650
+Wire Wire Line
+	6500 5550 6500 5650
+$Comp
+L Device:R R?
+U 1 1 5CA26BAF
+P 6750 5400
+AR Path="/5CA26BAF" Ref="R?"  Part="1" 
+AR Path="/66A201BE/5CA26BAF" Ref="R?"  Part="1" 
+AR Path="/66A12230/5CA26BAF" Ref="R63"  Part="1" 
+F 0 "R63" H 6800 5400 50  0000 L CNN
+F 1 "10k" V 6750 5330 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 6680 5400 50  0001 C CNN
+F 3 "~" H 6750 5400 50  0001 C CNN
+	1    6750 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5CA26BA8
+P 6500 5400
+AR Path="/5CA26BA8" Ref="R?"  Part="1" 
+AR Path="/66A201BE/5CA26BA8" Ref="R?"  Part="1" 
+AR Path="/66A12230/5CA26BA8" Ref="R62"  Part="1" 
+F 0 "R62" H 6550 5400 50  0000 L CNN
+F 1 "10k" V 6500 5330 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 6430 5400 50  0001 C CNN
+F 3 "~" H 6500 5400 50  0001 C CNN
+	1    6500 5400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 4900 6750 4900
+Wire Wire Line
+	6050 5150 6500 5150
+Wire Wire Line
+	6500 5150 6500 5250
+Wire Wire Line
+	6750 5250 6750 4900
+Connection ~ 6500 5150
+Connection ~ 6750 4900
+Wire Wire Line
+	6500 5150 7000 5150
+Wire Wire Line
+	6750 4900 7000 4900
 $EndSCHEMATC
