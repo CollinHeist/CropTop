@@ -2551,7 +2551,7 @@
   )
 
   (module Capacitor_SMD:CP_Elec_6.3x7.7 (layer F.Cu) (tedit 5A841F9D) (tstamp 5C60CD8F)
-    (at 103.505 127.635)
+    (at 116.84 119.38)
     (descr "SMT capacitor, aluminium electrolytic, 6.3x7.7, Nichicon ")
     (tags "Capacitor Electrolytic")
     (path /669AB112/5C2CADB9)
