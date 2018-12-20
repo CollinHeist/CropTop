@@ -50,10 +50,6 @@ Text GLabel 5500 4800 2    39   Input ~ 0
 BTN_A
 Text GLabel 5500 4900 2    39   Input ~ 0
 BTN_B
-Text GLabel 5500 5000 2    39   Input ~ 0
-BTN_C
-Text GLabel 5500 5100 2    39   Input ~ 0
-BTN_D
 Text GLabel 5500 4350 2    39   Input ~ 0
 LED_A
 Text GLabel 5500 4450 2    39   Input ~ 0
@@ -143,10 +139,6 @@ Wire Wire Line
 	5500 4800 5400 4800
 Wire Wire Line
 	5500 4900 5400 4900
-Wire Wire Line
-	5500 5000 5400 5000
-Wire Wire Line
-	5500 5100 5400 5100
 Wire Wire Line
 	5500 1800 5500 1950
 Wire Wire Line
@@ -1272,4 +1264,6 @@ Wire Wire Line
 	3500 1950 3600 1950
 Wire Wire Line
 	5400 5450 5500 5450
+NoConn ~ 5400 5000
+NoConn ~ 5400 5100
 $EndSCHEMATC

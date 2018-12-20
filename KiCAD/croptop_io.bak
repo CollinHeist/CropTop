@@ -2065,7 +2065,7 @@ F 1 "74HCT125D" H 8180 5370 50  0000 C CNN
 F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 9000 5200 50  0001 C CNN
 F 3 "" H 9000 5200 50  0001 C CNN
 	1    7950 5200
-	1    0    0    -1  
+	-1   0    0    -1  
 $EndComp
 Text Notes 3400 5750 0    50   ~ 10
 50V
