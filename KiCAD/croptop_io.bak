@@ -180,8 +180,6 @@ Text GLabel 5000 5050 2    39   Input ~ 0
 DRV_BAT
 Text GLabel 5000 5150 2    39   Input ~ 0
 DRV_GND
-Text GLabel 9900 5550 2    39   Input ~ 0
-LIN_VDD
 Text GLabel 9900 5750 2    39   Input ~ 0
 LIN_GND
 Text GLabel 9900 5350 2    39   Input ~ 0
@@ -246,44 +244,10 @@ F 3 "~" H 1100 2250 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3650 3050 3650 3150
-$Comp
-L Device:R R?
-U 1 1 669BF754
-P 7100 5300
-AR Path="/669BF754" Ref="R?"  Part="1" 
-AR Path="/669AB112/669BF754" Ref="R49"  Part="1" 
-F 0 "R49" V 7000 5300 50  0000 C CNN
-F 1 "10" V 7100 5300 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 7030 5300 50  0001 C CNN
-F 3 "~" H 7100 5300 50  0001 C CNN
-	1    7100 5300
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 669BF75B
-P 7100 5100
-AR Path="/669BF75B" Ref="R?"  Part="1" 
-AR Path="/669AB112/669BF75B" Ref="R48"  Part="1" 
-F 0 "R48" V 7000 5100 50  0000 C CNN
-F 1 "10" V 7100 5100 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 7030 5100 50  0001 C CNN
-F 3 "~" H 7100 5100 50  0001 C CNN
-	1    7100 5100
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	7250 5300 7350 5300
 Wire Wire Line
 	7350 5300 7350 5250
 Wire Wire Line
 	7350 5150 7350 5100
-Wire Wire Line
-	7350 5100 7250 5100
-Wire Wire Line
-	6950 5100 6850 5100
-Wire Wire Line
-	6950 5300 6850 5300
 $Comp
 L Device:R R?
 U 1 1 669BF768
@@ -433,8 +397,6 @@ Text GLabel 3575 7200 1    39   Input ~ 0
 DRV_GND
 Text GLabel 2975 7200 1    39   Input ~ 0
 LIN_IN
-Text GLabel 2775 7200 1    39   Input ~ 0
-LIN_VDD
 Text GLabel 2875 7200 1    39   Input ~ 0
 LIN_GND
 Wire Wire Line
@@ -445,8 +407,6 @@ Wire Wire Line
 	2575 7200 2575 7300
 Wire Wire Line
 	2675 7200 2675 7300
-Wire Wire Line
-	2775 7200 2775 7300
 Wire Wire Line
 	2875 7200 2875 7300
 Wire Wire Line
@@ -1526,17 +1486,6 @@ $EndComp
 Wire Wire Line
 	4850 5150 4850 5450
 $Comp
-L CropTop:DVDD #PWR0115
-U 1 1 5C8AB890
-P 9650 4900
-F 0 "#PWR0115" H 9650 4750 50  0001 C CNN
-F 1 "DVDD" H 9665 5073 50  0000 C CNN
-F 2 "" H 9650 4900 50  0001 C CNN
-F 3 "" H 9650 4900 50  0001 C CNN
-	1    9650 4900
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:C C?
 U 1 1 5C9402D2
 P 6650 5900
@@ -1551,32 +1500,8 @@ F 3 "~" H 6650 5900 50  0001 C CNN
 	1    6650 5900
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:C C?
-U 1 1 5C9402D9
-P 6300 5900
-AR Path="/5C9402D9" Ref="C?"  Part="1" 
-AR Path="/65B709D0/5C9402D9" Ref="C?"  Part="1" 
-AR Path="/66A12230/5C9402D9" Ref="C?"  Part="1" 
-AR Path="/669AB112/5C9402D9" Ref="C62"  Part="1" 
-F 0 "C62" H 6350 6000 50  0000 L CNN
-F 1 "10uF" H 6350 5800 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 6338 5750 50  0001 C CNN
-F 3 "~" H 6300 5900 50  0001 C CNN
-	1    6300 5900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6650 5750 6650 5700
-Wire Wire Line
-	6300 6100 6300 6050
 Wire Wire Line
 	6650 6100 6650 6050
-Wire Wire Line
-	6300 5750 6300 5700
-Wire Wire Line
-	6300 5650 6300 5700
-Connection ~ 6300 5700
 $Comp
 L CropTop:DGND #PWR?
 U 1 1 5C9402E6
@@ -1590,32 +1515,17 @@ F 3 "" H 6650 6100 50  0001 C CNN
 	1    6650 6100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6300 5700 6650 5700
 $Comp
 L CropTop:DVDD #PWR?
 U 1 1 5C9402ED
-P 6300 5650
+P 6650 5650
 AR Path="/65B709D0/5C9402ED" Ref="#PWR?"  Part="1" 
 AR Path="/669AB112/5C9402ED" Ref="#PWR0125"  Part="1" 
-F 0 "#PWR0125" H 6300 5500 50  0001 C CNN
-F 1 "DVDD" H 6315 5823 50  0000 C CNN
-F 2 "" H 6300 5650 50  0001 C CNN
-F 3 "" H 6300 5650 50  0001 C CNN
-	1    6300 5650
-	1    0    0    -1  
-$EndComp
-$Comp
-L CropTop:DGND #PWR?
-U 1 1 5C9402F3
-P 6300 6100
-AR Path="/65B709D0/5C9402F3" Ref="#PWR?"  Part="1" 
-AR Path="/669AB112/5C9402F3" Ref="#PWR0126"  Part="1" 
-F 0 "#PWR0126" H 6300 5850 50  0001 C CNN
-F 1 "DGND" H 6304 5945 50  0000 C CNN
-F 2 "" H 6300 6100 50  0001 C CNN
-F 3 "" H 6300 6100 50  0001 C CNN
-	1    6300 6100
+F 0 "#PWR0125" H 6650 5500 50  0001 C CNN
+F 1 "DVDD" H 6665 5823 50  0000 C CNN
+F 2 "" H 6650 5650 50  0001 C CNN
+F 3 "" H 6650 5650 50  0001 C CNN
+	1    6650 5650
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1757,38 +1667,6 @@ F 3 "~" H 1350 3400 50  0001 C CNN
 	1    1150 3400
 	0    1    1    0   
 $EndComp
-$Comp
-L CropTop:DGND #PWR?
-U 1 1 5C4B5B45
-P 1050 3650
-AR Path="/64809F0C/5C4B5B45" Ref="#PWR?"  Part="1" 
-AR Path="/66A12230/5C4B5B45" Ref="#PWR?"  Part="1" 
-AR Path="/669AB112/5C4B5B45" Ref="#PWR089"  Part="1" 
-F 0 "#PWR089" H 1050 3400 50  0001 C CNN
-F 1 "DGND" H 1054 3495 50  0000 C CNN
-F 2 "" H 1050 3650 50  0001 C CNN
-F 3 "" H 1050 3650 50  0001 C CNN
-	1    1050 3650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint_Alt TP?
-U 1 1 5C4B5B4B
-P 1150 3550
-AR Path="/64809F0C/5C4B5B4B" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5C4B5B4B" Ref="TP?"  Part="1" 
-AR Path="/669AB112/5C4B5B4B" Ref="TP67"  Part="1" 
-F 0 "TP67" V 1150 3730 50  0000 L CNN
-F 1 "TestPoint_Alt" V 1185 3735 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 1350 3550 50  0001 C CNN
-F 3 "~" H 1350 3550 50  0001 C CNN
-	1    1150 3550
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	1050 3650 1050 3550
-Wire Wire Line
-	1050 3550 1150 3550
 Text GLabel 5850 1050 0    39   Input ~ 0
 ADC_A1+
 Text GLabel 5850 1200 0    39   Input ~ 0
@@ -1882,38 +1760,6 @@ F 3 "~" H 1400 5550 50  0001 C CNN
 	1    1200 5550
 	0    1    1    0   
 $EndComp
-$Comp
-L CropTop:DGND #PWR?
-U 1 1 5C597586
-P 1100 5800
-AR Path="/64809F0C/5C597586" Ref="#PWR?"  Part="1" 
-AR Path="/66A12230/5C597586" Ref="#PWR?"  Part="1" 
-AR Path="/669AB112/5C597586" Ref="#PWR088"  Part="1" 
-F 0 "#PWR088" H 1100 5550 50  0001 C CNN
-F 1 "DGND" H 1104 5645 50  0000 C CNN
-F 2 "" H 1100 5800 50  0001 C CNN
-F 3 "" H 1100 5800 50  0001 C CNN
-	1    1100 5800
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint_Alt TP?
-U 1 1 5C59758C
-P 1200 5700
-AR Path="/64809F0C/5C59758C" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5C59758C" Ref="TP?"  Part="1" 
-AR Path="/669AB112/5C59758C" Ref="TP63"  Part="1" 
-F 0 "TP63" V 1200 5880 50  0000 L CNN
-F 1 "TestPoint_Alt" V 1235 5885 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 1400 5700 50  0001 C CNN
-F 3 "~" H 1400 5700 50  0001 C CNN
-	1    1200 5700
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	1100 5800 1100 5700
-Wire Wire Line
-	1100 5700 1200 5700
 Text GLabel 1100 5400 0    39   Input ~ 0
 DRV_IN1
 Text GLabel 1100 5550 0    39   Input ~ 0
@@ -1950,38 +1796,6 @@ F 3 "~" H 8300 6450 50  0001 C CNN
 	1    8100 6450
 	0    1    1    0   
 $EndComp
-$Comp
-L CropTop:DGND #PWR?
-U 1 1 5C624613
-P 8000 6700
-AR Path="/64809F0C/5C624613" Ref="#PWR?"  Part="1" 
-AR Path="/66A12230/5C624613" Ref="#PWR?"  Part="1" 
-AR Path="/669AB112/5C624613" Ref="#PWR0106"  Part="1" 
-F 0 "#PWR0106" H 8000 6450 50  0001 C CNN
-F 1 "DGND" H 8004 6545 50  0000 C CNN
-F 2 "" H 8000 6700 50  0001 C CNN
-F 3 "" H 8000 6700 50  0001 C CNN
-	1    8000 6700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint_Alt TP?
-U 1 1 5C624619
-P 8100 6600
-AR Path="/64809F0C/5C624619" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5C624619" Ref="TP?"  Part="1" 
-AR Path="/669AB112/5C624619" Ref="TP69"  Part="1" 
-F 0 "TP69" V 8100 6780 50  0000 L CNN
-F 1 "TestPoint_Alt" V 8135 6785 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 8300 6600 50  0001 C CNN
-F 3 "~" H 8300 6600 50  0001 C CNN
-	1    8100 6600
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	8000 6700 8000 6600
-Wire Wire Line
-	8000 6600 8100 6600
 Text GLabel 8000 6450 0    39   Input ~ 0
 LIN_VOLT
 Wire Wire Line
@@ -2014,38 +1828,6 @@ F 3 "~" H 7450 6450 50  0001 C CNN
 	1    7250 6450
 	0    1    1    0   
 $EndComp
-$Comp
-L CropTop:DGND #PWR?
-U 1 1 5C65485C
-P 7150 6700
-AR Path="/64809F0C/5C65485C" Ref="#PWR?"  Part="1" 
-AR Path="/66A12230/5C65485C" Ref="#PWR?"  Part="1" 
-AR Path="/669AB112/5C65485C" Ref="#PWR0124"  Part="1" 
-F 0 "#PWR0124" H 7150 6450 50  0001 C CNN
-F 1 "DGND" H 7154 6545 50  0000 C CNN
-F 2 "" H 7150 6700 50  0001 C CNN
-F 3 "" H 7150 6700 50  0001 C CNN
-	1    7150 6700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint_Alt TP?
-U 1 1 5C654862
-P 7250 6600
-AR Path="/64809F0C/5C654862" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5C654862" Ref="TP?"  Part="1" 
-AR Path="/669AB112/5C654862" Ref="TP75"  Part="1" 
-F 0 "TP75" V 7250 6780 50  0000 L CNN
-F 1 "TestPoint_Alt" V 7285 6785 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 7450 6600 50  0001 C CNN
-F 3 "~" H 7450 6600 50  0001 C CNN
-	1    7250 6600
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	7150 6700 7150 6600
-Wire Wire Line
-	7150 6600 7250 6600
 Text GLabel 7150 6300 0    39   Input ~ 0
 ROT_Y1
 Text GLabel 7150 6450 0    39   Input ~ 0
@@ -2187,8 +1969,6 @@ Wire Notes Line width 20
 	450  6350 6000 6350
 Wire Wire Line
 	9000 5650 9100 5650
-Wire Wire Line
-	8800 5050 9900 5050
 NoConn ~ 8900 6300
 Wire Wire Line
 	9100 5650 9900 5650
@@ -2209,13 +1989,6 @@ F 3 "" H 9800 5900 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	9500 6200 9650 6200
-Wire Wire Line
-	9650 6200 9650 5550
-Wire Wire Line
-	9650 5550 9900 5550
-Connection ~ 9650 5550
-Wire Wire Line
-	9650 5550 9650 4900
 Wire Wire Line
 	9800 5750 9900 5750
 Wire Wire Line
@@ -2251,4 +2024,42 @@ Wire Wire Line
 	8800 6200 8900 6200
 Text GLabel 10000 2150 2    39   Input ~ 0
 ADC_GND
+Wire Wire Line
+	6850 5100 7350 5100
+Wire Wire Line
+	6850 5300 7350 5300
+Wire Wire Line
+	6650 5650 6650 5750
+Wire Wire Line
+	8800 5050 9900 5050
+Wire Wire Line
+	9900 4850 9900 4750
+Wire Wire Line
+	9650 4850 9900 4850
+$Comp
+L CropTop:DVDD_UNREG #PWR?
+U 1 1 5C2F763A
+P 9900 4750
+F 0 "#PWR?" H 9900 4600 50  0001 C CNN
+F 1 "DVDD_UNREG" H 9915 4923 50  0000 C CNN
+F 2 "" H 9900 4750 50  0001 C CNN
+F 3 "" H 9900 4750 50  0001 C CNN
+	1    9900 4750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9650 4850 9650 6200
+$Comp
+L CropTop:DVDD_UNREG #PWR?
+U 1 1 5C342C9E
+P 2775 6875
+F 0 "#PWR?" H 2775 6725 50  0001 C CNN
+F 1 "DVDD_UNREG" H 2790 7048 50  0000 C CNN
+F 2 "" H 2775 6875 50  0001 C CNN
+F 3 "" H 2775 6875 50  0001 C CNN
+	1    2775 6875
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2775 6875 2775 7300
 $EndSCHEMATC

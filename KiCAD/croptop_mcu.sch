@@ -46,18 +46,14 @@ Wire Wire Line
 	4150 1500 4150 1400
 Wire Wire Line
 	4150 1400 4100 1400
-Text GLabel 5500 4800 2    39   Input ~ 0
+Text GLabel 3500 4850 0    39   Input ~ 0
 BTN_A
-Text GLabel 5500 4900 2    39   Input ~ 0
+Text GLabel 3500 4750 0    39   Input ~ 0
 BTN_B
 Text GLabel 5500 4350 2    39   Input ~ 0
 LED_A
 Text GLabel 5500 4450 2    39   Input ~ 0
 LED_B
-Text GLabel 5500 4550 2    39   Input ~ 0
-LED_C
-Text GLabel 5500 4650 2    39   Input ~ 0
-LED_D
 $Comp
 L Device:R R?
 U 1 1 65F75DCE
@@ -128,17 +124,9 @@ Wire Wire Line
 Wire Wire Line
 	5400 2550 5500 2550
 Wire Wire Line
-	5500 4650 5400 4650
-Wire Wire Line
-	5500 4550 5400 4550
-Wire Wire Line
 	5500 4450 5400 4450
 Wire Wire Line
 	5500 4350 5400 4350
-Wire Wire Line
-	5500 4800 5400 4800
-Wire Wire Line
-	5500 4900 5400 4900
 Wire Wire Line
 	5500 1800 5500 1950
 Wire Wire Line
@@ -393,12 +381,6 @@ Wire Wire Line
 	6850 4850 6850 4900
 Wire Wire Line
 	6450 4100 6850 4100
-Text GLabel 10100 1250 2    39   Input ~ 0
-VBUS
-Text GLabel 5500 3350 2    39   Input ~ 0
-VBUS
-Wire Wire Line
-	5400 3350 5500 3350
 Wire Wire Line
 	6150 3150 6150 3250
 Wire Wire Line
@@ -429,10 +411,10 @@ Wire Wire Line
 	5400 2650 5750 2650
 Wire Wire Line
 	6050 2650 6150 2650
-Text GLabel 5500 5750 2    39   Input ~ 0
+Text GLabel 5500 5450 2    39   Input ~ 0
 GPS_INT
 Wire Wire Line
-	5400 5750 5500 5750
+	5400 5450 5500 5450
 Wire Wire Line
 	6300 4100 6450 4100
 Connection ~ 6450 4100
@@ -447,14 +429,6 @@ Wire Wire Line
 	6450 4500 6450 4550
 Text Notes 550  700  0    98   ~ 20
 PICKit3 Header
-Wire Notes Line
-	5700 4300 5750 4300
-Wire Notes Line
-	5750 4300 5750 5150
-Wire Notes Line
-	5750 5150 5700 5150
-Text Notes 5800 4800 0    50   ~ 0
-Temporary
 Wire Wire Line
 	9750 6350 9750 6400
 Text Notes 9850 6450 0    50   ~ 0
@@ -956,7 +930,7 @@ U 1 1 5BF8FD1A
 P 8850 3250
 F 0 "H1" H 8950 3296 50  0000 L CNN
 F 1 "Top Left" H 8950 3205 50  0000 L CNN
-F 2 "MountingHole:MountingHole_4mm" H 8850 3250 50  0001 C CNN
+F 2 "MountingHole:MountingHole_4mm_Pad" H 8850 3250 50  0001 C CNN
 F 3 "~" H 8850 3250 50  0001 C CNN
 	1    8850 3250
 	1    0    0    -1  
@@ -967,7 +941,7 @@ U 1 1 5BF8FEEC
 P 9650 3250
 F 0 "H3" H 9750 3296 50  0000 L CNN
 F 1 "Top Right" H 9750 3205 50  0000 L CNN
-F 2 "MountingHole:MountingHole_4mm" H 9650 3250 50  0001 C CNN
+F 2 "MountingHole:MountingHole_4mm_Pad" H 9650 3250 50  0001 C CNN
 F 3 "~" H 9650 3250 50  0001 C CNN
 	1    9650 3250
 	1    0    0    -1  
@@ -978,7 +952,7 @@ U 1 1 5BF8FF6E
 P 8850 3450
 F 0 "H2" H 8950 3496 50  0000 L CNN
 F 1 "Bottom Left" H 8950 3405 50  0000 L CNN
-F 2 "MountingHole:MountingHole_4mm" H 8850 3450 50  0001 C CNN
+F 2 "MountingHole:MountingHole_4mm_Pad" H 8850 3450 50  0001 C CNN
 F 3 "~" H 8850 3450 50  0001 C CNN
 	1    8850 3450
 	1    0    0    -1  
@@ -989,7 +963,7 @@ U 1 1 5BF8FFF2
 P 9650 3450
 F 0 "H4" H 9750 3496 50  0000 L CNN
 F 1 "Bottom Right" H 9750 3405 50  0000 L CNN
-F 2 "MountingHole:MountingHole_4mm" H 9650 3450 50  0001 C CNN
+F 2 "MountingHole:MountingHole_4mm_Pad" H 9650 3450 50  0001 C CNN
 F 3 "~" H 9650 3450 50  0001 C CNN
 	1    9650 3450
 	1    0    0    -1  
@@ -1028,42 +1002,12 @@ Wire Wire Line
 	5500 5250 5400 5250
 NoConn ~ 8850 4000
 NoConn ~ 9650 4000
-$Comp
-L Device:R R?
-U 1 1 5C0298E7
-P 1250 1650
-AR Path="/5C0298E7" Ref="R?"  Part="1" 
-AR Path="/64807BBC/5C0298E7" Ref="R68"  Part="1" 
-F 0 "R68" V 1175 1650 50  0000 C CNN
-F 1 "10" V 1250 1650 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 1180 1650 50  0001 C CNN
-F 3 "~" H 1250 1650 50  0001 C CNN
-	1    1250 1650
-	0    -1   1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 5C08DA6B
-P 1250 1850
-AR Path="/5C08DA6B" Ref="R?"  Part="1" 
-AR Path="/64807BBC/5C08DA6B" Ref="R69"  Part="1" 
-F 0 "R69" V 1175 1850 50  0000 C CNN
-F 1 "10" V 1250 1850 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 1180 1850 50  0001 C CNN
-F 3 "~" H 1250 1850 50  0001 C CNN
-	1    1250 1850
-	0    -1   1    0   
-$EndComp
 Wire Wire Line
 	800  1550 1000 1550
 Wire Wire Line
 	1000 1550 1000 1450
 Wire Wire Line
-	800  1650 1100 1650
-Wire Wire Line
 	1000 1750 1000 1850
-Wire Wire Line
-	1000 1850 1100 1850
 Wire Wire Line
 	800  1750 1000 1750
 Wire Wire Line
@@ -1072,10 +1016,6 @@ Wire Wire Line
 	1300 1250 2050 1250
 Wire Wire Line
 	800  1350 2050 1350
-Wire Wire Line
-	1400 1650 1500 1650
-Wire Wire Line
-	1400 1850 1500 1850
 $Comp
 L Device:R R?
 U 1 1 5C1DE3C9
@@ -1187,9 +1127,6 @@ F 3 "" H 10000 1850 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	10000 1400 10000 1250
-Connection ~ 10000 1250
-Wire Wire Line
-	10000 1250 10100 1250
 Wire Wire Line
 	10000 1700 10000 1850
 Wire Wire Line
@@ -1233,8 +1170,6 @@ NoConn ~ 3600 5300
 NoConn ~ 3600 5200
 NoConn ~ 3600 5100
 NoConn ~ 3600 5000
-NoConn ~ 3600 4850
-NoConn ~ 3600 4750
 NoConn ~ 3600 4650
 NoConn ~ 3600 4550
 NoConn ~ 3600 4450
@@ -1256,14 +1191,40 @@ NoConn ~ 3600 2650
 NoConn ~ 3600 2550
 NoConn ~ 3600 2450
 NoConn ~ 3600 1850
-Text GLabel 5500 5450 2    39   Input ~ 0
-LCD_INT
 Text GLabel 3500 1950 0    39   Input ~ 0
 LCD_PD
 Wire Wire Line
 	3500 1950 3600 1950
-Wire Wire Line
-	5400 5450 5500 5450
 NoConn ~ 5400 5000
 NoConn ~ 5400 5100
+Wire Wire Line
+	800  1650 1500 1650
+Wire Wire Line
+	1000 1850 1500 1850
+NoConn ~ 5400 5750
+NoConn ~ 5400 4650
+NoConn ~ 5400 4550
+NoConn ~ 5400 4900
+NoConn ~ 5400 4800
+Wire Wire Line
+	3500 4750 3600 4750
+Wire Wire Line
+	3500 4850 3600 4850
+$Comp
+L CropTop:DVDD_UNREG #PWR?
+U 1 1 5C31543C
+P 5900 3000
+AR Path="/64809F0C/5C31543C" Ref="#PWR?"  Part="1" 
+AR Path="/64807BBC/5C31543C" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 5900 2850 50  0001 C CNN
+F 1 "DVDD_UNREG" H 5915 3173 50  0000 C CNN
+F 2 "" H 5900 3000 50  0001 C CNN
+F 3 "" H 5900 3000 50  0001 C CNN
+	1    5900 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 3350 5900 3350
+Wire Wire Line
+	5900 3350 5900 3000
 $EndSCHEMATC
