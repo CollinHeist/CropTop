@@ -867,7 +867,7 @@ AR Path="/64809F0C/5C1EC372" Ref="TP?"  Part="1"
 AR Path="/66A12230/5C1EC372" Ref="TP99"  Part="1" 
 F 0 "TP99" V 5350 5780 50  0000 L CNN
 F 1 "TestPoint_Alt" V 5385 5785 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 5550 5600 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 5550 5600 50  0001 C CNN
 F 3 "~" H 5550 5600 50  0001 C CNN
 	1    5350 5600
 	0    1    1    0   
@@ -888,7 +888,7 @@ AR Path="/64809F0C/5C1EC381" Ref="TP?"  Part="1"
 AR Path="/66A12230/5C1EC381" Ref="TP100"  Part="1" 
 F 0 "TP100" V 5350 5930 50  0000 L CNN
 F 1 "TestPoint_Alt" V 5385 5935 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 5550 5750 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 5550 5750 50  0001 C CNN
 F 3 "~" H 5550 5750 50  0001 C CNN
 	1    5350 5750
 	0    1    1    0   
@@ -901,7 +901,7 @@ AR Path="/64809F0C/5C1EC396" Ref="TP?"  Part="1"
 AR Path="/66A12230/5C1EC396" Ref="TP91"  Part="1" 
 F 0 "TP91" V 5350 6130 50  0000 L CNN
 F 1 "TestPoint_Alt" V 5385 6135 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 5550 5950 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 5550 5950 50  0001 C CNN
 F 3 "~" H 5550 5950 50  0001 C CNN
 	1    5350 5950
 	0    1    1    0   
@@ -914,7 +914,7 @@ AR Path="/64809F0C/5C1EC39D" Ref="TP?"  Part="1"
 AR Path="/66A12230/5C1EC39D" Ref="TP92"  Part="1" 
 F 0 "TP92" V 5350 6280 50  0000 L CNN
 F 1 "TestPoint_Alt" V 5385 6285 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 5550 6100 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 5550 6100 50  0001 C CNN
 F 3 "~" H 5550 6100 50  0001 C CNN
 	1    5350 6100
 	0    1    1    0   
@@ -927,7 +927,7 @@ AR Path="/64809F0C/5C32FA6C" Ref="TP?"  Part="1"
 AR Path="/66A12230/5C32FA6C" Ref="TP96"  Part="1" 
 F 0 "TP96" V 6150 3080 50  0000 L CNN
 F 1 "TestPoint_Alt" V 6185 3085 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 6350 2900 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 6350 2900 50  0001 C CNN
 F 3 "~" H 6350 2900 50  0001 C CNN
 	1    6150 2900
 	0    1    1    0   
@@ -940,7 +940,7 @@ AR Path="/64809F0C/5C32FA73" Ref="TP?"  Part="1"
 AR Path="/66A12230/5C32FA73" Ref="TP97"  Part="1" 
 F 0 "TP97" V 6150 3230 50  0000 L CNN
 F 1 "TestPoint_Alt" V 6185 3235 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 6350 3050 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 6350 3050 50  0001 C CNN
 F 3 "~" H 6350 3050 50  0001 C CNN
 	1    6150 3050
 	0    1    1    0   
@@ -961,7 +961,7 @@ AR Path="/64809F0C/5C337C6F" Ref="TP?"  Part="1"
 AR Path="/66A12230/5C337C6F" Ref="TP82"  Part="1" 
 F 0 "TP82" V 1700 7430 50  0000 L CNN
 F 1 "TestPoint_Alt" V 1735 7435 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 1900 7250 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 1900 7250 50  0001 C CNN
 F 3 "~" H 1900 7250 50  0001 C CNN
 	1    1700 7250
 	0    1    1    0   
@@ -974,7 +974,7 @@ AR Path="/64809F0C/5C337C76" Ref="TP?"  Part="1"
 AR Path="/66A12230/5C337C76" Ref="TP83"  Part="1" 
 F 0 "TP83" V 1700 7580 50  0000 L CNN
 F 1 "TestPoint_Alt" V 1735 7585 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 1900 7400 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 1900 7400 50  0001 C CNN
 F 3 "~" H 1900 7400 50  0001 C CNN
 	1    1700 7400
 	0    1    1    0   
@@ -995,7 +995,7 @@ AR Path="/64809F0C/5C3834AD" Ref="TP?"  Part="1"
 AR Path="/66A12230/5C3834AD" Ref="TP79"  Part="1" 
 F 0 "TP79" V 1550 3330 50  0000 L CNN
 F 1 "TestPoint_Alt" V 1585 3335 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 1750 3150 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 1750 3150 50  0001 C CNN
 F 3 "~" H 1750 3150 50  0001 C CNN
 	1    1550 3150
 	0    1    1    0   
@@ -1008,7 +1008,7 @@ AR Path="/64809F0C/5C3834B4" Ref="TP?"  Part="1"
 AR Path="/66A12230/5C3834B4" Ref="TP80"  Part="1" 
 F 0 "TP80" V 1550 3480 50  0000 L CNN
 F 1 "TestPoint_Alt" V 1585 3485 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 1750 3300 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 1750 3300 50  0001 C CNN
 F 3 "~" H 1750 3300 50  0001 C CNN
 	1    1550 3300
 	0    1    1    0   
@@ -1033,7 +1033,7 @@ AR Path="/64809F0C/5C3D3F97" Ref="TP?"  Part="1"
 AR Path="/66A12230/5C3D3F97" Ref="TP89"  Part="1" 
 F 0 "TP89" V 2350 3480 50  0000 L CNN
 F 1 "TestPoint_Alt" V 2385 3485 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 2550 3300 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 2550 3300 50  0001 C CNN
 F 3 "~" H 2550 3300 50  0001 C CNN
 	1    2350 3300
 	0    1    1    0   
@@ -1046,7 +1046,7 @@ AR Path="/64809F0C/5C3D3F9E" Ref="TP?"  Part="1"
 AR Path="/66A12230/5C3D3F9E" Ref="TP90"  Part="1" 
 F 0 "TP90" V 2350 3630 50  0000 L CNN
 F 1 "TestPoint_Alt" V 2385 3635 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 2550 3450 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 2550 3450 50  0001 C CNN
 F 3 "~" H 2550 3450 50  0001 C CNN
 	1    2350 3450
 	0    1    1    0   
@@ -1065,7 +1065,7 @@ AR Path="/64809F0C/5C401E07" Ref="TP?"  Part="1"
 AR Path="/66A12230/5C401E07" Ref="TP88"  Part="1" 
 F 0 "TP88" V 2350 3330 50  0000 L CNN
 F 1 "TestPoint_Alt" V 2385 3335 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 2550 3150 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 2550 3150 50  0001 C CNN
 F 3 "~" H 2550 3150 50  0001 C CNN
 	1    2350 3150
 	0    1    1    0   
@@ -1092,7 +1092,7 @@ AR Path="/64809F0C/5C45BD90" Ref="TP?"  Part="1"
 AR Path="/66A12230/5C45BD90" Ref="TP76"  Part="1" 
 F 0 "TP76" V 1050 5380 50  0000 L CNN
 F 1 "TestPoint_Alt" V 1085 5385 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 1250 5200 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 1250 5200 50  0001 C CNN
 F 3 "~" H 1250 5200 50  0001 C CNN
 	1    1050 5200
 	0    1    1    0   
@@ -1105,7 +1105,7 @@ AR Path="/64809F0C/5C45BD97" Ref="TP?"  Part="1"
 AR Path="/66A12230/5C45BD97" Ref="TP77"  Part="1" 
 F 0 "TP77" V 1050 5530 50  0000 L CNN
 F 1 "TestPoint_Alt" V 1085 5535 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 1250 5350 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 1250 5350 50  0001 C CNN
 F 3 "~" H 1250 5350 50  0001 C CNN
 	1    1050 5350
 	0    1    1    0   
@@ -1118,7 +1118,7 @@ AR Path="/64809F0C/5C45BD9E" Ref="TP?"  Part="1"
 AR Path="/66A12230/5C45BD9E" Ref="TP78"  Part="1" 
 F 0 "TP78" V 1050 5680 50  0000 L CNN
 F 1 "TestPoint_Alt" V 1085 5685 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 1250 5500 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 1250 5500 50  0001 C CNN
 F 3 "~" H 1250 5500 50  0001 C CNN
 	1    1050 5500
 	0    1    1    0   
@@ -1139,7 +1139,7 @@ AR Path="/64809F0C/5C861C3B" Ref="TP?"  Part="1"
 AR Path="/66A12230/5C861C3B" Ref="TP85"  Part="1" 
 F 0 "TP85" V 1950 5380 50  0000 L CNN
 F 1 "TestPoint_Alt" V 1985 5385 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 2150 5200 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 2150 5200 50  0001 C CNN
 F 3 "~" H 2150 5200 50  0001 C CNN
 	1    1950 5200
 	0    1    1    0   
@@ -1152,7 +1152,7 @@ AR Path="/64809F0C/5C861C42" Ref="TP?"  Part="1"
 AR Path="/66A12230/5C861C42" Ref="TP86"  Part="1" 
 F 0 "TP86" V 1950 5530 50  0000 L CNN
 F 1 "TestPoint_Alt" V 1985 5535 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 2150 5350 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 2150 5350 50  0001 C CNN
 F 3 "~" H 2150 5350 50  0001 C CNN
 	1    1950 5350
 	0    1    1    0   
