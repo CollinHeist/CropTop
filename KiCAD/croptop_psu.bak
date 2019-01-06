@@ -833,7 +833,7 @@ AR Path="/66A12230/5C9C9732" Ref="TP?"  Part="1"
 AR Path="/65B709D0/5C9C9732" Ref="TP?"  Part="1" 
 F 0 "TP1" V 7900 3930 50  0000 L CNN
 F 1 "TestPoint_Alt" V 7935 3935 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 8100 3750 50  0001 C CNN
+F 2 "croptop:TestPoint" H 8100 3750 50  0001 C CNN
 F 3 "~" H 8100 3750 50  0001 C CNN
 	1    7900 3750
 	0    1    1    0   
@@ -847,7 +847,7 @@ AR Path="/66A12230/5C9C9740" Ref="TP?"  Part="1"
 AR Path="/65B709D0/5C9C9740" Ref="TP?"  Part="1" 
 F 0 "TP5" V 9300 3930 50  0000 L CNN
 F 1 "TestPoint_Alt" V 9335 3935 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 9500 3750 50  0001 C CNN
+F 2 "croptop:TestPoint" H 9500 3750 50  0001 C CNN
 F 3 "~" H 9500 3750 50  0001 C CNN
 	1    9300 3750
 	0    1    1    0   
@@ -861,7 +861,7 @@ AR Path="/66A12230/5C9C9747" Ref="TP?"  Part="1"
 AR Path="/65B709D0/5C9C9747" Ref="TP?"  Part="1" 
 F 0 "TP3" V 8550 3930 50  0000 L CNN
 F 1 "TestPoint_Alt" V 8585 3935 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 8750 3750 50  0001 C CNN
+F 2 "croptop:TestPoint" H 8750 3750 50  0001 C CNN
 F 3 "~" H 8750 3750 50  0001 C CNN
 	1    8550 3750
 	0    1    1    0   
@@ -891,7 +891,7 @@ AR Path="/66A12230/5CA1515D" Ref="TP?"  Part="1"
 AR Path="/65B709D0/5CA1515D" Ref="TP?"  Part="1" 
 F 0 "TP6" V 9300 4080 50  0000 L CNN
 F 1 "TestPoint_Alt" V 9335 4085 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 9500 3900 50  0001 C CNN
+F 2 "croptop:TestPoint" H 9500 3900 50  0001 C CNN
 F 3 "~" H 9500 3900 50  0001 C CNN
 	1    9300 3900
 	0    1    1    0   
@@ -905,7 +905,7 @@ AR Path="/66A12230/5CA15164" Ref="TP?"  Part="1"
 AR Path="/65B709D0/5CA15164" Ref="TP?"  Part="1" 
 F 0 "TP7" V 9300 4230 50  0000 L CNN
 F 1 "TestPoint_Alt" V 9335 4235 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 9500 4050 50  0001 C CNN
+F 2 "croptop:TestPoint" H 9500 4050 50  0001 C CNN
 F 3 "~" H 9500 4050 50  0001 C CNN
 	1    9300 4050
 	0    1    1    0   
@@ -1084,7 +1084,7 @@ AR Path="/64809F0C/5C3F1F67" Ref="TP2"  Part="1"
 AR Path="/66A12230/5C3F1F67" Ref="TP?"  Part="1" 
 F 0 "TP2" V 7900 4130 50  0000 L CNN
 F 1 "TestPoint_Alt" V 7935 4135 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 8100 3950 50  0001 C CNN
+F 2 "croptop:TestPoint" H 8100 3950 50  0001 C CNN
 F 3 "~" H 8100 3950 50  0001 C CNN
 	1    7900 3950
 	0    1    1    0   

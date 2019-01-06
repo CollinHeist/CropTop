@@ -1000,8 +1000,6 @@ Text GLabel 5500 5250 2    39   Input ~ 0
 ADC_CS
 Wire Wire Line
 	5500 5250 5400 5250
-NoConn ~ 8850 4000
-NoConn ~ 9650 4000
 Wire Wire Line
 	800  1550 1000 1550
 Wire Wire Line
