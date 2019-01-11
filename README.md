@@ -1,26 +1,27 @@
 # CropTop
 
-CropTop is a small-form data aquisition platform being developed by undergraduates at the University of Idaho. It is 
+CropTop is a small-form data aquisition platform being developed by undergraduates at the University of Idaho. It was primarly designed to support the cereal grain crop strength research being conducted by [Dr. Daniel Roberston](https://www.uidaho.edu/engr/departments/me/our-people/faculty/daniel-robertson) in the UI Department of Mechanical Engineering.
 
-CropTop is currently in the prototype phase, and will be entering manufacturing soon
-
+Croptop is based around a 32 bit PIC32MX795F512L microcontroller and includes the following peripherals onboard:
+* 12 bit temperature/humidity sensor
+* 3-axis accelerometer
+* ΔΣ 24 bit 1kSPS ADC
+* GNSS reciever
+* USB 2.0 OTG interface
+* 5A DC motor controller
 * TFT LCD controller
-* Interface for linear
 * Resistive touch controller
-* Onboard 1GB NAND flash
+* Rotary encoder interface
+* Linear ecoder interface
+* 1GB NAND flash
 * User programmable push buttons
 * User programmalbe LEDs
-* 14 general purpose GPIO
-* GNSS reciever
-* USB OTG Connector
-* 5A DC motor driver (for linear actuators)
-* Supports seperate motor battery
-* 
+* 14 additional GPIO
 
-
-
-CropTop's hardware and firmware is being designed by two fourth year electrical engineering students at the University of Idaho. 
+# 3D Model of CropTop PCB
 
 ![3d model](Documentation/Images/Capture.PNG?raw=true "Title")
+
+# Gerber of CropTop PCB
 
 ![Gerber of board](Documentation/Images/gerb.PNG?raw=true "Title")
