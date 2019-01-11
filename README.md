@@ -1,4 +1,4 @@
-# CropTop
+## CropTop
 
 CropTop is a small-form data aquisition platform being developed by [Kennedy Caisley](https://github.com/kcaisley) and [Ryan Donahue](https://github.com/ryand323), two undergraduate electrical engineering students at the University of Idaho. It is designed to support the cereal grain crop strength research being conducted by [Dr. Daniel Roberston](https://www.uidaho.edu/engr/departments/me/our-people/faculty/daniel-robertson) in the UI Department of Mechanical Engineering.
 
@@ -18,10 +18,10 @@ Croptop is based around a 32 bit PIC32MX795F512L microcontroller and includes th
 * User programmable LEDs
 * 14 additional GPIO
 
-# Board 3D Model
+## 3D Model
 
 ![3d model](Documentation/Images/Capture.PNG?raw=true "Title")
 
-# PCB Gerber
+## Gerber
 
 ![Gerber of board](Documentation/Images/gerb.PNG?raw=true "Title")
