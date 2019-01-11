@@ -23,4 +23,4 @@ CropTop's hardware and firmware is being designed by two fourth year electrical 
 
 ![3d model](Documentation/Images/Capture.PNG?raw=true "Title")
 
-![Gerber of board](Documentation/Images/gerber image.PNG?raw=true "Title")
+![Gerber of board](Documentation/Images/Capture.PNG?raw=true "Title")
