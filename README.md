@@ -1,6 +1,8 @@
 # CropTop
 
-CropTop is a small form factor data aquisition device. IT is currently in the prototype phase and includes the following features:
+CropTop is a small-form data aquisition device. It is being developed two electrical engineering students, Kennedy Caisley and Ryan Donahue, for an agriculture research group at the University of Idaho.
+
+It is currently in the prototype phase and includes the following features:
 
 * TFT LCD controller
 * Interface for linear
