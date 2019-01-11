@@ -18,10 +18,10 @@ Croptop is based around a 32 bit PIC32MX795F512L microcontroller and includes th
 * User programmable LEDs
 * 14 additional GPIO
 
-# 3D Model of CropTop PCB
+# Board 3D Model
 
 ![3d model](Documentation/Images/Capture.PNG?raw=true "Title")
 
-# Gerber of CropTop PCB
+# PCB Gerber
 
 ![Gerber of board](Documentation/Images/gerb.PNG?raw=true "Title")
