@@ -21,21 +21,21 @@
  *              -Fix the CN15 label on pin 82 to say "CN14"
  */
 
-// Includes and definitions
+//includes and definitions
 #define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
 
-// Macros
-#define GetSystemClock()		(80000000ul)	/* 80 MHz */
-#define GetPeripheralClock()	(GetSystemClock()/1)                            //should be in a main project file
+//macros
+#define GetSystemClock()		(80000000ul)            //80 MHz
+#define GetPeripheralClock()	(GetSystemClock()/1)
 #define TOGGLES_PER_SEC 0x9C40                          //timer setup
 #define PBCLK GetPeripheralClock()                      //peripheral bus clock
 #define PWM_CYCLE_FREQUENCY 1000                        //pwm cycle frequency
 #define PWM_CYCLE_COUNT (PBCLK/(PWM_CYCLE_FREQUENCY)    //cycle count
 #define PR2_VALUE (PWM_CYCLE_COUNT-1)                   //period register value
-#define nFAULT (0x01<<5)
-#define IN1 (0x01<<1)
-#define IN2 (0x01<<2)
+#define nFAULT (0x01<<5)                                //port D
+#define IN1 (0x01<<1)                                   //port D
+#define IN2 (0x01<<2)                                   //port D
 
 void MotorLib_Init()
 {
@@ -51,9 +51,9 @@ void MotorLib_Init()
 
 void MotorLib_GPIOSetup()
 {
-    //pin 76 and pin 77 are output compare modules
+    //output compare module pins
     PORTSetPinsDigitalOut(IOPORT_D, (IN1 | IN2)); 
-    //pin 82 is driver fault change notice interrupt
+    //driver fault change notice interrupt pin
     PORTSetPinsDigitalIn(IOPORT_D, nFAULT);
 }
 
@@ -61,7 +61,6 @@ void MotorLib_TimersSetup()
 {
     //timer 2 generates interrupt once each mS.
     OpenTimer2((T2_ON | T2_PS_1_1), TOGGLES_PER_SEC);
-    
     //set timer priority group to 2, subgroup 0
     mT2SetIntPriority(2);
     mT2SetIntSubPriority(0);
@@ -85,7 +84,7 @@ void MotorLib_OCSetup()
     OpenOC3(OC_ON|OC_TIMER_MODE16|OC_TIMER2_SRC|OC_PWM_FAULT_PIN_DISABLE, nOCRS, nOCR);
 }
 
-int MotorLib_DutyCycleSet(int C2DutyCycle, int C3DutyCycle)
+int MotorLib_DutyCycleSet(unsigned int C2DutyCycle, unsigned int C3DutyCycle)
 {
     //calculate the new PWM register values
     int new_nOC2RS = (C2DutyCycle * (PR2_VALUE+1))/100);
@@ -97,17 +96,16 @@ int MotorLib_DutyCycleSet(int C2DutyCycle, int C3DutyCycle)
 
 void MotorLib_CNInterruptSetup()
 {
-    unsigned int dummy; 
-    
+    //variable for dummy read
+    unsigned int dummy;    
     //enable CN14 for pin 82
     mCNOpen(CN_ON, CN14_ENABLE, 0);
-    
     //set priority levels group level 1, subgroup 0
     mCNSetIntPriority(1);
     mCNSetIntSubPriority(0);
-    
     //read port to clear difference
     dummy = PORTReadBits(IOPORT_D, nFAULT);
+    //clear flag and enable interrupt
     mCNClearIntFlag();
     mCNIntEnable(1);
 }
@@ -124,26 +122,22 @@ void __ISR(_CHANGE_NOTICE_VECTOR, IPL1) CNIntHandler(void)
     }
 }
 
-void MotorLib_Forward(int speed)
+void MotorLib_Forward(unsigned int speed)
 {
-    SetDCOC2PWM(speed);
-    SetDCOC3PWM(0);
+    MotorLib_DutyCycleSet(speed, 0);
 }
 
-void MotorLib_Reverse(int speed)
+void MotorLib_Reverse(unsigned int speed)
 {
-    SetDCOC2PWM(0);
-    SetDCOC3PWM(speed);
+    MotorLib_DutyCycleSet(0, speed);
 }
 
 void MotorLib_Idle()
 {
-    SetDCOC2PWM(0);
-    SetDCOC3PWM(0);
+    MotorLib_DutyCycleSet(0, 0);
 }
 
 void MotorLib_Brake()
 {
-    SetDCOC2PWM(100);
-    SetDCOC3PWM(100);
+    MotorLib_DutyCycleSet(100, 100);
 }
