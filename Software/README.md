@@ -6,19 +6,19 @@ Lets try to keep our code consistent throughotu the project
 
 All files will follow the following form:
 
-'''
-/* **************************************************************************
- * File name:   SomeLib.c
- * Association: University of Idaho
- * Author:      
- * Dates:       Created x/x/xxxx
- * 
- * Summary:     Description of the file's purpose and functionality
- * 
- * Notes:       Optional, largely used during development to keep track of 
-				work in progress.
- * **************************************************************************/
-'''
+
+    /* **************************************************************************
+    * File name:   SomeLib.c
+    * Association: University of Idaho
+    * Author:      
+    * Dates:       Created x/x/xxxx
+    * 
+    * Summary:     Description of the file's purpose and functionality
+    * 
+    * Notes:       Optional, largely used during development to keep track of 
+	*			work in progress.
+    * **************************************************************************/
+
 
 ### Function Headers
 
