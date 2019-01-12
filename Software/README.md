@@ -29,12 +29,12 @@ TBD
 
 Strive to limit comments, if you can make a better funciton name or variable, do it.
 
-'''c	
-void test()
-{
-	does this shit work;
-}	
-'''
+    //lower case touching forward slash
+    
+	/*
+	for two lines or more open a multi line comment
+	opt for inline comments, avoid comments to the side of code
+	*/
 
 ### Function Naming Conventions
 
