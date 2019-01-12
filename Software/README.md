@@ -6,7 +6,7 @@ Lets try to keep our code consistent throughotu the project
 
 All files will follow the following form:
 
-'''c
+'''c++
 /* **************************************************************************
  * File name:   SomeLib.c
  * Association: University of Idaho
@@ -29,7 +29,7 @@ TBD
 
 Strive to limit comments, if you can make a better funciton name or variable, do it.
 
-'''c
+'''c++
 //lower case touching forward slash
 
 /*
