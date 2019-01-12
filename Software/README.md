@@ -1,9 +1,12 @@
-## General coding guidelines for our senior design
+## Code Guidelines
 
-### File Header
+Lets try to keep our code consistent throughotu the project
+
+### File Headers
 
 All files will follow the following form:
 
+'''c
 /* **************************************************************************
  * File name:   SomeLib.c
  * Association: University of Idaho
@@ -15,22 +18,27 @@ All files will follow the following form:
  * Notes:       Optional, largely used during development to keep track of 
 				work in progress.
  * **************************************************************************/
- 
+'''
 
 ### Function Headers
 
 TBD
 
  
-### Comment Format
+### Comments
 
 Strive to limit comments, if you can make a better funciton name or variable, do it.
 
+'''c
 //lower case touching forward slash
-//opt for inline comments, avoid comments to the side of code
 
+/*
+for two lines or more open a multi line comment
+opt for inline comments, avoid comments to the side of code
+*/
+'''
 
-### Function Naming Convention
+### Function Naming Conventions
 
 A library, such as MotorLib.c will have all functions labeled with "MotorLib_" before
 a descriptive function name.
