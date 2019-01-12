@@ -1,6 +1,6 @@
-#General coding guidelines for our senior design
+## General coding guidelines for our senior design
 
-##File Header
+### File Header
 
 All files will follow the following form:
 
@@ -17,12 +17,12 @@ All files will follow the following form:
  * **************************************************************************/
  
 
-##Function Headers
+### Function Headers
 
 TBD
 
  
-##Comment Format
+### Comment Format
 
 Strive to limit comments, if you can make a better funciton name or variable, do it.
 
@@ -30,7 +30,7 @@ Strive to limit comments, if you can make a better funciton name or variable, do
 //opt for inline comments, avoid comments to the side of code
 
 
-##Function Naming Convention
+### Function Naming Convention
 
 A library, such as MotorLib.c will have all functions labeled with "MotorLib_" before
 a descriptive function name.
