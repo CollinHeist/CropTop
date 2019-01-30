@@ -19,7 +19,7 @@
  *               "high-z when operating normal, low during a fault"
  *              -Add in a sense resistor to prevent overcurrent
  *              -Fix the CN15 label on pin 82 to say "CN14"
- */
+ * **************************************************************************/
 
 //includes and definitions
 #define _SUPPRESS_PLIB_WARNING

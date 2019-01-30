@@ -12,13 +12,14 @@
  *
  *              Hardware things:
  *              
- */
+ * *************************************************************************/
 
 //includes and definitions
 #define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
 
 //macros
+
 
 void PotLib_Init()
 {

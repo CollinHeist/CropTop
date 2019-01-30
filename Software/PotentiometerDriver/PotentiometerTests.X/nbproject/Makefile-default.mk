@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=PotLib.c
+SOURCEFILES_QUOTED_IF_SPACED=PotLib.c main.c CerebotMX7cK.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/PotLib.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/PotLib.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/PotLib.o ${OBJECTDIR}/main.o ${OBJECTDIR}/CerebotMX7cK.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/PotLib.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/CerebotMX7cK.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/PotLib.o
+OBJECTFILES=${OBJECTDIR}/PotLib.o ${OBJECTDIR}/main.o ${OBJECTDIR}/CerebotMX7cK.o
 
 # Source Files
-SOURCEFILES=PotLib.c
+SOURCEFILES=PotLib.c main.c CerebotMX7cK.c
 
 
 CFLAGS=
@@ -112,12 +112,36 @@ ${OBJECTDIR}/PotLib.o: PotLib.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/PotLib.o 
 	@${FIXDEPS} "${OBJECTDIR}/PotLib.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/PotLib.o.d" -o ${OBJECTDIR}/PotLib.o PotLib.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
+${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/CerebotMX7cK.o: CerebotMX7cK.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/CerebotMX7cK.o.d 
+	@${RM} ${OBJECTDIR}/CerebotMX7cK.o 
+	@${FIXDEPS} "${OBJECTDIR}/CerebotMX7cK.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/CerebotMX7cK.o.d" -o ${OBJECTDIR}/CerebotMX7cK.o CerebotMX7cK.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
 else
 ${OBJECTDIR}/PotLib.o: PotLib.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/PotLib.o.d 
 	@${RM} ${OBJECTDIR}/PotLib.o 
 	@${FIXDEPS} "${OBJECTDIR}/PotLib.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/PotLib.o.d" -o ${OBJECTDIR}/PotLib.o PotLib.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/CerebotMX7cK.o: CerebotMX7cK.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/CerebotMX7cK.o.d 
+	@${RM} ${OBJECTDIR}/CerebotMX7cK.o 
+	@${FIXDEPS} "${OBJECTDIR}/CerebotMX7cK.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/CerebotMX7cK.o.d" -o ${OBJECTDIR}/CerebotMX7cK.o CerebotMX7cK.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 endif
 

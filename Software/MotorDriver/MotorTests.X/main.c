@@ -11,7 +11,7 @@
  *
  *              Hardware things:
  *              
- */
+ * *************************************************************************/
 
 //includes and definitions
 #define _SUPPRESS_PLIB_WARNING
