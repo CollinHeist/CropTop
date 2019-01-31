@@ -19,12 +19,12 @@
 #include <plib.h>
 
 //macros
-
+#define AN9 (0x01<<9)   //port b
 
 void PotLib_Init()
 {
     //enable GPIO
-    
+    PORTSetPinsAnalogIn(IOPORT_B, AN9);
     //enable the peripheral
     
 }
