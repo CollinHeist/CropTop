@@ -2064,4 +2064,8 @@ F 3 "" H 2775 6875 50  0001 C CNN
 	1    2775 6875
 	1    0    0    -1  
 $EndComp
+Text Notes 11200 2750 0    50   ~ 0
+List of things to do:\nRemove electrolytic input on DC motor driver\nChange AVDD to 5V0_REG, DVDD to 3V3
+Text Notes 11200 3400 0    50   ~ 0
+Change nets to have directions\nRemove global nets on power\nAdd missing pullups and pulldowns on temp/memory\nSpace out componentts more, use a bigger board\nConsider 0603 resistors/caps\nCheck regulators can carry high current\nMove far end of\nMove micro usb and lcd connector further forward
 $EndSCHEMATC
