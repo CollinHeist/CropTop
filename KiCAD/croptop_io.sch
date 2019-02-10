@@ -2068,4 +2068,21 @@ Text Notes 11200 2750 0    50   ~ 0
 List of things to do:\nRemove electrolytic input on DC motor driver\nChange AVDD to 5V0_REG, DVDD to 3V3
 Text Notes 11200 3400 0    50   ~ 0
 Change nets to have directions\nRemove global nets on power\nAdd missing pullups and pulldowns on temp/memory\nSpace out componentts more, use a bigger board\nConsider 0603 resistors/caps\nCheck regulators can carry high current\nMove far end of\nMove micro usb and lcd connector further forward
+Text GLabel 1050 3550 0    39   Input ~ 0
+MOSI
+Wire Wire Line
+	1150 3550 1050 3550
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5C632DBE
+P 1150 3550
+AR Path="/64809F0C/5C632DBE" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5C632DBE" Ref="TP?"  Part="1" 
+F 0 "TP?" V 1150 3730 50  0000 L CNN
+F 1 "TestPoint_Alt" V 1185 3735 50  0001 L CNN
+F 2 "croptop:TestPoint" H 1350 3550 50  0001 C CNN
+F 3 "~" H 1350 3550 50  0001 C CNN
+	1    1150 3550
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC
