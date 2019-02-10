@@ -2198,4 +2198,8 @@ EB FA E0 E0 60 3A 9D EE EB EB EB EB EB BB 7A F5 6A 3A 9D 1E 1E 1E CE 77 BB 00 00
 00 00 00 00 49 45 4E 44 AE 42 60 82 
 EndData
 $EndBitmap
+Text Notes 7350 6100 0    50   ~ 0
+List of things to do:\nRemove electrolytic input on DC motor driver\nChange AVDD to 5V0_REG, DVDD to 3V3
+Text Notes 7350 6750 0    50   ~ 0
+Change nets to have directions\nRemove global nets on power\nAdd missing pullups and pulldowns on temp/memory\nSpace out componentts more, use a bigger board\nConsider 0603 resistors/caps\nCheck regulators can carry high current\nMove far end of\nMove micro usb and lcd connector further forward
 $EndSCHEMATC
