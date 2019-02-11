@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <project>                                  
-  <executable name="dist/default/production/CTMain.X.production.elf">                 
+  <executable name="dist/default/production/MotorTests.X.production.elf">                 
     <memory name="program">                 
       <units>bytes</units>                 
       <length>531968</length>                 
-      <used>4504</used>                     
-      <free>527464</free>                     
+      <used>4588</used>                     
+      <free>527380</free>                     
     </memory>                              
     <memory name="data">              
       <units>bytes</units>                 
