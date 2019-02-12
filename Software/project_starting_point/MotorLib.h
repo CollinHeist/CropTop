@@ -3,9 +3,8 @@
  * Association: University of Idaho
  * Author:      Ryan Donahue
  * Dates:       Created 2/9/2018
- * 
- * Summary:     This file contains all the macro definitions and prototypes
- *				for the motor library and peripheral.     
+ * Summary:     This file contains macro definitions and prototypes for the
+				motor library.     
  * *************************************************************************/
 #define _SUPPRESS_PLIB_WARNING
 
