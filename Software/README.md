@@ -1,6 +1,6 @@
 ## Code Guidelines
 
-Lets try to keep our code consistent throughotu the project
+Lets try to keep our code consistent throughout the project
 
 ### File Headers
 
@@ -12,17 +12,22 @@ All files will follow the following form:
     * Association: University of Idaho
     * Author:      
     * Dates:       Created x/x/xxxx
-    * 
     * Summary:     Description of the file's purpose and functionality
-    * 
     * Notes:       Optional, largely used during development to keep track of 
-	*			work in progress.
+	*			   work in progress.
     * **************************************************************************/
 
 
 ### Function Headers
 
-TBD
+All functions will follow the follwing form, omit sections that are not relevant:
+
+	/* **************************************************************************
+	 * Function:    void MotorLib_Forward(unsigned int speed)
+	 * Argument:    unsigned int speed, (0-100)% speed for forward movement
+	 * Return:		N/A
+	 * Summary:     Sets output PWM signals to move motor forward.
+	 * **************************************************************************/
 
  
 ### Comments

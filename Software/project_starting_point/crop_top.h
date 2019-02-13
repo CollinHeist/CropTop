@@ -3,18 +3,10 @@
  * Association: University of Idaho
  * Author:      Ryan Donahue
  * Dates:       Created 1/29/2018
- * 
  * Summary:     This file contains all the macro definitions used by the entire
- *              project.
- * 
- * Notes:       
- *              
+ *              project.             
  * *************************************************************************/
 #define _SUPPRESS_PLIB_WARNING
-
-#ifndef __PROJECT_1_H__
-    #define __PROJECT_1_H__
-#endif
 
 //function prototypes
 void initialize_system();

@@ -3,46 +3,28 @@
  * Association: University of Idaho
  * Author:      Ryan Donahue
  * Dates:       Created 2/09/2018
- * 
- * Summary:     This file contains a main loop and several functions to test
- *              the GPIOLib.h library functionality.
- * 
- * Notes:       Software things:
- *
- *              Hardware things:
- *              
+ * Summary:     This file is used to test the added drivers
+ * Notes:       
  * *************************************************************************/
 #define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
 #include "crop_top.h"
-#include "config_bits.h"
+#include "MotorLib.h"
+#include "PotLib.h"
 
 int main()
 {
     initialize_system();
+    unsigned int TestRead;
     while(1)
     {
-        if(PORTReadBits(IOPORT_C, BUTTON_A))
-        {
-            PORTSetBits(IOPORT_C, LED_A);
-        }
-        else
-        {
-            PORTClearBits(IOPORT_C, LED_A);
-        }
-        if(PORTReadBits(IOPORT_C, BUTTON_B))
-        {
-            PORTSetBits(IOPORT_C, LED_B);
-        }
-        else
-        {
-            PORTClearBits(IOPORT_C, LED_B);
-        }
+        TestRead = PotLib_SingleRead();
     }
 }
 void initialize_system()
 {
-    SYSTEMConfig(GetSystemClock(), SYS_CFG_WAIT_STATES | SYS_CFG_PCACHE);
     PORTSetPinsDigitalIn(IOPORT_C, BUTTONS);
     PORTSetPinsDigitalOut(IOPORT_C, LEDS);
+    MotorLib_Init();
+    PotLib_Init();
 }

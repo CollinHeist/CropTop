@@ -3,13 +3,10 @@
  * Association: University of Idaho
  * Author:      Ryan Donahue
  * Dates:       Created 1/29/2018
- * 
  * Summary:     This file contains configuration bits for initializing the
- *              PIC32 hardware.
- *              
+ *              PIC32 hardware.              
  * *************************************************************************/
 #define _SUPPRESS_PLIB_WARNING
-
 #pragma config FSRSSEL  = PRIORITY_7/* Interrupt priority 7 assigned to shadow set */
 #pragma config FMIIEN   = OFF       /* RMII Ethernet PHY */
 #pragma config FETHIO   = OFF       /* Default Ethernet I/O pin configuration */
@@ -26,7 +23,7 @@
 #pragma config IESO     = OFF       /* Internal/external clock switchover disabled */
 #pragma config POSCMOD  = HS        /* Primary oscillator config,  8MHz resonator */
 #pragma config OSCIOFNC = OFF       /* CLK0 disabled on OSCO pin */
-#pragma config FPBDIV   = DIV_8     /* Peripheral bus clock divisor, divide by 8 */
+#pragma config FPBDIV   = DIV_1     /* Peripheral bus clock divisor, divide by 1 */
 #pragma config FCKSM    = CSDCMD	/* Clock Switching & Fail Safe Clock Monitor disabled */
 #pragma config WDTPS    = PS1       /* Watchdog timer postcaler, 1:1 */
 #pragma config FWDTEN   = OFF       /* Watchdog timer disabled */
