@@ -453,10 +453,10 @@ Text Notes 3435 7610 0    28   ~ 0
 12V
 Text Notes 3530 7610 0    28   ~ 0
 GND
-Text Notes 3635 7610 0    28   ~ 0
-12V
-Text Notes 3730 7610 0    28   ~ 0
-GND
+Text Notes 3645 7610 0    28   ~ 0
+O1
+Text Notes 3740 7610 0    28   ~ 0
+O2\n
 Wire Notes Line
 	2715 7620 2715 7650
 Wire Notes Line

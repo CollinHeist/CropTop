@@ -61,3 +61,32 @@ Rotary encoder:
 Linear encoder:
 - verify accuracy of linear position
 - set up operation for the type of device (pusher or tipper)
+
+
+5V0 and GND: 
+A: 70.7K (measured 3.8K first time)
+B: 70k (measured 4.8K first time)
+
+3V3 and GND: 4.5:
+A: 3.5k
+B: 3.44k
+
+LCD A and GND:
+A: 161k
+A: 159k
+
+5.5V and GND:
+A: 510k
+B: 500k
+
+5V0_REG and GND
+A: 545k
+B: 880k
+
+Checked all voltage rails
+A:
+5V0: 5.065
+Screen: 5.065
+3V3: 3.289
+5V5: 5.531
+5.014

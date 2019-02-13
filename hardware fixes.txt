@@ -1,5 +1,0 @@
-Add ground plane to top and bottom layers
-Stitch top and bottom layers together with vias
-Add pullup resistors/pulldown resistors to data lines
-Add a second USB port
-Add a USB switch: USB2422

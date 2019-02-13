@@ -86,7 +86,10 @@ unsigned char SPI_Init(unsigned char lsbFirst,
 unsigned char SPI_Write(unsigned char* data,
                         unsigned char bytesNumber)
 {
-	// Add your code here.
+    int bytesSent;
+	for(bytesSent = 1; bytesSent++; bytesSent <= bytesNumber){
+        SpiChnPutC(SPI_CHANNEL3, *data++);
+    }
 }
 
 /***************************************************************************//**
@@ -104,6 +107,9 @@ unsigned char SPI_Write(unsigned char* data,
 unsigned char SPI_Read(unsigned char* data,
                        unsigned char bytesNumber)
 {
-	// Add your code here.
+	int bytesRead;
+    for(bytesRead = 1; bytesRead++; bytesRead <= bytesNumber){
+        *data++ = SpiChnGetC(SPI_CHANNEL3);
+    }
 }
 

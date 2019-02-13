@@ -1,0 +1,1851 @@
+EESchema Schematic File Version 4
+LIBS:croptop-cache
+EELAYER 26 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 4 6
+Title "CropTop"
+Date "2018-11-20"
+Rev "Revision 8"
+Comp "University of Idaho"
+Comment1 "Kennedy Caisley, Ryan Donahue"
+Comment2 "Designer 2: Ryan Donahue"
+Comment3 ""
+Comment4 ""
+$EndDescr
+Wire Wire Line
+	1750 3550 2100 3550
+$Comp
+L CropTop:DGND #PWR0189
+U 1 1 5DE4DAD8
+P 8500 5850
+F 0 "#PWR0189" H 8500 5600 50  0001 C CNN
+F 1 "DGND" H 8504 5695 50  0000 C CNN
+F 2 "" H 8500 5850 50  0001 C CNN
+F 3 "" H 8500 5850 50  0001 C CNN
+	1    8500 5850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 2750 3150 2750
+Wire Wire Line
+	2800 2750 2800 2700
+Wire Wire Line
+	2800 2450 3150 2450
+Wire Wire Line
+	2800 2500 2800 2450
+Connection ~ 2800 2450
+Wire Wire Line
+	2300 2450 2800 2450
+Connection ~ 2800 2750
+Wire Wire Line
+	2700 2750 2800 2750
+Wire Wire Line
+	5100 6950 5300 6950
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DDF5004
+P 5300 6950
+AR Path="/64809F0C/5DDF5004" Ref="TP?"  Part="1" 
+AR Path="/66A12230/5DDF5004" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DDF5004" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DDF5004" Ref="TP42"  Part="1" 
+F 0 "TP42" V 5300 7130 50  0000 L CNN
+F 1 "TestPoint_Alt" V 5335 7135 50  0001 L CNN
+F 2 "croptop:TestPoint" H 5500 6950 50  0001 C CNN
+F 3 "~" H 5500 6950 50  0001 C CNN
+	1    5300 6950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5100 7550 5300 7550
+Wire Wire Line
+	5300 7400 5100 7400
+Wire Wire Line
+	5100 7250 5300 7250
+Wire Wire Line
+	5300 7100 5100 7100
+Wire Wire Line
+	5100 6800 5300 6800
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DDF4FF8
+P 5300 7550
+AR Path="/64809F0C/5DDF4FF8" Ref="TP?"  Part="1" 
+AR Path="/66A12230/5DDF4FF8" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DDF4FF8" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DDF4FF8" Ref="TP46"  Part="1" 
+F 0 "TP46" V 5300 7730 50  0000 L CNN
+F 1 "TestPoint_Alt" V 5335 7735 50  0001 L CNN
+F 2 "croptop:TestPoint" H 5500 7550 50  0001 C CNN
+F 3 "~" H 5500 7550 50  0001 C CNN
+	1    5300 7550
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DDF4FF1
+P 5300 7400
+AR Path="/64809F0C/5DDF4FF1" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DDF4FF1" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DDF4FF1" Ref="TP45"  Part="1" 
+F 0 "TP45" V 5300 7580 50  0000 L CNN
+F 1 "TestPoint_Alt" V 5335 7585 50  0001 L CNN
+F 2 "croptop:TestPoint" H 5500 7400 50  0001 C CNN
+F 3 "~" H 5500 7400 50  0001 C CNN
+	1    5300 7400
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DDF4FEA
+P 5300 7250
+AR Path="/64809F0C/5DDF4FEA" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DDF4FEA" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DDF4FEA" Ref="TP44"  Part="1" 
+F 0 "TP44" V 5300 7430 50  0000 L CNN
+F 1 "TestPoint_Alt" V 5335 7435 50  0001 L CNN
+F 2 "croptop:TestPoint" H 5500 7250 50  0001 C CNN
+F 3 "~" H 5500 7250 50  0001 C CNN
+	1    5300 7250
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DDF4FE3
+P 5300 7100
+AR Path="/64809F0C/5DDF4FE3" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DDF4FE3" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DDF4FE3" Ref="TP43"  Part="1" 
+F 0 "TP43" V 5300 7280 50  0000 L CNN
+F 1 "TestPoint_Alt" V 5335 7285 50  0001 L CNN
+F 2 "croptop:TestPoint" H 5500 7100 50  0001 C CNN
+F 3 "~" H 5500 7100 50  0001 C CNN
+	1    5300 7100
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DDF4FDC
+P 5300 6800
+AR Path="/64809F0C/5DDF4FDC" Ref="TP?"  Part="1" 
+AR Path="/66A12230/5DDF4FDC" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DDF4FDC" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DDF4FDC" Ref="TP41"  Part="1" 
+F 0 "TP41" V 5300 6980 50  0000 L CNN
+F 1 "TestPoint_Alt" V 5335 6985 50  0001 L CNN
+F 2 "croptop:TestPoint" H 5500 6800 50  0001 C CNN
+F 3 "~" H 5500 6800 50  0001 C CNN
+	1    5300 6800
+	0    1    1    0   
+$EndComp
+Text GLabel 5100 7400 0    39   Input ~ 0
+LCD_PD
+Text GLabel 5100 7550 0    39   Input ~ 0
+LCD_INT
+Text GLabel 5100 6800 0    39   Input ~ 0
+SS2
+Text GLabel 5100 6950 0    39   Input ~ 0
+SDO2
+Text GLabel 5100 7100 0    39   Input ~ 0
+SDIO2
+Text GLabel 5100 7250 0    39   Input ~ 0
+SCLK2
+Wire Wire Line
+	4100 6950 4300 6950
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD832B3
+P 4300 6950
+AR Path="/64809F0C/5DD832B3" Ref="TP?"  Part="1" 
+AR Path="/66A12230/5DD832B3" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD832B3" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD832B3" Ref="TP36"  Part="1" 
+F 0 "TP36" V 4300 7130 50  0000 L CNN
+F 1 "TestPoint_Alt" V 4335 7135 50  0001 L CNN
+F 2 "croptop:TestPoint" H 4500 6950 50  0001 C CNN
+F 3 "~" H 4500 6950 50  0001 C CNN
+	1    4300 6950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4100 7550 4300 7550
+Wire Wire Line
+	4300 7400 4100 7400
+Wire Wire Line
+	4100 7250 4300 7250
+Wire Wire Line
+	4300 7100 4100 7100
+Wire Wire Line
+	4100 6800 4300 6800
+Wire Wire Line
+	4100 6650 4300 6650
+Wire Wire Line
+	4100 6500 4300 6500
+Wire Wire Line
+	4100 6350 4300 6350
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD421F3
+P 4300 7550
+AR Path="/64809F0C/5DD421F3" Ref="TP?"  Part="1" 
+AR Path="/66A12230/5DD421F3" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD421F3" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD421F3" Ref="TP40"  Part="1" 
+F 0 "TP40" V 4300 7730 50  0000 L CNN
+F 1 "TestPoint_Alt" V 4335 7735 50  0001 L CNN
+F 2 "croptop:TestPoint" H 4500 7550 50  0001 C CNN
+F 3 "~" H 4500 7550 50  0001 C CNN
+	1    4300 7550
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD421EC
+P 4300 7400
+AR Path="/64809F0C/5DD421EC" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD421EC" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD421EC" Ref="TP39"  Part="1" 
+F 0 "TP39" V 4300 7580 50  0000 L CNN
+F 1 "TestPoint_Alt" V 4335 7585 50  0001 L CNN
+F 2 "croptop:TestPoint" H 4500 7400 50  0001 C CNN
+F 3 "~" H 4500 7400 50  0001 C CNN
+	1    4300 7400
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD421E5
+P 4300 7250
+AR Path="/64809F0C/5DD421E5" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD421E5" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD421E5" Ref="TP38"  Part="1" 
+F 0 "TP38" V 4300 7430 50  0000 L CNN
+F 1 "TestPoint_Alt" V 4335 7435 50  0001 L CNN
+F 2 "croptop:TestPoint" H 4500 7250 50  0001 C CNN
+F 3 "~" H 4500 7250 50  0001 C CNN
+	1    4300 7250
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD421DE
+P 4300 7100
+AR Path="/64809F0C/5DD421DE" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD421DE" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD421DE" Ref="TP37"  Part="1" 
+F 0 "TP37" V 4300 7280 50  0000 L CNN
+F 1 "TestPoint_Alt" V 4335 7285 50  0001 L CNN
+F 2 "croptop:TestPoint" H 4500 7100 50  0001 C CNN
+F 3 "~" H 4500 7100 50  0001 C CNN
+	1    4300 7100
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD421D7
+P 4300 6800
+AR Path="/64809F0C/5DD421D7" Ref="TP?"  Part="1" 
+AR Path="/66A12230/5DD421D7" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD421D7" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD421D7" Ref="TP35"  Part="1" 
+F 0 "TP35" V 4300 6980 50  0000 L CNN
+F 1 "TestPoint_Alt" V 4335 6985 50  0001 L CNN
+F 2 "croptop:TestPoint" H 4500 6800 50  0001 C CNN
+F 3 "~" H 4500 6800 50  0001 C CNN
+	1    4300 6800
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD421D0
+P 4300 6650
+AR Path="/64809F0C/5DD421D0" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD421D0" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD421D0" Ref="TP34"  Part="1" 
+F 0 "TP34" V 4300 6830 50  0000 L CNN
+F 1 "TestPoint_Alt" V 4335 6835 50  0001 L CNN
+F 2 "croptop:TestPoint" H 4500 6650 50  0001 C CNN
+F 3 "~" H 4500 6650 50  0001 C CNN
+	1    4300 6650
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD421C9
+P 4300 6500
+AR Path="/64809F0C/5DD421C9" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD421C9" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD421C9" Ref="TP33"  Part="1" 
+F 0 "TP33" V 4300 6680 50  0000 L CNN
+F 1 "TestPoint_Alt" V 4335 6685 50  0001 L CNN
+F 2 "croptop:TestPoint" H 4500 6500 50  0001 C CNN
+F 3 "~" H 4500 6500 50  0001 C CNN
+	1    4300 6500
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD421C2
+P 4300 6350
+AR Path="/64809F0C/5DD421C2" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD421C2" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD421C2" Ref="TP32"  Part="1" 
+F 0 "TP32" V 4300 6530 50  0000 L CNN
+F 1 "TestPoint_Alt" V 4335 6535 50  0001 L CNN
+F 2 "croptop:TestPoint" H 4500 6350 50  0001 C CNN
+F 3 "~" H 4500 6350 50  0001 C CNN
+	1    4300 6350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	950  7550 1150 7550
+Wire Wire Line
+	1150 7400 950  7400
+Wire Wire Line
+	950  7250 1150 7250
+Wire Wire Line
+	1150 7100 950  7100
+Wire Wire Line
+	950  6950 1150 6950
+Wire Wire Line
+	950  6800 1150 6800
+Wire Wire Line
+	950  6650 1150 6650
+Wire Wire Line
+	950  6500 1150 6500
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD16361
+P 1150 7550
+AR Path="/64809F0C/5DD16361" Ref="TP?"  Part="1" 
+AR Path="/66A12230/5DD16361" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD16361" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD16361" Ref="TP15"  Part="1" 
+F 0 "TP15" V 1150 7730 50  0000 L CNN
+F 1 "TestPoint_Alt" V 1185 7735 50  0001 L CNN
+F 2 "croptop:TestPoint" H 1350 7550 50  0001 C CNN
+F 3 "~" H 1350 7550 50  0001 C CNN
+	1    1150 7550
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD1635A
+P 1150 7400
+AR Path="/64809F0C/5DD1635A" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD1635A" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD1635A" Ref="TP14"  Part="1" 
+F 0 "TP14" V 1150 7580 50  0000 L CNN
+F 1 "TestPoint_Alt" V 1185 7585 50  0001 L CNN
+F 2 "croptop:TestPoint" H 1350 7400 50  0001 C CNN
+F 3 "~" H 1350 7400 50  0001 C CNN
+	1    1150 7400
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD16353
+P 1150 7250
+AR Path="/64809F0C/5DD16353" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD16353" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD16353" Ref="TP13"  Part="1" 
+F 0 "TP13" V 1150 7430 50  0000 L CNN
+F 1 "TestPoint_Alt" V 1185 7435 50  0001 L CNN
+F 2 "croptop:TestPoint" H 1350 7250 50  0001 C CNN
+F 3 "~" H 1350 7250 50  0001 C CNN
+	1    1150 7250
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD1634C
+P 1150 7100
+AR Path="/64809F0C/5DD1634C" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD1634C" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD1634C" Ref="TP12"  Part="1" 
+F 0 "TP12" V 1150 7280 50  0000 L CNN
+F 1 "TestPoint_Alt" V 1185 7285 50  0001 L CNN
+F 2 "croptop:TestPoint" H 1350 7100 50  0001 C CNN
+F 3 "~" H 1350 7100 50  0001 C CNN
+	1    1150 7100
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD16345
+P 1150 6950
+AR Path="/64809F0C/5DD16345" Ref="TP?"  Part="1" 
+AR Path="/66A12230/5DD16345" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD16345" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD16345" Ref="TP11"  Part="1" 
+F 0 "TP11" V 1150 7130 50  0000 L CNN
+F 1 "TestPoint_Alt" V 1185 7135 50  0001 L CNN
+F 2 "croptop:TestPoint" H 1350 6950 50  0001 C CNN
+F 3 "~" H 1350 6950 50  0001 C CNN
+	1    1150 6950
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD1633E
+P 1150 6800
+AR Path="/64809F0C/5DD1633E" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD1633E" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD1633E" Ref="TP10"  Part="1" 
+F 0 "TP10" V 1150 6980 50  0000 L CNN
+F 1 "TestPoint_Alt" V 1185 6985 50  0001 L CNN
+F 2 "croptop:TestPoint" H 1350 6800 50  0001 C CNN
+F 3 "~" H 1350 6800 50  0001 C CNN
+	1    1150 6800
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD16337
+P 1150 6650
+AR Path="/64809F0C/5DD16337" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD16337" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD16337" Ref="TP9"  Part="1" 
+F 0 "TP9" V 1150 6830 50  0000 L CNN
+F 1 "TestPoint_Alt" V 1185 6835 50  0001 L CNN
+F 2 "croptop:TestPoint" H 1350 6650 50  0001 C CNN
+F 3 "~" H 1350 6650 50  0001 C CNN
+	1    1150 6650
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD16330
+P 1150 6500
+AR Path="/64809F0C/5DD16330" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD16330" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD16330" Ref="TP8"  Part="1" 
+F 0 "TP8" V 1150 6680 50  0000 L CNN
+F 1 "TestPoint_Alt" V 1185 6685 50  0001 L CNN
+F 2 "croptop:TestPoint" H 1350 6500 50  0001 C CNN
+F 3 "~" H 1350 6500 50  0001 C CNN
+	1    1150 6500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1900 7550 2100 7550
+Wire Wire Line
+	2100 7400 1900 7400
+Wire Wire Line
+	1900 7250 2100 7250
+Wire Wire Line
+	2100 7100 1900 7100
+Wire Wire Line
+	1900 6950 2100 6950
+Wire Wire Line
+	1900 6800 2100 6800
+Wire Wire Line
+	1900 6650 2100 6650
+Wire Wire Line
+	1900 6500 2100 6500
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD0944D
+P 2100 7550
+AR Path="/64809F0C/5DD0944D" Ref="TP?"  Part="1" 
+AR Path="/66A12230/5DD0944D" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD0944D" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD0944D" Ref="TP23"  Part="1" 
+F 0 "TP23" V 2100 7730 50  0000 L CNN
+F 1 "TestPoint_Alt" V 2135 7735 50  0001 L CNN
+F 2 "croptop:TestPoint" H 2300 7550 50  0001 C CNN
+F 3 "~" H 2300 7550 50  0001 C CNN
+	1    2100 7550
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD09446
+P 2100 7400
+AR Path="/64809F0C/5DD09446" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD09446" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD09446" Ref="TP22"  Part="1" 
+F 0 "TP22" V 2100 7580 50  0000 L CNN
+F 1 "TestPoint_Alt" V 2135 7585 50  0001 L CNN
+F 2 "croptop:TestPoint" H 2300 7400 50  0001 C CNN
+F 3 "~" H 2300 7400 50  0001 C CNN
+	1    2100 7400
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD0943F
+P 2100 7250
+AR Path="/64809F0C/5DD0943F" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD0943F" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD0943F" Ref="TP21"  Part="1" 
+F 0 "TP21" V 2100 7430 50  0000 L CNN
+F 1 "TestPoint_Alt" V 2135 7435 50  0001 L CNN
+F 2 "croptop:TestPoint" H 2300 7250 50  0001 C CNN
+F 3 "~" H 2300 7250 50  0001 C CNN
+	1    2100 7250
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD09438
+P 2100 7100
+AR Path="/64809F0C/5DD09438" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD09438" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD09438" Ref="TP20"  Part="1" 
+F 0 "TP20" V 2100 7280 50  0000 L CNN
+F 1 "TestPoint_Alt" V 2135 7285 50  0001 L CNN
+F 2 "croptop:TestPoint" H 2300 7100 50  0001 C CNN
+F 3 "~" H 2300 7100 50  0001 C CNN
+	1    2100 7100
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD09431
+P 2100 6950
+AR Path="/64809F0C/5DD09431" Ref="TP?"  Part="1" 
+AR Path="/66A12230/5DD09431" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD09431" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD09431" Ref="TP19"  Part="1" 
+F 0 "TP19" V 2100 7130 50  0000 L CNN
+F 1 "TestPoint_Alt" V 2135 7135 50  0001 L CNN
+F 2 "croptop:TestPoint" H 2300 6950 50  0001 C CNN
+F 3 "~" H 2300 6950 50  0001 C CNN
+	1    2100 6950
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD0942A
+P 2100 6800
+AR Path="/64809F0C/5DD0942A" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD0942A" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD0942A" Ref="TP18"  Part="1" 
+F 0 "TP18" V 2100 6980 50  0000 L CNN
+F 1 "TestPoint_Alt" V 2135 6985 50  0001 L CNN
+F 2 "croptop:TestPoint" H 2300 6800 50  0001 C CNN
+F 3 "~" H 2300 6800 50  0001 C CNN
+	1    2100 6800
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD09423
+P 2100 6650
+AR Path="/64809F0C/5DD09423" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD09423" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD09423" Ref="TP17"  Part="1" 
+F 0 "TP17" V 2100 6830 50  0000 L CNN
+F 1 "TestPoint_Alt" V 2135 6835 50  0001 L CNN
+F 2 "croptop:TestPoint" H 2300 6650 50  0001 C CNN
+F 3 "~" H 2300 6650 50  0001 C CNN
+	1    2100 6650
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DD0941C
+P 2100 6500
+AR Path="/64809F0C/5DD0941C" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DD0941C" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DD0941C" Ref="TP16"  Part="1" 
+F 0 "TP16" V 2100 6680 50  0000 L CNN
+F 1 "TestPoint_Alt" V 2135 6685 50  0001 L CNN
+F 2 "croptop:TestPoint" H 2300 6500 50  0001 C CNN
+F 3 "~" H 2300 6500 50  0001 C CNN
+	1    2100 6500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2950 7550 3150 7550
+Wire Wire Line
+	3150 7400 2950 7400
+Wire Wire Line
+	2950 7250 3150 7250
+Wire Wire Line
+	3150 7100 2950 7100
+Wire Wire Line
+	2950 6950 3150 6950
+Wire Wire Line
+	2950 6800 3150 6800
+Wire Wire Line
+	2950 6650 3150 6650
+Wire Wire Line
+	2950 6500 3150 6500
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DC1ED4E
+P 3150 7550
+AR Path="/64809F0C/5DC1ED4E" Ref="TP?"  Part="1" 
+AR Path="/66A12230/5DC1ED4E" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DC1ED4E" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DC1ED4E" Ref="TP31"  Part="1" 
+F 0 "TP31" V 3150 7730 50  0000 L CNN
+F 1 "TestPoint_Alt" V 3185 7735 50  0001 L CNN
+F 2 "croptop:TestPoint" H 3350 7550 50  0001 C CNN
+F 3 "~" H 3350 7550 50  0001 C CNN
+	1    3150 7550
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DC1ED47
+P 3150 7400
+AR Path="/64809F0C/5DC1ED47" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DC1ED47" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DC1ED47" Ref="TP30"  Part="1" 
+F 0 "TP30" V 3150 7580 50  0000 L CNN
+F 1 "TestPoint_Alt" V 3185 7585 50  0001 L CNN
+F 2 "croptop:TestPoint" H 3350 7400 50  0001 C CNN
+F 3 "~" H 3350 7400 50  0001 C CNN
+	1    3150 7400
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DC1ED40
+P 3150 7250
+AR Path="/64809F0C/5DC1ED40" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DC1ED40" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DC1ED40" Ref="TP29"  Part="1" 
+F 0 "TP29" V 3150 7430 50  0000 L CNN
+F 1 "TestPoint_Alt" V 3185 7435 50  0001 L CNN
+F 2 "croptop:TestPoint" H 3350 7250 50  0001 C CNN
+F 3 "~" H 3350 7250 50  0001 C CNN
+	1    3150 7250
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DC1ED39
+P 3150 7100
+AR Path="/64809F0C/5DC1ED39" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DC1ED39" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DC1ED39" Ref="TP28"  Part="1" 
+F 0 "TP28" V 3150 7280 50  0000 L CNN
+F 1 "TestPoint_Alt" V 3185 7285 50  0001 L CNN
+F 2 "croptop:TestPoint" H 3350 7100 50  0001 C CNN
+F 3 "~" H 3350 7100 50  0001 C CNN
+	1    3150 7100
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DC1ED32
+P 3150 6950
+AR Path="/64809F0C/5DC1ED32" Ref="TP?"  Part="1" 
+AR Path="/66A12230/5DC1ED32" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DC1ED32" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DC1ED32" Ref="TP27"  Part="1" 
+F 0 "TP27" V 3150 7130 50  0000 L CNN
+F 1 "TestPoint_Alt" V 3185 7135 50  0001 L CNN
+F 2 "croptop:TestPoint" H 3350 6950 50  0001 C CNN
+F 3 "~" H 3350 6950 50  0001 C CNN
+	1    3150 6950
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DC1ED2B
+P 3150 6800
+AR Path="/64809F0C/5DC1ED2B" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DC1ED2B" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DC1ED2B" Ref="TP26"  Part="1" 
+F 0 "TP26" V 3150 6980 50  0000 L CNN
+F 1 "TestPoint_Alt" V 3185 6985 50  0001 L CNN
+F 2 "croptop:TestPoint" H 3350 6800 50  0001 C CNN
+F 3 "~" H 3350 6800 50  0001 C CNN
+	1    3150 6800
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DC1ED24
+P 3150 6650
+AR Path="/64809F0C/5DC1ED24" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DC1ED24" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DC1ED24" Ref="TP25"  Part="1" 
+F 0 "TP25" V 3150 6830 50  0000 L CNN
+F 1 "TestPoint_Alt" V 3185 6835 50  0001 L CNN
+F 2 "croptop:TestPoint" H 3350 6650 50  0001 C CNN
+F 3 "~" H 3350 6650 50  0001 C CNN
+	1    3150 6650
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Alt TP?
+U 1 1 5DC1ED1D
+P 3150 6500
+AR Path="/64809F0C/5DC1ED1D" Ref="TP?"  Part="1" 
+AR Path="/669AB112/5DC1ED1D" Ref="TP?"  Part="1" 
+AR Path="/65B709D0/5DC1ED1D" Ref="TP24"  Part="1" 
+F 0 "TP24" V 3150 6680 50  0000 L CNN
+F 1 "TestPoint_Alt" V 3185 6685 50  0001 L CNN
+F 2 "croptop:TestPoint" H 3350 6500 50  0001 C CNN
+F 3 "~" H 3350 6500 50  0001 C CNN
+	1    3150 6500
+	0    1    1    0   
+$EndComp
+Text GLabel 4100 7100 0    39   Input ~ 0
+TCH_RIGHT
+Text GLabel 4100 7250 0    39   Input ~ 0
+TCH_DOWN
+Text GLabel 4100 7400 0    39   Input ~ 0
+TCH_LEFT
+Text GLabel 4100 7550 0    39   Input ~ 0
+TCH_UP
+Text GLabel 4100 6350 0    39   Input ~ 0
+LCD_SHIFT
+Text GLabel 4100 6950 0    39   Input ~ 0
+LCD_DEN
+Text GLabel 4100 6650 0    39   Input ~ 0
+LCD_VSYNC
+Text GLabel 4100 6800 0    39   Input ~ 0
+LCD_HSYNC
+Text GLabel 4100 6500 0    39   Input ~ 0
+LCD_DISP
+Text GLabel 950  7550 0    39   Input ~ 0
+LCD_R7
+Text GLabel 950  7400 0    39   Input ~ 0
+LCD_R6
+Text GLabel 950  6500 0    39   Input ~ 0
+LCD_R0
+Text GLabel 2950 7550 0    39   Input ~ 0
+LCD_B7
+Text GLabel 2950 7400 0    39   Input ~ 0
+LCD_B6
+Text GLabel 1900 7550 0    39   Input ~ 0
+LCD_G7
+Text GLabel 1900 6500 0    39   Input ~ 0
+LCD_G0
+Text GLabel 2950 6500 0    39   Input ~ 0
+LCD_B0
+Text GLabel 2950 7250 0    39   Input ~ 0
+LCD_B5
+Text GLabel 2950 6650 0    39   Input ~ 0
+LCD_B1
+Text GLabel 2950 6800 0    39   Input ~ 0
+LCD_B2
+Text GLabel 2950 6950 0    39   Input ~ 0
+LCD_B3
+Text GLabel 2950 7100 0    39   Input ~ 0
+LCD_B4
+Text GLabel 1900 7400 0    39   Input ~ 0
+LCD_G6
+Text GLabel 1900 6650 0    39   Input ~ 0
+LCD_G1
+Text GLabel 1900 6800 0    39   Input ~ 0
+LCD_G2
+Text GLabel 1900 6950 0    39   Input ~ 0
+LCD_G3
+Text GLabel 1900 7100 0    39   Input ~ 0
+LCD_G4
+Text GLabel 1900 7250 0    39   Input ~ 0
+LCD_G5
+Text GLabel 950  7250 0    39   Input ~ 0
+LCD_R5
+Text GLabel 950  6650 0    39   Input ~ 0
+LCD_R1
+Text GLabel 950  6800 0    39   Input ~ 0
+LCD_R2
+Text GLabel 950  6950 0    39   Input ~ 0
+LCD_R3
+Text GLabel 950  7100 0    39   Input ~ 0
+LCD_R4
+Wire Wire Line
+	2100 3950 2100 4000
+Wire Wire Line
+	1750 3950 1750 4000
+Wire Wire Line
+	1400 3950 1400 4000
+Wire Wire Line
+	1050 3950 1050 4000
+$Comp
+L CropTop:DGND #PWR0188
+U 1 1 5D9BF7E3
+P 2100 4000
+F 0 "#PWR0188" H 2100 3750 50  0001 C CNN
+F 1 "DGND" H 2104 3845 50  0000 C CNN
+F 2 "" H 2100 4000 50  0001 C CNN
+F 3 "" H 2100 4000 50  0001 C CNN
+	1    2100 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L CropTop:DGND #PWR0187
+U 1 1 5D9BF6F8
+P 1750 4000
+F 0 "#PWR0187" H 1750 3750 50  0001 C CNN
+F 1 "DGND" H 1754 3845 50  0000 C CNN
+F 2 "" H 1750 4000 50  0001 C CNN
+F 3 "" H 1750 4000 50  0001 C CNN
+	1    1750 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L CropTop:DGND #PWR0186
+U 1 1 5D9BF60D
+P 1400 4000
+F 0 "#PWR0186" H 1400 3750 50  0001 C CNN
+F 1 "DGND" H 1404 3845 50  0000 C CNN
+F 2 "" H 1400 4000 50  0001 C CNN
+F 3 "" H 1400 4000 50  0001 C CNN
+	1    1400 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L CropTop:DGND #PWR0185
+U 1 1 5D9BF522
+P 1050 4000
+F 0 "#PWR0185" H 1050 3750 50  0001 C CNN
+F 1 "DGND" H 1054 3845 50  0000 C CNN
+F 2 "" H 1050 4000 50  0001 C CNN
+F 3 "" H 1050 4000 50  0001 C CNN
+	1    1050 4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 3650 1750 3550
+Connection ~ 1750 3550
+Wire Wire Line
+	1400 3550 1750 3550
+Wire Wire Line
+	1400 3650 1400 3550
+Wire Wire Line
+	2100 3550 2100 3650
+Connection ~ 1400 3550
+Wire Wire Line
+	1050 3650 1050 3550
+Wire Wire Line
+	1050 3450 1050 3550
+Connection ~ 1050 3550
+Wire Wire Line
+	1050 3550 1400 3550
+$Comp
+L Device:C C?
+U 1 1 5D8DF21F
+P 1050 3800
+AR Path="/5D8DF21F" Ref="C?"  Part="1" 
+AR Path="/65B709D0/5D8DF21F" Ref="C33"  Part="1" 
+AR Path="/66A12230/5D8DF21F" Ref="C?"  Part="1" 
+AR Path="/669AB112/5D8DF21F" Ref="C?"  Part="1" 
+F 0 "C33" H 1100 3900 50  0000 L CNN
+F 1 "0.1uF" H 1100 3700 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 1088 3650 50  0001 C CNN
+F 3 "~" H 1050 3800 50  0001 C CNN
+	1    1050 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5D8B2D88
+P 2100 3800
+AR Path="/5D8B2D88" Ref="C?"  Part="1" 
+AR Path="/65B709D0/5D8B2D88" Ref="C36"  Part="1" 
+AR Path="/66A12230/5D8B2D88" Ref="C?"  Part="1" 
+AR Path="/669AB112/5D8B2D88" Ref="C?"  Part="1" 
+F 0 "C36" H 2150 3900 50  0000 L CNN
+F 1 "0.1uF" H 2150 3700 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 2138 3650 50  0001 C CNN
+F 3 "~" H 2100 3800 50  0001 C CNN
+	1    2100 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5D8B2C8E
+P 1750 3800
+AR Path="/5D8B2C8E" Ref="C?"  Part="1" 
+AR Path="/65B709D0/5D8B2C8E" Ref="C35"  Part="1" 
+AR Path="/66A12230/5D8B2C8E" Ref="C?"  Part="1" 
+AR Path="/669AB112/5D8B2C8E" Ref="C?"  Part="1" 
+F 0 "C35" H 1800 3900 50  0000 L CNN
+F 1 "0.1uF" H 1800 3700 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 1788 3650 50  0001 C CNN
+F 3 "~" H 1750 3800 50  0001 C CNN
+	1    1750 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5D8B2B8A
+P 1400 3800
+AR Path="/5D8B2B8A" Ref="C?"  Part="1" 
+AR Path="/65B709D0/5D8B2B8A" Ref="C34"  Part="1" 
+AR Path="/66A12230/5D8B2B8A" Ref="C?"  Part="1" 
+AR Path="/669AB112/5D8B2B8A" Ref="C?"  Part="1" 
+F 0 "C34" H 1450 3900 50  0000 L CNN
+F 1 "0.1uF" H 1450 3700 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 1438 3650 50  0001 C CNN
+F 3 "~" H 1400 3800 50  0001 C CNN
+	1    1400 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L CropTop:DGND #PWR0184
+U 1 1 5D8862F6
+P 3150 5200
+F 0 "#PWR0184" H 3150 4950 50  0001 C CNN
+F 1 "DGND" H 3154 5045 50  0000 C CNN
+F 2 "" H 3150 5200 50  0001 C CNN
+F 3 "" H 3150 5200 50  0001 C CNN
+	1    3150 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3250 4700 3150 4700
+Wire Wire Line
+	3150 4700 3150 4800
+Connection ~ 3150 4800
+Wire Wire Line
+	3250 4800 3150 4800
+Wire Wire Line
+	3150 4800 3150 4900
+Connection ~ 3150 4900
+Wire Wire Line
+	3250 4900 3150 4900
+Wire Wire Line
+	3150 4900 3150 5100
+Wire Wire Line
+	3150 5100 3150 5200
+Connection ~ 3150 5100
+Wire Wire Line
+	3250 5100 3150 5100
+Connection ~ 3150 4700
+Wire Wire Line
+	3150 4600 3150 4700
+Wire Wire Line
+	3250 4600 3150 4600
+$Comp
+L CropTop:DGND #PWR0183
+U 1 1 5D62F7FF
+P 2450 4800
+F 0 "#PWR0183" H 2450 4550 50  0001 C CNN
+F 1 "DGND" H 2454 4645 50  0000 C CNN
+F 2 "" H 2450 4800 50  0001 C CNN
+F 3 "" H 2450 4800 50  0001 C CNN
+	1    2450 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L CropTop:DVDD #PWR0144
+U 1 1 5D62F7F9
+P 1050 3450
+F 0 "#PWR0144" H 1050 3300 50  0001 C CNN
+F 1 "DVDD" H 1065 3623 50  0000 C CNN
+F 2 "" H 1050 3450 50  0001 C CNN
+F 3 "" H 1050 3450 50  0001 C CNN
+	1    1050 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L CropTop:DGND #PWR0143
+U 1 1 5D62F7F2
+P 2800 4800
+F 0 "#PWR0143" H 2800 4550 50  0001 C CNN
+F 1 "DGND" H 2804 4645 50  0000 C CNN
+F 2 "" H 2800 4800 50  0001 C CNN
+F 3 "" H 2800 4800 50  0001 C CNN
+	1    2800 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 4450 2450 4400
+Wire Wire Line
+	2800 4800 2800 4750
+Wire Wire Line
+	2450 4800 2450 4750
+Wire Wire Line
+	2450 4400 2800 4400
+Wire Wire Line
+	2800 4400 3250 4400
+Connection ~ 2800 4400
+Wire Wire Line
+	2800 4450 2800 4400
+$Comp
+L Device:C C?
+U 1 1 5D62F7E5
+P 2450 4600
+AR Path="/5D62F7E5" Ref="C?"  Part="1" 
+AR Path="/65B709D0/5D62F7E5" Ref="C38"  Part="1" 
+AR Path="/66A12230/5D62F7E5" Ref="C?"  Part="1" 
+AR Path="/669AB112/5D62F7E5" Ref="C?"  Part="1" 
+F 0 "C38" H 2500 4700 50  0000 L CNN
+F 1 "10uF" H 2500 4500 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 2488 4450 50  0001 C CNN
+F 3 "~" H 2450 4600 50  0001 C CNN
+	1    2450 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5D62F7DE
+P 2800 4600
+AR Path="/5D62F7DE" Ref="C?"  Part="1" 
+AR Path="/65B709D0/5D62F7DE" Ref="C40"  Part="1" 
+AR Path="/66A12230/5D62F7DE" Ref="C?"  Part="1" 
+AR Path="/669AB112/5D62F7DE" Ref="C?"  Part="1" 
+F 0 "C40" H 2850 4700 50  0000 L CNN
+F 1 "0.1uF" H 2850 4500 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 2838 4450 50  0001 C CNN
+F 3 "~" H 2800 4600 50  0001 C CNN
+	1    2800 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3250 3900 3050 3900
+Wire Wire Line
+	3050 3900 3050 4000
+Connection ~ 3050 4000
+Wire Wire Line
+	3250 4000 3050 4000
+Wire Wire Line
+	3050 4000 3050 4100
+Wire Wire Line
+	3050 4100 3050 4200
+Connection ~ 3050 4100
+Wire Wire Line
+	3250 4100 3050 4100
+Wire Wire Line
+	3050 4200 3250 4200
+Connection ~ 3050 3900
+Wire Wire Line
+	3050 3800 3050 3900
+$Comp
+L CropTop:DVDD #PWR0142
+U 1 1 5D567E13
+P 3050 3800
+F 0 "#PWR0142" H 3050 3650 50  0001 C CNN
+F 1 "DVDD" H 3065 3973 50  0000 C CNN
+F 2 "" H 3050 3800 50  0001 C CNN
+F 3 "" H 3050 3800 50  0001 C CNN
+	1    3050 3800
+	-1   0    0    -1  
+$EndComp
+NoConn ~ 3250 3700
+Wire Wire Line
+	3150 2300 3250 2300
+Wire Wire Line
+	3150 2200 3250 2200
+Text GLabel 3150 2200 0    39   Input ~ 0
+LCD_PD
+Text GLabel 3150 2300 0    39   Input ~ 0
+LCD_INT
+Wire Wire Line
+	3150 2000 3250 2000
+Wire Wire Line
+	3150 1900 3250 1900
+Wire Wire Line
+	3150 1800 3250 1800
+Wire Wire Line
+	3150 1700 3250 1700
+Text GLabel 3150 1700 0    39   Input ~ 0
+SS2
+Text GLabel 3150 1800 0    39   Input ~ 0
+SDO2
+Text GLabel 3150 1900 0    39   Input ~ 0
+SDIO2
+Text GLabel 3150 2000 0    39   Input ~ 0
+SCLK2
+Wire Wire Line
+	8500 4600 8600 4600
+Wire Wire Line
+	8500 4600 8500 5300
+Wire Wire Line
+	8500 5300 8500 5850
+Connection ~ 8500 5300
+Wire Wire Line
+	8600 5300 8500 5300
+Wire Wire Line
+	8000 5700 8600 5700
+Wire Wire Line
+	8000 5600 8600 5600
+Wire Wire Line
+	8000 5500 8600 5500
+Wire Wire Line
+	8000 5400 8600 5400
+Connection ~ 8500 4600
+Wire Wire Line
+	8500 2000 8500 4600
+Wire Wire Line
+	8600 2000 8500 2000
+Wire Wire Line
+	8000 5100 8150 5100
+Wire Wire Line
+	8150 5000 8000 5000
+Wire Wire Line
+	8150 4900 8000 4900
+Wire Wire Line
+	8150 4800 8000 4800
+Wire Wire Line
+	8150 4700 8000 4700
+Wire Wire Line
+	8150 4500 8000 4500
+Wire Wire Line
+	8150 4400 8000 4400
+Wire Wire Line
+	8150 4300 8000 4300
+Wire Wire Line
+	8150 4200 8000 4200
+Wire Wire Line
+	8150 4100 8000 4100
+Wire Wire Line
+	8150 4000 8000 4000
+Wire Wire Line
+	8150 3900 8000 3900
+Wire Wire Line
+	8150 3800 8000 3800
+Wire Wire Line
+	8150 3700 8000 3700
+Wire Wire Line
+	8150 3600 8000 3600
+Wire Wire Line
+	8150 3500 8000 3500
+Wire Wire Line
+	8150 3400 8000 3400
+Wire Wire Line
+	8150 3300 8000 3300
+Wire Wire Line
+	8150 3200 8000 3200
+Wire Wire Line
+	8150 3100 8000 3100
+Wire Wire Line
+	8150 3000 8000 3000
+Wire Wire Line
+	8150 2900 8000 2900
+Wire Wire Line
+	8150 2800 8000 2800
+Wire Wire Line
+	8150 2700 8000 2700
+Wire Wire Line
+	8150 2600 8000 2600
+Wire Wire Line
+	8150 2500 8000 2500
+Wire Wire Line
+	8150 2400 8000 2400
+Wire Wire Line
+	8150 2300 8000 2300
+Wire Wire Line
+	8350 5100 8600 5100
+Wire Wire Line
+	8350 5000 8600 5000
+Wire Wire Line
+	8350 4900 8600 4900
+Wire Wire Line
+	8350 4800 8600 4800
+Wire Wire Line
+	8350 4700 8600 4700
+Wire Wire Line
+	8350 4500 8600 4500
+Wire Wire Line
+	8350 4400 8600 4400
+Wire Wire Line
+	8350 4300 8600 4300
+Wire Wire Line
+	8350 4200 8600 4200
+Wire Wire Line
+	8350 4100 8600 4100
+Wire Wire Line
+	8350 4000 8600 4000
+Wire Wire Line
+	8350 3900 8600 3900
+Wire Wire Line
+	8350 3800 8600 3800
+Wire Wire Line
+	8350 3700 8600 3700
+Wire Wire Line
+	8350 3600 8600 3600
+Wire Wire Line
+	8350 3500 8600 3500
+Wire Wire Line
+	8350 3400 8600 3400
+Wire Wire Line
+	8350 3300 8600 3300
+Wire Wire Line
+	8350 3200 8600 3200
+Wire Wire Line
+	8350 3100 8600 3100
+Wire Wire Line
+	8350 3000 8600 3000
+Wire Wire Line
+	8350 2900 8600 2900
+Wire Wire Line
+	8350 2800 8600 2800
+Wire Wire Line
+	8350 2700 8600 2700
+Wire Wire Line
+	8350 2600 8600 2600
+Wire Wire Line
+	8350 2500 8600 2500
+Wire Wire Line
+	8350 2400 8600 2400
+Wire Wire Line
+	8350 2300 8600 2300
+Wire Wire Line
+	8350 2200 8600 2200
+Wire Wire Line
+	8000 2200 8150 2200
+$Comp
+L Device:R_Small R77
+U 1 1 5CACC4C4
+P 8250 5100
+F 0 "R77" V 8200 5250 50  0000 C CNN
+F 1 "22" V 8250 5100 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 5100 50  0001 C CNN
+F 3 "~" H 8250 5100 50  0001 C CNN
+	1    8250 5100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R76
+U 1 1 5CACC4BD
+P 8250 5000
+F 0 "R76" V 8200 5150 50  0000 C CNN
+F 1 "22" V 8250 5000 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 5000 50  0001 C CNN
+F 3 "~" H 8250 5000 50  0001 C CNN
+	1    8250 5000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R75
+U 1 1 5CACC4B6
+P 8250 4900
+F 0 "R75" V 8200 5050 50  0000 C CNN
+F 1 "22" V 8250 4900 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 4900 50  0001 C CNN
+F 3 "~" H 8250 4900 50  0001 C CNN
+	1    8250 4900
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R74
+U 1 1 5CACC4AF
+P 8250 4800
+F 0 "R74" V 8200 4950 50  0000 C CNN
+F 1 "22" V 8250 4800 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 4800 50  0001 C CNN
+F 3 "~" H 8250 4800 50  0001 C CNN
+	1    8250 4800
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R73
+U 1 1 5CACC4A8
+P 8250 4700
+F 0 "R73" V 8200 4850 50  0000 C CNN
+F 1 "22" V 8250 4700 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 4700 50  0001 C CNN
+F 3 "~" H 8250 4700 50  0001 C CNN
+	1    8250 4700
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R33
+U 1 1 5CAAEACD
+P 8250 4500
+F 0 "R33" V 8200 4650 50  0000 C CNN
+F 1 "22" V 8250 4500 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 4500 50  0001 C CNN
+F 3 "~" H 8250 4500 50  0001 C CNN
+	1    8250 4500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R32
+U 1 1 5CAAEAC6
+P 8250 4400
+F 0 "R32" V 8200 4550 50  0000 C CNN
+F 1 "22" V 8250 4400 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 4400 50  0001 C CNN
+F 3 "~" H 8250 4400 50  0001 C CNN
+	1    8250 4400
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R31
+U 1 1 5CAAEABF
+P 8250 4300
+F 0 "R31" V 8200 4450 50  0000 C CNN
+F 1 "22" V 8250 4300 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 4300 50  0001 C CNN
+F 3 "~" H 8250 4300 50  0001 C CNN
+	1    8250 4300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R30
+U 1 1 5CAAEAB8
+P 8250 4200
+F 0 "R30" V 8200 4350 50  0000 C CNN
+F 1 "22" V 8250 4200 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 4200 50  0001 C CNN
+F 3 "~" H 8250 4200 50  0001 C CNN
+	1    8250 4200
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R29
+U 1 1 5CAAEAB1
+P 8250 4100
+F 0 "R29" V 8200 4250 50  0000 C CNN
+F 1 "22" V 8250 4100 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 4100 50  0001 C CNN
+F 3 "~" H 8250 4100 50  0001 C CNN
+	1    8250 4100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R23
+U 1 1 5CAAEAAA
+P 8250 4000
+F 0 "R23" V 8200 4150 50  0000 C CNN
+F 1 "22" V 8250 4000 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 4000 50  0001 C CNN
+F 3 "~" H 8250 4000 50  0001 C CNN
+	1    8250 4000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R22
+U 1 1 5CAAEAA3
+P 8250 3900
+F 0 "R22" V 8200 4050 50  0000 C CNN
+F 1 "22" V 8250 3900 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 3900 50  0001 C CNN
+F 3 "~" H 8250 3900 50  0001 C CNN
+	1    8250 3900
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R21
+U 1 1 5CAAEA9C
+P 8250 3800
+F 0 "R21" V 8200 3950 50  0000 C CNN
+F 1 "22" V 8250 3800 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 3800 50  0001 C CNN
+F 3 "~" H 8250 3800 50  0001 C CNN
+	1    8250 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R20
+U 1 1 5CAAEA95
+P 8250 3700
+F 0 "R20" V 8200 3850 50  0000 C CNN
+F 1 "22" V 8250 3700 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 3700 50  0001 C CNN
+F 3 "~" H 8250 3700 50  0001 C CNN
+	1    8250 3700
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R19
+U 1 1 5CAAEA8E
+P 8250 3600
+F 0 "R19" V 8200 3750 50  0000 C CNN
+F 1 "22" V 8250 3600 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 3600 50  0001 C CNN
+F 3 "~" H 8250 3600 50  0001 C CNN
+	1    8250 3600
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R18
+U 1 1 5CAAEA87
+P 8250 3500
+F 0 "R18" V 8200 3650 50  0000 C CNN
+F 1 "22" V 8250 3500 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 3500 50  0001 C CNN
+F 3 "~" H 8250 3500 50  0001 C CNN
+	1    8250 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R17
+U 1 1 5CAAEA80
+P 8250 3400
+F 0 "R17" V 8200 3550 50  0000 C CNN
+F 1 "22" V 8250 3400 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 3400 50  0001 C CNN
+F 3 "~" H 8250 3400 50  0001 C CNN
+	1    8250 3400
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R16
+U 1 1 5CA9101D
+P 8250 3300
+F 0 "R16" V 8200 3450 50  0000 C CNN
+F 1 "22" V 8250 3300 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 3300 50  0001 C CNN
+F 3 "~" H 8250 3300 50  0001 C CNN
+	1    8250 3300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R15
+U 1 1 5CA91016
+P 8250 3200
+F 0 "R15" V 8200 3350 50  0000 C CNN
+F 1 "22" V 8250 3200 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 3200 50  0001 C CNN
+F 3 "~" H 8250 3200 50  0001 C CNN
+	1    8250 3200
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R14
+U 1 1 5CA9100F
+P 8250 3100
+F 0 "R14" V 8200 3250 50  0000 C CNN
+F 1 "22" V 8250 3100 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 3100 50  0001 C CNN
+F 3 "~" H 8250 3100 50  0001 C CNN
+	1    8250 3100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R13
+U 1 1 5CA91008
+P 8250 3000
+F 0 "R13" V 8200 3150 50  0000 C CNN
+F 1 "22" V 8250 3000 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 3000 50  0001 C CNN
+F 3 "~" H 8250 3000 50  0001 C CNN
+	1    8250 3000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R12
+U 1 1 5CA738E4
+P 8250 2900
+F 0 "R12" V 8200 3050 50  0000 C CNN
+F 1 "22" V 8250 2900 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 2900 50  0001 C CNN
+F 3 "~" H 8250 2900 50  0001 C CNN
+	1    8250 2900
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R11
+U 1 1 5CA738DD
+P 8250 2800
+F 0 "R11" V 8200 2950 50  0000 C CNN
+F 1 "22" V 8250 2800 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 2800 50  0001 C CNN
+F 3 "~" H 8250 2800 50  0001 C CNN
+	1    8250 2800
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R10
+U 1 1 5CA738D6
+P 8250 2700
+F 0 "R10" V 8200 2850 50  0000 C CNN
+F 1 "22" V 8250 2700 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 2700 50  0001 C CNN
+F 3 "~" H 8250 2700 50  0001 C CNN
+	1    8250 2700
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R9
+U 1 1 5CA738CF
+P 8250 2600
+F 0 "R9" V 8200 2725 50  0000 C CNN
+F 1 "22" V 8250 2600 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 2600 50  0001 C CNN
+F 3 "~" H 8250 2600 50  0001 C CNN
+	1    8250 2600
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R8
+U 1 1 5CA73784
+P 8250 2500
+F 0 "R8" V 8200 2625 50  0000 C CNN
+F 1 "22" V 8250 2500 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 2500 50  0001 C CNN
+F 3 "~" H 8250 2500 50  0001 C CNN
+	1    8250 2500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R7
+U 1 1 5CA734F0
+P 8250 2400
+F 0 "R7" V 8200 2525 50  0000 C CNN
+F 1 "22" V 8250 2400 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 2400 50  0001 C CNN
+F 3 "~" H 8250 2400 50  0001 C CNN
+	1    8250 2400
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R6
+U 1 1 5CA7343E
+P 8250 2300
+F 0 "R6" V 8200 2425 50  0000 C CNN
+F 1 "22" V 8250 2300 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 2300 50  0001 C CNN
+F 3 "~" H 8250 2300 50  0001 C CNN
+	1    8250 2300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R5
+U 1 1 5CA384EB
+P 8250 2200
+F 0 "R5" V 8200 2325 50  0000 C CNN
+F 1 "22" V 8250 2200 39  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8250 2200 50  0001 C CNN
+F 3 "~" H 8250 2200 50  0001 C CNN
+	1    8250 2200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2300 2450 2300 2800
+Wire Wire Line
+	3150 2500 3150 2450
+Wire Wire Line
+	3250 2500 3150 2500
+Wire Wire Line
+	2700 2750 2700 2800
+Wire Wire Line
+	3150 2700 3150 2750
+Wire Wire Line
+	3250 2700 3150 2700
+Wire Wire Line
+	3250 3500 3150 3500
+Text GLabel 3150 3500 0    39   Input ~ 0
+LCD_PWM
+NoConn ~ 3250 3300
+NoConn ~ 3250 3200
+NoConn ~ 3250 3000
+NoConn ~ 3250 2900
+$Comp
+L CropTop:DGND #PWR?
+U 1 1 5C76BAA9
+P 2700 3150
+AR Path="/64807BBC/5C76BAA9" Ref="#PWR?"  Part="1" 
+AR Path="/65B709D0/5C76BAA9" Ref="#PWR0141"  Part="1" 
+F 0 "#PWR0141" H 2700 2900 50  0001 C CNN
+F 1 "DGND" H 2704 2995 50  0000 C CNN
+F 2 "" H 2700 3150 50  0001 C CNN
+F 3 "" H 2700 3150 50  0001 C CNN
+	1    2700 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L CropTop:DGND #PWR?
+U 1 1 5C76BAA3
+P 2300 3150
+AR Path="/64807BBC/5C76BAA3" Ref="#PWR?"  Part="1" 
+AR Path="/65B709D0/5C76BAA3" Ref="#PWR0140"  Part="1" 
+F 0 "#PWR0140" H 2300 2900 50  0001 C CNN
+F 1 "DGND" H 2304 2995 50  0000 C CNN
+F 2 "" H 2300 3150 50  0001 C CNN
+F 3 "" H 2300 3150 50  0001 C CNN
+	1    2300 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 3100 2700 3150
+Wire Wire Line
+	2300 3100 2300 3150
+$Comp
+L Device:C C?
+U 1 1 5C76BA91
+P 2700 2950
+AR Path="/5C76BA91" Ref="C?"  Part="1" 
+AR Path="/64807BBC/5C76BA91" Ref="C?"  Part="1" 
+AR Path="/65B709D0/5C76BA91" Ref="C39"  Part="1" 
+F 0 "C39" H 2815 2996 50  0000 L CNN
+F 1 "26pF" H 2815 2905 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 2738 2800 50  0001 C CNN
+F 3 "~" H 2700 2950 50  0001 C CNN
+	1    2700 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5C76BA8A
+P 2300 2950
+AR Path="/5C76BA8A" Ref="C?"  Part="1" 
+AR Path="/64807BBC/5C76BA8A" Ref="C?"  Part="1" 
+AR Path="/65B709D0/5C76BA8A" Ref="C37"  Part="1" 
+F 0 "C37" H 2415 2996 50  0000 L CNN
+F 1 "26pF" H 2415 2905 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 2338 2800 50  0001 C CNN
+F 3 "~" H 2300 2950 50  0001 C CNN
+	1    2300 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 5100 5050 5100
+Wire Wire Line
+	4950 5000 5050 5000
+Wire Wire Line
+	4950 4900 5050 4900
+Wire Wire Line
+	4950 4800 5050 4800
+Text GLabel 5050 4800 2    39   Input ~ 0
+TCH_RIGHT
+Text GLabel 5050 4900 2    39   Input ~ 0
+TCH_DOWN
+Text GLabel 5050 5000 2    39   Input ~ 0
+TCH_LEFT
+Text GLabel 5050 5100 2    39   Input ~ 0
+TCH_UP
+$Comp
+L Device:Crystal_Small Y2
+U 1 1 5C4E9598
+P 2800 2600
+F 0 "Y2" V 2754 2688 50  0000 L CNN
+F 1 "12MHz" V 2845 2688 50  0000 L CNN
+F 2 "croptop:ABLS_OX" H 2800 2600 50  0001 C CNN
+F 3 "~" H 2800 2600 50  0001 C CNN
+	1    2800 2600
+	0    1    1    0   
+$EndComp
+Text GLabel 5050 4200 2    39   Input ~ 0
+LCD_SHIFT
+Text GLabel 5050 4600 2    39   Input ~ 0
+LCD_DEN
+Text GLabel 5050 4500 2    39   Input ~ 0
+LCD_VSYNC
+Text GLabel 5050 4400 2    39   Input ~ 0
+LCD_HSYNC
+Text GLabel 5050 4300 2    39   Input ~ 0
+LCD_DISP
+Wire Wire Line
+	4950 4200 5050 4200
+Wire Wire Line
+	4950 4300 5050 4300
+Wire Wire Line
+	5050 4400 4950 4400
+Wire Wire Line
+	5050 4500 4950 4500
+Wire Wire Line
+	5050 4600 4950 4600
+Wire Wire Line
+	4950 4000 5050 4000
+Wire Wire Line
+	4950 3900 5050 3900
+Wire Wire Line
+	4950 3800 5050 3800
+Wire Wire Line
+	4950 3700 5050 3700
+Wire Wire Line
+	4950 3600 5050 3600
+Wire Wire Line
+	4950 3500 5050 3500
+Wire Wire Line
+	4950 3400 5050 3400
+Wire Wire Line
+	4950 3300 5050 3300
+Wire Wire Line
+	4950 3200 5050 3200
+Wire Wire Line
+	4950 3100 5050 3100
+Wire Wire Line
+	4950 3000 5050 3000
+Wire Wire Line
+	4950 2900 5050 2900
+Wire Wire Line
+	4950 2800 5050 2800
+Wire Wire Line
+	4950 2700 5050 2700
+Wire Wire Line
+	5050 2600 4950 2600
+Wire Wire Line
+	4950 2500 5050 2500
+Wire Wire Line
+	4950 2400 5050 2400
+Wire Wire Line
+	4950 2300 5050 2300
+Wire Wire Line
+	5050 2200 4950 2200
+Wire Wire Line
+	4950 2100 5050 2100
+Wire Wire Line
+	4950 2000 5050 2000
+Wire Wire Line
+	4950 1900 5050 1900
+Wire Wire Line
+	4950 1800 5050 1800
+Wire Wire Line
+	4950 1700 5050 1700
+Text GLabel 8000 4500 0    39   Input ~ 0
+LCD_B7
+Text GLabel 8000 2900 0    39   Input ~ 0
+LCD_R7
+Text GLabel 8000 2800 0    39   Input ~ 0
+LCD_R6
+Text GLabel 8000 2200 0    39   Input ~ 0
+LCD_R0
+Text GLabel 8000 4400 0    39   Input ~ 0
+LCD_B6
+Text GLabel 8000 3700 0    39   Input ~ 0
+LCD_G7
+Text GLabel 8000 3000 0    39   Input ~ 0
+LCD_G0
+Text GLabel 8000 3800 0    39   Input ~ 0
+LCD_B0
+Text GLabel 8000 4300 0    39   Input ~ 0
+LCD_B5
+Text GLabel 8000 3900 0    39   Input ~ 0
+LCD_B1
+Text GLabel 8000 4000 0    39   Input ~ 0
+LCD_B2
+Text GLabel 8000 4100 0    39   Input ~ 0
+LCD_B3
+Text GLabel 8000 4200 0    39   Input ~ 0
+LCD_B4
+Text GLabel 8000 3600 0    39   Input ~ 0
+LCD_G6
+Text GLabel 8000 3100 0    39   Input ~ 0
+LCD_G1
+Text GLabel 8000 3200 0    39   Input ~ 0
+LCD_G2
+Text GLabel 8000 3300 0    39   Input ~ 0
+LCD_G3
+Text GLabel 8000 3400 0    39   Input ~ 0
+LCD_G4
+Text GLabel 8000 3500 0    39   Input ~ 0
+LCD_G5
+Text GLabel 8000 2700 0    39   Input ~ 0
+LCD_R5
+Text GLabel 8000 2300 0    39   Input ~ 0
+LCD_R1
+Text GLabel 8000 2400 0    39   Input ~ 0
+LCD_R2
+Text GLabel 8000 2500 0    39   Input ~ 0
+LCD_R3
+Text GLabel 8000 2600 0    39   Input ~ 0
+LCD_R4
+Text GLabel 5050 2400 2    39   Input ~ 0
+LCD_R7
+Text GLabel 5050 2300 2    39   Input ~ 0
+LCD_R6
+Text GLabel 5050 1700 2    39   Input ~ 0
+LCD_R0
+Text GLabel 5050 4000 2    39   Input ~ 0
+LCD_B7
+Text GLabel 5050 3900 2    39   Input ~ 0
+LCD_B6
+Text GLabel 5050 3200 2    39   Input ~ 0
+LCD_G7
+Text GLabel 5050 2500 2    39   Input ~ 0
+LCD_G0
+Text GLabel 5050 3300 2    39   Input ~ 0
+LCD_B0
+Text GLabel 5050 3800 2    39   Input ~ 0
+LCD_B5
+Text GLabel 5050 3400 2    39   Input ~ 0
+LCD_B1
+Text GLabel 5050 3500 2    39   Input ~ 0
+LCD_B2
+Text GLabel 5050 3600 2    39   Input ~ 0
+LCD_B3
+Text GLabel 5050 3700 2    39   Input ~ 0
+LCD_B4
+Text GLabel 5050 3100 2    39   Input ~ 0
+LCD_G6
+Text GLabel 5050 2600 2    39   Input ~ 0
+LCD_G1
+Text GLabel 5050 2700 2    39   Input ~ 0
+LCD_G2
+Text GLabel 5050 2800 2    39   Input ~ 0
+LCD_G3
+Text GLabel 5050 2900 2    39   Input ~ 0
+LCD_G4
+Text GLabel 5050 3000 2    39   Input ~ 0
+LCD_G5
+Text GLabel 5050 2200 2    39   Input ~ 0
+LCD_R5
+Text GLabel 5050 1800 2    39   Input ~ 0
+LCD_R1
+Text GLabel 5050 1900 2    39   Input ~ 0
+LCD_R2
+Text GLabel 5050 2000 2    39   Input ~ 0
+LCD_R3
+Text GLabel 5050 2100 2    39   Input ~ 0
+LCD_R4
+$Comp
+L CropTop:FT812Q U6
+U 1 1 5C0AA294
+P 4050 3400
+AR Path="/5C0AA294" Ref="U6"  Part="1" 
+AR Path="/65B709D0/5C0AA294" Ref="U6"  Part="1" 
+F 0 "U6" H 4100 5367 50  0000 C CNN
+F 1 "FT812Q" H 4100 5276 50  0000 C CNN
+F 2 "Package_DFN_QFN:QFN-56-1EP_8x8mm_P0.5mm_EP4.5x5.2mm" H 4125 3275 50  0001 C CNN
+F 3 "" H 4125 3275 50  0001 C CNN
+	1    4050 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L CropTop:DVDD #PWR063
+U 1 1 5C09A46E
+P 7900 2000
+F 0 "#PWR063" H 7900 1850 50  0001 C CNN
+F 1 "DVDD" H 7915 2173 50  0000 C CNN
+F 2 "" H 7900 2000 50  0001 C CNN
+F 3 "" H 7900 2000 50  0001 C CNN
+	1    7900 2000
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CropTop:54104-4031 J4
+U 1 1 5BFE9F50
+P 8900 3750
+F 0 "J4" H 8950 5800 50  0000 C CNN
+F 1 "4-1734839-0" H 8900 1700 50  0000 C CNN
+F 2 "croptop:4-1734839-0" H 8600 5000 50  0001 C CNN
+F 3 "" H 8600 5000 50  0001 C CNN
+	1    8900 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7900 2100 7900 2000
+Wire Wire Line
+	8600 2100 7900 2100
+Wire Notes Line width 20
+	6250 550  6250 8050
+Text GLabel 8000 5400 0    39   Input ~ 0
+TCH_RIGHT
+Text GLabel 8000 5500 0    39   Input ~ 0
+TCH_DOWN
+Text GLabel 8000 5600 0    39   Input ~ 0
+TCH_LEFT
+Text GLabel 8000 5700 0    39   Input ~ 0
+TCH_UP
+Text GLabel 8500 1800 0    39   Input ~ 0
+LCD_CATHODE
+Text GLabel 8500 1900 0    39   Input ~ 0
+LCD_ANODE
+Text GLabel 8000 4700 0    39   Input ~ 0
+LCD_SHIFT
+NoConn ~ 8600 5200
+Text GLabel 8000 5100 0    39   Input ~ 0
+LCD_DEN
+Text GLabel 8000 5000 0    39   Input ~ 0
+LCD_VSYNC
+Text GLabel 8000 4900 0    39   Input ~ 0
+LCD_HSYNC
+Text GLabel 8000 4800 0    39   Input ~ 0
+LCD_DISP
+Wire Wire Line
+	8600 1800 8500 1800
+Wire Wire Line
+	8600 1900 8500 1900
+Text Notes 550  700  0    98   ~ 20
+Graphics Controller
+Text Notes 6350 700  0    98   ~ 20
+FCP Connector for TFT LCD
+$EndSCHEMATC
