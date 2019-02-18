@@ -4,9 +4,9 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>../crop_top.h</itemPath>
-      <itemPath>../config_bits.h</itemPath>
       <itemPath>I2CLib.h</itemPath>
+      <itemPath>config_bits.h</itemPath>
+      <itemPath>crop_top.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

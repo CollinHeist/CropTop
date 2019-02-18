@@ -14,13 +14,20 @@
 int main()
 {
     initialize_system();
+    int error = 0;
+    char write_str[1] = {Si7006_hold_master};
+    char read_str[2];
     while(1)
     {
         // do some shit
+        error |= I2C_Write(Si7006_addr, write_str, 1);
+        error |= I2C_Read(Si7006_addr, read_str, 2);
     }
 }
 void initialize_system()
 {
     PORTSetPinsDigitalIn(IOPORT_C, BUTTONS);
     PORTSetPinsDigitalOut(IOPORT_C, LEDS);
+    LATCCLR = LEDS;
+    I2CLib_Init();
 }

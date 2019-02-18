@@ -4,39 +4,67 @@
  * Author:      Ryan Donahue
  * Dates:       Created 2/13/2018
  * Summary:     
- * Notes:       
+ * Notes:       HW: Get rid of accelerometer in lieu of a gyroscope  
  * **************************************************************************/
 #define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
 #include "crop_top.h"
+#include "I2CLib.h"
+
+//variables
+int MSB, LSB;
 
 void I2CLib_Init()
 {
-    I2CLib_PortSetup();
-    I2CLib_I2CSetup();
+    PORTSetPinsDigitalOut(IOPORT_A, SDA|SCL); //possibly done automatically
+    OpenI2C1(I2C_EN, BRG_VAL);
 }
 
-void I2CLib_PortSetup()
+char BusyI2C1() //returns non-zero value if I2C1 is busy, 1-busy, 0-not busy
 {
-    
+    return(I2C1CONbits.SEN || I2C1CONbits.PEN || I2C1CONbits.RSEN ||
+            I2C1CONbits.RCEN || I2C1CONbits.ACKEN || I2C1STATbits.TRSTAT);
 }
 
-void I2CLib_I2CSetup()
+char I2C_Read(char slave_addr, char *read_string, int len)
 {
-    
+    char error = 0;
+    StartI2C1();
+    IdleI2C1();
+    error |= MasterWriteI2C1((slave_addr<<1)|1);
+    while(1)
+    {
+        len--;
+        *read_string = MasterReadI2C1();
+        if(len == 0)
+        {
+            return;
+        }
+        AckI2C1();
+        IdleI2C1();
+        read_string++;
+    }
+    NotAckI2C1();
+    IdleI2C1();
+    StopI2C1();
+    IdleI2C1();
+    return error;
 }
 
-char I2C_Read(int slave_addr, char *i2c_string_read, int len)
+//terminated by null terminated string or after len message bytes are sent 
+char I2C_Write(char slave_addr, char *write_string, int len)
 {
-    
-}
-
-int I2C_Write(int slave_addr, char *i2c_string_write, int len)
-{
-    
-}
-
-char BusyI2C2()
-{
-    
+    char error = 0;
+    StartI2C1();
+    IdleI2C1();
+    error |= MasterWriteI2C1(slave_addr<<1|0);
+    while((write_string!= NULL)&&(len!=0))
+    {
+        error |= MasterWriteI2C1(*write_string);
+        write_string++;
+        len--;
+    }
+    StopI2C1();
+    IdleI2C1(); 
+    return error;
 }

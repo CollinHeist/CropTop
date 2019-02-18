@@ -8,7 +8,7 @@
 #define _SUPPRESS_PLIB_WARNING
 
 //macros
-#define AN9 (0x01<<9)   //port b
+#define AN9 (BIT_9)   //port b
 
 //function declarations
 void PotLib_Init();

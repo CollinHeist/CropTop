@@ -12,11 +12,11 @@
 void initialize_system();
 
 //macros
-#define BUTTON_A    BIT_14                  //port c
-#define BUTTON_B    BIT_13                  //port c
+#define BUTTON_A    (BIT_14)                  //port c
+#define BUTTON_B    (BIT_13)                  //port c
 #define BUTTONS     (BUTTON_A | BUTTON_B)   //port c
-#define LED_A       (0x01)<<1               //port c
-#define LED_B       (0x01)<<2               //port c
+#define LED_A       (BIT_1)               //port c
+#define LED_B       (BIT_2)               //port c
 #define LEDS        (LED_A | LED_B)         //port c
 
 
@@ -24,5 +24,5 @@ void initialize_system();
 
 #define GetSystemClock()		(80000000ul)
 #define GetInstructionClock()	(GetSystemClock()/2)	
-#define GetPeripheralClock()	(GetSystemClock()/8)	
+#define GetPeripheralClock()	(GetSystemClock()/1)	
 #define CORE_MS_TICK_RATE	(GetInstructionClock()/1000)

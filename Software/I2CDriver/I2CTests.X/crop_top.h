@@ -1,4 +1,4 @@
-/* **************************************************************************
+/* *************** **********************************************************
  * File name:   crop_top.h
  * Association: University of Idaho
  * Author:      Ryan Donahue
@@ -24,5 +24,5 @@ void initialize_system();
 
 #define GetSystemClock()		(80000000ul)
 #define GetInstructionClock()	(GetSystemClock()/2)	
-#define GetPeripheralClock()	(GetSystemClock()/8)	
+#define GetPeripheralClock()	(GetSystemClock()/1)	
 #define CORE_MS_TICK_RATE	(GetInstructionClock()/1000)

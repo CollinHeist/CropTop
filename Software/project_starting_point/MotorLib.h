@@ -14,9 +14,9 @@
 #define PR2_VALUE (GetPeripheralClock()/T2_PRESCALE/T2_TOGGLES_PER_SEC)
 
 //pin macros
-#define nFAULT (0x01<<5)                                //port D
-#define IN1 (0x01<<1)                                   //port D
-#define IN2 (0x01<<2)                                   //port D
+#define nFAULT (BIT_5)                                //port D
+#define IN1 (BIT_1)                                   //port D
+#define IN2 (BIT_2)                                   //port D
 
 //prototypes
 void MotorLib_Init();
