@@ -8,20 +8,13 @@
  * *************************************************************************/
 #define _SUPPRESS_PLIB_WARNING
 
-//pin macros
-#define SDA BIT_14 //port A
-#define SCL BIT_15 //port A
-
 //I2C module macros
-#define FSCK 50000 //clock frequency
-#define BRG_VAL ((GetPeripheralClock()/2/FSCK)-2)    //baud rate
-
-//Si7006 temperature and humidity sensor modules
-#define Si7006_addr 0b1000000
-#define Si7006_hold_master 0xE3
+#define I2C_CLOCK_FREQ 100000                                   //clock frequency
 
 //prototypes
 void I2CLib_Init();
 char BusyI2C1();
 char I2C_Read(char slave_addr, char *read_string, int len);
 char I2C_Write(char slave_addr, char *write_string, int len);
+char I2C_WriteRead(char slave_addr, char *write_string, char *read_string, int write_len, int read_len);
+BOOL I2C_SlaveAck(char slave_addr);

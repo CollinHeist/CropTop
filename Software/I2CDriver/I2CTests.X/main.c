@@ -8,20 +8,26 @@
  * *************************************************************************/
 #define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
+#include "config_bits.h"
 #include "crop_top.h"
 #include "I2CLib.h"
+#include "Si7006.h"
 
 int main()
 {
     initialize_system();
-    int error = 0;
-    char write_str[1] = {Si7006_hold_master};
-    char read_str[2];
+    float temp = 0.0, humidity = 0.0;
+    int i;
     while(1)
     {
+        i = 0;
+        while(i<5000)
+        {
+            i++;
+        }
         // do some shit
-        error |= I2C_Write(Si7006_addr, write_str, 1);
-        error |= I2C_Read(Si7006_addr, read_str, 2);
+//        temp = Si7006_ReadTemp();
+        humidity = Si7006_ReadTemp();
     }
 }
 void initialize_system()

@@ -75,6 +75,7 @@ void MotorLib_TimersSetup()
  * **************************************************************************/
 void __ISR(_TIMER_2_VECTOR, IPL1SOFT) Timer2Handler(void)
 {
+    LATCINV = LED_A;
     mT2ClearIntFlag();
 }
 

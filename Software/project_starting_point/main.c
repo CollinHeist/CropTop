@@ -8,6 +8,7 @@
  * *************************************************************************/
 #define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
+#include "config_bits.h"
 #include "crop_top.h"
 #include "MotorLib.h"
 #include "PotLib.h"
@@ -18,13 +19,16 @@ int main()
     unsigned int TestRead;
     while(1)
     {
-        TestRead = PotLib_SingleRead();
+//        TestRead = PotLib_SingleRead();
+//        LATCINV = LED_A;
     }
 }
 void initialize_system()
 {
+	SYSTEMConfig(GetSystemClock(), SYS_CFG_WAIT_STATES | SYS_CFG_PCACHE);
     PORTSetPinsDigitalIn(IOPORT_C, BUTTONS);
     PORTSetPinsDigitalOut(IOPORT_C, LEDS);
-    MotorLib_Init();
     PotLib_Init();
+    MotorLib_Init();
+    INTEnableSystemMultiVectoredInt();
 }

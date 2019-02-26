@@ -5,7 +5,8 @@
         <group>
             <file>file:/C:/Users/Ryan/Desktop/temp/CropTop/Software/I2CDriver/I2CTests.X/main.c</file>
             <file>file:/C:/Users/Ryan/Desktop/temp/CropTop/Software/I2CDriver/I2CTests.X/I2CLib.c</file>
-            <file>file:/C:/Users/Ryan/Desktop/temp/CropTop/Software/I2CDriver/I2CTests.X/I2CLib.h</file>
+            <file>file:/C:/Users/Ryan/Desktop/temp/CropTop/Software/I2CDriver/I2CTests.X/Si7006.c</file>
+            <file>file:/C:/Users/Ryan/Desktop/temp/CropTop/Software/I2CDriver/I2CTests.X/Si7006.h</file>
         </group>
     </open-files>
 </project-private>

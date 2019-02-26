@@ -1,5 +1,6 @@
 build/default/production/_ext/1472/main.o:  \
 ../main.c  \
-../crop_top.h  \
- ../MotorLib.h  \
+../config_bits.h  \
+ ../crop_top.h  \
+../MotorLib.h  \
 ../PotLib.h 
