@@ -21,13 +21,13 @@ int main()
     while(1)
     {
         i = 0;
-        while(i<20000)
+        while(i<5000)
         {
             i++;
         }
         // do some shit
 //        temp = Si7006_ReadTemp();
-        humidity = Si7006_ReadHumidity();
+        humidity = Si7006_ReadTemp();
     }
 }
 void initialize_system()

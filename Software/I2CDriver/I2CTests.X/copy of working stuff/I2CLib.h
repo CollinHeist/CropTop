@@ -14,7 +14,7 @@
 //prototypes
 void I2CLib_Init();
 char BusyI2C1();
-char I2C_Read(char slave_addr, char *read_array, int len);
-char I2C_Write(char slave_addr, char *write_array, int len);
-char I2C_WriteRead(char slave_addr, char *write_array, char *read_array, int write_len, int read_len);
-BOOL I2C_WaitForSlaveAck(char slave_addr);
+char I2C_Read(char slave_addr, char *read_string, int len);
+char I2C_Write(char slave_addr, char *write_string, int len);
+char I2C_WriteRead(char slave_addr, char *write_string, char *read_string, int write_len, int read_len);
+BOOL I2C_SlaveAck(char slave_addr);
