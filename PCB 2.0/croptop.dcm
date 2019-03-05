@@ -1,9 +1,36 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP +5V_REG
+D Power flag, +5V
+K power-flag
+$ENDCMP
+#
+$CMP LCD_A
+D Power flag, +5V
+K power-flag
+$ENDCMP
+#
+$CMP LCD_K
+D Power flag, +5V
+K power-flag
+$ENDCMP
+#
 $CMP Micro_SD_Card_Det
 D Micro SD Card Socket with card detection pins
 K connector SD microsd
 F https://www.hirose.com/product/en/download_file/key_name/DM3/category/Catalog/doc_file_id/49662/?file_category_id=4&item_id=195&is_series=1
+$ENDCMP
+#
+$CMP PIC32MX795F512L-80I_PT
+D IC MCU 32BIT 512KB FLASH 100TQFP
+K PIC32MX795F512L-80I/PT-ND PIC® 32MX
+F http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en545749
+$ENDCMP
+#
+$CMP PIC32MX795F512L-80I_PT_0
+D IC MCU 32BIT 512KB FLASH 100TQFP
+K PIC32MX795F512L-80I/PT-ND PIC® 32MX
+F http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en545749
 $ENDCMP
 #
 $CMP SW_Push

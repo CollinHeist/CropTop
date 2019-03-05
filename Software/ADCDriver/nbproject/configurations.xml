@@ -8,6 +8,7 @@
       <itemPath>Communication.h</itemPath>
       <itemPath>config_bits.h</itemPath>
       <itemPath>crop_top.h</itemPath>
+      <itemPath>FT812.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
