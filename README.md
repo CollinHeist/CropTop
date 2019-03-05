@@ -23,10 +23,6 @@ Croptop is based around a 32 bit PIC32MX795F512L microcontroller and includes th
 ![Prototypte Front](docs/images/IMG_7746.JPG?raw=true "Title")
 ![Prototypte Back](docs/images/IMG_7747.JPG?raw=true "Title")
 
-## 3D Model
-
-![3d model](docs/images/Capture.PNG?raw=true "Title")
-
 ## Gerber
 
 ![Gerber of board](docs/images/gerb.PNG?raw=true "Title")
