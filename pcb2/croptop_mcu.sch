@@ -1815,4 +1815,16 @@ Wire Wire Line
 Connection ~ 3500 4750
 Wire Wire Line
 	3500 4750 3750 4750
+Text Notes 4000 3150 0    50   ~ 0
+control alt delete muthafucka
+Text Notes 5500 2150 0    50   ~ 10
+hmmmm no
+Text Notes 6000 3050 3    50   Italic 10
+squablo
+Text Notes 6100 3150 3    50   Italic 10
+and
+Text Notes 6200 2950 3    50   Italic 10
+accomplash
+Text Notes 3750 1600 3    50   Italic 10
+j? k? l? mnop?
 $EndSCHEMATC
