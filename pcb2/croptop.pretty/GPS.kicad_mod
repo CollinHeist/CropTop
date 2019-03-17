@@ -1,4 +1,4 @@
-(module GPS (layer F.Cu) (tedit 5C04CC3F)
+(module GPS (layer F.Cu) (tedit 5C875283)
   (descr "surface-mounted straight socket strip, 1x31, 2.00mm pitch, single row, style 1 (pin 1 left) (https://www.jayconsystems.com/fileuploader/download/download/?d=1&file=custom%2Fupload%2FFile-1375728122.pdf), script generated")
   (tags "Surface mounted socket strip SMD 1x31 2.00mm single row style1 pin1 left")
   (attr smd)
@@ -53,4 +53,9 @@
   (pad 26 smd rect (at -6 -4.4) (size 0.7 1.5) (layers F.Cu F.Paste F.Mask))
   (pad 28 smd rect (at -6.4 -1) (size 1.5 0.7) (layers F.Cu F.Paste F.Mask))
   (pad 30 smd rect (at -6.4 1) (size 1.5 0.7) (layers F.Cu F.Paste F.Mask))
+  (model ${KIPRJMOD}/step/CAM-M8.STEP
+    (offset (xyz 10.7 5.4 -7.3))
+    (scale (xyz 1 1 1))
+    (rotate (xyz -90 0 90))
+  )
 )

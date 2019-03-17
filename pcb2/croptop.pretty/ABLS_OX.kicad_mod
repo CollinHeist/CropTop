@@ -1,4 +1,4 @@
-(module ABLS_OX (layer F.Cu) (tedit 5C04BFC5)
+(module ABLS_OX (layer F.Cu) (tedit 5C8734CF)
   (descr "Resistor SMD 4020 (10251 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://datasheet.octopart.com/HVC0603T5004FET-Ohmite-datasheet-26699797.pdf), generated with kicad-footprint-generator")
   (tags resistor)
   (attr smd)
@@ -23,9 +23,9 @@
   )
   (pad 1 smd roundrect (at -4.75 0) (size 5.6 2.1) (layers F.Cu F.Paste F.Mask) (roundrect_rratio 0.169))
   (pad 2 smd roundrect (at 4.75 0) (size 5.6 2.1) (layers F.Cu F.Paste F.Mask) (roundrect_rratio 0.169))
-  (model ${KISYS3DMOD}/Resistor_SMD.3dshapes/R_4020_10251Metric.wrl
+  (model ${KIPRJMOD}/step/ABLS.STEP
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
-    (rotate (xyz 0 0 0))
+    (rotate (xyz -90 0 0))
   )
 )

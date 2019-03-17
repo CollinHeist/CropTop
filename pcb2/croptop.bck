@@ -50,4 +50,10 @@ D Push button switch, generic, two pins
 K switch normally-open pushbutton push-button
 $ENDCMP
 #
+$CMP TPS62131
+D 3A Step-Down Converter with DCS-Control, Adjustable Output Voltage, 3-17V Input Voltage, QFN-16
+K step-down dcdc
+F http://www.ti.com/lit/ds/symlink/tps62130.pdf
+$ENDCMP
+#
 #End Doc Library
