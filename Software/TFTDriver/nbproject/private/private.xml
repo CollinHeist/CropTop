@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Kennedy/Desktop/CropTop/Software/TFTDriver/EVE_Layer.c</file>
-            <file>file:/C:/Users/Kennedy/Desktop/CropTop/Software/TFTDriver/MCU_Layer.c</file>
-            <file>file:/C:/Users/Kennedy/Desktop/CropTop/Software/TFTDriver/main.c</file>
+            <file>file:/C:/Users/Kennedy/Desktop/CropTop/software/TFTDriver/MCU_Layer.c</file>
+            <file>file:/C:/Users/Kennedy/Desktop/CropTop/software/TFTDriver/EVE_Layer.c</file>
+            <file>file:/C:/Users/Kennedy/Desktop/CropTop/software/TFTDriver/FT8xx.h</file>
+            <file>file:/C:/Users/Kennedy/Desktop/CropTop/software/TFTDriver/main.c</file>
+            <file>file:/C:/Users/Kennedy/Desktop/CropTop/software/TFTDriver/Library.h</file>
         </group>
     </open-files>
 </project-private>
