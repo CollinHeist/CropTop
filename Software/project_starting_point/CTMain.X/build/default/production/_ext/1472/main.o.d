@@ -3,4 +3,6 @@ build/default/production/_ext/1472/main.o:  \
 ../config_bits.h  \
  ../crop_top.h  \
 ../MotorLib.h  \
-../PotLib.h 
+../PotLib.h  \
+../FT8xx.h  \
+../DisplayLib.h 

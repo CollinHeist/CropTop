@@ -8,6 +8,8 @@
       <itemPath>../MotorLib.h</itemPath>
       <itemPath>../PotLib.h</itemPath>
       <itemPath>../config_bits.h</itemPath>
+      <itemPath>../DisplayLib.h</itemPath>
+      <itemPath>../FT8xx.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -19,6 +21,8 @@
       <itemPath>../main.c</itemPath>
       <itemPath>../MotorLib.c</itemPath>
       <itemPath>../PotLib.c</itemPath>
+      <itemPath>../DisplayEVE.c</itemPath>
+      <itemPath>../DisplayMCU.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -40,10 +44,10 @@
         <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>2.15</languageToolchainVersion>
-        <platform>3</platform>
+        <platform>2</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32MX_DFP" vendor="Microchip" version="1.0.23"/>
+        <pack name="PIC32MX_DFP" vendor="Microchip" version="1.0.28"/>
       </packs>
       <compileType>
         <linkerTool>
