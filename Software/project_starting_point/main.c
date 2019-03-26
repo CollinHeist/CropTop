@@ -118,7 +118,9 @@ void APP_Init(void)
     EVE_MemWrite8(REG_GPIO, 0x80 | EVE_MemRead8(REG_GPIO));
 
     EVE_MemWrite8(REG_PCLK, lcdPclk);
+    EVE_MemWrite8(REG_PWM_HZ, );
     EVE_MemWrite8(REG_PWM_DUTY, 127);
+
 }
 void APP_FlashingDot(void)
 {

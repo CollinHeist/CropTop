@@ -65,6 +65,10 @@ unsigned char MCU_UART_Rx(void);
 void MCU_Delay_20ms(void);
 void MCU_Delay_500ms(void);
 
+void MCU_SetFreq10();
+void MCU_SetFreq20();
+
+
 // EVE Layer
 void EVE_AddrForWr(unsigned long ftAddress);
 void EVE_AddrForRd(unsigned long ftAddress);
