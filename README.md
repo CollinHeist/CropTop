@@ -25,7 +25,7 @@ Croptop is based around a 32 bit PIC32MX795F512L microcontroller and includes th
 #### Gerber
 ![Gerber of board](docs/images/gerb.PNG?raw=true "Title")
 
-## Understanding and configuring the hardware
+## Understanding and Configuring Hardware
 
 #### Installing KiCAD
 installation guide and tutorial screencast
@@ -41,14 +41,14 @@ links to
 * Voltage levels
 * Resistor divider for software modes.)
 
-#### Making a daughter board
+#### Making a Daughter Board
 instruction/guide to mating a board to the croptop board
 
-#### Manufacturing and ordering new board
+#### Manufacturing and Ordering Boards
 * Logging into Macrofab
 * Specifying chips for populate or do not populate (DNP)
 
-## Understanding and creating software
+## Understanding and Creating Software
 how to get MPLAB up and running, understand the control flow of drivers and IC drivers, and program the device
 
 #### MPLAB Installation
@@ -59,7 +59,7 @@ MPLAB and legacy peripheral library install guide and links
 * C programming guide
 * tutorial links
 
-#### Control flow diagram 
+#### Control Flow Diagram 
 * drivers
 * peripheral libraries
 * middleware 
@@ -68,22 +68,22 @@ MPLAB and legacy peripheral library install guide and links
 #### Integrated Circuit Drivers
 each module has an associated .c and .h file with a documented format
 
-#### Creating new screens
+#### Creating New Screens
 instructions
 
-#### Device programming
+#### Device Programming
 using the PICKIT programming header in MPLAB, and photo of connection to croptop
 
 ## Integration Guide
 how board interacts with system
 
-#### Calibrating sensors
+#### Calibrating Sensors
 how to guide
 
-#### Checking internal storage
+#### Checking Internal Storage
 how to guide
 
-#### Powering the device
+#### Powering the Device
 -How to power on devices
 
 ### Specifications
