@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=I2CLib.c main.c Si7006.c
+SOURCEFILES_QUOTED_IF_SPACED=I2CLib.c main.c Si7006.c AccelLib.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/I2CLib.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Si7006.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/I2CLib.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Si7006.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/I2CLib.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Si7006.o ${OBJECTDIR}/AccelLib.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/I2CLib.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Si7006.o.d ${OBJECTDIR}/AccelLib.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/I2CLib.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Si7006.o
+OBJECTFILES=${OBJECTDIR}/I2CLib.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Si7006.o ${OBJECTDIR}/AccelLib.o
 
 # Source Files
-SOURCEFILES=I2CLib.c main.c Si7006.c
+SOURCEFILES=I2CLib.c main.c Si7006.c AccelLib.c
 
 
 CFLAGS=
@@ -124,6 +124,12 @@ ${OBJECTDIR}/Si7006.o: Si7006.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/Si7006.o 
 	@${FIXDEPS} "${OBJECTDIR}/Si7006.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Si7006.o.d" -o ${OBJECTDIR}/Si7006.o Si7006.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
+${OBJECTDIR}/AccelLib.o: AccelLib.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/AccelLib.o.d 
+	@${RM} ${OBJECTDIR}/AccelLib.o 
+	@${FIXDEPS} "${OBJECTDIR}/AccelLib.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/AccelLib.o.d" -o ${OBJECTDIR}/AccelLib.o AccelLib.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
 else
 ${OBJECTDIR}/I2CLib.o: I2CLib.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -142,6 +148,12 @@ ${OBJECTDIR}/Si7006.o: Si7006.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/Si7006.o.d 
 	@${RM} ${OBJECTDIR}/Si7006.o 
 	@${FIXDEPS} "${OBJECTDIR}/Si7006.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Si7006.o.d" -o ${OBJECTDIR}/Si7006.o Si7006.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/AccelLib.o: AccelLib.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/AccelLib.o.d 
+	@${RM} ${OBJECTDIR}/AccelLib.o 
+	@${FIXDEPS} "${OBJECTDIR}/AccelLib.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/AccelLib.o.d" -o ${OBJECTDIR}/AccelLib.o AccelLib.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 endif
 

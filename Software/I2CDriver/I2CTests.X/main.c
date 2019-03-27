@@ -12,12 +12,17 @@
 #include "crop_top.h"
 #include "I2CLib.h"
 #include "Si7006.h"
+#include "AccelLib.h"
 
 int main()
 {
     initialize_system();
-    float temp = 0.0, humidity = 0.0;
     int i;
+    unsigned char who_is_it;
+    float Z_read, Y_read, X_read;
+    float temperature, humidity;
+    double tilt;
+    char st_failed;
     while(1)
     {
         i = 0;
@@ -26,8 +31,14 @@ int main()
             i++;
         }
         // do some shit
-//        temp = Si7006_ReadTemp();
+        temperature = Si7006_ReadTemp();
         humidity = Si7006_ReadHumidity();
+        Z_read = AccelLib_ReadZ();
+        Y_read = AccelLib_ReadY();
+        X_read = AccelLib_ReadX();
+        tilt = AccelLib_ReadTilt();
+        st_failed = AccelLib_SelfTest();
+        who_is_it = AccelLib_SingleRead(WHO_AM_I);
     }
 }
 void initialize_system()
@@ -36,4 +47,5 @@ void initialize_system()
     PORTSetPinsDigitalOut(IOPORT_C, LEDS);
     LATCCLR = LEDS;
     I2CLib_Init();
+    AccelLib_Init();
 }
