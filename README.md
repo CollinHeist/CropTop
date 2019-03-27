@@ -1,7 +1,7 @@
 # CropTop
 CropTop is a small-form data aquisition platform being developed by [Kennedy Caisley](https://github.com/kcaisley) and [Ryan Donahue](https://github.com/ryand323), two undergraduate electrical engineering students at the University of Idaho. It is designed to support the cereal grain crop strength research being conducted by [Dr. Daniel Roberston](https://www.uidaho.edu/engr/departments/me/our-people/faculty/daniel-robertson) in the UI Department of Mechanical Engineering.
 
-### What can CropTop do?
+## What can CropTop do?
 Croptop is based around a 32 bit PIC32MX795F512L microcontroller and includes the following peripherals onboard:
 * 12 bit temperature/humidity sensor
 * 3-axis accelerometer
@@ -25,7 +25,7 @@ Croptop is based around a 32 bit PIC32MX795F512L microcontroller and includes th
 #### Gerber
 ![Gerber of board](docs/images/gerb.PNG?raw=true "Title")
 
-### Understanding and configuring the hardware
+## Understanding and configuring the hardware
 
 #### Installing KiCAD
 installation guide and tutorial screencast
@@ -48,7 +48,7 @@ instruction/guide to mating a board to the croptop board
 * Logging into Macrofab
 * Specifying chips for populate or do not populate (DNP)
 
-### Understanding and creating software
+## Understanding and creating software
 how to get MPLAB up and running, understand the control flow of drivers and IC drivers, and program the device
 
 #### MPLAB Installation
@@ -74,7 +74,7 @@ instructions
 #### Device programming
 using the PICKIT programming header in MPLAB, and photo of connection to croptop
 
-### Integration Guide
+## Integration Guide
 how board interacts with system
 
 #### Calibrating sensors
