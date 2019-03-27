@@ -18,7 +18,7 @@
 #include "FT8xx.h"
 #include "DisplayLib.h"
 
-// APPLICATION SPECIFIC DEFINITIONS
+// APPLICATION DEFINITIONS
 #define FTD81x_ACTIVE 0x00
 #define FTD81x_CLKEXT 0x44
 
@@ -39,9 +39,9 @@ unsigned char lcdPclkpol =  1;  // Define active edge of PCLK
 
 
 //FROM EXAMPLE
-unsigned int cmdOffset = 0x0000;		// Used to navigate command rung buffer
+unsigned int cmdOffset = 0x0000;    // Used to navigate command rung buffer
 unsigned long color;				// Variable for changing colors
-unsigned int point_size = 0x0100;		// Define a default dot size
+unsigned int point_size = 0x0100;	// Define a default dot size
 
 ///////
 
@@ -76,13 +76,14 @@ void initialize_system()
 }
 void APP_Init(void)
 {
-//    // Not listed in Programming manual
-//    // PM shows usage of MCU_SPI_CLK_Freq?
-//    MCU_PDlow();
-//    MCU_Delay_20ms();
-//    MCU_PDhigh();
-//    MCU_Delay_20ms();
+    // Not listed in Programming manual
+    MCU_PDlow();
+    MCU_Delay_20ms();
+    MCU_PDhigh();
+    MCU_Delay_20ms();
 
+    MCU_SetFreq10();
+    
     EVE_CmdWrite(FTD81x_CLKEXT, 0x00);
     EVE_CmdWrite(FTD81x_ACTIVE, 0x00);
     
@@ -105,7 +106,7 @@ void APP_Init(void)
     EVE_MemWrite16(REG_VSIZE,   lcdHeight);
     
     // Write first display list
-    // TODO Replace constants!                                                   
+    // TODO Replace constants!
     EVE_MemWrite32(RAM_DL, 0x02000000);// Clear Color RGB sets the colour to clear screen to
     EVE_MemWrite32(RAM_DL+4, (0x26000000 | 0x00000007));// Clear 00100110 -------- -------- -----CST  (C/S/T define which parameters to clear)                                                // point to next location
     EVE_MemWrite32(RAM_DL+8, 0x00000000);// DISPLAY command 00000000 00000000 00000000 00000000 (end of display list)
@@ -118,8 +119,11 @@ void APP_Init(void)
     EVE_MemWrite8(REG_GPIO, 0x80 | EVE_MemRead8(REG_GPIO));
 
     EVE_MemWrite8(REG_PCLK, lcdPclk);
-    EVE_MemWrite8(REG_PWM_HZ, );
-    EVE_MemWrite8(REG_PWM_DUTY, 127);
+    EVE_MemWrite16(REG_PWM_HZ, 250);
+    EVE_MemWrite8(REG_PWM_DUTY, 63);
+    EVE_MemWrite16(REG_GPIOX, 1<<15);
+    
+    MCU_SetFreq20();
 
 }
 void APP_FlashingDot(void)

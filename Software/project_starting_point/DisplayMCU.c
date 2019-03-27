@@ -27,9 +27,7 @@
 
 // ------------------- MCU specific initialisation  ----------------------------
 void MCU_Init(void)
-{       
-    //Notes: May still need to find a way to make SCLK = FOSC/16
-    
+{
     // Port pin set-up
     TRISBbits.TRISB14 = 0;                                                      // CS
     TRISGbits.TRISG9 = 0;                                                       // PD pin
@@ -55,8 +53,6 @@ void MCU_Init(void)
     SPI2STATbits.SPITBE = 1;  //SPI transmit buffer is empty
     SPI2STATbits.SPIRBF = 0;
     SPI2STATbits.SPIROV = 0;
-
-    MCU_SetFreq20();
     
     SPI2CONbits.ON = 1;// Enable SPI1 after configuration
     
@@ -125,7 +121,7 @@ void MCU_Delay_20ms(void)
     int i;
     while(delay --){
         for(i=0;i<8850;i++){
-            //Do nothing
+            Nop();
         }
     }
 }
@@ -133,7 +129,7 @@ void MCU_Delay_20ms(void)
 void MCU_Delay_500ms(void){
     unsigned char dly = 0;                                                      
     for(dly =0; dly < 100; dly++){
-    MCU_Delay_20ms();
+        MCU_Delay_20ms();
     }
 }
 
