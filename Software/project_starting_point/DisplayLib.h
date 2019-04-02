@@ -62,8 +62,11 @@ unsigned char MCU_SPIReadWrite(unsigned char DataToWrite);
 void MCU_UART_Init(void);
 void MCU_UART_Tx(unsigned char SerialTxByte);
 unsigned char MCU_UART_Rx(void);
-void MCU_Delay_20ms(void);
-void MCU_Delay_500ms(void);
+void MCU_Delay_1ms(void);
+void MCU_Delay_ms(unsigned int);
+void MCU_Delay_1us(void);
+void MCU_Delay_us(unsigned int);
+
 
 void MCU_SetFreq10();
 void MCU_SetFreq20();
