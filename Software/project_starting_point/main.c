@@ -13,8 +13,8 @@
 #include <plib.h>
 #include "config_bits.h"
 #include "crop_top.h"
-#include "MotorLib.h"
-#include "PotLib.h"
+//#include "MotorLib.h"
+//#include "PotLib.h"
 #include "FT8xx.h"
 #include "DisplayLib.h"
 
@@ -51,36 +51,36 @@ void APP_FlashingDot(void);
 
 int main()
 {
-    // Initialize board
+    //Initialize board
     initialize_system();
     
-    // Initialize Display MCU
-    MCU_Init();
     APP_Init();
+    
     APP_FlashingDot();
-    unsigned int TestRead;
     while(1)
     {
-//        TestRead = PotLib_SingleRead();
-//        LATCINV = LED_A;
+        Nop();
     }
 }
 void initialize_system()
 {
 	SYSTEMConfig(GetSystemClock(), SYS_CFG_WAIT_STATES | SYS_CFG_PCACHE);
+    DDPCONbits.JTAGEN = 0;
     PORTSetPinsDigitalIn(IOPORT_C, BUTTONS);
     PORTSetPinsDigitalOut(IOPORT_C, LEDS);
+    MCU_Init();//Configures FT812 SPI Bits, rename to something LCD related
+    LATCCLR = LED_A;
     PotLib_Init();
     MotorLib_Init();
     INTEnableSystemMultiVectoredInt();
 }
+
 void APP_Init(void)
 {
-    // Not listed in Programming manual
     MCU_PDlow();
-    MCU_Delay_20ms();
+    MCU_Delay_ms(20);
     MCU_PDhigh();
-    MCU_Delay_20ms();
+    MCU_Delay_ms(20);
 
     MCU_SetFreq10();
     
@@ -88,8 +88,7 @@ void APP_Init(void)
     EVE_CmdWrite(FTD81x_ACTIVE, 0x00);
     
     // Startup may take 300ms. Wait until ready
-    while (EVE_MemRead8(REG_ID) != 0x7C);
-    while (EVE_MemRead8(REG_CPURESET) != 0x00);
+    while ((EVE_MemRead16(REG_ID) >> 8) != 0x7C);
  
     // Configure display registers
     EVE_MemWrite16(REG_HCYCLE,  lcdHcycle);	
@@ -178,7 +177,7 @@ void APP_FlashingDot(void)
                                                                                 // Co-processor will now execute all of the above commands and create a display list
         cmdOffset = EVE_WaitCmdFifoEmpty();                                     // Await completion of processing and record starting address for next screen update
                                                                          
-        MCU_Delay_500ms();                                                      // Delay to slow down the flashing of the dot to allow user to see it
+        MCU_Delay_ms(500);                                                      // Delay to slow down the flashing of the dot to allow user to see it
         
     }
 }

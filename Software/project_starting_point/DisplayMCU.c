@@ -4,6 +4,9 @@
 
 #define _XTAL_FREQ 12000000      // Required for _delay() function
 
+//CS Pin timing
+#define CS_LOW_TIMER 10
+#define CS_HIGH_TIMER 50
 
 /*
  * Section 23.3.2.1, DS61106E-page 23-23, ~Page 775 of
@@ -27,7 +30,7 @@
 
 // ------------------- MCU specific initialisation  ----------------------------
 void MCU_Init(void)
-{
+{    
     // Port pin set-up
     TRISBbits.TRISB14 = 0;                                                      // CS
     TRISGbits.TRISG9 = 0;                                                       // PD pin
@@ -35,7 +38,7 @@ void MCU_Init(void)
     TRISGbits.TRISG7 = 1;                                                       // SDI (MISO)
     TRISGbits.TRISG8 = 0;                                                       // SDO (MOSI) 
     
-    // SPI 1 set-up
+    // SPI 2 set-up
     SPI2CONbits.ON  = 0;// Disable SPI1 and configure it
     
     MCU_SetFreq10();
@@ -59,6 +62,7 @@ void MCU_Init(void)
 }
 // ######################### FREQUENCY CONTROL #################################
 // Set Frequency to 10Mhz
+// TODO Rename along lines of SPI_FREQ
 void MCU_SetFreq10()
 {
     SPI2BRGCLR = 0x000000FF;
@@ -74,18 +78,19 @@ void MCU_SetFreq20()
 
 
 // ########################### GPIO CONTROL ####################################
-
 // --------------------- Chip Select line low ----------------------------------
 void MCU_CSlow(void)
 {
     LATGbits.LATG9 = 0;
-    Nop();
+    unsigned int i;
+    for(i=0; i < CS_LOW_TIMER; i++);
 }  
 
 // --------------------- Chip Select line high ---------------------------------
 void MCU_CShigh(void)
 {
-    Nop();
+    unsigned int i;
+    for(i=0; i < CS_HIGH_TIMER; i++);
     LATGbits.LATG9 = 1;
 }
 
@@ -115,21 +120,18 @@ unsigned char MCU_SPIReadWrite(unsigned char DataToWrite)
     return DataRead;
 }
 
-void MCU_Delay_20ms(void)
+void MCU_Delay_1ms(void)
 {
-    int delay = 20;
+    unsigned int ms = 7272;
     int i;
-    while(delay --){
-        for(i=0;i<8850;i++){
-            Nop();
-        }
+    for(i=0;i<ms;i++){
+        Nop();
     }
 }
-
-void MCU_Delay_500ms(void){
-    unsigned char dly = 0;                                                      
-    for(dly =0; dly < 100; dly++){
-        MCU_Delay_20ms();
+void MCU_Delay_ms(unsigned int time_in_ms)
+{
+    unsigned int i;
+    for(i=0;i<time_in_ms;i++){
+        MCU_Delay_1ms();
     }
 }
-

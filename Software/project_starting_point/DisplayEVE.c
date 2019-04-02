@@ -20,27 +20,22 @@
 // ------------------ Send FT81x register address for writing ------------------
 void EVE_AddrForWr(unsigned long ftAddress)
 {
-    unsigned char dummyRead = 0;
+//    unsigned char dummyRead = 0;
     // Send three bytes of a register address which has to be subsequently written. Ignore return values as this is an SPI write only.
-    dummyRead = MCU_SPIReadWrite( (char) ((ftAddress >> 16) | MEM_WRITE) );     // Send high byte of address with 'write' bits set
-
-    dummyRead = MCU_SPIReadWrite( (char) (ftAddress >> 8) );                    // Send middle byte of address
-
-    dummyRead = MCU_SPIReadWrite( (char) (ftAddress) );                         // Send low byte of address
+    MCU_SPIReadWrite( (char) ((ftAddress >> 16) | MEM_WRITE) );     // Send high byte of address with 'write' bits set
+    MCU_SPIReadWrite( (char) (ftAddress >> 8) );                    // Send middle byte of address
+    MCU_SPIReadWrite( (char) (ftAddress) );                         // Send low byte of address
 }
 
 // ------------------ Send FT81x register address for reading ------------------
 void EVE_AddrForRd(unsigned long ftAddress)
 {
-    unsigned char dummyRead = 0;
+//    unsigned char dummyRead = 0;
     // Send three bytes of a register address which has to be subsequently read. Ignore return values as this is an SPI write only.
-    dummyRead = MCU_SPIReadWrite( (char) ((ftAddress >> 16) | MEM_READ) );      // Send high byte of address with 'read' bits set
-
-    dummyRead = MCU_SPIReadWrite( (char) (ftAddress >> 8) );                    // Send middle byte of address
-
-    dummyRead = MCU_SPIReadWrite( (char) (ftAddress) );                         // Send low byte of address
-
-    dummyRead = MCU_SPIReadWrite( 0x00 );                                       // Send dummy byte before doing the read
+    MCU_SPIReadWrite( (char) ((ftAddress >> 16) | MEM_READ) );      // Send high byte of address with 'read' bits set
+    MCU_SPIReadWrite( (char) (ftAddress >> 8) );                    // Send middle byte of address
+    MCU_SPIReadWrite( (char) (ftAddress) );                         // Send low byte of address
+    MCU_SPIReadWrite( 0x00 );                                       // Send dummy byte before doing the read
 }
 
 // ------------------------ Send a 32-bit data value --------------------------
@@ -214,10 +209,10 @@ unsigned char EVE_MemRead8(unsigned long ftAddress)
   
     MCU_CSlow();                                                                // CS low begins the SPI transfer 
   
-    EVE_AddrForRd(ftAddress);                                                   // Send address to be read
+    EVE_AddrForRd(ftAddress);//First 32 bytes                                                   // Send address to be read
        
     ftData8 = EVE_Read8();                                                      // Read the data value   
-
+    
     MCU_CShigh();                                                               // CS high terminates the SPI transfer
  
     return ftData8;                                                             // Return 8-bit value read
