@@ -91,7 +91,8 @@ A highly reccomended [tutorial](http://cslibrary.stanford.edu/101/EssentialC.pdf
 * Data types and operators
 * Control structures
 * Functions
-but asking questions on [https://stackexchange.com/] is a great learning resource
+
+But, asking questions on [stack exchange](https://stackexchange.com/) is essential to learning the nuances of C programming
 
 #### Control Flow Diagram 
 * drivers
@@ -100,7 +101,9 @@ but asking questions on [https://stackexchange.com/] is a great learning resourc
 * application
 
 #### Integrated Circuit Drivers
-each module has an associated .c and .h file with a documented format
+Every driver PIC32 peripheral or Integrated Circuit (IC) driver has an associated .c and .h file with a [documented coding standard](https://github.com/kcaisley/CropTop/tree/master/Software)
+
+For longevity of the project, it is encouraged to be consistent with the project structure.
 
 #### Creating New Screens
 instructions
