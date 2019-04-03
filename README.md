@@ -70,9 +70,9 @@ Install [Git](https://git-scm.com/downloads "Git")
 A tutorial covering basic workflow can be found [here](https://evanwill.github.io/get-git/), but many others exist
 
 To pull the repository to a new device, run git bash and execute the following
-''''
+'''
 git clone https://github.com/kcaisley/CropTop.git
-''''
+'''
 
 #### Using MPLAB 
 * screen cast
