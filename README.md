@@ -70,21 +70,19 @@ Install [Git](https://git-scm.com/downloads "Git")
 A tutorial covering basic workflow can be found [here](https://evanwill.github.io/get-git/), but many others exist
 
 To pull a repository to a new device, run git bash and execute the following
-
-'''
+```
 git clone https://github.com/kcaisley/CropTop.git
-'''
+```
 
 A few other useful commands are:
-
-'''
+```
 git pull
 git status
 git add
 git commit
 git branch
 git merge
-'''
+```
 
 #### Using MPLAB 
 * screen cast
