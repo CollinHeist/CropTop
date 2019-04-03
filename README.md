@@ -85,7 +85,7 @@ git merge
 ```
 
 #### Using MPLAB 
-A [tutorial](/docs/videos/MPLAB_tutorial.mp4) on using MPLAB
+A [video tutorial](https://vimeo.com/user96989107/review/328287810/0cc609795f) on using MPLAB
 
 A highly reccomended [tutorial](http://cslibrary.stanford.edu/101/EssentialC.pdf) from stanford can teach you the basics of
 * Data types and operators
