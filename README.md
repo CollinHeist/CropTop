@@ -100,7 +100,7 @@ But, asking questions on [stack exchange](https://stackexchange.com/) is essenti
 * middleware 
 * application
 
-#### Integrated Circuit Drivers
+#### CropTop Drivers
 Every driver PIC32 peripheral or Integrated Circuit (IC) driver has an associated .c and .h file adhering to a [CropTop coding standard](https://github.com/kcaisley/CropTop/tree/master/Software)
 
 For longevity of the project, it is encouraged to be consistent with the project structure.

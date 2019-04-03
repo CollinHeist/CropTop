@@ -1,0 +1,18 @@
+Screencast for MPLAB
+"Once you have completed the installation and open MPLAB, this is the starting Screen"
+"I want to walk you through the some of the useful tools"
+
+Open a new project for the device then show:
+  Project navigator, the file structure of the project
+  Dashboard, mostly useful for program memory size
+
+Open a CropTop project
+  Run the project, with a breakpoint
+    window>debugging>(variables and watch)
+    window>Target Memory Views>configuration bits
+    step through the code and look at the execution
+  ctrl click on a function, macro, variable (or right click) to find implementation
+  ctrl / to comment
+  put an error in, compile, read debug console
+  help>help contents
+    walkthrough plib help and others

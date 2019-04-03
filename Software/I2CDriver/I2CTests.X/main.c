@@ -30,7 +30,7 @@ int main()
         {
             i++;
         }
-        // do some shit
+        // do some stuff
         temperature = Si7006_ReadTemp();
         humidity = Si7006_ReadHumidity();
         Z_read = AccelLib_ReadZ();
