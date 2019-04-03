@@ -86,8 +86,12 @@ git merge
 
 #### Using MPLAB 
 * screen cast
-* C programming guide
-* tutorial links
+
+A highly reccomended [tutorial](http://cslibrary.stanford.edu/101/EssentialC.pdf) from stanford can teach you the basics of
+* Data types and operators
+* Control structures
+* Functions
+but asking questions on [https://stackexchange.com/] is a great learning resource
 
 #### Control Flow Diagram 
 * drivers
