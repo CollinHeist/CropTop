@@ -49,10 +49,19 @@ instruction/guide to mating a board to the croptop board
 * Specifying chips for populate or do not populate (DNP)
 
 ## Understanding and Creating Software
-how to get MPLAB up and running, understand the control flow of drivers and IC drivers, and program the device
+How to get the MPLAB enviroment up and running, understand the control flow of drivers and IC drivers, and program the device
 
 #### MPLAB Installation
-MPLAB and legacy peripheral library install guide and links
+MPLAB is Microchip's Interactive Development Enviroment (IDE) 
+The tool offers dedicated debug, programming, and congiguration tools for Microchip's processors.
+
+Setup requires three steps:
+1. Install [MPLAB X IDE]:https://www.microchip.com/mplab/mplab-x-ide
+2. Install [XC32 Compiler]:https://www.microchip.com/mplab/compilers
+3. Install the [legacy peripheral libraries]:https://www.microchip.com/SWLibraryWeb/product.aspx?product=PIC32%20Peripheral%20Library
+
+Microchip's help guide for installation is found here:
+[http://microchipdeveloper.com/tls0101:get-mplabx]
 
 #### Using MPLAB 
 * screen cast

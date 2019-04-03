@@ -1,0 +1,27 @@
+Continuous mode		52
+RTC					27
+DDC					34, exactly I2C
+how to change between protocols 38, irrelevant
+
+
+configured into current operation through UBX-CFG messages
+UBX protocol
+page 10 lists configuration sub-sections
+
+uses multiple GNSS signals for better accuracy
+
+section 4.2 configuration
+
+
+section 11.5 DDC
+#define GPS_ADDR 0x42
+0xFF means no message data is waiting
+Read (normal): start, device address | W, sub-register, device address | R, read 1 to N, NACK, stop
+Write, at least 2 bytes: normal
+read address are not accessable for writes
+
+12.3.3 - flow control, something for online shit
+writing many messages may result in some NACKs, ensure each write is ACKd
+
+time and data
+base of 2019, week number each 30s, second number in the rest (TOW)
