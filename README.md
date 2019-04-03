@@ -56,12 +56,15 @@ MPLAB is Microchip's Interactive Development Enviroment (IDE)
 The tool offers dedicated debug, programming, and congiguration tools for Microchip's processors.
 
 Setup requires three steps:
-1. Install [MPLAB X IDE]:https://www.microchip.com/mplab/mplab-x-ide
-2. Install [XC32 Compiler]:https://www.microchip.com/mplab/compilers
-3. Install the [legacy peripheral libraries]:https://www.microchip.com/SWLibraryWeb/product.aspx?product=PIC32%20Peripheral%20Library
+1. Install [MPLAB X IDE](https://www.microchip.com/mplab/mplab-x-ide "MPLAB X IDE")
+2. Install [XC32 Compiler](https://www.microchip.com/mplab/compilers "XC32 Compilers")
+3. Install the [Legacy Peripheral Libraries](https://www.microchip.com/SWLibraryWeb/product.aspx?product=PIC32%20Peripheral%20Library "legacy peripheral libraries")
 
-Microchip's help guide for installation is found here:
-[http://microchipdeveloper.com/tls0101:get-mplabx]
+Microchip's help guide for installation is found here: [Microchip Developer](http://microchipdeveloper.com/tls0101:get-mplabx "Microchip Developer")
+
+#### Git Installation
+* tutorial and installation
+* pulling the repo guide
 
 #### Using MPLAB 
 * screen cast
