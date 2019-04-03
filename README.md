@@ -63,8 +63,16 @@ Setup requires three steps:
 Microchip's help guide for installation is found here: [Microchip Developer](http://microchipdeveloper.com/tls0101:get-mplabx "Microchip Developer")
 
 #### Git Installation
-* tutorial and installation
-* pulling the repo guide
+The Git project chose guarantee your freedom to share and change free software. CropTop was developed with this tool and offers the most efficient method of distributing and controlling the project.
+
+Install [Git](https://git-scm.com/downloads "Git")
+
+A tutorial covering basic workflow can be found [here](https://evanwill.github.io/get-git/), but many others exist
+
+To pull the repository to a new device, run git bash and execute the following
+''''
+git clone https://github.com/kcaisley/CropTop.git
+''''
 
 #### Using MPLAB 
 * screen cast
