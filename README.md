@@ -101,7 +101,7 @@ But, asking questions on [stack exchange](https://stackexchange.com/) is essenti
 * application
 
 #### Integrated Circuit Drivers
-Every driver PIC32 peripheral or Integrated Circuit (IC) driver has an associated .c and .h file with a [documented coding standard](https://github.com/kcaisley/CropTop/tree/master/Software)
+Every driver PIC32 peripheral or Integrated Circuit (IC) driver has an associated .c and .h file adhering to a [CropTop coding standard](https://github.com/kcaisley/CropTop/tree/master/Software)
 
 For longevity of the project, it is encouraged to be consistent with the project structure.
 
@@ -112,19 +112,16 @@ instructions
 using the PICKIT programming header in MPLAB, and photo of connection to croptop
 
 ## Integration Guide
-how board interacts with system
+How the board interacts with system
 
 #### Calibrating Sensors
-how to guide
-
-#### Checking Internal Storage
-how to guide
+How to calibrate guide
 
 #### Powering the Device
--How to power on devices
+How to power on devices
 
 ### Specifications
-sensors and power supplies electrical characteristics
+Electrical Characteristics of sensors and power supplies
 
 #### Creating and Using Data
-how to export, interpret, and use the data
+How to export, interpret, and use the data CropTop Logs
