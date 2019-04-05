@@ -37,29 +37,57 @@ unsigned char lcdPclk =     2;	// Pixel Clock
 unsigned char lcdSwizzle =  0;	// Define RGB output pins
 unsigned char lcdPclkpol =  1;  // Define active edge of PCLK 
 
-
-//FROM EXAMPLE
-unsigned int cmdOffset = 0x0000;    // Used to navigate command rung buffer
-unsigned long color;				// Variable for changing colors
-unsigned int point_size = 0x0100;	// Define a default dot size
-
-///////
-
 // Lame interface
 void APP_Init(void);
-void APP_FlashingDot(void);
+
+#define POINTS 2
+
+/*
+ *
+ *  The graphics engine interprets commands from the MPU host via a 4 Kbyte 
+ * FIFO in the FT81x memory at RAM_CMD. 
+ * 
+ * The MPU/MCU writes commands into the FIFO, and the graphics engine  reads 
+ *  and  executes  the  commands. 
+ * 
+ * The MPU/MCU  updates the register REG_CMD_WRITE to indicate  that  there 
+ *  are  new  commands  in  the  FIFO, and  the  graphics  engine 
+ *  updates REG_CMD_READ after commands have been executed
+ 
+ */
+
+void cmd(unsigned long command)
+{
+    unsigned long current_offset, new_offset;
+    EVE_MemWrite32(RAM_CMD, command);
+    current_offset = EVE_MemRead32(REG_CMD_WRITE);
+    new_offset = EVE_IncCMDOffset(current_offset, 4);
+    EVE_MemWrite32(REG_CMD_WRITE, new_offset);
+    EVE_WaitCmdFifoEmpty();
+}
 
 int main()
 {
-    //Initialize board
     initialize_system();
-    
     APP_Init();
     
-    APP_FlashingDot();
+    cmd(CMD_LOGO);
+    
+//    EVE_MemWrite32(RAM_DL + 0, CLEAR(0, 0, 0));
+//    
+//    
+//    
+//    EVE_MemWrite32(RAM_DL +20,END());
+//    EVE_MemWrite32(RAM_DL +24,DISPLAY());
+    
+    
+    
+    int time = 100;
+    
     while(1)
     {
-        Nop();
+        MCU_Delay_ms(time);
+
     }
 }
 void initialize_system()
@@ -124,60 +152,4 @@ void APP_Init(void)
     
     MCU_SetFreq20();
 
-}
-void APP_FlashingDot(void)
-{
-   
-    cmdOffset = EVE_WaitCmdFifoEmpty();                                         // Wait for command FIFO to be empty and record current position in FIFO
-            
-    while(1)
-    {   
-        if(color == 0x00)                                                       // Toggle colour variable
-            color = 0xFF;
-        else
-            color = 0x00;
-        
-        MCU_CSlow();                                                            // CS low begins SPI transaction 
-        EVE_AddrForWr(RAM_CMD + cmdOffset);                                     // Send address to which first value will be written
-       
-        EVE_Write32(CMD_DLSTART);                                               // Co-pro starts new DL at RAM_DL + 0
-        cmdOffset = EVE_IncCMDOffset(cmdOffset, 4);                             // Keep count of bytes sent so that write pointer can be updated at end
-                                                                                // Keeping CS low and FT8xx will auto increment address for 'burst write'
-
-        EVE_Write32(CLEAR_COLOR_RGB(0,0,0));                                    // Set the default clear color to black
-        cmdOffset = EVE_IncCMDOffset(cmdOffset, 4);                                
-
-        EVE_Write32(CLEAR(1,1,1));                                              // Clear the screen Attributes color, stencil and tag buffers
-        cmdOffset = EVE_IncCMDOffset(cmdOffset, 4);                               
-
-        EVE_Write32 (COLOR_RGB(color,0,0));                                     // Specify RGB colour of subsequent items drawn
-        cmdOffset = EVE_IncCMDOffset(cmdOffset, 4);                                 
-
-        EVE_Write32(BEGIN(FTPOINTS));                                           // Begin drawing points
-        cmdOffset = EVE_IncCMDOffset(cmdOffset, 4);                               
-
-        EVE_Write32(POINT_SIZE(point_size));                                    // Select the size of the dot to draw
-        cmdOffset = EVE_IncCMDOffset(cmdOffset, 4);                              
-    
-        EVE_Write32(VERTEX2F(100*16,100*16));                                   // Set the point center location
-        cmdOffset = EVE_IncCMDOffset(cmdOffset, 4);                               
-
-        EVE_Write32(END());                                                     // End drawing of points
-        cmdOffset = EVE_IncCMDOffset(cmdOffset, 4);                           
-
-        EVE_Write32(DISPLAY());                                                 // Instruct the graphics processor to show the list
-        cmdOffset = EVE_IncCMDOffset(cmdOffset, 4);                    
-
-        EVE_Write32(CMD_SWAP);                                                  // Make this list active
-        cmdOffset = EVE_IncCMDOffset(cmdOffset, 4);                          
-
-        MCU_CShigh();                                                           // Chip Select high concludes burst
-    
-        EVE_MemWrite32(REG_CMD_WRITE, (cmdOffset));                             // Update the ring buffer pointer 
-                                                                                // Co-processor will now execute all of the above commands and create a display list
-        cmdOffset = EVE_WaitCmdFifoEmpty();                                     // Await completion of processing and record starting address for next screen update
-                                                                         
-        MCU_Delay_ms(500);                                                      // Delay to slow down the flashing of the dot to allow user to see it
-        
-    }
 }

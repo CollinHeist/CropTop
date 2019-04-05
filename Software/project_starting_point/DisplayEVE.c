@@ -272,12 +272,24 @@ unsigned int EVE_WaitCmdFifoEmpty(void)
     return WritePointer;                                                        // New starting point will be first location after the last command
 }
 
+uint32_t EVE_GetCurrentWritePointer(void)
+{
+    uint32_t WritePointer;
 
+    WritePointer = EVE_MemRead32(REG_CMD_WRITE);                                // Read the graphics processor write pointer
+  
+    return WritePointer;                                                        // New starting point will be first location after the last command
+}
 
+// ------------ Check how much free space is available in CMD FIFO -------------
 
-
-
-
-
-
-
+uint16_t EVE_CheckFreeSpace(uint16_t CmdOffset)
+{
+    uint32_t ReadPointer = 0;
+    uint16_t Fullness, Freespace;
+        
+    ReadPointer = EVE_MemRead32(REG_CMD_READ);                                  // Check the graphics processor read pointer
+    Fullness = ((CmdOffset - (uint16_t)ReadPointer) & 4095);                    // Fullness is difference between MCUs current write pointer value and the FT81x's REG_CMD_READ
+    Freespace = (4096 - 4) - Fullness;                                          // Free Space is 4K - 4 - Fullness (-4 avoids buffer wrapping round)
+    return Freespace;
+}

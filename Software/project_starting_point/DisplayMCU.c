@@ -5,8 +5,8 @@
 #define _XTAL_FREQ 12000000      // Required for _delay() function
 
 //CS Pin timing
-#define CS_LOW_TIMER 10
-#define CS_HIGH_TIMER 50
+#define CS_LOW_TIMER 8
+#define CS_HIGH_TIMER 8
 
 /*
  * Section 23.3.2.1, DS61106E-page 23-23, ~Page 775 of
