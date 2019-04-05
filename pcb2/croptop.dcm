@@ -56,4 +56,10 @@ K step-down dcdc
 F http://www.ti.com/lit/ds/symlink/tps62130.pdf
 $ENDCMP
 #
+$CMP USB2512B
+D USB 2.0 Hi-Speed Hub Controller
+K USB2.0 Hi-Speed-USB-Hub Hub-Controller
+F http://ww1.microchip.com/downloads/en/DeviceDoc/00001692C.pdf
+$ENDCMP
+#
 #End Doc Library

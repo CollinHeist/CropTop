@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 6
+Sheet 1 5
 Title "CropTop 2.0"
 Date "2019-03-18"
 Rev "Revision 12"
@@ -19,12 +19,6 @@ S 6300 2750 1200 900
 U 64807BBC
 F0 "Microcontroller" 50
 F1 "croptop_mcu.sch" 50
-$EndSheet
-$Sheet
-S 6300 5150 1200 900 
-U 64809F0C
-F0 "Power Supply" 50
-F1 "croptop_psu.sch" 50
 $EndSheet
 $Sheet
 S 7700 2750 1200 900 

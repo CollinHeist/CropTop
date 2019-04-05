@@ -20,7 +20,7 @@ int main()
     while(1)
     {
 //        TestRead = PotLib_SingleRead();
-//        LATCINV = LED_A;
+        LATCSET = LED_A;
     }
 }
 void initialize_system()
