@@ -239,9 +239,9 @@ Wire Wire Line
 	3750 6000 3550 6000
 Wire Wire Line
 	3550 6100 3750 6100
-Text GLabel 950  4050 0    39   Input ~ 0
+Text GLabel 900  4200 0    33   Input ~ 0
 ~GPU_PD
-Text GLabel 950  4250 0    39   Output ~ 0
+Text GLabel 900  4100 0    33   Output ~ 0
 ~GPU_INT
 Wire Wire Line
 	3650 3900 3750 3900
@@ -260,7 +260,7 @@ Wire Wire Line
 	15100 3400 15000 3400
 Wire Wire Line
 	3750 5400 3650 5400
-Text GLabel 3650 5400 0    39   Output ~ 0
+Text GLabel 3650 5400 0    33   Output ~ 0
 GPU_PWM
 $Comp
 L CropTop:DGND #PWR?
@@ -315,7 +315,7 @@ AR Path="/65B709D0/5C0AA294" Ref="U12"  Part="1"
 F 0 "U12" H 4600 7267 50  0000 C CNN
 F 1 "FT812Q" H 4600 7176 50  0000 C CNN
 F 2 "Package_DFN_QFN:QFN-56-1EP_8x8mm_P0.5mm_EP4.5x5.2mm" H 4625 5175 50  0001 C CNN
-F 3 "" H 4625 5175 50  0001 C CNN
+F 3 "https://brtchip.com/wp-content/uploads/Support/Documentation/Datasheets/ICs/EVE/DS_FT81x.pdf" H 4625 5175 50  0001 C CNN
 	1    4550 5300
 	1    0    0    -1  
 $EndComp
@@ -323,7 +323,7 @@ NoConn ~ 15100 6600
 Text Notes 3750 3150 0    98   ~ 20
 Graphics Processing Unit
 Text Notes 13900 1300 0    98   ~ 20
-TFT LCD Display FPC Connector
+TFT GPU Display FPC Connector
 $Comp
 L power:+3V3 #PWR?
 U 1 1 5C758084
@@ -488,13 +488,13 @@ Wire Wire Line
 	1800 4400 2000 4400
 Wire Wire Line
 	1800 4400 1800 5000
-Text GLabel 2100 3400 0    39   Input ~ 0
+Text GLabel 2100 3400 0    33   Input ~ 0
 GPU_MOSI
-Text GLabel 2100 4000 0    39   Input ~ 0
+Text GLabel 2100 4000 0    33   Input ~ 0
 GPU_SCLK
-Text GLabel 2100 3700 0    39   Output ~ 0
+Text GLabel 2100 3700 0    33   Output ~ 0
 GPU_MISO
-Text GLabel 2100 3100 0    39   Input ~ 0
+Text GLabel 2100 3100 0    33   Input ~ 0
 ~GPU_CS
 Wire Wire Line
 	2200 5000 2200 4900
@@ -524,10 +524,6 @@ F 3 "" H 1500 3650 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1500 3650 1500 3700
-Wire Wire Line
-	1150 4000 1150 4100
-Wire Wire Line
-	1500 4000 1500 4200
 Wire Wire Line
 	2100 4000 2200 4000
 Wire Wire Line
@@ -692,8 +688,6 @@ Wire Wire Line
 Connection ~ 2200 4000
 Wire Wire Line
 	2200 4000 3050 4000
-Wire Wire Line
-	1500 4200 1600 4200
 $Comp
 L Device:Q_NMOS_GSD Q?
 U 1 1 5F1C2A52
@@ -826,7 +820,7 @@ F 3 "" H 2500 7900 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2500 7900 2500 8000
-Text GLabel 1600 9000 0    39   Input ~ 0
+Text GLabel 1600 9000 0    33   Input ~ 0
 GPU_LED_1
 $Comp
 L Connector:TestPoint TP?
@@ -977,7 +971,7 @@ F 3 "" H 4450 7900 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4450 7900 4450 8000
-Text GLabel 3550 9000 0    39   Input ~ 0
+Text GLabel 3550 9000 0    33   Input ~ 0
 GPU_LED_2
 $Comp
 L Connector:TestPoint TP?
@@ -996,11 +990,11 @@ F 3 "" H 4250 8900 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4050 8900 4050 9000
-Text GLabel 3650 5200 0    39   Output ~ 0
+Text GLabel 3650 5200 0    33   Output ~ 0
 GPU_LED_2
 NoConn ~ 3750 4800
 NoConn ~ 3750 4900
-Text GLabel 3650 5100 0    39   Output ~ 0
+Text GLabel 3650 5100 0    33   Output ~ 0
 GPU_LED_1
 Wire Wire Line
 	3650 5100 3750 5100
@@ -1117,14 +1111,14 @@ Wire Wire Line
 $Comp
 L Connector:TestPoint TP?
 U 1 1 5FB7E1C8
-P 1250 4300
+P 1400 4400
 AR Path="/64809F0C/5FB7E1C8" Ref="TP?"  Part="1" 
 AR Path="/65B709D0/5FB7E1C8" Ref="TP19"  Part="1" 
-F 0 "TP19" H 1160 4500 50  0000 L CNN
-F 1 "TestPoint" H 1308 4329 50  0001 L CNN
-F 2 "" H 1450 4300 50  0001 C CNN
-F 3 "" H 1450 4300 50  0001 C CNN
-	1    1250 4300
+F 0 "TP19" H 1310 4600 50  0000 L CNN
+F 1 "TestPoint" H 1458 4429 50  0001 L CNN
+F 2 "" H 1600 4400 50  0001 C CNN
+F 3 "" H 1600 4400 50  0001 C CNN
+	1    1400 4400
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -2244,21 +2238,21 @@ Wire Wire Line
 	3450 2050 3500 2050
 Wire Wire Line
 	3500 2050 3500 2200
-Text GLabel 2850 1300 0    39   Output ~ 0
+Text GLabel 2850 1300 0    33   Output ~ 0
 GPU_X+
-Text GLabel 2850 1400 0    39   Output ~ 0
+Text GLabel 2850 1400 0    33   Output ~ 0
 GPU_Y-
-Text GLabel 2850 1600 0    39   Output ~ 0
+Text GLabel 2850 1600 0    33   Output ~ 0
 GPU_Y+
-Text GLabel 2850 1500 0    39   Output ~ 0
+Text GLabel 2850 1500 0    33   Output ~ 0
 GPU_X-
-Text GLabel 5550 6700 2    39   Input ~ 0
+Text GLabel 5550 6700 2    33   Input ~ 0
 GPU_X+
-Text GLabel 5550 6800 2    39   Input ~ 0
+Text GLabel 5550 6800 2    33   Input ~ 0
 GPU_Y-
-Text GLabel 5550 7000 2    39   Input ~ 0
+Text GLabel 5550 7000 2    33   Input ~ 0
 GPU_Y+
-Text GLabel 5550 6900 2    39   Input ~ 0
+Text GLabel 5550 6900 2    33   Input ~ 0
 GPU_X-
 Wire Wire Line
 	5450 6700 5550 6700
@@ -2737,42 +2731,19 @@ Connection ~ 2000 4400
 Wire Wire Line
 	2200 4900 3250 4900
 Connection ~ 2200 4900
-Wire Wire Line
-	1150 4100 1050 4100
-Wire Wire Line
-	1050 4100 1050 4050
-Wire Wire Line
-	1050 4050 950  4050
-Connection ~ 1150 4100
-Wire Wire Line
-	950  4250 1050 4250
-Wire Wire Line
-	1050 4250 1050 4200
-Connection ~ 1500 4200
 $Comp
 L Connector:TestPoint TP?
 U 1 1 60F30E3B
-P 1600 4400
+P 1650 4400
 AR Path="/64809F0C/60F30E3B" Ref="TP?"  Part="1" 
 AR Path="/65B709D0/60F30E3B" Ref="TP20"  Part="1" 
-F 0 "TP20" H 1510 4600 50  0000 L CNN
-F 1 "TestPoint" H 1658 4429 50  0001 L CNN
-F 2 "" H 1800 4400 50  0001 C CNN
-F 3 "" H 1800 4400 50  0001 C CNN
-	1    1600 4400
+F 0 "TP20" H 1560 4600 50  0000 L CNN
+F 1 "TestPoint" H 1708 4429 50  0001 L CNN
+F 2 "" H 1850 4400 50  0001 C CNN
+F 3 "" H 1850 4400 50  0001 C CNN
+	1    1650 4400
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	1600 4400 1600 4200
-Connection ~ 1600 4200
-Wire Wire Line
-	1600 4200 3750 4200
-Wire Wire Line
-	1150 4100 1250 4100
-Wire Wire Line
-	1050 4200 1500 4200
-Wire Wire Line
-	1250 4300 1250 4100
 Wire Wire Line
 	8500 2000 9150 2000
 Wire Wire Line
@@ -2925,9 +2896,6 @@ NoConn ~ 15100 8500
 NoConn ~ 15200 8500
 Wire Wire Line
 	3100 5600 3750 5600
-Connection ~ 1250 4100
-Wire Wire Line
-	1250 4100 3750 4100
 Text Notes 2100 1150 0    98   ~ 20
 Resittive Touch Panel FPC Connector
 Wire Wire Line
@@ -2948,4 +2916,63 @@ Wire Wire Line
 	14600 8400 14600 8500
 Wire Wire Line
 	14600 6500 14600 8400
+Wire Wire Line
+	1000 4600 1000 4700
+$Comp
+L CropTop:DGND #PWR?
+U 1 1 5D6170F4
+P 1000 4700
+F 0 "#PWR?" H 1000 4450 50  0001 C CNN
+F 1 "DGND" H 1004 4545 50  0000 C CNN
+F 2 "" H 1000 4700 50  0001 C CNN
+F 3 "" H 1000 4700 50  0001 C CNN
+	1    1000 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5D6170FB
+P 1000 4450
+AR Path="/5D6170FB" Ref="C?"  Part="1" 
+AR Path="/65B709D0/5D6170FB" Ref="C?"  Part="1" 
+AR Path="/66A12230/5D6170FB" Ref="C?"  Part="1" 
+AR Path="/669AB112/5D6170FB" Ref="C?"  Part="1" 
+F 0 "C?" H 1115 4496 50  0000 L CNN
+F 1 "0.1uF" H 1115 4405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 1038 4300 50  0001 C CNN
+F 3 "" H 1000 4450 50  0001 C CNN
+	1    1000 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1650 4400 1650 4100
+Connection ~ 1650 4100
+Wire Wire Line
+	1650 4100 3750 4100
+Wire Wire Line
+	900  4200 1000 4200
+Wire Wire Line
+	1500 4000 1500 4100
+Connection ~ 1500 4100
+Wire Wire Line
+	1500 4100 1650 4100
+Wire Wire Line
+	1400 4400 1400 4200
+Connection ~ 1400 4200
+Wire Wire Line
+	1400 4200 3750 4200
+Wire Wire Line
+	1000 4300 1000 4200
+Connection ~ 1000 4200
+Wire Wire Line
+	1000 4200 1150 4200
+Wire Wire Line
+	900  4100 1150 4100
+Wire Wire Line
+	1150 4100 1500 4100
+Connection ~ 1150 4200
+Wire Wire Line
+	1150 4200 1400 4200
+Wire Wire Line
+	1150 4000 1150 4200
 $EndSCHEMATC

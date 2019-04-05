@@ -412,11 +412,11 @@ Wire Wire Line
 	3050 3450 3150 3450
 Wire Wire Line
 	3150 3350 3150 3400
-Text GLabel 10150 2400 2    39   Input ~ 0
+Text GLabel 10150 2400 2    33   Input ~ 0
 ADI_A1-
-Text GLabel 10150 2250 2    39   Input ~ 0
+Text GLabel 10150 2250 2    33   Input ~ 0
 ADI_A1+
-Text GLabel 3300 3400 2    39   Input ~ 0
+Text GLabel 3300 3400 2    33   Input ~ 0
 ADI_PSW
 Wire Wire Line
 	2350 2150 2150 2150
@@ -502,13 +502,13 @@ Wire Wire Line
 Wire Wire Line
 	8800 2850 9450 2850
 Connection ~ 8900 2700
-Text GLabel 10150 2700 2    39   Input ~ 0
+Text GLabel 10150 2700 2    33   Input ~ 0
 ADI_A2-
-Text GLabel 10150 2550 2    39   Input ~ 0
+Text GLabel 10150 2550 2    33   Input ~ 0
 ADI_A2+
-Text GLabel 10150 3000 2    39   Input ~ 0
+Text GLabel 10150 3000 2    33   Input ~ 0
 ADI_A3-
-Text GLabel 10150 2850 2    39   Input ~ 0
+Text GLabel 10150 2850 2    33   Input ~ 0
 ADI_A3+
 $Comp
 L Connector:TestPoint TP83
@@ -735,19 +735,19 @@ Wire Wire Line
 $Comp
 L power:+3V3 #PWR?
 U 1 1 5C762ECA
-P 8900 8200
+P 9000 8200
 AR Path="/64807BBC/5C762ECA" Ref="#PWR?"  Part="1" 
 AR Path="/669AB112/5C762ECA" Ref="#PWR0172"  Part="1" 
 AR Path="/5EC973C3/5C762ECA" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0172" H 8900 8050 50  0001 C CNN
-F 1 "+3V3" H 8915 8373 50  0000 C CNN
-F 2 "" H 8900 8200 50  0001 C CNN
-F 3 "" H 8900 8200 50  0001 C CNN
-	1    8900 8200
+F 0 "#PWR0172" H 9000 8050 50  0001 C CNN
+F 1 "+3V3" H 9015 8373 50  0000 C CNN
+F 2 "" H 9000 8200 50  0001 C CNN
+F 3 "" H 9000 8200 50  0001 C CNN
+	1    9000 8200
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8900 8200 8900 8250
+	9000 8200 9000 8250
 $Comp
 L Device:C C?
 U 1 1 5C78B44B
@@ -762,7 +762,7 @@ F 3 "" H 11150 7050 50  0001 C CNN
 	1    11150 7050
 	0    -1   -1   0   
 $EndComp
-Text GLabel 8450 8800 0    39   Output ~ 0
+Text GLabel 8550 8750 0    33   Output ~ 0
 ~STEP_HOME
 Wire Wire Line
 	12350 8050 12350 7650
@@ -819,19 +819,19 @@ Connection ~ 12350 7650
 $Comp
 L power:+3V3 #PWR?
 U 1 1 5C9E2DB0
-P 8550 8200
+P 8650 8200
 AR Path="/64807BBC/5C9E2DB0" Ref="#PWR?"  Part="1" 
 AR Path="/669AB112/5C9E2DB0" Ref="#PWR0170"  Part="1" 
 AR Path="/5EC973C3/5C9E2DB0" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0170" H 8550 8050 50  0001 C CNN
-F 1 "+3V3" H 8565 8373 50  0000 C CNN
-F 2 "" H 8550 8200 50  0001 C CNN
-F 3 "" H 8550 8200 50  0001 C CNN
-	1    8550 8200
+F 0 "#PWR0170" H 8650 8050 50  0001 C CNN
+F 1 "+3V3" H 8665 8373 50  0000 C CNN
+F 2 "" H 8650 8200 50  0001 C CNN
+F 3 "" H 8650 8200 50  0001 C CNN
+	1    8650 8200
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8550 8200 8550 8250
+	8650 8200 8650 8250
 $Comp
 L Connector:TestPoint TP103
 U 1 1 5CBB2F0C
@@ -904,7 +904,7 @@ Connection ~ 11150 8950
 Wire Wire Line
 	11150 8950 11200 8950
 Wire Wire Line
-	8900 8550 8900 8650
+	9000 8550 9000 8650
 Wire Wire Line
 	12350 6350 12600 6350
 Connection ~ 12350 6350
@@ -980,7 +980,7 @@ F 3 "" H 3400 8250 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2250 8350 2250 8250
-Text GLabel 1000 9200 0    39   Output ~ 0
+Text GLabel 1000 9200 0    33   Output ~ 0
 ROTARY_1A
 $Comp
 L CropTop:DGND #PWR?
@@ -999,7 +999,7 @@ F 3 "" H 2450 9950 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2450 9850 2450 9950
-Text GLabel 1000 9300 0    39   Output ~ 0
+Text GLabel 1000 9300 0    33   Output ~ 0
 ROTARY_1B
 $Comp
 L power:+3V3 #PWR?
@@ -1122,7 +1122,7 @@ F 3 "" H 10050 5850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8550 8550 8550 8800
+	8650 8550 8650 8750
 $Comp
 L Device:R R?
 U 1 1 5DB63B18
@@ -1182,29 +1182,29 @@ $EndComp
 $Comp
 L Device:R R?
 U 1 1 5DB66B95
-P 8550 8400
+P 8650 8400
 AR Path="/64809F0C/5DB66B95" Ref="R?"  Part="1" 
 AR Path="/66A12230/5DB66B95" Ref="R?"  Part="1" 
 AR Path="/669AB112/5DB66B95" Ref="R91"  Part="1" 
-F 0 "R91" H 8620 8446 50  0000 L CNN
-F 1 "10k" H 8620 8355 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 8480 8400 50  0001 C CNN
-F 3 "" H 8550 8400 50  0001 C CNN
-	1    8550 8400
+F 0 "R91" H 8720 8446 50  0000 L CNN
+F 1 "10k" H 8720 8355 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 8580 8400 50  0001 C CNN
+F 3 "" H 8650 8400 50  0001 C CNN
+	1    8650 8400
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R?
 U 1 1 5DB66C61
-P 8900 8400
+P 9000 8400
 AR Path="/64809F0C/5DB66C61" Ref="R?"  Part="1" 
 AR Path="/66A12230/5DB66C61" Ref="R?"  Part="1" 
 AR Path="/669AB112/5DB66C61" Ref="R92"  Part="1" 
-F 0 "R92" H 8970 8446 50  0000 L CNN
-F 1 "10k" H 8970 8355 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 8830 8400 50  0001 C CNN
-F 3 "" H 8900 8400 50  0001 C CNN
-	1    8900 8400
+F 0 "R92" H 9070 8446 50  0000 L CNN
+F 1 "10k" H 9070 8355 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 8930 8400 50  0001 C CNN
+F 3 "" H 9000 8400 50  0001 C CNN
+	1    9000 8400
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1572,25 +1572,25 @@ Wire Wire Line
 	2100 1050 2550 1050
 Wire Wire Line
 	2000 1050 2100 1050
-Text GLabel 1450 2450 0    39   Input ~ 0
+Text GLabel 1450 2450 0    33   Input ~ 0
 ADI_MOSI
-Text GLabel 1450 2150 0    39   Input ~ 0
+Text GLabel 1450 2150 0    33   Input ~ 0
 ADI_SCLK
-Text GLabel 1450 2750 0    39   Output ~ 0
+Text GLabel 1450 2750 0    33   Output ~ 0
 ADI_MISO
-Text GLabel 1450 3050 0    39   Input ~ 0
+Text GLabel 1450 3050 0    33   Input ~ 0
 ~ADI_CS
-Text GLabel 14950 2300 0    39   Output ~ 0
+Text GLabel 14950 2300 0    33   Output ~ 0
 ADI_A1-
-Text GLabel 14950 2200 0    39   Output ~ 0
+Text GLabel 14950 2200 0    33   Output ~ 0
 ADI_A1+
-Text GLabel 14950 2800 0    39   Output ~ 0
+Text GLabel 14950 2800 0    33   Output ~ 0
 ADI_A2-
-Text GLabel 14950 2700 0    39   Output ~ 0
+Text GLabel 14950 2700 0    33   Output ~ 0
 ADI_A2+
-Text GLabel 14950 3300 0    39   Output ~ 0
+Text GLabel 14950 3300 0    33   Output ~ 0
 ADI_A3-
-Text GLabel 14950 3200 0    39   Output ~ 0
+Text GLabel 14950 3200 0    33   Output ~ 0
 ADI_A3+
 $Comp
 L CropTop:AGND #PWR0199
@@ -1683,11 +1683,11 @@ F 4 "Motor Drive Block" H 15850 6450 50  0001 C CNN "Note"
 	1    15850 6450
 	1    0    0    -1  
 $EndComp
-Text GLabel 9550 4950 0    39   Input ~ 0
+Text GLabel 9550 4950 0    33   Input ~ 0
 DC_PWM_1
-Text GLabel 9700 6100 0    39   Output ~ 0
+Text GLabel 9700 6100 0    33   Output ~ 0
 ~DC_FAULT
-Text GLabel 9550 5250 0    39   Input ~ 0
+Text GLabel 9550 5250 0    33   Input ~ 0
 DC_PWM_2
 $Comp
 L CropTop:TPD4E1U06 U28
@@ -1904,8 +1904,8 @@ Wire Wire Line
 	11400 2500 11400 2600
 Wire Wire Line
 	11100 1400 11100 1500
-Text GLabel 11000 1900 0    39   Output ~ 0
-ADI_5V_FLG
+Text GLabel 11000 1900 0    33   Output ~ 0
+ADI_5V_FAULT
 Wire Wire Line
 	10950 2000 10950 2150
 Wire Wire Line
@@ -2108,9 +2108,9 @@ Wire Wire Line
 Connection ~ 13650 1900
 Wire Wire Line
 	13650 2450 13650 2600
-Text GLabel 5050 5050 0    39   Output ~ 0
+Text GLabel 5050 5050 0    33   Output ~ 0
 POTEN_1
-Text GLabel 5050 5400 0    39   Output ~ 0
+Text GLabel 5050 5400 0    33   Output ~ 0
 POTEN_2
 $Comp
 L Device:C C?
@@ -2209,8 +2209,8 @@ Wire Wire Line
 	4100 9150 4100 9250
 Wire Wire Line
 	3750 8050 3750 8150
-Text GLabel 3650 8550 0    39   Output ~ 0
-ENCODE_PWR_FLG
+Text GLabel 3650 8550 0    33   Output ~ 0
+ENCODE_PWR_FAULT
 Wire Wire Line
 	3650 8650 3650 8800
 Wire Wire Line
@@ -2590,8 +2590,8 @@ Wire Wire Line
 	1950 5300 1950 5400
 Wire Wire Line
 	1600 4200 1600 4300
-Text GLabel 1500 4700 0    39   Output ~ 0
-POTEN_PWR_FLG
+Text GLabel 1500 4700 0    33   Output ~ 0
+POTEN_PWR_FAULT
 Wire Wire Line
 	1500 4800 1500 4950
 Wire Wire Line
@@ -3061,29 +3061,29 @@ P 11150 8050
 F 0 "U31" H 11400 8800 50  0000 C CNN
 F 1 "DRV8825" H 11400 8700 50  0000 C CNN
 F 2 "" H 11150 8550 50  0001 C CNN
-F 3 "" H 11150 8550 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/drv8825.pdf" H 11150 8550 50  0001 C CNN
 	1    11150 8050
 	1    0    0    -1  
 $EndComp
-Text GLabel 9600 7950 0    39   Input ~ 0
+Text GLabel 9600 7950 0    33   Input ~ 0
 STEP_MODE2
-Text GLabel 9600 7850 0    39   Input ~ 0
+Text GLabel 9600 7850 0    33   Input ~ 0
 STEP_MODE1
-Text GLabel 9600 7750 0    39   Input ~ 0
+Text GLabel 9600 7750 0    33   Input ~ 0
 STEP_MODE0
-Text GLabel 9600 7650 0    39   Input ~ 0
+Text GLabel 9600 7650 0    33   Input ~ 0
 STEP_STEP
-Text GLabel 9600 7550 0    39   Input ~ 0
+Text GLabel 9600 7550 0    33   Input ~ 0
 ~STEP_ENBL
-Text GLabel 9600 8150 0    39   Input ~ 0
+Text GLabel 9600 8150 0    33   Input ~ 0
 STEP_DECAY
-Text GLabel 8450 8650 0    39   Output ~ 0
+Text GLabel 8550 8650 0    33   Output ~ 0
 ~STEP_FAULT
-Text GLabel 9600 8300 0    39   Input ~ 0
+Text GLabel 9600 8350 0    33   Input ~ 0
 ~STEP_SLEEP
-Text GLabel 9600 8500 0    39   Input ~ 0
+Text GLabel 9600 8450 0    33   Input ~ 0
 ~STEP_RESET
-Text GLabel 9600 8050 0    39   Input ~ 0
+Text GLabel 9600 8050 0    33   Input ~ 0
 STEP_DIR
 $Comp
 L Connector:TestPoint TP85
@@ -3206,15 +3206,11 @@ F 3 "" H 10700 8900 50  0001 C CNN
 	1    0    0    1   
 $EndComp
 Wire Wire Line
-	9600 8500 9800 8500
-Wire Wire Line
-	9800 8500 9800 8450
-Wire Wire Line
 	10200 8650 10200 8550
 Wire Wire Line
 	10200 8550 10600 8550
 Wire Wire Line
-	10400 8800 10400 8650
+	10400 8750 10400 8650
 Wire Wire Line
 	10400 8650 10600 8650
 Wire Wire Line
@@ -3270,7 +3266,7 @@ Wire Wire Line
 Wire Wire Line
 	9900 8450 9900 9050
 Wire Wire Line
-	9500 9050 9500 8800
+	9500 9050 9500 8750
 Wire Wire Line
 	5050 5400 5200 5400
 NoConn ~ 2050 9400
@@ -4263,9 +4259,9 @@ Wire Wire Line
 	3150 9550 3500 9550
 Wire Wire Line
 	3050 9650 3400 9650
-Text GLabel 5750 6900 0    39   Output ~ 0
+Text GLabel 5750 6900 0    33   Output ~ 0
 SONIC_TRIG
-Text GLabel 5750 7250 0    39   Output ~ 0
+Text GLabel 5750 7250 0    33   Output ~ 0
 SONIC_ECHO
 $Comp
 L Device:C C?
@@ -4441,8 +4437,8 @@ Wire Wire Line
 	2550 7150 2550 7250
 Wire Wire Line
 	2200 6050 2200 6150
-Text GLabel 2100 6550 0    39   Output ~ 0
-SONIC_PWR_FLG
+Text GLabel 2100 6550 0    33   Output ~ 0
+SONIC_PWR_FAULT
 Wire Wire Line
 	2100 6650 2100 6800
 Wire Wire Line
@@ -4890,31 +4886,27 @@ Wire Wire Line
 Connection ~ 9900 8450
 Wire Wire Line
 	9900 8450 10600 8450
+Connection ~ 9500 8750
 Wire Wire Line
-	9800 8450 9900 8450
-Connection ~ 9500 8800
-Wire Wire Line
-	9500 8800 10400 8800
-Wire Wire Line
-	9800 8350 9800 8300
-Wire Wire Line
-	9800 8300 9600 8300
-Wire Wire Line
-	9800 8350 10100 8350
+	9500 8750 10400 8750
 Connection ~ 10100 8350
 Wire Wire Line
 	9700 8900 9700 8650
 Connection ~ 9700 8650
 Wire Wire Line
 	9700 8650 10200 8650
-Connection ~ 8550 8800
 Wire Wire Line
-	8550 8800 9500 8800
-Connection ~ 8900 8650
+	9600 8450 9900 8450
 Wire Wire Line
-	8900 8650 9700 8650
+	9600 8350 10100 8350
+Connection ~ 8650 8750
 Wire Wire Line
-	8450 8800 8550 8800
+	8650 8750 9500 8750
+Connection ~ 9000 8650
 Wire Wire Line
-	8450 8650 8900 8650
+	9000 8650 9700 8650
+Wire Wire Line
+	8550 8750 8650 8750
+Wire Wire Line
+	8550 8650 9000 8650
 $EndSCHEMATC
