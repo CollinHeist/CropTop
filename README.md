@@ -1,26 +1,26 @@
 # CropTop
-CropTop is a small-form data aquisition platform being developed by [Kennedy Caisley](https://github.com/kcaisley) and [Ryan Donahue](https://github.com/ryand323), two undergraduate electrical engineering students at the University of Idaho. It is designed to support the cereal grain crop strength research being conducted by [Dr. Daniel Roberston](https://www.uidaho.edu/engr/departments/me/our-people/faculty/daniel-robertson) in the UI Department of Mechanical Engineering.
+CropTop is a small-form data acquisition platform being developed by [Kennedy Caisley](https://github.com/kcaisley) and [Ryan Donahue](https://github.com/ryand323), two undergraduate electrical engineering students at the University of Idaho. It is designed to support the cereal grain crop strength research being conducted by [Dr. Daniel Roberston](https://www.uidaho.edu/engr/departments/me/our-people/faculty/daniel-robertson) in the UI Department of Mechanical Engineering.
 
 ## What can CropTop do?
 Croptop is based around a 32 bit PIC32MX795F512L microcontroller and includes the following peripherals onboard:
 * 12 bit temperature/humidity sensor
 * 3-axis accelerometer
 * ΔΣ 24 bit 1kSPS ADC
-* GNSS reciever
+* GNSS receiver
 * USB 2.0 OTG interface
 * 5A DC motor controller
 * TFT LCD controller
 * Resistive touch controller
 * Rotary encoder interface
-* Linear ecoder interface
+* Linear encoder interface
 * 1GB NAND flash
 * User programmable push buttons
 * User programmable LEDs
 * 14 additional GPIO
 
 #### Assembled Prototype
-![Prototypte Front](docs/images/IMG_7746.JPG?raw=true "Title")
-![Prototypte Back](docs/images/IMG_7747.JPG?raw=true "Title")
+![Prototype Front](docs/images/IMG_7746.JPG?raw=true "Title")
+![Prototype Back](docs/images/IMG_7747.JPG?raw=true "Title")
 
 #### Gerber
 ![Gerber of board](docs/images/gerb.PNG?raw=true "Title")
@@ -28,9 +28,11 @@ Croptop is based around a 32 bit PIC32MX795F512L microcontroller and includes th
 ## Understanding and Configuring Hardware
 
 #### Installing KiCAD
-installation guide and tutorial screencast
+KiCAD EDA offers open source schematic capture and PCB layout tools. The software can be downloaded [here]{http://kicad-pcb.org/download/}
 
-#### locations of files
+Eventually some links to a tutorial screencast and/or suggested training materials will be added
+
+#### File Locations
 links to
 * Schematic
 * BOM
@@ -49,11 +51,11 @@ instruction/guide to mating a board to the croptop board
 * Specifying chips for populate or do not populate (DNP)
 
 ## Understanding and Creating Software
-How to get the MPLAB enviroment up and running, understand the control flow of drivers and IC drivers, and program the device
+How to get the MPLAB environment up and running, understand the control flow of drivers and IC drivers, and program the device
 
 #### MPLAB Installation
-MPLAB is Microchip's Interactive Development Enviroment (IDE) 
-The tool offers dedicated debug, programming, and congiguration tools for Microchip's processors.
+MPLAB is Microchip's Interactive Development Environment (IDE) 
+The tool offers dedicated debug, programming, and configuration tools for Microchip's processors.
 
 Setup requires three steps:
 1. Install [MPLAB X IDE](https://www.microchip.com/mplab/mplab-x-ide "MPLAB X IDE")
@@ -67,7 +69,7 @@ The Git project chose guarantee your freedom to share and change free software. 
 
 Install [Git](https://git-scm.com/downloads "Git")
 
-A tutorial covering basic workflow can be found [here](https://evanwill.github.io/get-git/), but many others exist
+A tutorial covering basic work-flow can be found [here](https://evanwill.github.io/get-git/), but many others exist
 
 To pull a repository to a new device, run git bash and execute the following
 ```
@@ -87,7 +89,7 @@ git merge
 #### Using MPLAB 
 A [video tutorial](https://vimeo.com/user96989107/review/328287810/0cc609795f) on using MPLAB
 
-A highly reccomended [tutorial](http://cslibrary.stanford.edu/101/EssentialC.pdf) from stanford can teach you the basics of
+A highly recommended [tutorial](http://cslibrary.stanford.edu/101/EssentialC.pdf) from Stanford will teach you the basics of
 * Data types and operators
 * Control structures
 * Functions
@@ -124,4 +126,4 @@ How to power on devices
 Electrical Characteristics of sensors and power supplies
 
 #### Creating and Using Data
-How to export, interpret, and use the data CropTop Logs
+How to export, interpret, and use the data CropTop logs

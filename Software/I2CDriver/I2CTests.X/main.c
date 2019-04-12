@@ -39,7 +39,7 @@ int main()
         tilt = AccelLib_ReadTilt();
         st_failed = AccelLib_SelfTest();
         who_is_it = AccelLib_SingleRead(WHO_AM_I);
-        x = 5;
+//        x = 5;
     }
 }
 void initialize_system()
