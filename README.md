@@ -28,11 +28,11 @@ Croptop is based around a 32 bit PIC32MX795F512L microcontroller and includes th
 ## Understanding and Configuring Hardware
 
 #### Installing KiCAD
-KiCAD EDA offers open source schematic capture and PCB layout tools. The software can be downloaded [here]{http://kicad-pcb.org/download/}
+KiCAD EDA offers open source schematic capture and PCB layout tools. The software can be downloaded [here](http://kicad-pcb.org/download/)
 
 A video tutorial covering basic work-flow can be found here: (eventually) 
 
-KICAD community suggested training modules can be found: [here]{http://kicad-pcb.org/help/tutorials/}
+KICAD community suggested training modules can be found: [here](http://kicad-pcb.org/help/tutorials/)
 
 #### File Locations
 links to
