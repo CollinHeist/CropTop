@@ -59,16 +59,18 @@ void APP_Init(void)
     MCU_Delay_ms(20);
 
     MCU_SetFreq10();
-    
-    MCU_Delay_ms(500);
-    
     EVE_CmdWrite(FTD81x_CLKEXT, 0x00);
     EVE_CmdWrite(FTD81x_ACTIVE, 0x00);
     
+    MCU_Delay_ms(500);
+
     // Startup may take 300ms. Wait until ready
     // TODO this should really just be a MemRead8...
     while ((EVE_MemRead16(REG_ID) >> 8) != 0x7C);
 //    while (EVE_MemRead8(REG_ID) != 0x7C);
+
+    EVE_MemWrite8(REG_PWM_DUTY, 0);
+
  
     // Configure display registers
     EVE_MemWrite16(REG_HCYCLE,  lcdHcycle);	
@@ -96,11 +98,26 @@ void APP_Init(void)
     // Enable display bit
     EVE_MemWrite8(REG_GPIO_DIR, 0x80 | EVE_MemRead8(REG_GPIO_DIR));
     EVE_MemWrite8(REG_GPIO, 0x80 | EVE_MemRead8(REG_GPIO));
-
+    EVE_MemWrite
     EVE_MemWrite8(REG_PCLK, lcdPclk);
-    EVE_MemWrite16(REG_PWM_HZ, 250);
-    EVE_MemWrite8(REG_PWM_DUTY, 63);
-    EVE_MemWrite16(REG_GPIOX, 1<<15);
+
+    for (PWM = 0; PWM <= 127; PWM++)
+    {
+        EVE_MemWrite8(REG_PWM_DUTY, PWM);
+        MCU_Delay_ms(20);
+    }
+
+/*
+Disabled the following to add this sick PWM loop
+also, previous codes did not include PWM_HZ, or a similar GPIOX line
+
+What do those do?
+*/
+
+
+    //EVE_MemWrite16(REG_PWM_HZ, 250);
+    //EVE_MemWrite8(REG_PWM_DUTY, 63);
+    //EVE_MemWrite16(REG_GPIOX, 1<<15);
     
     MCU_SetFreq20();
 
