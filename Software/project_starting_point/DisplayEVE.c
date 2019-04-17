@@ -1,6 +1,8 @@
 #include "xc.h"
 #include "DisplayLib.h" 
 #include "FT8xx.h"
+#include <string.h>
+#include <stdint.h> // for Uint8/16/32 and Int8/16/32 data types
 
 #define MEM_WRITE	0x80			// FT800 Host Memory Write
 #define MEM_READ	0x00			// FT800 Host Memory Read
@@ -18,65 +20,70 @@
 // This section has separate calls for addressing and data phases of the transaction which allows for burst writes and reads.
 
 // ------------------ Send FT81x register address for writing ------------------
-void EVE_AddrForWr(unsigned long ftAddress)
+void EVE_AddrForWr(uint32_t ftAddress)
 {
-//    unsigned char dummyRead = 0;
+    uint8_t dummyRead = 0;
     // Send three bytes of a register address which has to be subsequently written. Ignore return values as this is an SPI write only.
-    MCU_SPIReadWrite( (char) ((ftAddress >> 16) | MEM_WRITE) );     // Send high byte of address with 'write' bits set
-    MCU_SPIReadWrite( (char) (ftAddress >> 8) );                    // Send middle byte of address
-    MCU_SPIReadWrite( (char) (ftAddress) );                         // Send low byte of address
+    dummyRead = MCU_SPIReadWrite( (uint8_t) ((ftAddress >> 16) | MEM_WRITE) );  // Send high byte of address with 'write' bits set
+
+    dummyRead = MCU_SPIReadWrite( (uint8_t) (ftAddress >> 8) );                 // Send middle byte of address
+
+    dummyRead = MCU_SPIReadWrite( (uint8_t) (ftAddress) );                      // Send low byte of address
 }
 
 // ------------------ Send FT81x register address for reading ------------------
-void EVE_AddrForRd(unsigned long ftAddress)
+void EVE_AddrForRd(uint32_t ftAddress)
 {
-//    unsigned char dummyRead = 0;
+    uint8_t dummyRead = 0;
     // Send three bytes of a register address which has to be subsequently read. Ignore return values as this is an SPI write only.
-    MCU_SPIReadWrite( (char) ((ftAddress >> 16) | MEM_READ) );      // Send high byte of address with 'read' bits set
-    MCU_SPIReadWrite( (char) (ftAddress >> 8) );                    // Send middle byte of address
-    MCU_SPIReadWrite( (char) (ftAddress) );                         // Send low byte of address
-    MCU_SPIReadWrite( 0x00 );                                       // Send dummy byte before doing the read
+    dummyRead = MCU_SPIReadWrite( (uint8_t) ((ftAddress >> 16) | MEM_READ) );   // Send high byte of address with 'read' bits set
+
+    dummyRead = MCU_SPIReadWrite( (uint8_t) (ftAddress >> 8) );                 // Send middle byte of address
+
+    dummyRead = MCU_SPIReadWrite( (uint8_t) (ftAddress) );                      // Send low byte of address
+
+    dummyRead = MCU_SPIReadWrite( 0x00 );                                       // Send dummy byte before doing the read
 }
 
 // ------------------------ Send a 32-bit data value --------------------------
-void EVE_Write32(unsigned long ftData32)
+void EVE_Write32(uint32_t ftData32)
 {    
-    unsigned char dummyRead = 0;
+    uint8_t dummyRead = 0;
     // Send four bytes of data after previously sending address. Ignore return values as this is an SPI write only.
-    dummyRead = MCU_SPIReadWrite( (char) (ftData32) );                          // Send low byte of data   
+    dummyRead = MCU_SPIReadWrite( (uint8_t) (ftData32) );                       // Send low byte of data   
 
-    dummyRead = MCU_SPIReadWrite( (char) (ftData32 >> 8) );                     //
+    dummyRead = MCU_SPIReadWrite( (uint8_t) (ftData32 >> 8) );                  //
 
-    dummyRead = MCU_SPIReadWrite( (char) (ftData32 >> 16) );                    //
+    dummyRead = MCU_SPIReadWrite( (uint8_t) (ftData32 >> 16) );                 //
 
-    dummyRead = MCU_SPIReadWrite( (char) (ftData32 >> 24) );                    // Send high byte of data       
+    dummyRead = MCU_SPIReadWrite( (uint8_t) (ftData32 >> 24) );                 // Send high byte of data       
 }
 
 // ------------------------ Send a 16-bit data value --------------------------
-void EVE_Write16(unsigned int ftData16)
+void EVE_Write16(uint16_t ftData16)
 {
     
-    unsigned char dummyRead = 0;    
+    uint8_t dummyRead = 0;    
     // Send two bytes of data after previously sending address. Ignore return values as this is an SPI write only.
-    dummyRead = MCU_SPIReadWrite( (char) (ftData16) );                          // Send low byte of data  
+    dummyRead = MCU_SPIReadWrite( (uint8_t) (ftData16) );                       // Send low byte of data  
 
-    dummyRead = MCU_SPIReadWrite( (char) (ftData16 >> 8) );                     // Send high byte of data
+    dummyRead = MCU_SPIReadWrite( (uint8_t) (ftData16 >> 8) );                  // Send high byte of data
 }
 
 // ------------------------ Send an 8-bit data value ---------------------------
-void EVE_Write8(unsigned char ftData8)
+void EVE_Write8(uint8_t ftData8)
 {
-    unsigned char dummyRead = 0;    
+    uint8_t dummyRead = 0;    
     // Send one byte of data after previously sending address. Ignore return values as this is an SPI write only.
-    dummyRead = MCU_SPIReadWrite( (char) (ftData8) );                          // Send byte of data  
+    dummyRead = MCU_SPIReadWrite( (uint8_t) (ftData8) );                        // Send byte of data  
 }
 
 // ------------------------ Read a 32-bit data value --------------------------
-unsigned long EVE_Read32(void)
+uint32_t EVE_Read32(void)
 {    
     // Read 4 bytes from a register has been previously addressed. Send dummy 00 bytes as only the incoming value is important.
-    unsigned long ftData32 = 0x00000000;
-    unsigned long tempData32 = 0x00000000;
+    uint32_t ftData32 = 0x00000000;
+    uint32_t tempData32 = 0x00000000;
        
     tempData32 = MCU_SPIReadWrite( 0x00 );                                      // Read low byte of data first
     ftData32 = ftData32 | tempData32;
@@ -97,11 +104,11 @@ unsigned long EVE_Read32(void)
 }
 
 // ------------------------ Read a 16-bit data value ---------------------------
-unsigned int EVE_Read16(void)
+uint16_t EVE_Read16(void)
 {
     // Read 2 bytes from a register has been previously addressed. Send dummy 00 bytes as only the incoming value is important.
-    unsigned int ftData16 = 0x0000;
-    unsigned int tempData16 = 0x0000;
+    uint16_t ftData16 = 0x0000;
+    uint16_t tempData16 = 0x0000;
     
     tempData16 = MCU_SPIReadWrite( 0x00 );                                      // Read low byte of data first
     ftData16 = ftData16 | tempData16;
@@ -114,10 +121,10 @@ unsigned int EVE_Read16(void)
 }
 
 // ------------------------ Read an 8-bit data value ---------------------------
-unsigned char EVE_Read8(void)
+uint8_t EVE_Read8(void)
 {
     // Read 1 byte from a register has been previously addressed. Send dummy 00 byte as only the incoming value is important.
-    unsigned char ftData8 = 0x00;
+    uint8_t ftData8 = 0x00;
     
     ftData8 = MCU_SPIReadWrite( 0x00 );                                         // Read byte of data
       
@@ -132,7 +139,7 @@ unsigned char EVE_Read8(void)
 // This would often be used for register writes and reads. 
 
 // -------------- Write a 32-bit value to specified address --------------------
-void EVE_MemWrite32(unsigned long ftAddress, unsigned long ftData32)
+void EVE_MemWrite32(uint32_t ftAddress, uint32_t ftData32)
 {
     MCU_CSlow();                                                                // CS low begins the SPI transfer    
   
@@ -145,7 +152,7 @@ void EVE_MemWrite32(unsigned long ftAddress, unsigned long ftData32)
 }
 
 // -------------- Write a 16-bit value to specified address --------------------
-void EVE_MemWrite16(unsigned long ftAddress, unsigned int ftData16)
+void EVE_MemWrite16(uint32_t ftAddress, uint16_t ftData16)
 {
     MCU_CSlow();                                                                // CS low begins the SPI transfer 
   
@@ -157,7 +164,7 @@ void EVE_MemWrite16(unsigned long ftAddress, unsigned int ftData16)
 }
 
 // -------------- Write an 8-bit value to specified address --------------------
-void EVE_MemWrite8(unsigned long ftAddress, unsigned char ftData8)
+void EVE_MemWrite8(uint32_t ftAddress, uint8_t ftData8)
 {
     MCU_CSlow();                                                                // CS low begins the SPI transfer 
   
@@ -171,9 +178,9 @@ void EVE_MemWrite8(unsigned long ftAddress, unsigned char ftData8)
 
 
 // -------------- Read a 32-bit value from specified address --------------------
-unsigned long EVE_MemRead32(unsigned long ftAddress)
+uint32_t EVE_MemRead32(uint32_t ftAddress)
 {
-    unsigned long ftData32 = 0x00000000;
+    uint32_t ftData32 = 0x00000000;
   
     MCU_CSlow();                                                                // CS low begins the SPI transfer 
   
@@ -187,9 +194,9 @@ unsigned long EVE_MemRead32(unsigned long ftAddress)
 }
 
 // -------------- Read a 16-bit value from specified address --------------------
-unsigned int EVE_MemRead16(unsigned long ftAddress)
+uint16_t EVE_MemRead16(uint32_t ftAddress)
 {
-    unsigned int ftData16 = 0x0000;
+    uint16_t ftData16 = 0x0000;
   
     MCU_CSlow();                                                                // CS low begins the SPI transfer 
     
@@ -203,16 +210,16 @@ unsigned int EVE_MemRead16(unsigned long ftAddress)
 }
 
 // -------------- Read an 8-bit value from specified address --------------------
-unsigned char EVE_MemRead8(unsigned long ftAddress)
+uint8_t EVE_MemRead8(uint32_t ftAddress)
 {
-    unsigned char ftData8 = 0x00;
+    uint8_t ftData8 = 0x00;
   
     MCU_CSlow();                                                                // CS low begins the SPI transfer 
   
-    EVE_AddrForRd(ftAddress);//First 32 bytes                                                   // Send address to be read
+    EVE_AddrForRd(ftAddress);                                                   // Send address to be read
        
     ftData8 = EVE_Read8();                                                      // Read the data value   
-    
+
     MCU_CShigh();                                                               // CS high terminates the SPI transfer
  
     return ftData8;                                                             // Return 8-bit value read
@@ -221,19 +228,18 @@ unsigned char EVE_MemRead8(unsigned long ftAddress)
 
 
 
-
 // ############################# HOST COMMANDS #################################
 
 // -------------------------- Write a host command -----------------------------
-void EVE_CmdWrite(unsigned char EVECmd, unsigned char Param)
+void EVE_CmdWrite(uint8_t EVECmd, uint8_t Param)
 {
-    unsigned char dummyRead = 0;
+    uint8_t dummyRead = 0;
 
     MCU_CSlow();                                                                // CS low begins the SPI transfer
     
-    dummyRead = MCU_SPIReadWrite( (char) (EVECmd) );                            // Send command 
+    dummyRead = MCU_SPIReadWrite( (uint8_t) (EVECmd) );                         // Send command 
 
-    dummyRead = MCU_SPIReadWrite( (char) (Param) );                             // followed by parameter
+    dummyRead = MCU_SPIReadWrite( (uint8_t) (Param) );                          // followed by parameter
 
     dummyRead = MCU_SPIReadWrite( 0x00 );                                       // and a dummy 00 byte
     
@@ -243,9 +249,9 @@ void EVE_CmdWrite(unsigned char EVECmd, unsigned char Param)
 // ######################## SUPPORTING FUNCTIONS ###############################
 
 // --------- Increment co-processor address offset counter --------------------
-unsigned int EVE_IncCMDOffset(unsigned int currentOffset, unsigned char commandSize)
+uint16_t EVE_IncCMDOffset(uint16_t currentOffset, uint16_t commandSize)
 {
-    unsigned int newOffset;                                                     // Used to hold new offset
+    uint16_t newOffset;                                                         // Used to hold new offset
     
     newOffset = currentOffset + commandSize;                                    // Calculate new offset
     
@@ -258,18 +264,20 @@ unsigned int EVE_IncCMDOffset(unsigned int currentOffset, unsigned char commandS
 }
 
 // ------ Wait for co-processor read and write pointers to be equal ------------
-
-unsigned int EVE_WaitCmdFifoEmpty(void)
+uint8_t EVE_WaitCmdFifoEmpty(void)
 {
-    unsigned int ReadPointer, WritePointer;
+    uint16_t ReadPointer, WritePointer;
         
     do
     {
-        ReadPointer = EVE_MemRead32(REG_CMD_READ);                              // Read the graphics processor read pointer
-        WritePointer = EVE_MemRead32(REG_CMD_WRITE);                            // Read the graphics processor write pointer
-    }while (WritePointer != ReadPointer);                                       // Wait until the two registers match
+        ReadPointer = EVE_MemRead16(REG_CMD_READ);                              // Read the graphics processor read pointer
+        WritePointer = EVE_MemRead16(REG_CMD_WRITE);                            // Read the graphics processor write pointer
+    }while ((WritePointer != ReadPointer) && (ReadPointer != 0xFFF));           // Wait until the two registers match
 
-    return WritePointer;                                                        // New starting point will be first location after the last command
+    if(ReadPointer == 0xFFF)
+        return 0xFF;                                                            // Return 0xFF if an error occurred
+    else
+        return 0;                                                               // Return 0 if pointers became equal successfully
 }
 
 uint32_t EVE_GetCurrentWritePointer(void)
