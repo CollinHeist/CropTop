@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../main.c ../MotorLib.c ../PotLib.c ../DisplayEVE.c ../DisplayMCU.c
+SOURCEFILES_QUOTED_IF_SPACED=../main.c ../MotorLib.c ../PotLib.c ../DisplayEVE.c ../DisplayMCU.c ../DisplayAPI.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/MotorLib.o ${OBJECTDIR}/_ext/1472/PotLib.o ${OBJECTDIR}/_ext/1472/DisplayEVE.o ${OBJECTDIR}/_ext/1472/DisplayMCU.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1472/main.o.d ${OBJECTDIR}/_ext/1472/MotorLib.o.d ${OBJECTDIR}/_ext/1472/PotLib.o.d ${OBJECTDIR}/_ext/1472/DisplayEVE.o.d ${OBJECTDIR}/_ext/1472/DisplayMCU.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/MotorLib.o ${OBJECTDIR}/_ext/1472/PotLib.o ${OBJECTDIR}/_ext/1472/DisplayEVE.o ${OBJECTDIR}/_ext/1472/DisplayMCU.o ${OBJECTDIR}/_ext/1472/DisplayAPI.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1472/main.o.d ${OBJECTDIR}/_ext/1472/MotorLib.o.d ${OBJECTDIR}/_ext/1472/PotLib.o.d ${OBJECTDIR}/_ext/1472/DisplayEVE.o.d ${OBJECTDIR}/_ext/1472/DisplayMCU.o.d ${OBJECTDIR}/_ext/1472/DisplayAPI.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/MotorLib.o ${OBJECTDIR}/_ext/1472/PotLib.o ${OBJECTDIR}/_ext/1472/DisplayEVE.o ${OBJECTDIR}/_ext/1472/DisplayMCU.o
+OBJECTFILES=${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/MotorLib.o ${OBJECTDIR}/_ext/1472/PotLib.o ${OBJECTDIR}/_ext/1472/DisplayEVE.o ${OBJECTDIR}/_ext/1472/DisplayMCU.o ${OBJECTDIR}/_ext/1472/DisplayAPI.o
 
 # Source Files
-SOURCEFILES=../main.c ../MotorLib.c ../PotLib.c ../DisplayEVE.c ../DisplayMCU.c
+SOURCEFILES=../main.c ../MotorLib.c ../PotLib.c ../DisplayEVE.c ../DisplayMCU.c ../DisplayAPI.c
 
 
 CFLAGS=
@@ -136,6 +136,12 @@ ${OBJECTDIR}/_ext/1472/DisplayMCU.o: ../DisplayMCU.c  nbproject/Makefile-${CND_C
 	@${RM} ${OBJECTDIR}/_ext/1472/DisplayMCU.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/DisplayMCU.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/DisplayMCU.o.d" -o ${OBJECTDIR}/_ext/1472/DisplayMCU.o ../DisplayMCU.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
+${OBJECTDIR}/_ext/1472/DisplayAPI.o: ../DisplayAPI.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
+	@${RM} ${OBJECTDIR}/_ext/1472/DisplayAPI.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1472/DisplayAPI.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/DisplayAPI.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/DisplayAPI.o.d" -o ${OBJECTDIR}/_ext/1472/DisplayAPI.o ../DisplayAPI.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
 else
 ${OBJECTDIR}/_ext/1472/main.o: ../main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
@@ -166,6 +172,12 @@ ${OBJECTDIR}/_ext/1472/DisplayMCU.o: ../DisplayMCU.c  nbproject/Makefile-${CND_C
 	@${RM} ${OBJECTDIR}/_ext/1472/DisplayMCU.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1472/DisplayMCU.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/DisplayMCU.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/DisplayMCU.o.d" -o ${OBJECTDIR}/_ext/1472/DisplayMCU.o ../DisplayMCU.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/_ext/1472/DisplayAPI.o: ../DisplayAPI.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
+	@${RM} ${OBJECTDIR}/_ext/1472/DisplayAPI.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1472/DisplayAPI.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/DisplayAPI.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/DisplayAPI.o.d" -o ${OBJECTDIR}/_ext/1472/DisplayAPI.o ../DisplayAPI.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 endif
 

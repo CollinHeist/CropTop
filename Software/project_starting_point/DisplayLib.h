@@ -91,7 +91,9 @@ void EVE_CmdWrite(unsigned char EVECmd, unsigned char Param);
 unsigned int EVE_IncCMDOffset(unsigned int currentOffset, unsigned char commandSize);
 unsigned int EVE_WaitCmdFifoEmpty(void);
 
-
+// API Layer
+void API_INIT(void);
+void API_CMD(unsigned long command);
 
 
 
