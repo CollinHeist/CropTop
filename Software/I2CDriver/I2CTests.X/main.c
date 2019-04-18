@@ -13,16 +13,20 @@
 #include "I2CLib.h"
 #include "Si7006.h"
 #include "AccelLib.h"
+#include "GPSLib.h"
 
 int main()
 {
     initialize_system();
-    int i;
-    unsigned char who_is_it;
-    float Z_read, Y_read, X_read;
-    float temperature, humidity;
-    double tilt;
-    char st_failed;
+    int i, err = 0;
+//    float temperature, humidity;
+//    double tilt;
+//    char st_failed;
+    int data_len = 0;
+    char write_data_len[2] = {MSG_LEN_MSB,MSG_LEN_LSB};
+    char write_data_stream[1] = {GPS_DATA};
+    char read_data_stream[170] = {0};
+    unsigned char payload[1] = {0};
     while(1)
     {
         i = 0;
@@ -30,16 +34,14 @@ int main()
         {
             i++;
         }
-        // do some stuff
-        temperature = Si7006_ReadTemp();
-        humidity = Si7006_ReadHumidity();
-        Z_read = AccelLib_ReadZ();
-        Y_read = AccelLib_ReadY();
-        X_read = AccelLib_ReadX();
-        tilt = AccelLib_ReadTilt();
-        st_failed = AccelLib_SelfTest();
-        who_is_it = AccelLib_SingleRead(WHO_AM_I);
-//        x = 5;
+//        temperature = Si7006_ReadTemp();
+//        humidity = Si7006_ReadHumidity();
+//        tilt = AccelLib_ReadTilt();
+//        st_failed = AccelLib_SelfTest();
+//        err |= GPSLib_UBXWrite(NAV, NAV_PVT, payload, 0);
+        err |= GPSLib_UBXWrite(MON, MON_VER, payload, 0);
+        data_len = GPSLib_MessageCount();
+        err |= I2C_WriteRead(GPS_ADDR, write_data_stream, read_data_stream, 1, 170);
     }
 }
 void initialize_system()

@@ -9,6 +9,7 @@
       <itemPath>crop_top.h</itemPath>
       <itemPath>Si7006.h</itemPath>
       <itemPath>AccelLib.h</itemPath>
+      <itemPath>GPSLib.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -21,6 +22,7 @@
       <itemPath>main.c</itemPath>
       <itemPath>Si7006.c</itemPath>
       <itemPath>AccelLib.c</itemPath>
+      <itemPath>GPSLib.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

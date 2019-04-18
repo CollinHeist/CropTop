@@ -84,7 +84,8 @@ char I2C_Write(char slave_addr, char *write_array, int len)
     StartI2C1();
     IdleI2C1();
     error |= MasterWriteI2C1(slave_addr<<1|0);
-    while((write_array!= NULL)&&(len!=0))
+//    while((write_array!= NULL)&&(len!=0))
+    while((len!=0))
     {
         error |= MasterWriteI2C1(*write_array);
         write_array++;
@@ -111,11 +112,10 @@ char I2C_Write(char slave_addr, char *write_array, int len)
  * **************************************************************************/
 char I2C_WriteRead(char slave_addr, char *write_array, char *read_array, int write_len, int read_len)
 {
-    char error = 0;
     int i = 0;
     StartI2C1();
     IdleI2C1();
-    error |= MasterWriteI2C1(slave_addr<<1|0x00);
+    char error = MasterWriteI2C1(slave_addr<<1|0x00);
     while((write_array!= NULL)&&(write_len!=0))
     {
         error |= MasterWriteI2C1(*write_array);
