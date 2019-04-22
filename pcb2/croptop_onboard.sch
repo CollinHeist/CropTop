@@ -642,7 +642,7 @@ AR Path="/669AB112/60BCF9B8" Ref="U?"  Part="1"
 AR Path="/66A12230/60BCF9B8" Ref="U30"  Part="1" 
 F 0 "U30" H 2550 6476 50  0000 C CNN
 F 1 "TPD4E1U06DBV" H 2550 6385 50  0000 C CNN
-F 2 "" V 2800 6150 50  0001 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" V 2800 6150 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tpd4e1u06.pdf" V 2800 6150 50  0001 C CNN
 	1    2550 6700
 	1    0    0    -1  
@@ -1166,7 +1166,7 @@ AR Path="/669AB112/5D8427D8" Ref="U?"  Part="1"
 AR Path="/66A12230/5D8427D8" Ref="U31"  Part="1" 
 F 0 "U31" H 2550 8526 50  0000 C CNN
 F 1 "TPD4E1U06DBV" H 2550 8435 50  0000 C CNN
-F 2 "" V 2800 8200 50  0001 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" V 2800 8200 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tpd4e1u06.pdf" V 2800 8200 50  0001 C CNN
 	1    2550 8750
 	1    0    0    -1  
@@ -1355,7 +1355,7 @@ AR Path="/669AB112/5D90171E" Ref="U?"  Part="1"
 AR Path="/66A12230/5D90171E" Ref="U38"  Part="1" 
 F 0 "U38" H 6550 8526 50  0000 C CNN
 F 1 "TPD4E1U06DBV" H 6550 8435 50  0000 C CNN
-F 2 "" V 6800 8200 50  0001 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" V 6800 8200 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tpd4e1u06.pdf" V 6800 8200 50  0001 C CNN
 	1    6550 8750
 	-1   0    0    -1  
@@ -1860,7 +1860,7 @@ AR Path="/669AB112/5E3A7F1D" Ref="U?"  Part="1"
 AR Path="/66A12230/5E3A7F1D" Ref="U34"  Part="1" 
 F 0 "U34" H 4550 9626 50  0000 C CNN
 F 1 "TPD4E1U06DBV" H 4550 9535 50  0000 C CNN
-F 2 "" V 4800 9300 50  0001 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" V 4800 9300 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tpd4e1u06.pdf" V 4800 9300 50  0001 C CNN
 	1    4550 9850
 	1    0    0    -1  
@@ -3081,7 +3081,7 @@ AR Path="/669AB112/5D958270" Ref="U?"  Part="1"
 AR Path="/66A12230/5D958270" Ref="U37"  Part="1" 
 F 0 "U37" H 6550 6476 50  0000 C CNN
 F 1 "TPD4E1U06DBV" H 6550 6385 50  0000 C CNN
-F 2 "" V 6800 6150 50  0001 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" V 6800 6150 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tpd4e1u06.pdf" V 6800 6150 50  0001 C CNN
 	1    6550 6700
 	-1   0    0    -1  
@@ -3141,7 +3141,7 @@ U 1 1 6417DB50
 P 10950 2300
 F 0 "U39" H 10950 2917 50  0000 C CNN
 F 1 "LIS3DSHTR" H 10950 2826 50  0000 C CNN
-F 2 "" H 10850 1900 50  0001 C CNN
+F 2 "croptop:LISDR" H 10850 1900 50  0001 C CNN
 F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/23/c3/ea/bf/8f/d9/41/df/DM00040962.pdf/files/DM00040962.pdf/jcr:content/translations/en.DM00040962.pdf" H 10850 1900 50  0001 C CNN
 	1    10950 2300
 	1    0    0    -1  
@@ -3429,7 +3429,7 @@ AR Path="/669AB112/6026C527" Ref="U?"  Part="1"
 AR Path="/66A12230/6026C527" Ref="U35"  Part="1" 
 F 0 "U35" H 5800 2576 50  0000 C CNN
 F 1 "TPD4E1U06DBV" H 5800 2485 50  0000 C CNN
-F 2 "" V 6050 2250 50  0001 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" V 6050 2250 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tpd4e1u06.pdf" V 6050 2250 50  0001 C CNN
 	1    5800 2800
 	1    0    0    -1  
