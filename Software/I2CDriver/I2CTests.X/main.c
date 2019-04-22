@@ -23,9 +23,8 @@ int main()
 //    double tilt;
 //    char st_failed;
     int data_len = 0;
-    char write_data_len[2] = {MSG_LEN_MSB,MSG_LEN_LSB};
     char write_data_stream[1] = {GPS_DATA};
-    char read_data_stream[170] = {0};
+    char read_data_stream[394] = {0};
     unsigned char payload[1] = {0};
     while(1)
     {
@@ -38,10 +37,18 @@ int main()
 //        humidity = Si7006_ReadHumidity();
 //        tilt = AccelLib_ReadTilt();
 //        st_failed = AccelLib_SelfTest();
-//        err |= GPSLib_UBXWrite(NAV, NAV_PVT, payload, 0);
-        err |= GPSLib_UBXWrite(MON, MON_VER, payload, 0);
-        data_len = GPSLib_MessageCount();
-        err |= I2C_WriteRead(GPS_ADDR, write_data_stream, read_data_stream, 1, 170);
+        
+        data_len=0;
+        err |= GPSLib_UBXWrite(NAV, NAV_PVT, payload, 0);
+//        err |= GPSLib_UBXWrite(NAV, NAV_STATUS, payload, 0);
+//        err |= GPSLib_UBXWrite(NAV, NAV_POSLLH, payload, 0);
+//        err |= GPSLib_UBXWrite(MON, MON_VER, payload, 0);
+//        err |= GPSLib_UBXWrite(CFG, CFG_NAV5, payload, 0);
+        while(data_len==0)
+        {
+            data_len = GPSLib_MessageCount();
+        }
+        err |= I2C_WriteRead(GPS_ADDR, write_data_stream, read_data_stream, 1, 394);
     }
 }
 void initialize_system()
@@ -50,5 +57,5 @@ void initialize_system()
     PORTSetPinsDigitalOut(IOPORT_C, LEDS);
     LATCCLR = LEDS;
     I2CLib_Init();
-    AccelLib_Init();
+//    AccelLib_Init();
 }

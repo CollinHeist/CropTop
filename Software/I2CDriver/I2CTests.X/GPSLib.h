@@ -34,12 +34,22 @@
 //NAV message IDs
 #define     NAV_CLK     0x22    //time of week, clk bias, clk drift, time accuracy, frequency accuracy (20-bytes)
 #define     NAV_PVT     0x07    //Navigation Position Velocity Time Solution (92-bytes)
+#define     NAV_STATUS  0x03
+#define     NAV_POSLLH  0x02
 
 //MON message IDs
 #define     MON_VER     0x04    //Poll Receiver/Software Version
 
+//CFG message IDs
+#define     CFG_NAV5    0x24    //Navigation Engine Settings
+#define     CFG_NMEA    0x17
+
+//HNR message IDs
+#define     HNR_PVT     0x00
+
 //function prototypes
 char GPSLib_Init();
+int GPSLib_MessageCount();
 char GPSLib_Read(char* read);
 char GPSLib_UBXWrite(unsigned char class_id,unsigned char msg_id, unsigned char* payload,unsigned short payload_len);
 void GPSLib_UBXChecksum(unsigned char* data,int payload_len);

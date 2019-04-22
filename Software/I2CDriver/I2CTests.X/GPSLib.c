@@ -31,10 +31,17 @@ char GPSLib_Init()
  * **************************************************************************/
 int GPSLib_MessageCount()
 {
-    char write_data_len[2] = {MSG_LEN_MSB,MSG_LEN_LSB};
-    char read_data_len[2] = {0};
-    I2C_WriteRead(GPS_ADDR, write_data_len, read_data_len, 1, 2);
-    return ((read_data_len[0]<<8)|read_data_len[1])&0xFFFF;
+    char write[1] = {MSG_LEN_MSB};
+    char read[2] = {0,0};
+    I2C_WriteRead(GPS_ADDR, write, read, 1, 2);
+    if(read[0]!=0x00)
+    {
+        return ((read[0]<<8)&0xFF00)|(read[1]&0xFF);
+    }
+    else
+    {
+        return 0;
+    }
 }
 
 /* **************************************************************************
