@@ -17,6 +17,7 @@
 //#include "PotLib.h"
 #include "FT8xx.h"
 #include "DisplayLib.h"
+#include <stdio.h>
 
 /*
  *
@@ -88,6 +89,9 @@ void APP_Init(void)
     
     // Touch settings
     EVE_MemWrite16(REG_TOUCH_RZTHRESH, 1200);  
+    EVE_MemWrite8(REG_TOUCH_MODE, 0x02);
+//    EVE_MemWrite8(REG_TOUCH_ADC_MODE, 0x01);
+//    EVE_MemWrite8(REG_TOUCH_OVERSAMPLE, 15);
     
     // Write first display list
     EVE_MemWrite32(RAM_DL, 0x02000000);
@@ -98,9 +102,11 @@ void APP_Init(void)
     // Enable display bit
     EVE_MemWrite8(REG_GPIO_DIR, 0x80 | EVE_MemRead8(REG_GPIO_DIR));
     EVE_MemWrite8(REG_GPIO, 0x80 | EVE_MemRead8(REG_GPIO));
-    EVE_MemWrite
+    
     EVE_MemWrite8(REG_PCLK, lcdPclk);
 
+    uint8_t PWM = 0;
+    
     for (PWM = 0; PWM <= 127; PWM++)
     {
         EVE_MemWrite8(REG_PWM_DUTY, PWM);
@@ -115,9 +121,9 @@ What do those do?
 */
 
 
-    //EVE_MemWrite16(REG_PWM_HZ, 250);
-    //EVE_MemWrite8(REG_PWM_DUTY, 63);
-    //EVE_MemWrite16(REG_GPIOX, 1<<15);
+    EVE_MemWrite16(REG_PWM_HZ, 250);
+    EVE_MemWrite8(REG_PWM_DUTY, 63);
+    EVE_MemWrite16(REG_GPIOX, 1<<15);
     
     MCU_SetFreq20();
 
@@ -140,6 +146,69 @@ void APP_Calibrate(void)
 
     API_LIB_EndCoProList();                                                     // Finish the co-processor list burst write
     API_LIB_AwaitCoProEmpty();                                                  // Wait until co-processor has consumed all commands 
+}
+
+void APP_SliderandButton(void)   
+{
+    uint32_t TrackerVal = 0;
+    uint8_t TagVal = 0;
+    uint16_t SlideVal = 0;
+    uint16_t Button3D = 0;
+    uint8_t color = 0xFF;
+    char status[100];
+   
+    while(1)
+    {
+        API_LIB_BeginCoProList();                                              
+        API_CMD_DLSTART();                                                
+        
+        API_CLEAR_COLOR_RGB(0, 0, 0);                                        
+        API_CLEAR(1,1,1);                                             
+
+        API_TAG_MASK(1);                                
+        API_TAG(2);                                               
+        API_CMD_FGCOLOR(0x0000FF);                                            
+        API_CMD_BUTTON(100, 200, 80, 30, 27, Button3D, "Button");                     
+        API_TAG_MASK(0);                                
+        
+        API_BEGIN(FTPOINTS);                                       	
+        API_POINT_SIZE(30*16);  
+        API_COLOR_RGB(color, 0, 0);                     
+        API_VERTEX2F((140*16), (100*16));
+        API_END(); 
+        
+        API_COLOR_RGB(0xFF, 0xFF, 0xFF);
+        API_CMD_TEXT(10, 10, 30, 0, status);
+        
+        API_DISPLAY();
+        API_CMD_SWAP(); 
+
+        API_LIB_EndCoProList();
+        API_LIB_AwaitCoProEmpty();
+
+        TagVal = EVE_MemRead8(0x30212C);
+        //TagVal = EVE_MemRead8(REG_TOUCH_TAG);
+        TrackerVal = EVE_MemRead32(REG_TRACKER);
+
+        if(TagVal == 2)   
+        {
+            color = 0xFF;
+            Button3D = 256;
+        } else {
+            color = 0x55;
+            Button3D = 0;
+        }
+        
+        uint16_t rz = EVE_MemRead16(0x302120);
+        
+        sprintf(status, "tag:[%d] track:[%d] rz:[%d]", TagVal, TrackerVal, rz);
+                
+        //APP_SnapShot2PPM();                                                   // Un-comment to take snapshot (see BRT_AN_014)
+        
+        // Result of button press and slider value will be displayed next time round
+        MCU_Delay_ms(100);
+
+    }
 }
 
 void APP_FlashingDot(void)
@@ -168,6 +237,10 @@ void APP_FlashingDot(void)
         API_VERTEX2F(200*16, 200*16);                                           // Place a point at the specified coordinates
         API_END();                                                              // Finished drawing points
         
+        API_COLOR_RGB(0xFF, 0xFF, 0xFF);
+        API_CMD_TEXT(100, 100, 30, 0, "Hmmm, think time");
+
+        
         API_DISPLAY();                                                          // Tell EVE that this is end of list
         API_CMD_SWAP();                                                         // Swap buffers in EVE to make this list active
 
@@ -180,73 +253,6 @@ void APP_FlashingDot(void)
     }
 }
 
-void APP_SliderandButton(void)   
-{
-    uint32_t TrackerVal = 0;
-    uint8_t TagVal = 0;
-    uint16_t SlideVal = 0;
-    uint16_t Button3D = 0;
-    uint8_t color = 0;
-   
-    while(1)
-    {
-        API_LIB_BeginCoProList();                                               // Begin new screen 
-        API_CMD_DLSTART();                                                      // Tell co-processor to create new Display List
-        
-        API_CLEAR_COLOR_RGB(0, 0, 0);                                           // Specify color to clear screen to
-        API_CLEAR(1,1,1);                                                       // Clear color, stencil, and tag buffer
-        
-        API_TAG_MASK(1);                                                        // Enable tagging
-
-        API_TAG(2);                                                             // Tag following items with tag 2
-        API_CMD_FGCOLOR(0x0000FF);                                              // Blue foreground color
-        API_CMD_BUTTON(100, 200, 80, 30, 27, Button3D, "Button");               // Draw button
-        
-        API_TAG(5);                                                             // Tag following items with tag 5
-        API_CMD_SLIDER(300, 100, 16, 200, 0, SlideVal, 255);                    // Draw a slider
-        API_CMD_TRACK(300, 100, 16, 200, 5);                                    // Place a tracker
-        
-        API_TAG_MASK(0);                                                        // Mask tagging so that following items won't be tagged
-        
-        API_BEGIN(FTPOINTS);                                                    // Draw a dot in red at 140, 100)		
-        API_POINT_SIZE(30*16);  
-        API_COLOR_RGB(color, 0, 0);                                             // Set colour to blue and write some text
-        API_VERTEX2F((140*16), (100*16));
-        API_END(); 
-        
-        API_DISPLAY();                                                          // Tell EVE that this is end of list
-        API_CMD_SWAP();                                                         // Swap buffers in EVE to make this list active
-
-        API_LIB_EndCoProList();                                                 // Finish the co-processor list burst write
-        API_LIB_AwaitCoProEmpty();                                              // Wait until co-processor has consumed all commands 
-
-        // ------ read tag and tracker values --------
-        TagVal = EVE_MemRead8(REG_TOUCH_TAG);                                   // Get Tag value
-        TrackerVal = EVE_MemRead32(REG_TRACKER);                                // Read the value of the tag and track register
-
-        if(TagVal == 2)   
-        {// If button pushed tag register will read 2
-            color = 0xFF;                                                       // change red amount to 255
-            Button3D = 256;                                                     // Give the button a pushed-in appearance
-        }
-        else  
-        {// Otherwise...
-            color = 0x00;                                                       // change red amount to 0 so dot is not visible
-            Button3D = 0;                                                       // Button has 3D effect (not pushed in))
-        }
-        
-        if(TagVal == 5)                                                         // if slider touched...
-        {
-            SlideVal = (TrackerVal >> 24);                                      // ... then get the tracker value. 
-            // Note: Value of tracking is 16 bits but we only use upper 8 bits since the slider is set for 8 bit resolution
-        }
-                
-        //APP_SnapShot2PPM();                                                   // Un-comment to take snapshot (see BRT_AN_014)
-        
-        // Result of button press and slider value will be displayed next time round
-    }
-}
-
 int main()
 {
     initialize_system();
@@ -254,16 +260,29 @@ int main()
     APP_Init();
     
     APP_Calibrate();
-   
-//    APP_SliderandButton();
     
-    APP_FlashingDot();
+    APP_SliderandButton();
     
+//    APP_FlashingDot();
 //    APP_VertexTranslate();
-    
     while (1)
-    {
-        // yaw hee
+    {           
+        API_LIB_BeginCoProList();
+        API_CMD_DLSTART();
+        
+        API_CLEAR_COLOR_RGB(0, 0, 0);
+        API_CLEAR(1,1,1);
+        
+        API_COLOR_RGB(0xFF, 0xFF, 0xFF);
+        API_CMD_TEXT(100, 100, 30, 0, "Hmmm, think time");
+
+        
+        API_DISPLAY();
+        API_CMD_SWAP();
+
+        API_LIB_EndCoProList();
+        API_LIB_AwaitCoProEmpty();
+        MCU_Delay_ms(100);
     }
     
 }

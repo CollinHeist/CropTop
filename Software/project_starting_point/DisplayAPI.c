@@ -33,8 +33,8 @@ void API_LIB_AwaitCoProEmpty(void)
 {
     uint8_t success = 0;
     
-    success = EVE_WaitCmdFifoEmpty();                                           // Await completion of processing 
-    cmdOffset = EVE_GetCurrentWritePointer();                                   // and record starting address for next screen update
+    EVE_WaitCmdFifoEmpty();
+//    cmdOffset = EVE_GetCurrentWritePointer();
 }
 
 // Writes a block of data to the RAM_G

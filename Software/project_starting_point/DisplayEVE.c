@@ -263,21 +263,34 @@ uint16_t EVE_IncCMDOffset(uint16_t currentOffset, uint16_t commandSize)
     return newOffset;                                                           // Return new offset
 }
 
-// ------ Wait for co-processor read and write pointers to be equal ------------
-uint8_t EVE_WaitCmdFifoEmpty(void)
+uint16_t EVE_WaitCmdFifoEmpty(void)
+{
+    uint16_t ReadPointer, WritePointer;
+
+    do
+    {
+        ReadPointer = EVE_MemRead32(REG_CMD_READ);
+        WritePointer = EVE_MemRead32(REG_CMD_WRITE);
+    }while (WritePointer != ReadPointer);
+
+    return WritePointer;
+}
+
+// DEPRECIATED
+uint8_t EVE_WaitCmdFifoEmptyOld(void)
 {
     uint16_t ReadPointer, WritePointer;
         
     do
     {
-        ReadPointer = EVE_MemRead16(REG_CMD_READ);                              // Read the graphics processor read pointer
-        WritePointer = EVE_MemRead16(REG_CMD_WRITE);                            // Read the graphics processor write pointer
-    }while ((WritePointer != ReadPointer) && (ReadPointer != 0xFFF));           // Wait until the two registers match
+        ReadPointer = EVE_MemRead16(REG_CMD_READ);
+        WritePointer = EVE_MemRead16(REG_CMD_WRITE);
+    }while ((WritePointer != ReadPointer) && (ReadPointer != 0xFFF));
 
     if(ReadPointer == 0xFFF)
-        return 0xFF;                                                            // Return 0xFF if an error occurred
+        return 0xFF;
     else
-        return 0;                                                               // Return 0 if pointers became equal successfully
+        return 0;
 }
 
 uint32_t EVE_GetCurrentWritePointer(void)

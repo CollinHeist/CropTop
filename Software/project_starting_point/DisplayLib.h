@@ -90,7 +90,10 @@ uint16_t EVE_MemRead16(uint32_t ftAddress);
 uint8_t EVE_MemRead8(uint32_t ftAddress);
 void EVE_CmdWrite(uint8_t EVECmd, uint8_t Param);
 uint16_t EVE_IncCMDOffset(uint16_t currentOffset, uint16_t commandSize);
-uint8_t EVE_WaitCmdFifoEmpty(void);
+uint8_t EVE_WaitCmdFifoEmptyOLD(void);
+
+uint16_t EVE_WaitCmdFifoEmpty(void);
+
 uint32_t EVE_GetCurrentWritePointer(void);
 uint16_t EVE_CheckFreeSpace(uint16_t CmdOffset);
 
