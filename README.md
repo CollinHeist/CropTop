@@ -45,9 +45,6 @@ links to
 * Voltage levels
 * Resistor divider for software modes.)
 
-#### Making a Daughter Board
-instruction/guide to mating a board to the croptop board
-
 #### Manufacturing and Ordering Boards
 * Logging into Macrofab
 * Specifying chips for populate or do not populate (DNP)
@@ -116,10 +113,7 @@ instructions
 using the PICKIT programming header in MPLAB, and photo of connection to croptop
 
 ## Integration Guide
-How the board interacts with system
-
-#### Calibrating Sensors
-How to calibrate guide
+Integrating the hardware into a project
 
 #### Powering the Device
 How to power on devices
