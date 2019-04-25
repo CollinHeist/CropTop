@@ -39,13 +39,44 @@ int main()
     MCU_Init();
     APP_Init();
     
-    APP_Calibrate();
+//    APP_Calibrate();
     
-    APP_SliderandButton();
+    uint8_t x = 7;
+    char buf[50];
     
     while (1)
-    {           
-        Nop();
+    {
+        API_LIB_BeginCoProList();
+        API_CMD_DLSTART();
+        
+        API_CLEAR_COLOR_RGB(0, 0, 0);
+        API_CLEAR(1,1,1);
+        
+        API_COLOR_RGB(0xFF, 0xFF, 0xFF);
+        
+        x *= 43;
+        sprintf(buf, "Here's some nonsense %d", x);
+        API_CMD_TEXT(10, 10, 30, 0, buf);
+        
+        x *= 23;
+        sprintf(buf, "Here's some more nonsense %d", x);
+        API_CMD_TEXT(10, 50, 22, 0, buf);
+        
+        x *= 723;
+        sprintf(buf, "[%d] is in brackets", x);
+        API_CMD_TEXT(10, 80, 18, 0, buf);
+        
+        x *= 901;
+        sprintf(buf, "heres sum %d", x);
+        API_CMD_TEXT(10, 110, 16, 0, buf);
+        
+        API_DISPLAY();
+        API_CMD_SWAP();
+
+        API_LIB_EndCoProList();
+        API_LIB_AwaitCoProEmpty();
+            
+        MCU_Delay_ms(250);
     }
     
 }
@@ -55,7 +86,7 @@ void initialize_system()
     DDPCONbits.JTAGEN = 0;
     PORTSetPinsDigitalIn(IOPORT_C, BUTTONS);
     PORTSetPinsDigitalOut(IOPORT_C, LEDS);
-//    MCU_Init();//Configures FT812 SPI Bits, rename to something LCD related
+//    MCU_Init();
     LATCCLR = LED_A;
     PotLib_Init();
     MotorLib_Init();
