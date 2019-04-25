@@ -8,6 +8,10 @@
       <itemPath>../MotorLib.h</itemPath>
       <itemPath>../PotLib.h</itemPath>
       <itemPath>../config_bits.h</itemPath>
+      <itemPath>../AccelLib.h</itemPath>
+      <itemPath>../GPSLib.h</itemPath>
+      <itemPath>../I2CLib.h</itemPath>
+      <itemPath>../Si7006.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -19,6 +23,10 @@
       <itemPath>../main.c</itemPath>
       <itemPath>../MotorLib.c</itemPath>
       <itemPath>../PotLib.c</itemPath>
+      <itemPath>../AccelLib.c</itemPath>
+      <itemPath>../GPSLib.c</itemPath>
+      <itemPath>../I2CLib.c</itemPath>
+      <itemPath>../Si7006.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -43,7 +51,7 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32MX_DFP" vendor="Microchip" version="1.0.25"/>
+        <pack name="PIC32MX_DFP" vendor="Microchip" version="1.0.23"/>
       </packs>
       <compileType>
         <linkerTool>
