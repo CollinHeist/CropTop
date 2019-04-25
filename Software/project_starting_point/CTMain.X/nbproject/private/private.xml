@@ -5,10 +5,9 @@
         <group>
             <file>file:/home/conrad/code/CropTop/Software/project_starting_point/main.c</file>
             <file>file:/home/conrad/code/CropTop/Software/project_starting_point/DisplayMCU.c</file>
-            <file>file:/home/conrad/code/CropTop/Software/project_starting_point/DisplayAPI.c</file>
             <file>file:/home/conrad/code/CropTop/Software/project_starting_point/DisplayLib.h</file>
             <file>file:/home/conrad/code/CropTop/Software/project_starting_point/DisplayEVE.c</file>
-            <file>file:/home/conrad/code/CropTop/Software/project_starting_point/FT8xx.h</file>
+            <file>file:/home/conrad/code/CropTop/Software/project_starting_point/DisplayAPP.c</file>
         </group>
     </open-files>
 </project-private>

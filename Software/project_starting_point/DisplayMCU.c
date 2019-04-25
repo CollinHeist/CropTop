@@ -8,26 +8,6 @@
 #define CS_LOW_TIMER 8
 #define CS_HIGH_TIMER 8
 
-/*
- * Section 23.3.2.1, DS61106E-page 23-23, ~Page 775 of
- * PIC32MX Family Reference Manual
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Perform the following steps to set up the SPI module 
- * for the Master mode of operation:
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
- * 1.Disable the SPI interrupts in the respective IEC0/1 register.
- * 2.Stop and reset the SPI module by clearing the ON bit.
- * 3.Clear the receive buffer.
- * 4. <SKIP>
- * 5.Write the Baud Rate register, SPIxBRG.
- * 6.Clear the SPIROV bit (SPIxSTAT<6>).
- * 7.Write the desired settings to the SPIxCON register with MSTEN (SPIxCON<5>) =1. 
- * 8.Enable SPI operation by setting the ON bit (SPIxCON<15>).
- * 9.Write the data to be transmitted to the SPIxBUF register. Transmission (and reception) willstart as soon as data is written to the SPIxBUF register.
-  
- */
-
 // ------------------- MCU specific initialisation  ----------------------------
 void MCU_Init(void)
 {    

@@ -2,7 +2,7 @@
 #include "DisplayLib.h" 
 #include "FT8xx.h"
 #include <string.h>
-#include <stdint.h> // for Uint8/16/32 and Int8/16/32 data types
+#include <stdint.h>
 
 #define MEM_WRITE	0x80			// FT800 Host Memory Write
 #define MEM_READ	0x00			// FT800 Host Memory Read

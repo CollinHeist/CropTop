@@ -36,22 +36,17 @@ Version Author              Date        Description
  
 */
 
+#include <stdio.h>
+#include <stdint.h>
 
-#include <stdint.h> // for Uint8/16/32 and Int8/16/32 data types
-#include "FT8xx.h"
-
-#ifdef	__cplusplus
+#ifdef __cplusplus
 extern "C" {
 #endif /* __cplusplus */
 
-    // TODO If C++ is being used, regular C code needs function names to have C 
-    // linkage so the functions can be used by the c code. 
+#include "FT8xx.h"
 
-
-// This is a guard condition so that contents of this file are not included
-// more than once.  
-#ifndef XC_HEADER_TEMPLATE_H
-#define	XC_HEADER_TEMPLATE_H
+#ifndef XC_H
+#define	XC_H
 
 // MCU Layer
 void MCU_Init(void);                                                                 
@@ -106,6 +101,7 @@ void API_LIB_AwaitCoProEmpty(void);
 void API_LIB_WriteDataRAMG(const uint8_t *ImgData, uint32_t DataSize, uint32_t DestAddress);
 uint8_t API_SendString(const char* string);
 void API_LIB_WriteDataToCMD(const uint8_t *ImgData, uint32_t TotalDataSize);
+
 // Graphics instructions
 void API_CLEAR_COLOR_RGB(uint8_t R, uint8_t G, uint8_t B);
 void API_CLEAR(uint8_t C, uint8_t S, uint8_t T);
@@ -142,6 +138,7 @@ void API_RESTORE_CONTEXT(void);
 void API_RETURN(void);   
 void API_MACRO(uint8_t m);   
 void API_DISPLAY(void);   
+
 // Co-Processor Widgets
 void API_CMD_TEXT(int16_t x, int16_t y, int16_t font, uint16_t options, const char* string);
 void API_CMD_BUTTON(int16_t x, int16_t y, int16_t w, int16_t h, int16_t font, uint16_t options, const char* string);
@@ -223,11 +220,15 @@ void API_CMD_SETBITMAP(uint32_t source, uint16_t fmt, uint16_t w, uint16_t h);
 void API_CMD_SETSCRATCH(uint32_t handle);
 #endif
 
+// ######################### APP Layer #########################################
 
+void APP_Init(void);
+void APP_Calibrate(void);
+void APP_SliderandButton(void);
+void APP_FlashingDot(void);
+
+#endif	/* XC_HEADER_TEMPLATE_H */
 
 #ifdef	__cplusplus
 }
 #endif /* __cplusplus */
-
-#endif	/* XC_HEADER_TEMPLATE_H */
-
