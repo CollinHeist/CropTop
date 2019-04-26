@@ -1,0 +1,17 @@
+Temperature, Humidity, GPS, and Accelerometer
+Motor Drive Features
+Force Sensor Interface
+Data export features
+Software slide 1: Appoach, picture of programming header
+Software slide 2: Software stack image
+
+Miscellanous IO: Potentiometers, Encoders, and ultrasonic ranging modules
+Mechanical Design
+Display/Gui
+Microcontroller
+Manufacturing Approach
+Outcomes
+
+Questions (Hours invested)	 
+
+

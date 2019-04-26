@@ -1,4 +1,4 @@
-update=4/20/2019 8:55:04 PM
+update=4/25/2019 3:30:09 PM
 version=1
 last_client=kicad
 [general]
@@ -34,7 +34,7 @@ LibDir=
 [schematic_editor]
 version=1
 PageLayoutDescrFile=croptop.kicad_wks
-PlotDirectoryName=../../
+PlotDirectoryName=../docs/prez/
 SubpartIdSeparator=0
 SubpartFirstId=65
 NetFmtName=
