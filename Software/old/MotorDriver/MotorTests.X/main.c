@@ -8,7 +8,9 @@
  *              the MotorLib.c library functionality.
  * 
  * Notes:       Software things:
- *
+ *              fixed the PWM duty cycle in this version
+ *              need to workout the fault indication
+ * 
  *              Hardware things:
  *              
  * *************************************************************************/
@@ -22,10 +24,10 @@ int main()
 {
     //local variables
     initialize_system();
-    int ButtonA;
     while(1)
     {
-        MotorLib_ForwardBackwardTest(50);
+        MotorLib_ForwardBackwardTest(60);
+//        MotorLib_Coast();
     }
 }
 

@@ -38,7 +38,7 @@ void MotorLib_Init()
     //enable the output compare peripheral
     MotorLib_OCSetup();
     //enable the fault indicator interrupt
-    MotorLib_CNInterruptSetup();
+    //MotorLib_CNInterruptSetup();
 }
 
 /* **************************************************************************
@@ -106,8 +106,8 @@ void MotorLib_OCSetup()
 void MotorLib_DutyCycleSet(unsigned int C2DutyCycle, unsigned int C3DutyCycle)
 {
     //calculate the new PWM register values
-    int new_nOC2RS = (PR2_VALUE*C2DutyCycle/100)-1;
-    int new_nOC3RS = (PR2_VALUE*C3DutyCycle/100)-1;
+    int new_nOC2RS = (PR2_VALUE*(100-C2DutyCycle)/100)-1;
+    int new_nOC3RS = (PR2_VALUE*(100-C3DutyCycle)/100)-1;
     //change the PWM setting
     SetDCOC2PWM(new_nOC2RS);
     SetDCOC3PWM(new_nOC3RS);
@@ -147,9 +147,12 @@ void __ISR(_CHANGE_NOTICE_VECTOR, IPL1SOFT) CNIntHandler(void)
     if(PORTReadBits(IOPORT_D, nFAULT))
     {
         //Stop the motor
-        MotorLib_Coast();
+//        MotorLib_Coast();
         //flick a light or ideally trigger a semaphore that unblocks a warning
         //screen task
+        
+        //clear the interrupt flag
+        mCNClearIntFlag();
     }
 }
 

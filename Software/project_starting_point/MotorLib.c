@@ -145,6 +145,7 @@ void __ISR(_CHANGE_NOTICE_VECTOR, IPL1SOFT) CNIntHandler(void)
         MotorLib_Coast();
         //flick a light or ideally trigger a semaphore that unblocks a warning
         //screen task
+        mCNClearIntFlag();
     }
 }
 

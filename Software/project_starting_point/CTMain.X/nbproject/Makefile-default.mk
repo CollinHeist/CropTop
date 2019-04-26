@@ -19,7 +19,7 @@ endif
 endif
 
 # Environment
-MKDIR=mkdir -p
+MKDIR=gnumkdir -p
 RM=rm -f 
 MV=mv 
 CP=cp 
@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../MotorLib.c ../PotLib.c ../DisplayEVE.c ../DisplayMCU.c ../AccelLib.c ../GPSLib.c ../I2CLib.c ../Si7006.c ../Expo.c ../main.c ../RTClib.c ../DisplayAPI.c ../DisplayAPP.c
+SOURCEFILES_QUOTED_IF_SPACED=../MotorLib.c ../PotLib.c ../DisplayEVE.c ../DisplayMCU.c ../AccelLib.c ../GPSLib.c ../I2CLib.c ../Si7006.c ../Expo.c ../main.c ../RTClib.c ../DisplayAPP.c ../DisplayAPI.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1472/MotorLib.o ${OBJECTDIR}/_ext/1472/PotLib.o ${OBJECTDIR}/_ext/1472/DisplayEVE.o ${OBJECTDIR}/_ext/1472/DisplayMCU.o ${OBJECTDIR}/_ext/1472/AccelLib.o ${OBJECTDIR}/_ext/1472/GPSLib.o ${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/Si7006.o ${OBJECTDIR}/_ext/1472/Expo.o ${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/RTClib.o ${OBJECTDIR}/_ext/1472/DisplayAPI.o ${OBJECTDIR}/_ext/1472/DisplayAPP.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1472/MotorLib.o.d ${OBJECTDIR}/_ext/1472/PotLib.o.d ${OBJECTDIR}/_ext/1472/DisplayEVE.o.d ${OBJECTDIR}/_ext/1472/DisplayMCU.o.d ${OBJECTDIR}/_ext/1472/AccelLib.o.d ${OBJECTDIR}/_ext/1472/GPSLib.o.d ${OBJECTDIR}/_ext/1472/I2CLib.o.d ${OBJECTDIR}/_ext/1472/Si7006.o.d ${OBJECTDIR}/_ext/1472/Expo.o.d ${OBJECTDIR}/_ext/1472/main.o.d ${OBJECTDIR}/_ext/1472/RTClib.o.d ${OBJECTDIR}/_ext/1472/DisplayAPI.o.d ${OBJECTDIR}/_ext/1472/DisplayAPP.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1472/MotorLib.o ${OBJECTDIR}/_ext/1472/PotLib.o ${OBJECTDIR}/_ext/1472/DisplayEVE.o ${OBJECTDIR}/_ext/1472/DisplayMCU.o ${OBJECTDIR}/_ext/1472/AccelLib.o ${OBJECTDIR}/_ext/1472/GPSLib.o ${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/Si7006.o ${OBJECTDIR}/_ext/1472/Expo.o ${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/RTClib.o ${OBJECTDIR}/_ext/1472/DisplayAPP.o ${OBJECTDIR}/_ext/1472/DisplayAPI.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1472/MotorLib.o.d ${OBJECTDIR}/_ext/1472/PotLib.o.d ${OBJECTDIR}/_ext/1472/DisplayEVE.o.d ${OBJECTDIR}/_ext/1472/DisplayMCU.o.d ${OBJECTDIR}/_ext/1472/AccelLib.o.d ${OBJECTDIR}/_ext/1472/GPSLib.o.d ${OBJECTDIR}/_ext/1472/I2CLib.o.d ${OBJECTDIR}/_ext/1472/Si7006.o.d ${OBJECTDIR}/_ext/1472/Expo.o.d ${OBJECTDIR}/_ext/1472/main.o.d ${OBJECTDIR}/_ext/1472/RTClib.o.d ${OBJECTDIR}/_ext/1472/DisplayAPP.o.d ${OBJECTDIR}/_ext/1472/DisplayAPI.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1472/MotorLib.o ${OBJECTDIR}/_ext/1472/PotLib.o ${OBJECTDIR}/_ext/1472/DisplayEVE.o ${OBJECTDIR}/_ext/1472/DisplayMCU.o ${OBJECTDIR}/_ext/1472/AccelLib.o ${OBJECTDIR}/_ext/1472/GPSLib.o ${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/Si7006.o ${OBJECTDIR}/_ext/1472/Expo.o ${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/RTClib.o ${OBJECTDIR}/_ext/1472/DisplayAPI.o ${OBJECTDIR}/_ext/1472/DisplayAPP.o
+OBJECTFILES=${OBJECTDIR}/_ext/1472/MotorLib.o ${OBJECTDIR}/_ext/1472/PotLib.o ${OBJECTDIR}/_ext/1472/DisplayEVE.o ${OBJECTDIR}/_ext/1472/DisplayMCU.o ${OBJECTDIR}/_ext/1472/AccelLib.o ${OBJECTDIR}/_ext/1472/GPSLib.o ${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/Si7006.o ${OBJECTDIR}/_ext/1472/Expo.o ${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/RTClib.o ${OBJECTDIR}/_ext/1472/DisplayAPP.o ${OBJECTDIR}/_ext/1472/DisplayAPI.o
 
 # Source Files
-SOURCEFILES=../MotorLib.c ../PotLib.c ../DisplayEVE.c ../DisplayMCU.c ../AccelLib.c ../GPSLib.c ../I2CLib.c ../Si7006.c ../Expo.c ../main.c ../RTClib.c ../DisplayAPI.c ../DisplayAPP.c
+SOURCEFILES=../MotorLib.c ../PotLib.c ../DisplayEVE.c ../DisplayMCU.c ../AccelLib.c ../GPSLib.c ../I2CLib.c ../Si7006.c ../Expo.c ../main.c ../RTClib.c ../DisplayAPP.c ../DisplayAPI.c
 
 
 CFLAGS=
@@ -172,17 +172,17 @@ ${OBJECTDIR}/_ext/1472/RTClib.o: ../RTClib.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/_ext/1472/RTClib.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/RTClib.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/RTClib.o.d" -o ${OBJECTDIR}/_ext/1472/RTClib.o ../RTClib.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/_ext/1472/DisplayAPI.o: ../DisplayAPI.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
-	@${RM} ${OBJECTDIR}/_ext/1472/DisplayAPI.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1472/DisplayAPI.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/DisplayAPI.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/DisplayAPI.o.d" -o ${OBJECTDIR}/_ext/1472/DisplayAPI.o ../DisplayAPI.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
 ${OBJECTDIR}/_ext/1472/DisplayAPP.o: ../DisplayAPP.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
 	@${RM} ${OBJECTDIR}/_ext/1472/DisplayAPP.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1472/DisplayAPP.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/DisplayAPP.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/DisplayAPP.o.d" -o ${OBJECTDIR}/_ext/1472/DisplayAPP.o ../DisplayAPP.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/_ext/1472/DisplayAPI.o: ../DisplayAPI.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
+	@${RM} ${OBJECTDIR}/_ext/1472/DisplayAPI.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1472/DisplayAPI.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/DisplayAPI.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/DisplayAPI.o.d" -o ${OBJECTDIR}/_ext/1472/DisplayAPI.o ../DisplayAPI.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 else
 ${OBJECTDIR}/_ext/1472/MotorLib.o: ../MotorLib.c  nbproject/Makefile-${CND_CONF}.mk
@@ -251,17 +251,17 @@ ${OBJECTDIR}/_ext/1472/RTClib.o: ../RTClib.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/_ext/1472/RTClib.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/RTClib.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/RTClib.o.d" -o ${OBJECTDIR}/_ext/1472/RTClib.o ../RTClib.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/_ext/1472/DisplayAPI.o: ../DisplayAPI.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
-	@${RM} ${OBJECTDIR}/_ext/1472/DisplayAPI.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1472/DisplayAPI.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/DisplayAPI.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/DisplayAPI.o.d" -o ${OBJECTDIR}/_ext/1472/DisplayAPI.o ../DisplayAPI.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
 ${OBJECTDIR}/_ext/1472/DisplayAPP.o: ../DisplayAPP.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
 	@${RM} ${OBJECTDIR}/_ext/1472/DisplayAPP.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1472/DisplayAPP.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/DisplayAPP.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/DisplayAPP.o.d" -o ${OBJECTDIR}/_ext/1472/DisplayAPP.o ../DisplayAPP.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/_ext/1472/DisplayAPI.o: ../DisplayAPI.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
+	@${RM} ${OBJECTDIR}/_ext/1472/DisplayAPI.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1472/DisplayAPI.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/DisplayAPI.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/DisplayAPI.o.d" -o ${OBJECTDIR}/_ext/1472/DisplayAPI.o ../DisplayAPI.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 endif
 
@@ -282,7 +282,7 @@ else
 dist/${CND_CONF}/${IMAGE_TYPE}/CTMain.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
 	${MP_CC} $(MP_EXTRA_LD_PRE)  -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/CTMain.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml
-	${MP_CC_DIR}/xc32-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/CTMain.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} 
+	${MP_CC_DIR}\\xc32-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/CTMain.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} 
 endif
 
 
@@ -301,7 +301,7 @@ endif
 # Enable dependency checking
 .dep.inc: .depcheck-impl
 
-DEPFILES=$(shell "${PATH_TO_IDE_BIN}"mplabwildcard ${POSSIBLE_DEPFILES})
+DEPFILES=$(shell mplabwildcard ${POSSIBLE_DEPFILES})
 ifneq (${DEPFILES},)
 include ${DEPFILES}
 endif

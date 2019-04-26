@@ -52,7 +52,8 @@ int main()
     float temp_c_moving = 1;
     float temp_f_moving = 1;
     float humidi_moving = 1;
-    float moving_N = 200;
+    double tilt_moving = 1;
+    float moving_N = 500;
     
     int first = 0;
     
@@ -61,7 +62,7 @@ int main()
     while (1)
     {
         system_variables_update(&sv);
-        
+//        MotorLib_ForwardBackwardTest(100);
         if (0 == first)
         {
             first++;
@@ -78,6 +79,9 @@ int main()
         
         humidi_moving -= humidi_moving / moving_N;
         humidi_moving += sv.humidity / moving_N;
+        
+        tilt_moving -= tilt_moving / moving_N;
+        tilt_moving += sv.tilt / moving_N;
     
         API_LIB_BeginCoProList();
         API_CMD_DLSTART();
@@ -90,27 +94,35 @@ int main()
         API_COLOR_RGB(0, 0, 0);
 
         
-        sprintf(buf, "Date: %02d - %02d - %d  |  Time: %d:%02d", sv.day, sv.month, sv.year, sv.hour, sv.minute);
+        sprintf(buf, "Date: %02d - %02d - %d", sv.day, sv.month, sv.year);
         API_CMD_TEXT(10, 10, 22, 0, buf);
         
         sprintf(buf, "Latitude: %s  |  Longitude: %s", sv.latitude, sv.longitude);
-        API_CMD_TEXT(400, 10, 22, 0, buf);
-        
-        sprintf(buf, "Board Temperature (C): %0.3f (%f)", temp_c_moving, sv.temp_c);
         API_CMD_TEXT(10, 40, 22, 0, buf);
         
-        sprintf(buf, "Board Temperature (F): %0.3f (%f)", temp_f_moving, sv.temp_f);
+        sprintf(buf, "Board Temperature (C): %0.3f (%f)", temp_c_moving, sv.temp_c);
         API_CMD_TEXT(10, 70, 22, 0, buf);
         
-        sprintf(buf, "Humidity: %.3f (%f)", humidi_moving, sv.humidity);
+        sprintf(buf, "Board Temperature (F): %0.3f (%f)", temp_f_moving, sv.temp_f);
         API_CMD_TEXT(10, 100, 22, 0, buf);
         
-        sprintf(buf, "Tilt: %f", sv.tilt);
+        sprintf(buf, "Humidity: %.3f (%f)", humidi_moving, sv.humidity);
         API_CMD_TEXT(10, 130, 22, 0, buf);
         
-        sprintf(buf, "ADC_RAW: %d  |  ADC: %f", sv.adc_raw, sv.adc_nominal);
+        sprintf(buf, "Tilt: %5.3lf", sv.tilt);
         API_CMD_TEXT(10, 160, 22, 0, buf);
         
+        sprintf(buf, "ADC_RAW: %d  |  ADC: %f", sv.adc_raw, sv.adc_nominal);
+        API_CMD_TEXT(10, 190, 22, 0, buf);
+        
+        sprintf(buf, "LCD Firmware: Conrad Mearns");
+        API_CMD_TEXT(10, 360, 23, 0, buf);
+        
+        sprintf(buf, "Backend Firmware: Ryan Donahue");
+        API_CMD_TEXT(10, 400, 23, 0, buf);
+        
+        sprintf(buf, "Board Design: Kennedy Caisley");
+        API_CMD_TEXT(10, 440, 23, 0, buf);
         
         int lx=700,ly=130,ls=16;
         

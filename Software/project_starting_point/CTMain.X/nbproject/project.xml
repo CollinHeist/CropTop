@@ -23,7 +23,6 @@
             <formatting>
                 <project-formatting-style>false</project-formatting-style>
             </formatting>
-            <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>..</sourceRootElem>
             </sourceRootList>
@@ -36,6 +35,7 @@
             <formatting>
                 <project-formatting-style>false</project-formatting-style>
             </formatting>
+            <make-dep-projects/>
         </data>
     </configuration>
 </project>

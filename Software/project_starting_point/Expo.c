@@ -34,5 +34,5 @@ void system_variables_update(struct system_variables *sys_vars)
     sys_vars->tilt = AccelLib_ReadTilt();
     //PIC ADC read
     sys_vars->adc_raw = PotLib_SingleRead();
-    sys_vars->adc_nominal = (sys_vars->adc_raw)*3.30/1024;
+    sys_vars->adc_nominal = (sys_vars->adc_raw)*3.30/1023;
 }
