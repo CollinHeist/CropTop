@@ -7,4 +7,5 @@ build/default/debug/_ext/1472/main.o:  \
 ../I2CLib.h  \
 ../Si7006.h  \
  ../AccelLib.h  \
-../GPSLib.h 
+../GPSLib.h  \
+../Expo.h 

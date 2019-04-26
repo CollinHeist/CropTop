@@ -21,16 +21,37 @@
 int main()
 {
     initialize_system();
-    int i;
-    struct system_variables sys_vars;
+//    unsigned int TestRead;
+//    float temperature, humidity;
+//    double tilt;
+//    char st_failed;
+    int data_len = 0, err = 0, i;
+    char write_data_stream[1] = {GPS_DATA};
+    char read_data_stream[394] = {0};
+    unsigned char payload[1] = {0};
     while(1)
     {
         i = 0;
-        while(i<1000)
+        while(i<20000)
         {
             i++;
         }
-        system_variables_update(&sys_vars);
+//        TestRead = PotLib_SingleRead();
+//        temperature = Si7006_ReadTemp();
+//        humidity = Si7006_ReadHumidity();
+//        tilt = AccelLib_ReadTilt();
+//        st_failed = AccelLib_SelfTest();
+        data_len=0;
+        err |= GPSLib_UBXWrite(NAV, NAV_PVT, payload, 0);
+//        err |= GPSLib_UBXWrite(NAV, NAV_STATUS, payload, 0);
+//        err |= GPSLib_UBXWrite(NAV, NAV_POSLLH, payload, 0);
+//        err |= GPSLib_UBXWrite(MON, MON_VER, payload, 0);
+//        err |= GPSLib_UBXWrite(CFG, CFG_NAV5, payload, 0);
+        while(data_len==0)
+        {
+            data_len = GPSLib_MessageCount();
+        }
+        err |= I2C_WriteRead(GPS_ADDR, write_data_stream, read_data_stream, 1, 394);
 	}
 }
 void initialize_system()

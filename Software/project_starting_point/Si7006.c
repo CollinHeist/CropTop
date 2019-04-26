@@ -12,6 +12,11 @@
 #include "I2CLib.h"
 #include "Si7006.h"
 
+/* **************************************************************************
+ * Function:    float Si7006_ReadTemp()
+ * Summary:     Read the Temperature.
+ * Return:		float, temperature in degrees
+ * **************************************************************************/
 float Si7006_ReadTemp()
 {
     unsigned char write[1] = {Si7006_temp_no_hold_master};
@@ -20,6 +25,11 @@ float Si7006_ReadTemp()
     return (((read[0]<<8)|read[1])*175.72/65536)-46.85;
 }
 
+/* **************************************************************************
+ * Function:    float Si7006_ReadTemp()
+ * Summary:     Read Humidity.
+ * Return:		float, percent humidity (0-100)
+ * **************************************************************************/
 float Si7006_ReadHumidity()
     {
     float humidity;

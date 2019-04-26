@@ -2,9 +2,8 @@
  * File name:   I2CLib.c
  * Association: University of Idaho
  * Author:      Ryan Donahue
- * Dates:       Created 2/13/2018
+ * Dates:       Created 2/13/2019
  * Summary:     Function to initialize and use I2C module 1.
- * Notes:       HW: sub gyroscope for accelerometer
  * **************************************************************************/
 #define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
@@ -160,7 +159,7 @@ char I2C_WriteRead(char slave_addr, char *write_array, char *read_array, int wri
 }
 
 /* **************************************************************************
- * Function:    BOOL I2C_WaitForSlaveAck(char slave_addr)
+ * Function:    char I2C_WaitForSlaveAck(char slave_addr)
  * Summary:     Polls for a read acknowledgement from slave_addr. After 20ms 
 				without acknowledgement function will exit.
  * Argument:    char slave_addr, 7-bit destination slave address
@@ -168,7 +167,7 @@ char I2C_WriteRead(char slave_addr, char *write_array, char *read_array, int wri
 				!0 - a read was acknowledged
  * Notes:		Untested
  * **************************************************************************/
-BOOL I2C_WaitForSlaveAck(char slave_addr)
+char I2C_WaitForSlaveAck(char slave_addr)
 {
     int i = 0;
     StartI2C1();

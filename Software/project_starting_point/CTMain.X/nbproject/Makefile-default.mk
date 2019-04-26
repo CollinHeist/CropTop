@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../main.c ../MotorLib.c ../PotLib.c ../AccelLib.c ../GPSLib.c ../I2CLib.c ../Si7006.c
+SOURCEFILES_QUOTED_IF_SPACED=../MotorLib.c ../PotLib.c ../AccelLib.c ../GPSLib.c ../I2CLib.c ../Si7006.c ../Expo.c ../main.c ../RTClib.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/MotorLib.o ${OBJECTDIR}/_ext/1472/PotLib.o ${OBJECTDIR}/_ext/1472/AccelLib.o ${OBJECTDIR}/_ext/1472/GPSLib.o ${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/Si7006.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1472/main.o.d ${OBJECTDIR}/_ext/1472/MotorLib.o.d ${OBJECTDIR}/_ext/1472/PotLib.o.d ${OBJECTDIR}/_ext/1472/AccelLib.o.d ${OBJECTDIR}/_ext/1472/GPSLib.o.d ${OBJECTDIR}/_ext/1472/I2CLib.o.d ${OBJECTDIR}/_ext/1472/Si7006.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1472/MotorLib.o ${OBJECTDIR}/_ext/1472/PotLib.o ${OBJECTDIR}/_ext/1472/AccelLib.o ${OBJECTDIR}/_ext/1472/GPSLib.o ${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/Si7006.o ${OBJECTDIR}/_ext/1472/Expo.o ${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/RTClib.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1472/MotorLib.o.d ${OBJECTDIR}/_ext/1472/PotLib.o.d ${OBJECTDIR}/_ext/1472/AccelLib.o.d ${OBJECTDIR}/_ext/1472/GPSLib.o.d ${OBJECTDIR}/_ext/1472/I2CLib.o.d ${OBJECTDIR}/_ext/1472/Si7006.o.d ${OBJECTDIR}/_ext/1472/Expo.o.d ${OBJECTDIR}/_ext/1472/main.o.d ${OBJECTDIR}/_ext/1472/RTClib.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/MotorLib.o ${OBJECTDIR}/_ext/1472/PotLib.o ${OBJECTDIR}/_ext/1472/AccelLib.o ${OBJECTDIR}/_ext/1472/GPSLib.o ${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/Si7006.o
+OBJECTFILES=${OBJECTDIR}/_ext/1472/MotorLib.o ${OBJECTDIR}/_ext/1472/PotLib.o ${OBJECTDIR}/_ext/1472/AccelLib.o ${OBJECTDIR}/_ext/1472/GPSLib.o ${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/Si7006.o ${OBJECTDIR}/_ext/1472/Expo.o ${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/RTClib.o
 
 # Source Files
-SOURCEFILES=../main.c ../MotorLib.c ../PotLib.c ../AccelLib.c ../GPSLib.c ../I2CLib.c ../Si7006.c
+SOURCEFILES=../MotorLib.c ../PotLib.c ../AccelLib.c ../GPSLib.c ../I2CLib.c ../Si7006.c ../Expo.c ../main.c ../RTClib.c
 
 
 CFLAGS=
@@ -106,12 +106,6 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/_ext/1472/main.o: ../main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
-	@${RM} ${OBJECTDIR}/_ext/1472/main.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1472/main.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/main.o.d" -o ${OBJECTDIR}/_ext/1472/main.o ../main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
 ${OBJECTDIR}/_ext/1472/MotorLib.o: ../MotorLib.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
 	@${RM} ${OBJECTDIR}/_ext/1472/MotorLib.o.d 
@@ -148,13 +142,25 @@ ${OBJECTDIR}/_ext/1472/Si7006.o: ../Si7006.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/_ext/1472/Si7006.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/Si7006.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/Si7006.o.d" -o ${OBJECTDIR}/_ext/1472/Si7006.o ../Si7006.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
-else
+${OBJECTDIR}/_ext/1472/Expo.o: ../Expo.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
+	@${RM} ${OBJECTDIR}/_ext/1472/Expo.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1472/Expo.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/Expo.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/Expo.o.d" -o ${OBJECTDIR}/_ext/1472/Expo.o ../Expo.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
 ${OBJECTDIR}/_ext/1472/main.o: ../main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
 	@${RM} ${OBJECTDIR}/_ext/1472/main.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1472/main.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/main.o.d" -o ${OBJECTDIR}/_ext/1472/main.o ../main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/main.o.d" -o ${OBJECTDIR}/_ext/1472/main.o ../main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
+${OBJECTDIR}/_ext/1472/RTClib.o: ../RTClib.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
+	@${RM} ${OBJECTDIR}/_ext/1472/RTClib.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1472/RTClib.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/RTClib.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/RTClib.o.d" -o ${OBJECTDIR}/_ext/1472/RTClib.o ../RTClib.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+else
 ${OBJECTDIR}/_ext/1472/MotorLib.o: ../MotorLib.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
 	@${RM} ${OBJECTDIR}/_ext/1472/MotorLib.o.d 
@@ -190,6 +196,24 @@ ${OBJECTDIR}/_ext/1472/Si7006.o: ../Si7006.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/_ext/1472/Si7006.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1472/Si7006.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/Si7006.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/Si7006.o.d" -o ${OBJECTDIR}/_ext/1472/Si7006.o ../Si7006.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/_ext/1472/Expo.o: ../Expo.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
+	@${RM} ${OBJECTDIR}/_ext/1472/Expo.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1472/Expo.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/Expo.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/Expo.o.d" -o ${OBJECTDIR}/_ext/1472/Expo.o ../Expo.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/_ext/1472/main.o: ../main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
+	@${RM} ${OBJECTDIR}/_ext/1472/main.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1472/main.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/main.o.d" -o ${OBJECTDIR}/_ext/1472/main.o ../main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/_ext/1472/RTClib.o: ../RTClib.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
+	@${RM} ${OBJECTDIR}/_ext/1472/RTClib.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1472/RTClib.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/RTClib.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/RTClib.o.d" -o ${OBJECTDIR}/_ext/1472/RTClib.o ../RTClib.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 endif
 
