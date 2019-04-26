@@ -8,17 +8,14 @@
       <itemPath>../MotorLib.h</itemPath>
       <itemPath>../PotLib.h</itemPath>
       <itemPath>../config_bits.h</itemPath>
-<<<<<<< HEAD
       <itemPath>../DisplayLib.h</itemPath>
       <itemPath>../FT8xx.h</itemPath>
-=======
       <itemPath>../AccelLib.h</itemPath>
       <itemPath>../GPSLib.h</itemPath>
       <itemPath>../I2CLib.h</itemPath>
       <itemPath>../Si7006.h</itemPath>
       <itemPath>../Expo.h</itemPath>
       <itemPath>../RTClib.h</itemPath>
->>>>>>> master
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -29,10 +26,8 @@
                    projectFiles="true">
       <itemPath>../MotorLib.c</itemPath>
       <itemPath>../PotLib.c</itemPath>
-<<<<<<< HEAD
       <itemPath>../DisplayEVE.c</itemPath>
       <itemPath>../DisplayMCU.c</itemPath>
-=======
       <itemPath>../AccelLib.c</itemPath>
       <itemPath>../GPSLib.c</itemPath>
       <itemPath>../I2CLib.c</itemPath>
@@ -40,7 +35,6 @@
       <itemPath>../Expo.c</itemPath>
       <itemPath>../main.c</itemPath>
       <itemPath>../RTClib.c</itemPath>
->>>>>>> master
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
