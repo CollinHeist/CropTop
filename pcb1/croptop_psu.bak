@@ -435,7 +435,7 @@ Wire Wire Line
 Connection ~ 7075 2600
 Connection ~ 4900 2700
 Text Notes 6650 4700 0    50   ~ 0
-25.6V
+9.5V approx.\n
 $Comp
 L Device:D_Zener D2
 U 1 1 5C1C0D13

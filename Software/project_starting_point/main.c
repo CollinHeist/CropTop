@@ -13,6 +13,7 @@
 #include <plib.h>
 #include "config_bits.h"
 #include "crop_top.h"
+<<<<<<< HEAD
 //#include "MotorLib.h"
 //#include "PotLib.h"
 #include "FT8xx.h"
@@ -32,10 +33,20 @@
  *  updates REG_CMD_READ after commands have been executed
  
  */
+=======
+#include "MotorLib.h"
+#include "PotLib.h"
+#include "I2CLib.h"
+#include "Si7006.h"
+#include "AccelLib.h"
+#include "GPSLib.h"
+#include "Expo.h"
+>>>>>>> master
 
 int main()
 {
     initialize_system();
+<<<<<<< HEAD
     MCU_Init();
     APP_Init();
     
@@ -79,6 +90,19 @@ int main()
         MCU_Delay_ms(250);
     }
     
+=======
+    int i;
+    struct system_variables sys_vars;
+    while(1)
+    {
+        i = 0;
+        while(i<1000)
+        {
+            i++;
+        }
+        system_variables_update(&sys_vars);
+	}
+>>>>>>> master
 }
 void initialize_system()
 {
@@ -90,5 +114,7 @@ void initialize_system()
     LATCCLR = LED_A;
     PotLib_Init();
     MotorLib_Init();
+    I2CLib_Init();
+    AccelLib_Init();
     INTEnableSystemMultiVectoredInt();
 }
