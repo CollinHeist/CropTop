@@ -2,10 +2,6 @@ build/default/production/_ext/1472/main.o:  \
 ../main.c  \
 ../config_bits.h  \
  ../crop_top.h  \
-<<<<<<< HEAD
-../FT8xx.h  \
-../DisplayLib.h 
-=======
 ../MotorLib.h  \
 ../PotLib.h  \
 ../I2CLib.h  \
@@ -13,4 +9,3 @@ build/default/production/_ext/1472/main.o:  \
  ../AccelLib.h  \
 ../GPSLib.h  \
 ../Expo.h 
->>>>>>> master
