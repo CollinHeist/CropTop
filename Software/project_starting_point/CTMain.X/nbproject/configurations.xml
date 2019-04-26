@@ -33,10 +33,10 @@
       <itemPath>../I2CLib.c</itemPath>
       <itemPath>../Si7006.c</itemPath>
       <itemPath>../Expo.c</itemPath>
-      <itemPath>../main.c</itemPath>
       <itemPath>../RTClib.c</itemPath>
       <itemPath>../DisplayAPI.c</itemPath>
       <itemPath>../DisplayAPP.c</itemPath>
+      <itemPath>../main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

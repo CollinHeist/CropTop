@@ -34,14 +34,7 @@ int GPSLib_MessageCount()
     char write[1] = {MSG_LEN_MSB};
     char read[2] = {0,0};
     I2C_WriteRead(GPS_ADDR, write, read, 1, 2);
-    if(read[0]!=0x00)
-    {
-        return ((read[0]<<8)&0xFF00)|(read[1]&0xFF);
-    }
-    else
-    {
-        return 0;
-    }
+    return ((read[0]<<8)&0xFF00)|(read[1]&0xFF);
 }
 
 /* **************************************************************************

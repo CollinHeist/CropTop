@@ -35,7 +35,7 @@ char AccelLib_Init()
     int error = AccelLib_SingleWrite(CTRL_REG0,ACC_CFG_0);
 	error |= AccelLib_SingleWrite(CTRL_REG1,ACC_CFG_1);
 	error |= AccelLib_SingleWrite(CTRL_REG4,ACC_CFG_4);
-	error |= AccelLib_SelfTest();
+	//error |= AccelLib_SelfTest();
     return error;
 }
 

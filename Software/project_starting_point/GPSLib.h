@@ -43,6 +43,7 @@
 //CFG message IDs
 #define     CFG_NAV5    0x24    //Navigation Engine Settings
 #define     CFG_NMEA    0x17
+#define     CFG_GNSS    0x3E
 
 //HNR message IDs
 #define     HNR_PVT     0x00
