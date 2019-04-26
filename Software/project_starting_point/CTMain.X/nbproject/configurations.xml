@@ -35,6 +35,8 @@
       <itemPath>../Expo.c</itemPath>
       <itemPath>../main.c</itemPath>
       <itemPath>../RTClib.c</itemPath>
+      <itemPath>../DisplayAPI.c</itemPath>
+      <itemPath>../DisplayAPP.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -56,10 +58,10 @@
         <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>2.15</languageToolchainVersion>
-        <platform>2</platform>
+        <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32MX_DFP" vendor="Microchip" version="1.0.28"/>
+        <pack name="PIC32MX_DFP" vendor="Microchip" version="1.0.23"/>
       </packs>
       <compileType>
         <linkerTool>
