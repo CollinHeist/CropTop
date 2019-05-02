@@ -34,16 +34,9 @@ A video tutorial covering basic work-flow can be found here: (eventually)
 
 KiCAD community suggested training modules can be found: [here](http://kicad-pcb.org/help/tutorials/)
 
-#### File Locations
-links to
-* Schematic
-* BOM
-* Gerbers
-* Project files
-
 #### Hardware Configuration 
 * Voltage levels
-* Resistor divider for software modes.)
+* Resistor divider for software modes.
 
 #### Manufacturing and Ordering Boards
 * Logging into Macrofab
@@ -109,15 +102,3 @@ instructions
 
 #### Device Programming
 using the PICKIT programming header in MPLAB, and photo of connection to croptop
-
-## Integration Guide
-Integrating the hardware into a project
-
-#### Powering the Device
-How to power on devices
-
-### Specifications
-Electrical Characteristics of sensors and power supplies
-
-#### Creating and Using Data
-How to export, interpret, and use the data CropTop logs
