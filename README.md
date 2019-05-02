@@ -89,9 +89,9 @@ A highly recommended [tutorial](http://cslibrary.stanford.edu/101/EssentialC.pdf
 But, asking questions on [stack exchange](https://stackexchange.com/) is essential to learning the nuances of C programming
 
 #### Control Flow Diagram 
-![CFD](docs/images/CFD.PNG?raw=true "Title") 
-
 Using the following control approach simplifies development and offers an abstracted application layer. This offers fast design time, ideal group development, and portability.
+
+![CFD](docs/images/CFD.PNG?raw=true "Title") 
 
 #### CropTop Drivers
 Every driver PIC32 peripheral or Integrated Circuit (IC) driver has an associated .c and .h file adhering to a [CropTop coding standard](https://github.com/kcaisley/CropTop/tree/master/Software)
