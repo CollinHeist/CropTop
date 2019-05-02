@@ -90,7 +90,8 @@ But, asking questions on [stack exchange](https://stackexchange.com/) is essenti
 
 #### Control Flow Diagram 
 ![CFD](docs/images/CFD.PNG?raw=true "Title") 
-Using a tiered approach simplifies development and offers an abstracted application layer.
+
+Using the following control approach simplifies development and offers an abstracted application layer. This offers fast design time, ideal group development, and portability.
 
 #### CropTop Drivers
 Every driver PIC32 peripheral or Integrated Circuit (IC) driver has an associated .c and .h file adhering to a [CropTop coding standard](https://github.com/kcaisley/CropTop/tree/master/Software)
