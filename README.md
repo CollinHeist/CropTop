@@ -89,7 +89,7 @@ A highly recommended [tutorial](http://cslibrary.stanford.edu/101/EssentialC.pdf
 But, asking questions on [stack exchange](https://stackexchange.com/) is essential to learning the nuances of C programming
 
 #### Control Flow Diagram 
-Using the following control approach simplifies development and offers an abstracted application layer. This offers fast design time, ideal group development, and portability.
+Using the following control approach simplifies development and offers an abstracted application layer. This offers portability and easy team development.
 
 ![CFD](docs/images/CFD.PNG?raw=true "Title") 
 
