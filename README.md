@@ -30,13 +30,7 @@ Croptop is based around a 32 bit PIC32MX795F512L microcontroller and includes th
 #### Installing and using KiCAD
 KiCAD EDA offers open source schematic capture and PCB layout tools. The software can be downloaded [here](http://kicad-pcb.org/download/)
 
-A video tutorial covering basic work-flow can be found here: (eventually) 
-
 KiCAD community suggested training modules can be found: [here](http://kicad-pcb.org/help/tutorials/)
-
-#### Hardware Configuration 
-* Voltage levels
-* Resistor divider for software modes.
 
 #### Manufacturing and Ordering Boards
 * Logging into Macrofab
@@ -97,9 +91,3 @@ Using the following control approach simplifies development and offers an abstra
 Every driver PIC32 peripheral or Integrated Circuit (IC) driver has an associated .c and .h file adhering to a [CropTop coding standard](https://github.com/kcaisley/CropTop/tree/master/Software)
 
 For longevity of the project, it is encouraged to be consistent with the project structure.
-
-#### Creating New Screens
-instructions
-
-#### Device Programming
-using the PICKIT programming header in MPLAB, and photo of connection to croptop
