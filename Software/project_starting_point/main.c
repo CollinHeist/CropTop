@@ -44,9 +44,12 @@ int main()
     MCU_Init();
     APP_Init();
     
+    //Enable Touch
+    EVE_MemWrite16(REG_TOUCH_MODE, 0x03);
+
 //    APP_Calibrate();
     
-    char buf[50];
+    char buf[200];
     struct system_variables sv;
     
     float temp_c_moving = 1;
@@ -56,13 +59,17 @@ int main()
     float moving_N = 500;
     
     int first = 0;
-    
+      
     // Sizes:   30  22  18  16
     
     while (1)
     {
+        uint32_t xy = EVE_MemRead32(REG_TOUCH_SCREEN_XY);
+        uint32_t raw = EVE_MemRead32(REG_TOUCH_RAW_XY);
+        uint16_t rz = EVE_MemRead16(REG_TOUCH_RZ);
+        
         system_variables_update(&sv);
-//        MotorLib_ForwardBackwardTest(100);
+        
         if (0 == first)
         {
             first++;
@@ -114,6 +121,27 @@ int main()
         
         sprintf(buf, "ADC_RAW: %d  |  ADC: %f", sv.adc_raw, sv.adc_nominal);
         API_CMD_TEXT(10, 190, 22, 0, buf);
+        
+        
+        
+        ///////////////////////////////////////////////////////////////////////////////
+        
+        
+//        uint32_t xy = 0xFFFFFFFF;
+
+        sprintf(buf, "RAW: 0x%08x  |  TOUCH: 0x%08x  |  RZ: 0x%04x", raw, xy, rz);
+        API_CMD_TEXT(10, 220, 22, 0, buf);
+        
+        sprintf(buf, "A: 0x%08x  |  B: 0x%08x  |  C: 0x%08x", REG_TOUCH_TRANSFORM_A, REG_TOUCH_TRANSFORM_B, REG_TOUCH_TRANSFORM_C);
+        API_CMD_TEXT(10, 250, 22, 0, buf);
+        
+        sprintf(buf, "D: 0x%08x  |  E: 0x%08x  |  F: 0x%08x", REG_TOUCH_TRANSFORM_D, REG_TOUCH_TRANSFORM_E, REG_TOUCH_TRANSFORM_F);
+        API_CMD_TEXT(10, 280, 22, 0, buf);
+
+        
+        
+        
+        
         
         sprintf(buf, "LCD Firmware: Conrad Mearns");
         API_CMD_TEXT(10, 360, 23, 0, buf);

@@ -67,11 +67,15 @@ void APP_Init(void)
     EVE_MemWrite16(REG_HSIZE,   lcdWidth);	
     EVE_MemWrite16(REG_VSIZE,   lcdHeight);
     
+    
     // Touch settings
-    EVE_MemWrite16(REG_TOUCH_RZTHRESH, 1200);  
-    EVE_MemWrite8(REG_TOUCH_MODE, 0x02);
-//    EVE_MemWrite8(REG_TOUCH_ADC_MODE, 0x01);
-//    EVE_MemWrite8(REG_TOUCH_OVERSAMPLE, 15);
+    EVE_MemWrite16(REG_TOUCH_MODE, 0x00);
+    EVE_MemWrite16(REG_TOUCH_ADC_MODE, 0x01);
+    EVE_MemWrite16(REG_TOUCH_CHARGE, 0x1770);
+    EVE_MemWrite16(REG_TOUCH_SETTLE, 0x03);
+    EVE_MemWrite16(REG_TOUCH_OVERSAMPLE, 0x07);
+    EVE_MemWrite16(REG_TOUCH_RZTHRESH, 0xFFFF);
+
     
     // Write first display list
     EVE_MemWrite32(RAM_DL, 0x02000000);
