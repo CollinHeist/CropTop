@@ -44,9 +44,9 @@ int main()
     MCU_Init();
     APP_Init();
     
-    //Enable Touch
-    EVE_MemWrite16(REG_TOUCH_MODE, 0x03);
-
+    //Enable Touch    
+//    EVE_MemWrite8(REG_TOUCH_MODE, TOUCHMODE_FRAME);
+    
 //    APP_Calibrate();
     
     char buf[200];
@@ -62,11 +62,20 @@ int main()
       
     // Sizes:   30  22  18  16
     
+    EVE_MemWrite16(REG_TOUCH_CONFIG, 0x8381);
+    uint16_t v = EVE_MemRead16(REG_TOUCH_CONFIG);
+    
     while (1)
     {
         uint32_t xy = EVE_MemRead32(REG_TOUCH_SCREEN_XY);
+//        uint32_t xy = EVE_MemRead32(REG_TOUCH_DIRECT_XY);
+        
         uint32_t raw = EVE_MemRead32(REG_TOUCH_RAW_XY);
+//        uint32_t raw = EVE_MemRead32(REG_TOUCH_DIRECT_Z1Z2);
+        
         uint16_t rz = EVE_MemRead16(REG_TOUCH_RZ);
+        
+        uint16_t w = EVE_MemRead16(REG_TOUCH_CONFIG);
         
         system_variables_update(&sv);
         
@@ -137,6 +146,9 @@ int main()
         
         sprintf(buf, "D: 0x%08x  |  E: 0x%08x  |  F: 0x%08x", REG_TOUCH_TRANSFORM_D, REG_TOUCH_TRANSFORM_E, REG_TOUCH_TRANSFORM_F);
         API_CMD_TEXT(10, 280, 22, 0, buf);
+        
+        sprintf(buf, "v: 0x%04x  |  w: 0x%04x", v, w);
+        API_CMD_TEXT(10, 310, 22, 0, buf);
 
         
         

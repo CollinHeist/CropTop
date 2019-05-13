@@ -68,13 +68,18 @@ void APP_Init(void)
     EVE_MemWrite16(REG_VSIZE,   lcdHeight);
     
     
-    // Touch settings
-    EVE_MemWrite16(REG_TOUCH_MODE, 0x00);
-    EVE_MemWrite16(REG_TOUCH_ADC_MODE, 0x01);
-    EVE_MemWrite16(REG_TOUCH_CHARGE, 0x1770);
-    EVE_MemWrite16(REG_TOUCH_SETTLE, 0x03);
-    EVE_MemWrite16(REG_TOUCH_OVERSAMPLE, 0x07);
-    EVE_MemWrite16(REG_TOUCH_RZTHRESH, 0xFFFF);
+//    // Touch settings
+    EVE_MemWrite16(REG_TOUCH_CONFIG, 0x8381);
+//    EVE_MemWrite8(REG_TOUCH_MODE, 0x00 & EVE_MemRead8(REG_TOUCH_MODE));
+//    EVE_MemWrite8(REG_TOUCH_ADC_MODE, 0x01 | EVE_MemRead8(REG_TOUCH_ADC_MODE));
+//    EVE_MemWrite16(REG_TOUCH_CHARGE, 0x1770 | EVE_MemRead16(REG_TOUCH_CHARGE));
+//    EVE_MemWrite8(REG_TOUCH_SETTLE, 0x03 | EVE_MemRead8(REG_TOUCH_SETTLE));
+//    EVE_MemWrite8(REG_TOUCH_OVERSAMPLE, 0x07 | EVE_MemRead8(REG_TOUCH_OVERSAMPLE));
+//    
+//    EVE_MemWrite16(REG_TOUCH_RZTHRESH, 1200);
+//    
+    EVE_MemWrite8(REG_GPIO_DIR, 0xff | EVE_MemRead8(REG_GPIO_DIR));
+    EVE_MemWrite8(REG_GPIO, 0xff | EVE_MemRead8(REG_GPIO));
 
     
     // Write first display list
@@ -82,10 +87,6 @@ void APP_Init(void)
     EVE_MemWrite32(RAM_DL+4, (0x26000000 | 0x00000007));
     EVE_MemWrite32(RAM_DL+8, 0x00000000);
     EVE_MemWrite32(REG_DLSWAP, DLSWAP_FRAME);
-    
-    // Enable display bit
-    EVE_MemWrite8(REG_GPIO_DIR, 0x80 | EVE_MemRead8(REG_GPIO_DIR));
-    EVE_MemWrite8(REG_GPIO, 0x80 | EVE_MemRead8(REG_GPIO));
     
     EVE_MemWrite8(REG_PCLK, lcdPclk);
 
