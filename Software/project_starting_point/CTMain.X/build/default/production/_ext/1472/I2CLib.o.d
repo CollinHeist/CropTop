@@ -1,4 +1,4 @@
 build/default/production/_ext/1472/I2CLib.o:  \
 ../I2CLib.c  \
-../crop_top.h  \
+../hardware.h  \
  ../I2CLib.h 

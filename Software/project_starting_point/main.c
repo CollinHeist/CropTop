@@ -1,18 +1,8 @@
-/* **************************************************************************
- * 
- * To become DisplayAPP.c, this only operates as main.c for testing purposes!
- * 
- * File name:   main.c
- * Association: University of Idaho
- * Author:      Conrad Mearns
- * Dates:       Created 3/22/2018
- * Summary:     Application level driver for 7" Touchscreen
- * Notes:       
- * *************************************************************************/
 #define _SUPPRESS_PLIB_WARNING
+
 #include <plib.h>
 #include "config_bits.h"
-#include "crop_top.h"
+#include "hardware.h"
 #include "FT8xx.h"
 #include <stdio.h>
 #include "DisplayLib.h"

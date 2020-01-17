@@ -6,7 +6,7 @@
  * Summary:     Functions to modify system_variables
  * **************************************************************************/
 #include <string.h>
-#include "crop_top.h"
+#include "hardware.h"
 #include "MotorLib.h"
 #include "PotLib.h"
 #include "I2CLib.h"

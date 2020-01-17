@@ -596,6 +596,7 @@ extern "C" {
 #define REG_TAG_Y            3154040UL
 #define REG_TAP_CRC          3153956UL
 #define REG_TAP_MASK         3153960UL
+#define REG_TOUCH_CONFIG	 0x302168		// Added to build
 #define REG_TOUCH_ADC_MODE   3154184UL
 #define REG_TOUCH_CHARGE     3154188UL
 #define REG_TOUCH_DIRECT_XY  3154316UL

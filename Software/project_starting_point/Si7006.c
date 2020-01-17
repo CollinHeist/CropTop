@@ -8,7 +8,7 @@
  * *************************************************************************/
 #define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
-#include "crop_top.h"
+#include "hardware.h"
 #include "I2CLib.h"
 #include "Si7006.h"
 

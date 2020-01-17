@@ -1,6 +1,6 @@
 build/default/production/_ext/1472/Expo.o:  \
 ../Expo.c  \
-../crop_top.h  \
+../hardware.h  \
  ../MotorLib.h  \
 ../PotLib.h  \
 ../I2CLib.h  \

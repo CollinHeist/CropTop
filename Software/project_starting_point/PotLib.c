@@ -10,7 +10,7 @@
 #define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
 #include "MotorLib.h"
-#include "crop_top.h"
+#include "hardware.h"
 #include "PotLib.h"
 
 /* **************************************************************************
