@@ -199,8 +199,8 @@ void MotorLib_ForwardBackwardTest(unsigned int speed)
     //local variables
     int ButtonA, ButtonB;
     //configure IO
-    ButtonA = (PORTReadBits(IOPORT_C, BUTTON_A))>>14;
-    ButtonB = (PORTReadBits(IOPORT_C, BUTTON_B))>>13;
+    ButtonA = (PORTReadBits(IOPORT_C, SWITCH_2)>>14);
+    ButtonB = (PORTReadBits(IOPORT_C, SWITCH_3))>>13;
     if((ButtonA == 1) && (ButtonB ==0))
     {
         MotorLib_Forward(speed);

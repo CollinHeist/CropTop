@@ -1,7 +1,8 @@
 #define _SUPPRESS_PLIB_WARNING
 
+#include "config_bits.h"    // Do only once
+#include "main.h"
 #include <plib.h>
-#include "config_bits.h"
 #include "hardware.h"
 #include "FT8xx.h"
 #include <stdio.h>
@@ -15,7 +16,6 @@
 #include "Expo.h"
 
 /*
- *
  *  The graphics engine interprets commands from the MPU host via a 4 Kbyte 
  * FIFO in the FT81x memory at RAM_CMD. 
  * 
@@ -25,11 +25,9 @@
  * The MPU/MCU  updates the register REG_CMD_WRITE to indicate  that  there 
  *  are  new  commands  in  the  FIFO, and  the  graphics  engine 
  *  updates REG_CMD_READ after commands have been executed
- 
  */
 
-int main()
-{
+int main() {
     initialize_system();
     MCU_Init();
     APP_Init();
@@ -223,15 +221,23 @@ int main()
 //        MCU_Delay_ms(20);
     }
 }
-void initialize_system()
-{
-	SYSTEMConfig(GetSystemClock(), SYS_CFG_WAIT_STATES | SYS_CFG_PCACHE);
+
+static void initialize_system() {
+    // Fundamental hardware configurations
+    SYSTEMConfig(GetSystemClock(), SYS_CFG_WAIT_STATES | SYS_CFG_PCACHE);
     DDPCONbits.JTAGEN = 0;
-    PORTSetPinsDigitalIn(IOPORT_C, BUTTONS);
-    PORTSetPinsDigitalOut(IOPORT_C, LEDS);
+    
+    // Configure debug buttons and LEDs
+    mPORTASetPinsDigitalIn(SWITCH_2 | SWITCH_3);
+    mPORTGSetPinsDigitalIn(SWITCH_4);
+    mPORTGSetPinsDigitalOut(LED_A);
+    mPORTFSetPinsDigitalOut(LED_B | LED_C);
+    ALL_LEDS_OFF;
+    
+    // Initialize the potentiometer
+    initialize_potentiometer();
+    
 //    MCU_Init();
-    LATCCLR = LED_A;
-    PotLib_Init();
     MotorLib_Init();
     I2CLib_Init();
     AccelLib_Init();

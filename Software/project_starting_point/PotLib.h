@@ -7,10 +7,15 @@
  * *************************************************************************/
 #define _SUPPRESS_PLIB_WARNING
 
-//macros
-#define AN9 (BIT_9)   //port b
+#ifndef __POTLIB_H__
+	#define __POTLIB_H__
 
-//function declarations
-void PotLib_Init();
-void PotLib_ADCInit();
-unsigned int PotLib_SingleRead();
+	// Macros
+	#define POT_ADC_1	(BIT_10)	// POTEN_ADC_1 is Bit 34, AN10, RB10
+	#define POT_ADC_2	(BIT_9)		// POTEN_ADC_2 is Bit 33, AN9, RB9
+
+	// Function prototypes
+	void initialize_potentiometer();
+	unsigned int PotLib_SingleRead();
+#endif
+

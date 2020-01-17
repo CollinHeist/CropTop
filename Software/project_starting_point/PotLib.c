@@ -13,31 +13,22 @@
 #include "hardware.h"
 #include "PotLib.h"
 
-/* **************************************************************************
- * Function:    void PotLib_Init()
- * Summary:     Initializes AN9 pins and peripheral for analog to digital
- *              conversion.
- * **************************************************************************/
-void PotLib_Init()
-{
-    PORTSetPinsAnalogIn(IOPORT_B, AN9);
-    PotLib_ADCInit();
-}
 
-/* **************************************************************************
- * Function:    void PotLib_ADCInit()
- * Summary:     Initializes ADC SFRs for analog to digital conversion with 
-				auto sampling, auto trigger and dual buffer timed by the ADC
-				internal clock.
- * **************************************************************************/
-void PotLib_ADCInit()
-{
-    //ensure the ADC is off before configuration
-	CloseADC10();
-    //configure AN9 for samples referenced to ground
-	SetChanADC10(ADC_CH0_POS_SAMPLEA_AN9|ADC_CH0_NEG_SAMPLEA_NVREF);
-    //configure ADC capture settings
-                //turn module on | integer output  | auto trigger | auto sample
+// TODO: Change the initialization code to utilize AN9 and AN10
+void initialize_potentiometer() {
+    // Configure input pins for analog input
+    mPORTBSetPinsAnalogIn(POT_ADC_1 | POT_ADC_2);
+
+    // Configure ADC SFRs for ADC with auto sampling, auto trigger, and
+    // dual-buffer timed by ADC internal clock
+    
+    // Ensure the ADC is off before configuration
+    CloseADC10();
+    /* change here forward
+    // Configure AN9 for samples referenced to ground
+    SetChanADC10(ADC_CH0_POS_SAMPLEA_AN9 | ADC_CH0_NEG_SAMPLEA_NVREF);
+    // Configure ADC capture settings
+    //            turn module on | integer output  | auto trigger | auto sample
     #define PARAM1 ADC_MODULE_ON | ADC_FORMAT_INTG | ADC_CLK_AUTO | ADC_AUTO_SAMPLING_ON
                 //external reference  | disable offset test    | scan mode off| 2 samples per interval| use dual buffers| use alternate mode
     #define PARAM2 ADC_VREF_AVDD_AVSS | ADC_OFFSET_CAL_DISABLE | ADC_SCAN_OFF | ADC_SAMPLES_PER_INT_2 | ADC_ALT_BUF_ON | ADC_ALT_INPUT_ON
@@ -52,13 +43,9 @@ void PotLib_ADCInit()
 	EnableADC10();
     //wait for first data to be read
      while(!mAD1GetIntFlag());
+    */
 }
 
-/* **************************************************************************
- * Function:    unsigned int PotLib_SingleRead()
- * Return:		ADC value (0 to 1023)
- * Summary:     Returns the most recent 10-bit AN9 ADC value. 
- * **************************************************************************/
 unsigned int PotLib_SingleRead()
 {
     //locate the offset of the most recent conversion in the idle buffer

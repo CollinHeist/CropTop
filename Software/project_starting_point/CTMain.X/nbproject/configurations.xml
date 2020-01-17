@@ -17,6 +17,7 @@
       <itemPath>../RTClib.h</itemPath>
       <itemPath>../Library.h</itemPath>
       <itemPath>../hardware.h</itemPath>
+      <itemPath>../main.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
