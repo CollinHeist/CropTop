@@ -1,21 +1,23 @@
-/* **************************************************************************
- * File name:   PotLib.h
- * Association: University of Idaho
- * Author:      Ryan Donahue
- * Dates:       Created 2/11/2018
- * Summary:     This file contains macro definitions used in the project.             
- * *************************************************************************/
+/** 
+ *	@file 	PotLib.h
+ *	@brief	Potentiometer library header file. Provides useful macros for T3 configuration.
+ *	@author	Collin Heist
+ **/
+
 #define _SUPPRESS_PLIB_WARNING
 
 #ifndef __POTLIB_H__
 	#define __POTLIB_H__
 
-	// Macros
-	#define POT_ADC_1	(BIT_10)	// POTEN_ADC_1 is Bit 34, AN10, RB10
-	#define POT_ADC_2	(BIT_9)		// POTEN_ADC_2 is Bit 33, AN9, RB9
+	// Timer 3 Configurations
+	#define TIMER3_BASE_FREQ	(GetPeripheralClock())	// Base (undivided) frequency of T3
+	#define TIMER3_MAX_PR_VAL	(1 << 16)				// The maximum value of T3 is 2^16
+	#define TIMER3_PS_ERROR		(-1.0)	
 
 	// Function prototypes
-	void initialize_potentiometer();
-	unsigned int PotLib_SingleRead();
+	void initialize_potentiometer(float sample_frequency);
+	unsigned int reconfigure_timer3(float timer3_frequency);
+	unsigned int read_potentiometer(void);
+	static unsigned int initialize_timer3(float timer3_frequency)
 #endif
 
