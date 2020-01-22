@@ -1,5 +1,5 @@
 /** 
- *	@file 		PotLib.c
+ *	@file 		potentiometer.c
  *	@brief		Potentiometer library source file. Implements all basic potentiometer ADC functionality.
  *	@author		Collin Heist, Ryan Donahue.
  **/
@@ -9,7 +9,7 @@
 #define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
 #include "hardware.h"
-#include "PotLib.h"
+#include "potentiometer.h"
 
 /* -------------------------- Global Variables and Structures --------------------------- */
 

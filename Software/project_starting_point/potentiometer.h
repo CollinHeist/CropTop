@@ -1,13 +1,13 @@
 /** 
- *	@file 	PotLib.h
+ *	@file 	potentiometer.h
  *	@brief	Potentiometer library header file. Provides useful macros for T3 configuration.
  *	@author	Collin Heist
  **/
 
 #define _SUPPRESS_PLIB_WARNING
 
-#ifndef __POTLIB_H__
-	#define __POTLIB_H__
+#ifndef __POTENTIOMETER_H__
+	#define __POTENTIOMETER_H__
 
 	// Timer 3 Configurations
 	#define TIMER3_BASE_FREQ	(GetPeripheralClock())	// Base (undivided) frequency of T3

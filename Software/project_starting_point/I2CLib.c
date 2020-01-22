@@ -1,61 +1,70 @@
-/* **************************************************************************
- * File name:   I2CLib.c
- * Association: University of Idaho
- * Author:      Ryan Donahue
- * Dates:       Created 2/13/2019
- * Summary:     Function to initialize and use I2C module 1.
- * **************************************************************************/
+/** 
+ *	@file 		i2c.c
+ *	@brief		I2C library source file. Implements functionality of I2C module 1.
+ *	@author		Collin Heist, Ryan Donahue.
+ **/
+
+/* ----------------------------------- File Inclusion ----------------------------------- */
+
 #define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
 #include "hardware.h"
 #include "I2CLib.h"
 
-/* **************************************************************************
- * Function:    void I2CLib_Init()
- * Summary:     Enables I2C1 for 100kbaud
- * **************************************************************************/
-void I2CLib_Init()
-{
-    I2CConfigure(I2C1,0);
-    I2CSetFrequency(I2C1, GetPeripheralClock(), I2C_CLOCK_FREQ);
+/* -------------------------- Global Variables and Structures --------------------------- */
+
+/* ---------------------------------- Public Functions ---------------------------------- */
+
+/**	
+ *	@brief		Initializes I2C1 module to the desired frequency.
+ *	@param[in]	i2c_frequency: Unsigned int that signifies what frequency the I2C clock line should operate at.
+ *	@return		unsigned int that is the error flag if the frequency was achieved with an adequate amount of accuracy
+ **/
+unsigned int initialize_i2c(unsigned int i2c_frequency) {
+    I2CConfigure(I2C1, 0);  // Configure I2C1 with no special options
+    
+    // Check if the actual frequency of the I2C bus is acceptable close to what we wanted
+    float actual_freq = (float) I2CSetFrequency(I2C1, GetPeripheralClock(), (UINT32) i2c_frequency);
+    if ((actual_freq - (float) i2c_frequency > (float) i2c_frequency * I2C_CLOCK_MAX_DEVIATION) ||
+	((float) i2c_frequency - actual_freq > (float) i2c_frequency * I2C_CLOCK_MAX_DEVIATION)) {
+	return ERROR;
+    }
+//    I2CSetSlaveAddress(I2C1, I2C_GNSS_SLAVE_ADDRESS, 0, I2C_USE_7BIT_ADDRESS);    // Not used for some reason?
     I2CEnable(I2C1, TRUE);
+    
+    return NO_ERROR;
 }
 
-/* **************************************************************************
- * Function:    char BusyI2C1()
- * Summary:     Reads PIC32 I2C1 busy status registers
- * Return:		1 - busy flag is set
-				0 - busy flags are cleared
- * **************************************************************************/
-char BusyI2C1()
-{
-    return(I2C1CONbits.SEN || I2C1CONbits.PEN || I2C1CONbits.RSEN ||
-            I2C1CONbits.RCEN || I2C1CONbits.ACKEN || I2C1STATbits.TRSTAT);
+/**	
+ *	@brief		Reads the I2C1 busy status registers.
+ *	@param		None.
+ *	@return		character that is either 1, or 0. 1 if the flags are SET, 0 if they're cleared
+ **/
+char BusyI2C1() {
+    return(I2C1CONbits.SEN || I2C1CONbits.PEN || I2C1CONbits.RSEN || I2C1CONbits.RCEN || I2C1CONbits.ACKEN || I2C1STATbits.TRSTAT);
 }
 
-/* **************************************************************************
- * Function:    char I2C_Read(char slave_addr, char *read_array, int len)
- * Summary:     Reads len items from slave device into read_array from I2C1
- * Argument:    char slave_addr, 7-bit slave address
-				char *read_array, pointer to character array of length > len
-				len, number of characters to read
- * Return:		0  - no errors
-				!0 - an error was encountered
- * **************************************************************************/
-char I2C_Read(char slave_addr, char *read_array, int len)
-{
+/**	
+ *	@brief		Reads (len) items from slave device into read_array over I2C1 bus.
+ *	@param[in]	slave_addr: Character that is the device to read from.
+ *	@param[out]	read_array: Pointer to character array that will be filed with (len) bytes from the slave device.
+ *	@param[in]	len: Integer corresponding to how many characters to read from the slave.
+ *	@return		character that is either 0 (if no errors occurred) or non-zero if an error occurred.
+ **/
+char I2C_Read(char slave_addr, char *read_array, int len) {
     char error = 0;
+    
+    // Begin I2C transaction by addressing the slave with a READ 
     StartI2C1();
     IdleI2C1();
     error |= MasterWriteI2C1((slave_addr<<1)|1);
-    while(1)
-    {
+    
+    // Begin reading from I2C bus into the array
+    while (len >= 0) {
         len--;
         *read_array = MasterReadI2C1();
-        if(len == 0)
-        {
-            return;
-        }
+        if (len == 0)
+	    return NO_ERROR;
         AckI2C1();
         IdleI2C1();
         read_array++;
@@ -64,6 +73,7 @@ char I2C_Read(char slave_addr, char *read_array, int len)
     IdleI2C1();
     StopI2C1();
     IdleI2C1();
+    
     return error;
 }
 
@@ -189,3 +199,7 @@ char I2C_WaitForSlaveAck(char slave_addr)
         IdleI2C1();
     }
 }
+
+/* --------------------------------- Private Functions ---------------------------------- */
+
+/* ----------------------------- Interrupt Service Routines ----------------------------- */

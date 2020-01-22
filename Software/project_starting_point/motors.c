@@ -1,5 +1,5 @@
 /** 
- *	@file 	MotorLib.c
+ *	@file 	motors.c
  *	@brief	Motor library source file. Implements all basic motor functionality.
  *	@author	Collin Heist, Ryan Donahue.
  **/
@@ -9,7 +9,7 @@
 #define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
 #include "hardware.h"
-#include "MotorLib.h"
+#include "motors.h"
 
 /* -------------------------- Global Variables and Structures --------------------------- */
 

@@ -5,10 +5,10 @@ build/default/production/_ext/1472/main.o:  \
 ../hardware.h  \
 ../FT8xx.h  \
 ../DisplayLib.h  \
-../MotorLib.h  \
- ../PotLib.h  \
+../motors.h  \
+ ../potentiometer.h  \
 ../I2CLib.h  \
 ../Si7006.h  \
 ../AccelLib.h  \
 ../GPSLib.h  \
-../Expo.h 
+ ../Expo.h 

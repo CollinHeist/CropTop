@@ -7,8 +7,8 @@
  * **************************************************************************/
 #include <string.h>
 #include "hardware.h"
-#include "MotorLib.h"
-#include "PotLib.h"
+#include "motors.h"
+#include "potentiometer.h"
 #include "I2CLib.h"
 #include "Si7006.h"
 #include "AccelLib.h"

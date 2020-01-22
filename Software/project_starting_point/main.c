@@ -13,8 +13,8 @@
 #include "FT8xx.h"
 #include <stdio.h>
 #include "DisplayLib.h"
-#include "MotorLib.h"
-#include "PotLib.h"
+#include "motors.h"
+#include "potentiometer.h"
 #include "I2CLib.h"
 #include "Si7006.h"
 #include "AccelLib.h"
@@ -245,8 +245,8 @@ static unsigned int initialize_system(void) {
 	unsigned int error_flag = NO_ERROR;
 	error_flag |= initialize_potentiometer(POTENTIOMETER_SAMPLE_FREQ_HZ);
 	error_flag |= initialize_motors();
+	error_flag |= initialize_i2c(I2C1_GNSS_FREQ_HZ);
 	
-	I2CLib_Init();
 	AccelLib_Init();
 
 //	MCU_Init(); // This one is a doozy
