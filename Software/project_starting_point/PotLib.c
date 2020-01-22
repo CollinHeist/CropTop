@@ -8,7 +8,6 @@
 
 #define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
-#include "MotorLib.h"
 #include "hardware.h"
 #include "PotLib.h"
 
@@ -79,7 +78,7 @@ unsigned int initialize_potentiometer(float sample_frequency) {
  **/
 unsigned int reconfigure_timer3(float sample_frequency) {
 	CloseTimer3();								// Close T3 for reconfiguration
-	DisableIntT3();								// Disable interrupt for T3
+	DisableIntT3;								// Disable interrupt for T3
 
 	// Reconfigure T3 and return the result
 	return initialize_timer3(sample_frequency);	

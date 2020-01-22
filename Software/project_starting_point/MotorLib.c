@@ -10,7 +10,6 @@
 #include <plib.h>
 #include "hardware.h"
 #include "MotorLib.h"
-// #include "PotLib.h" // Might not be necessary(?)
 
 /* -------------------------- Global Variables and Structures --------------------------- */
 
