@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../MotorLib.c ../PotLib.c ../DisplayEVE.c ../DisplayMCU.c ../AccelLib.c ../GPSLib.c ../I2CLib.c ../Si7006.c ../Expo.c ../main.c ../RTClib.c ../DisplayAPP.c ../DisplayAPI.c
+SOURCEFILES_QUOTED_IF_SPACED=../DisplayEVE.c ../DisplayMCU.c ../AccelLib.c ../GPSLib.c ../I2CLib.c ../Si7006.c ../Expo.c ../main.c ../RTClib.c ../DisplayAPP.c ../DisplayAPI.c ../potentiometer.c ../motors.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1472/MotorLib.o ${OBJECTDIR}/_ext/1472/PotLib.o ${OBJECTDIR}/_ext/1472/DisplayEVE.o ${OBJECTDIR}/_ext/1472/DisplayMCU.o ${OBJECTDIR}/_ext/1472/AccelLib.o ${OBJECTDIR}/_ext/1472/GPSLib.o ${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/Si7006.o ${OBJECTDIR}/_ext/1472/Expo.o ${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/RTClib.o ${OBJECTDIR}/_ext/1472/DisplayAPP.o ${OBJECTDIR}/_ext/1472/DisplayAPI.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1472/MotorLib.o.d ${OBJECTDIR}/_ext/1472/PotLib.o.d ${OBJECTDIR}/_ext/1472/DisplayEVE.o.d ${OBJECTDIR}/_ext/1472/DisplayMCU.o.d ${OBJECTDIR}/_ext/1472/AccelLib.o.d ${OBJECTDIR}/_ext/1472/GPSLib.o.d ${OBJECTDIR}/_ext/1472/I2CLib.o.d ${OBJECTDIR}/_ext/1472/Si7006.o.d ${OBJECTDIR}/_ext/1472/Expo.o.d ${OBJECTDIR}/_ext/1472/main.o.d ${OBJECTDIR}/_ext/1472/RTClib.o.d ${OBJECTDIR}/_ext/1472/DisplayAPP.o.d ${OBJECTDIR}/_ext/1472/DisplayAPI.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1472/DisplayEVE.o ${OBJECTDIR}/_ext/1472/DisplayMCU.o ${OBJECTDIR}/_ext/1472/AccelLib.o ${OBJECTDIR}/_ext/1472/GPSLib.o ${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/Si7006.o ${OBJECTDIR}/_ext/1472/Expo.o ${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/RTClib.o ${OBJECTDIR}/_ext/1472/DisplayAPP.o ${OBJECTDIR}/_ext/1472/DisplayAPI.o ${OBJECTDIR}/_ext/1472/potentiometer.o ${OBJECTDIR}/_ext/1472/motors.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1472/DisplayEVE.o.d ${OBJECTDIR}/_ext/1472/DisplayMCU.o.d ${OBJECTDIR}/_ext/1472/AccelLib.o.d ${OBJECTDIR}/_ext/1472/GPSLib.o.d ${OBJECTDIR}/_ext/1472/I2CLib.o.d ${OBJECTDIR}/_ext/1472/Si7006.o.d ${OBJECTDIR}/_ext/1472/Expo.o.d ${OBJECTDIR}/_ext/1472/main.o.d ${OBJECTDIR}/_ext/1472/RTClib.o.d ${OBJECTDIR}/_ext/1472/DisplayAPP.o.d ${OBJECTDIR}/_ext/1472/DisplayAPI.o.d ${OBJECTDIR}/_ext/1472/potentiometer.o.d ${OBJECTDIR}/_ext/1472/motors.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1472/MotorLib.o ${OBJECTDIR}/_ext/1472/PotLib.o ${OBJECTDIR}/_ext/1472/DisplayEVE.o ${OBJECTDIR}/_ext/1472/DisplayMCU.o ${OBJECTDIR}/_ext/1472/AccelLib.o ${OBJECTDIR}/_ext/1472/GPSLib.o ${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/Si7006.o ${OBJECTDIR}/_ext/1472/Expo.o ${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/RTClib.o ${OBJECTDIR}/_ext/1472/DisplayAPP.o ${OBJECTDIR}/_ext/1472/DisplayAPI.o
+OBJECTFILES=${OBJECTDIR}/_ext/1472/DisplayEVE.o ${OBJECTDIR}/_ext/1472/DisplayMCU.o ${OBJECTDIR}/_ext/1472/AccelLib.o ${OBJECTDIR}/_ext/1472/GPSLib.o ${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/Si7006.o ${OBJECTDIR}/_ext/1472/Expo.o ${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/RTClib.o ${OBJECTDIR}/_ext/1472/DisplayAPP.o ${OBJECTDIR}/_ext/1472/DisplayAPI.o ${OBJECTDIR}/_ext/1472/potentiometer.o ${OBJECTDIR}/_ext/1472/motors.o
 
 # Source Files
-SOURCEFILES=../MotorLib.c ../PotLib.c ../DisplayEVE.c ../DisplayMCU.c ../AccelLib.c ../GPSLib.c ../I2CLib.c ../Si7006.c ../Expo.c ../main.c ../RTClib.c ../DisplayAPP.c ../DisplayAPI.c
+SOURCEFILES=../DisplayEVE.c ../DisplayMCU.c ../AccelLib.c ../GPSLib.c ../I2CLib.c ../Si7006.c ../Expo.c ../main.c ../RTClib.c ../DisplayAPP.c ../DisplayAPI.c ../potentiometer.c ../motors.c
 
 
 CFLAGS=
@@ -106,18 +106,6 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/_ext/1472/MotorLib.o: ../MotorLib.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
-	@${RM} ${OBJECTDIR}/_ext/1472/MotorLib.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1472/MotorLib.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/MotorLib.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/MotorLib.o.d" -o ${OBJECTDIR}/_ext/1472/MotorLib.o ../MotorLib.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1472/PotLib.o: ../PotLib.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
-	@${RM} ${OBJECTDIR}/_ext/1472/PotLib.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1472/PotLib.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/PotLib.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/PotLib.o.d" -o ${OBJECTDIR}/_ext/1472/PotLib.o ../PotLib.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
 ${OBJECTDIR}/_ext/1472/DisplayEVE.o: ../DisplayEVE.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
 	@${RM} ${OBJECTDIR}/_ext/1472/DisplayEVE.o.d 
@@ -184,19 +172,19 @@ ${OBJECTDIR}/_ext/1472/DisplayAPI.o: ../DisplayAPI.c  nbproject/Makefile-${CND_C
 	@${RM} ${OBJECTDIR}/_ext/1472/DisplayAPI.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/DisplayAPI.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/DisplayAPI.o.d" -o ${OBJECTDIR}/_ext/1472/DisplayAPI.o ../DisplayAPI.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
+${OBJECTDIR}/_ext/1472/potentiometer.o: ../potentiometer.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
+	@${RM} ${OBJECTDIR}/_ext/1472/potentiometer.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1472/potentiometer.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/potentiometer.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/potentiometer.o.d" -o ${OBJECTDIR}/_ext/1472/potentiometer.o ../potentiometer.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/_ext/1472/motors.o: ../motors.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
+	@${RM} ${OBJECTDIR}/_ext/1472/motors.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1472/motors.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/motors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/motors.o.d" -o ${OBJECTDIR}/_ext/1472/motors.o ../motors.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
 else
-${OBJECTDIR}/_ext/1472/MotorLib.o: ../MotorLib.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
-	@${RM} ${OBJECTDIR}/_ext/1472/MotorLib.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1472/MotorLib.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/MotorLib.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/MotorLib.o.d" -o ${OBJECTDIR}/_ext/1472/MotorLib.o ../MotorLib.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1472/PotLib.o: ../PotLib.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
-	@${RM} ${OBJECTDIR}/_ext/1472/PotLib.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1472/PotLib.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/PotLib.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/PotLib.o.d" -o ${OBJECTDIR}/_ext/1472/PotLib.o ../PotLib.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
 ${OBJECTDIR}/_ext/1472/DisplayEVE.o: ../DisplayEVE.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
 	@${RM} ${OBJECTDIR}/_ext/1472/DisplayEVE.o.d 
@@ -262,6 +250,18 @@ ${OBJECTDIR}/_ext/1472/DisplayAPI.o: ../DisplayAPI.c  nbproject/Makefile-${CND_C
 	@${RM} ${OBJECTDIR}/_ext/1472/DisplayAPI.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1472/DisplayAPI.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/DisplayAPI.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/DisplayAPI.o.d" -o ${OBJECTDIR}/_ext/1472/DisplayAPI.o ../DisplayAPI.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/_ext/1472/potentiometer.o: ../potentiometer.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
+	@${RM} ${OBJECTDIR}/_ext/1472/potentiometer.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1472/potentiometer.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/potentiometer.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/potentiometer.o.d" -o ${OBJECTDIR}/_ext/1472/potentiometer.o ../potentiometer.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/_ext/1472/motors.o: ../motors.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
+	@${RM} ${OBJECTDIR}/_ext/1472/motors.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1472/motors.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/motors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/motors.o.d" -o ${OBJECTDIR}/_ext/1472/motors.o ../motors.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 endif
 

@@ -1,5 +1,5 @@
 /** 
- *	@file 	MotorLib.h
+ *	@file 	motors.h
  *	@brief	Motor library header file. Provides useful macros for timer 2, PWM, and pin configurations.
  *	@author	Collin Heist, Ryan Donahue.
  **/

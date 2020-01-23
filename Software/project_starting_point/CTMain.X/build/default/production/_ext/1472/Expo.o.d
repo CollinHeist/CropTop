@@ -1,8 +1,8 @@
 build/default/production/_ext/1472/Expo.o:  \
 ../Expo.c  \
 ../hardware.h  \
- ../MotorLib.h  \
-../PotLib.h  \
+ ../motors.h  \
+../potentiometer.h  \
 ../I2CLib.h  \
 ../Si7006.h  \
 ../AccelLib.h  \
