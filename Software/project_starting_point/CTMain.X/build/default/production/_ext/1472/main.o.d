@@ -9,6 +9,6 @@ build/default/production/_ext/1472/main.o:  \
  ../potentiometer.h  \
 ../I2CLib.h  \
 ../Si7006.h  \
-../AccelLib.h  \
-../GPSLib.h  \
- ../Expo.h 
+../accelerometer.h  \
+ ../GPSLib.h  \
+../Expo.h 

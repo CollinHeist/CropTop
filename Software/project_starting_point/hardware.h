@@ -11,8 +11,8 @@
 	#define __HARDWARE_H__
 
 	// Macros for error-detection
-	#define ERROR                   (1)
 	#define NO_ERROR                (0)
+	#define ERROR                   (1)
 
 	// Hardware macros
 	#define SWITCH_2				(BIT_7)		// SW2 is Pin 92, RA7
@@ -24,7 +24,7 @@
 	#define LED_A					(BIT_1)		// LEDA (D22) is Pin 89, RG1
 	#define LED_B					(BIT_1)		// LEDB (D23) is Pin 88, RF1
 	#define LED_C					(BIT_0)		// LEDC (D24) is Pin 87, RF0
-	#define ALL_LEDS_OFF			{LATGCLR = LED_A; LATFCLR = LED_B | LED_C;}
+	#define ALL_LEDS_OFF()			{LATGCLR = LED_A; LATFCLR = LED_B | LED_C;}
 
 	// System timing definitions
 	#define GetSystemClock()		(80000000ul)

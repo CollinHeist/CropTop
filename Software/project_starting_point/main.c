@@ -17,7 +17,7 @@
 #include "potentiometer.h"
 #include "I2CLib.h"
 #include "Si7006.h"
-#include "AccelLib.h"
+#include "accelerometer.h"
 #include "GPSLib.h"
 #include "Expo.h"
 
@@ -239,15 +239,14 @@ static unsigned int initialize_system(void) {
 	mPORTGSetPinsDigitalIn(SWITCH_4);
 	mPORTGSetPinsDigitalOut(LED_A);
 	mPORTFSetPinsDigitalOut(LED_B | LED_C);
-	ALL_LEDS_OFF;
+	ALL_LEDS_OFF();
 
 	// Initialize subsystems
 	unsigned int error_flag = NO_ERROR;
 	error_flag |= initialize_potentiometer(POTENTIOMETER_SAMPLE_FREQ_HZ);
 	error_flag |= initialize_motors();
 	error_flag |= initialize_i2c(I2C1_GNSS_FREQ_HZ);
-	
-	AccelLib_Init();
+	error_flag |= initialize_accelerometer();
 
 //	MCU_Init(); // This one is a doozy
 

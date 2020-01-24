@@ -11,7 +11,7 @@
 #include "potentiometer.h"
 #include "I2CLib.h"
 #include "Si7006.h"
-#include "AccelLib.h"
+#include "accelerometer.h"
 #include "GPSLib.h"
 #include "Expo.h"
 

@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../DisplayEVE.c ../DisplayMCU.c ../AccelLib.c ../GPSLib.c ../I2CLib.c ../Si7006.c ../Expo.c ../main.c ../RTClib.c ../DisplayAPP.c ../DisplayAPI.c ../potentiometer.c ../motors.c
+SOURCEFILES_QUOTED_IF_SPACED=../DisplayEVE.c ../DisplayMCU.c ../GPSLib.c ../I2CLib.c ../Si7006.c ../Expo.c ../main.c ../RTClib.c ../DisplayAPP.c ../DisplayAPI.c ../potentiometer.c ../motors.c ../accelerometer.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1472/DisplayEVE.o ${OBJECTDIR}/_ext/1472/DisplayMCU.o ${OBJECTDIR}/_ext/1472/AccelLib.o ${OBJECTDIR}/_ext/1472/GPSLib.o ${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/Si7006.o ${OBJECTDIR}/_ext/1472/Expo.o ${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/RTClib.o ${OBJECTDIR}/_ext/1472/DisplayAPP.o ${OBJECTDIR}/_ext/1472/DisplayAPI.o ${OBJECTDIR}/_ext/1472/potentiometer.o ${OBJECTDIR}/_ext/1472/motors.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1472/DisplayEVE.o.d ${OBJECTDIR}/_ext/1472/DisplayMCU.o.d ${OBJECTDIR}/_ext/1472/AccelLib.o.d ${OBJECTDIR}/_ext/1472/GPSLib.o.d ${OBJECTDIR}/_ext/1472/I2CLib.o.d ${OBJECTDIR}/_ext/1472/Si7006.o.d ${OBJECTDIR}/_ext/1472/Expo.o.d ${OBJECTDIR}/_ext/1472/main.o.d ${OBJECTDIR}/_ext/1472/RTClib.o.d ${OBJECTDIR}/_ext/1472/DisplayAPP.o.d ${OBJECTDIR}/_ext/1472/DisplayAPI.o.d ${OBJECTDIR}/_ext/1472/potentiometer.o.d ${OBJECTDIR}/_ext/1472/motors.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1472/DisplayEVE.o ${OBJECTDIR}/_ext/1472/DisplayMCU.o ${OBJECTDIR}/_ext/1472/GPSLib.o ${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/Si7006.o ${OBJECTDIR}/_ext/1472/Expo.o ${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/RTClib.o ${OBJECTDIR}/_ext/1472/DisplayAPP.o ${OBJECTDIR}/_ext/1472/DisplayAPI.o ${OBJECTDIR}/_ext/1472/potentiometer.o ${OBJECTDIR}/_ext/1472/motors.o ${OBJECTDIR}/_ext/1472/accelerometer.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1472/DisplayEVE.o.d ${OBJECTDIR}/_ext/1472/DisplayMCU.o.d ${OBJECTDIR}/_ext/1472/GPSLib.o.d ${OBJECTDIR}/_ext/1472/I2CLib.o.d ${OBJECTDIR}/_ext/1472/Si7006.o.d ${OBJECTDIR}/_ext/1472/Expo.o.d ${OBJECTDIR}/_ext/1472/main.o.d ${OBJECTDIR}/_ext/1472/RTClib.o.d ${OBJECTDIR}/_ext/1472/DisplayAPP.o.d ${OBJECTDIR}/_ext/1472/DisplayAPI.o.d ${OBJECTDIR}/_ext/1472/potentiometer.o.d ${OBJECTDIR}/_ext/1472/motors.o.d ${OBJECTDIR}/_ext/1472/accelerometer.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1472/DisplayEVE.o ${OBJECTDIR}/_ext/1472/DisplayMCU.o ${OBJECTDIR}/_ext/1472/AccelLib.o ${OBJECTDIR}/_ext/1472/GPSLib.o ${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/Si7006.o ${OBJECTDIR}/_ext/1472/Expo.o ${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/RTClib.o ${OBJECTDIR}/_ext/1472/DisplayAPP.o ${OBJECTDIR}/_ext/1472/DisplayAPI.o ${OBJECTDIR}/_ext/1472/potentiometer.o ${OBJECTDIR}/_ext/1472/motors.o
+OBJECTFILES=${OBJECTDIR}/_ext/1472/DisplayEVE.o ${OBJECTDIR}/_ext/1472/DisplayMCU.o ${OBJECTDIR}/_ext/1472/GPSLib.o ${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/Si7006.o ${OBJECTDIR}/_ext/1472/Expo.o ${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/RTClib.o ${OBJECTDIR}/_ext/1472/DisplayAPP.o ${OBJECTDIR}/_ext/1472/DisplayAPI.o ${OBJECTDIR}/_ext/1472/potentiometer.o ${OBJECTDIR}/_ext/1472/motors.o ${OBJECTDIR}/_ext/1472/accelerometer.o
 
 # Source Files
-SOURCEFILES=../DisplayEVE.c ../DisplayMCU.c ../AccelLib.c ../GPSLib.c ../I2CLib.c ../Si7006.c ../Expo.c ../main.c ../RTClib.c ../DisplayAPP.c ../DisplayAPI.c ../potentiometer.c ../motors.c
+SOURCEFILES=../DisplayEVE.c ../DisplayMCU.c ../GPSLib.c ../I2CLib.c ../Si7006.c ../Expo.c ../main.c ../RTClib.c ../DisplayAPP.c ../DisplayAPI.c ../potentiometer.c ../motors.c ../accelerometer.c
 
 
 CFLAGS=
@@ -117,12 +117,6 @@ ${OBJECTDIR}/_ext/1472/DisplayMCU.o: ../DisplayMCU.c  nbproject/Makefile-${CND_C
 	@${RM} ${OBJECTDIR}/_ext/1472/DisplayMCU.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1472/DisplayMCU.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/DisplayMCU.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/DisplayMCU.o.d" -o ${OBJECTDIR}/_ext/1472/DisplayMCU.o ../DisplayMCU.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1472/AccelLib.o: ../AccelLib.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
-	@${RM} ${OBJECTDIR}/_ext/1472/AccelLib.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1472/AccelLib.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/AccelLib.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/AccelLib.o.d" -o ${OBJECTDIR}/_ext/1472/AccelLib.o ../AccelLib.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 ${OBJECTDIR}/_ext/1472/GPSLib.o: ../GPSLib.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
@@ -184,6 +178,12 @@ ${OBJECTDIR}/_ext/1472/motors.o: ../motors.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/_ext/1472/motors.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/motors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/motors.o.d" -o ${OBJECTDIR}/_ext/1472/motors.o ../motors.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
+${OBJECTDIR}/_ext/1472/accelerometer.o: ../accelerometer.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
+	@${RM} ${OBJECTDIR}/_ext/1472/accelerometer.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1472/accelerometer.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/accelerometer.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/accelerometer.o.d" -o ${OBJECTDIR}/_ext/1472/accelerometer.o ../accelerometer.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
 else
 ${OBJECTDIR}/_ext/1472/DisplayEVE.o: ../DisplayEVE.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
@@ -196,12 +196,6 @@ ${OBJECTDIR}/_ext/1472/DisplayMCU.o: ../DisplayMCU.c  nbproject/Makefile-${CND_C
 	@${RM} ${OBJECTDIR}/_ext/1472/DisplayMCU.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1472/DisplayMCU.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/DisplayMCU.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/DisplayMCU.o.d" -o ${OBJECTDIR}/_ext/1472/DisplayMCU.o ../DisplayMCU.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1472/AccelLib.o: ../AccelLib.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
-	@${RM} ${OBJECTDIR}/_ext/1472/AccelLib.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1472/AccelLib.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/AccelLib.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/AccelLib.o.d" -o ${OBJECTDIR}/_ext/1472/AccelLib.o ../AccelLib.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 ${OBJECTDIR}/_ext/1472/GPSLib.o: ../GPSLib.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
@@ -262,6 +256,12 @@ ${OBJECTDIR}/_ext/1472/motors.o: ../motors.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/_ext/1472/motors.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1472/motors.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/motors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/motors.o.d" -o ${OBJECTDIR}/_ext/1472/motors.o ../motors.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/_ext/1472/accelerometer.o: ../accelerometer.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
+	@${RM} ${OBJECTDIR}/_ext/1472/accelerometer.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1472/accelerometer.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/accelerometer.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1472/accelerometer.o.d" -o ${OBJECTDIR}/_ext/1472/accelerometer.o ../accelerometer.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 endif
 
