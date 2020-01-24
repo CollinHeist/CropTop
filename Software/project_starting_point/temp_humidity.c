@@ -1,6 +1,6 @@
 /** 
  *	@file 	temp_humidity.c
- *	@brief	Library source file for the temperature and humidity sensor (the IC Silicon Labs Si7006)
+ *	@brief	Temperature and humidity source file for the the IC Silicon Labs Si7006.
  *	@author	Collin Heist, Ryan Donahue
  **/
 

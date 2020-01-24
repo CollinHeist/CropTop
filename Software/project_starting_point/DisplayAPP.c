@@ -1,14 +1,13 @@
-/* **************************************************************************
- * File name:   DisplayAPP.c
- * Association: University of Idaho
- * Author:      Conrad Mearns
- * Dates:       Created 4/25/2018
- * Summary:     Application level driver for 7" Touchscreen
- * Notes:       
- * *************************************************************************/
+/** 
+ *	@file	    DisplayApp.c
+ *	@brief	    Application driver for touchscreen.
+ *	@authors    Collin Heist, Conrad Mearns
+ **/
+
+/* ----------------------------------- File Inclusion ----------------------------------- */
 
 #include <stdint.h>
-#include "DisplayLib.h"
+#include "display_library.h"
 
 //#define _SUPPRESS_PLIB_WARNING
 //#include <plib.h>
@@ -39,7 +38,7 @@ void APP_Init(void)
     MCU_PDhigh();
     MCU_Delay_ms(20);
 
-    MCU_SetFreq10();
+    set_display_SPI_frequency_10MHZ();
     EVE_CmdWrite(FTD81x_CLKEXT, 0x00);
     EVE_CmdWrite(FTD81x_ACTIVE, 0x00);
     
@@ -109,7 +108,7 @@ void APP_Init(void)
     EVE_MemWrite8(REG_PWM_DUTY, 63);
     EVE_MemWrite16(REG_GPIOX, 1<<15);
     
-    MCU_SetFreq20();
+    set_display_SPI_frequency_20MHZ();
 }
 
 void APP_Calibrate(void)

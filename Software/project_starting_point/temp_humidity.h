@@ -1,12 +1,9 @@
-/* **************************************************************************
- * File name:   Si7006.h
- * Association: University of Idaho
- * Author:      Ryan Donahue
- * Dates:       Created 2/21/2018
- * Summary:     Contains register addresses and functions pertaining used to
-				operate temperature and humidity sensor IC Silicon Labs 
-				Si7006.
- * *************************************************************************/
+/** 
+ *	@file 	temp_humidity.h
+ *	@brief	Temperature and humidity header file for the the IC Silicon Labs Si7006.
+ *  @note   Data taken from following PDF: https://www.silabs.com/documents/public/data-sheets/Si7006-A20.pdf
+ *	@author	Collin Heist, Ryan Donahue
+ **/
 #define _SUPPRESS_PLIB_WARNING
 
 #ifndef __TEMP_HUMIDITY_H__

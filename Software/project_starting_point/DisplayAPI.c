@@ -1,5 +1,5 @@
 #include "FT8xx.h"
-#include "DisplayLib.h"
+#include "display_library.h"
 #include <string.h>
 #include <stdint.h> 
 
@@ -1092,10 +1092,4 @@ void API_CMD_SETSCRATCH(uint32_t handle)
     EVE_Write32( handle);
     cmdOffset = EVE_IncCMDOffset(cmdOffset, 8);
 }
-#endif  // FT81X-only features
-
-
-
-
-
-
+#endif

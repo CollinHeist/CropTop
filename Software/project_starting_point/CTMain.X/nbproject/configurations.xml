@@ -5,18 +5,17 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>../config_bits.h</itemPath>
-      <itemPath>../DisplayLib.h</itemPath>
       <itemPath>../FT8xx.h</itemPath>
       <itemPath>../GPSLib.h</itemPath>
       <itemPath>../I2CLib.h</itemPath>
       <itemPath>../Expo.h</itemPath>
-      <itemPath>../Library.h</itemPath>
       <itemPath>../hardware.h</itemPath>
       <itemPath>../main.h</itemPath>
       <itemPath>../potentiometer.h</itemPath>
       <itemPath>../motors.h</itemPath>
       <itemPath>../accelerometer.h</itemPath>
       <itemPath>../temp_humidity.h</itemPath>
+      <itemPath>../display_library.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -32,7 +31,6 @@
       <itemPath>../Expo.c</itemPath>
       <itemPath>../main.c</itemPath>
       <itemPath>../DisplayAPP.c</itemPath>
-      <itemPath>../EVE_Layer.c</itemPath>
       <itemPath>../DisplayAPI.c</itemPath>
       <itemPath>../potentiometer.c</itemPath>
       <itemPath>../motors.c</itemPath>
@@ -85,34 +83,6 @@
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
-      <item path="../EVE_Layer.c" ex="true" overriding="false">
-        <C32>
-        </C32>
-        <C32-AR>
-        </C32-AR>
-        <C32-AS>
-        </C32-AS>
-        <C32-LD>
-        </C32-LD>
-        <C32CPP>
-        </C32CPP>
-        <C32Global>
-        </C32Global>
-      </item>
-      <item path="../Library.h" ex="true" overriding="false">
-        <C32>
-        </C32>
-        <C32-AR>
-        </C32-AR>
-        <C32-AS>
-        </C32-AS>
-        <C32-LD>
-        </C32-LD>
-        <C32CPP>
-        </C32CPP>
-        <C32Global>
-        </C32Global>
-      </item>
       <item path="../main.c" ex="false" overriding="false">
         <C32>
         </C32>

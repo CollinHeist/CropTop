@@ -1,58 +1,64 @@
+/** 
+ *	@file	    DisplayMCU.c
+ *	@brief	    
+ *	@author	    Collin Heist
+ **/
+
+/* ----------------------------------- File Inclusion ----------------------------------- */
+
+#include <plib.h>
 #include <xc.h>
-#include "DisplayLib.h" 
+#include "hardware.h"
+#include "display_library.h" 
 #include "FT8xx.h"
 
-#define _XTAL_FREQ 12000000      // Required for _delay() function
+/* -------------------------- Global Variables and Structures --------------------------- */
 
+#define _XTAL_FREQ 12000000      // Required for _delay() function
 //CS Pin timing
 #define CS_LOW_TIMER 8
 #define CS_HIGH_TIMER 8
 
-// ------------------- MCU specific initialisation  ----------------------------
-void MCU_Init(void)
-{    
+/* ---------------------------------- Public Functions ---------------------------------- */
+
+unsigned int initialize_display(void) {
     // Port pin set-up
-    TRISBbits.TRISB14 = 0;                                                      // CS
-    TRISGbits.TRISG9 = 0;                                                       // PD pin
-    TRISGbits.TRISG6 = 0;                                                       // SCK 
-    TRISGbits.TRISG7 = 1;                                                       // SDI (MISO)
-    TRISGbits.TRISG8 = 0;                                                       // SDO (MOSI) 
+    PORTSetPinsDigitalOut(CS_PORT, CS_PIN);	// Was TRISBbits.TRISB14 = 0;
+    PORTSetPinsDigitalOut(PD_PORT, PD_PIN);	// Was TRISGbits.TRISG9 = 0;
+    PORTSetPinsDigitalOut(SCLK_PORT, SCLK_PIN);	// Was TRISGbits.TRISG6 = 0;
+    PORTSetPinsDigitalIn(MISO_PORT, MISO_PIN);	// Was TRISGbits.TRISG7 = 1;
+    PORTSetPinsDigitalOut(MOSI_PORT, MOSI_PIN);	// Was TRISGbits.TRISG8 = 0;
     
     // SPI 2 set-up
-    SPI2CONbits.ON  = 0;// Disable SPI1 and configure it
+    SPI1CONbits.ON  = 0;// Disable SPI1 and configure it
     
-    MCU_SetFreq10();
+    set_display_SPI_frequency_10MHZ();
     
-    SPI2CONbits.DISSDO = 0;     //SDO pin used by SPI module
-    SPI2CONbits.CKP    = 0;     //Clock polarity, idle high | active low  
+    SPI1CONbits.DISSDO = 0;     //SDO pin used by SPI module
+    SPI1CONbits.CKP    = 0;     //Clock polarity, idle high | active low  
 
-    SPI2CONbits.MSTEN = 1;      //SPI is in master mode
-    SPI2CONbits.MODE32 = 0;
-    SPI2CONbits.MODE16 = 0;
+    SPI1CONbits.MSTEN = 1;      //SPI is in master mode
+    SPI1CONbits.MODE32 = 0;
+    SPI1CONbits.MODE16 = 0;
 
-    SPI2CONbits.SMP = 0;       //Data samples in middle of data output time
-    SPI2CONbits.CKE = 1;       //clock edge select rising edge
+    SPI1CONbits.SMP = 0;       //Data samples in middle of data output time
+    SPI1CONbits.CKE = 1;       //clock edge select rising edge
     
-    SPI2STATbits.SPITBE = 1;  //SPI transmit buffer is empty
-    SPI2STATbits.SPIRBF = 0;
-    SPI2STATbits.SPIROV = 0;
+    SPI1STATbits.SPITBE = 1;  //SPI transmit buffer is empty
+    SPI1STATbits.SPIRBF = 0;
+    SPI1STATbits.SPIROV = 0;
     
-    SPI2CONbits.ON = 1;// Enable SPI1 after configuration
+    SPI1CONbits.ON = 1;// Enable SPI1 after configuration
     
+    return NO_ERROR;
 }
-// ######################### FREQUENCY CONTROL #################################
-// Set Frequency to 10Mhz
-// TODO Rename along lines of SPI_FREQ
-void MCU_SetFreq10()
-{
-    SPI2BRGCLR = 0x000000FF;
-    SPI2BRGSET = 0x00000003;
+void set_display_SPI_frequency_10MHZ(void) {
+    SPI1BRGCLR = 0x000000FF;
+    SPI1BRGSET = 0x00000003;
 }
-// Set Frequency to 20Mhz
-void MCU_SetFreq20()
-{
-    SPI2BRGCLR = 0x000000FF;
-    SPI2BRGSET = 0x00000001;
+void set_display_SPI_frequency_20MHZ(void) {
+    SPI1BRGCLR = 0x000000FF;
+    SPI1BRGSET = 0x00000001;
 }
 
 
@@ -61,7 +67,7 @@ void MCU_SetFreq20()
 // --------------------- Chip Select line low ----------------------------------
 void MCU_CSlow(void)
 {
-    LATGbits.LATG9 = 0;
+    CS_LOW();
     unsigned int i;
     for(i=0; i < CS_LOW_TIMER; i++);
 }  
@@ -70,20 +76,20 @@ void MCU_CSlow(void)
 void MCU_CShigh(void)
 {
     unsigned int i;
-    for(i=0; i < CS_HIGH_TIMER; i++);
-    LATGbits.LATG9 = 1;
+    for (i=0; i < CS_HIGH_TIMER; i++);
+    CS_HIGH();
 }
 
 // -------------------------- PD line low --------------------------------------
 void MCU_PDlow(void)
 {
-    LATBbits.LATB14 = 0;
+    PD_LOW();
 }
 
 // ------------------------- PD line high --------------------------------------
 void MCU_PDhigh(void)
 {
-    LATBbits.LATB14 = 1;
+    PD_HIGH();
 }
 
 // ################################# SPI #######################################
@@ -93,9 +99,9 @@ unsigned char MCU_SPIReadWrite(unsigned char DataToWrite)
 {
     unsigned char DataRead = 0;
     
-    SPI2BUF = (DataToWrite);                                                    // Write data to SPI data register                          
-    while(!SPI2STATbits.SPITBE);                                                    // Wait for completion of the SPI transfer
-    DataRead = SPI2BUF;                                                         // Get the value clocked in from the FT8xx
+    SPI1BUF = (DataToWrite);                                                    // Write data to SPI data register                          
+    while (!SPI1STATbits.SPITBE);                                                    // Wait for completion of the SPI transfer
+    DataRead = SPI1BUF;                                                         // Get the value clocked in from the FT8xx
     
     return DataRead;
 }
@@ -115,3 +121,7 @@ void MCU_Delay_ms(unsigned int time_in_ms)
         MCU_Delay_1ms();
     }
 }
+
+/* --------------------------------- Private Functions ---------------------------------- */
+
+/* ----------------------------- Interrupt Service Routines ----------------------------- */

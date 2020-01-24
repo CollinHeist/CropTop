@@ -13,7 +13,7 @@
 #include "hardware.h"
 
 #include "FT8xx.h"
-#include "DisplayLib.h"
+#include "display_library.h"
 #include "motors.h"
 #include "potentiometer.h"
 #include "I2CLib.h"
@@ -37,7 +37,6 @@
 int main() {
 	if (initialize_system() == ERROR)
 		return;		// An error occurred while running
-	MCU_Init();
 	APP_Init();
 	
 	//Enable Touch	
@@ -248,8 +247,7 @@ static unsigned int initialize_system(void) {
     error_flag |= initialize_motors();
     error_flag |= initialize_i2c(I2C1_GNSS_FREQ_HZ);
     error_flag |= initialize_accelerometer();
-
-//	MCU_Init(); // This one is a doozy
+    error_flag |= initialize_display();
 
     INTEnableSystemMultiVectoredInt();
 

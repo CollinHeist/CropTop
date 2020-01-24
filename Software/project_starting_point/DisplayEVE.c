@@ -1,5 +1,5 @@
 #include "xc.h"
-#include "DisplayLib.h" 
+#include "display_library.h" 
 #include "FT8xx.h"
 #include <string.h>
 #include <stdint.h>

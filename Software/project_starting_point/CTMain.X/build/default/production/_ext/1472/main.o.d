@@ -4,7 +4,7 @@ build/default/production/_ext/1472/main.o:  \
  ../main.h  \
 ../hardware.h  \
 ../FT8xx.h  \
-../DisplayLib.h  \
+../display_library.h  \
 ../motors.h  \
  ../potentiometer.h  \
 ../I2CLib.h  \
