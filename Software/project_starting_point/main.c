@@ -9,14 +9,15 @@
 #include "config_bits.h"	// Do only once
 #include "main.h"
 #include <plib.h>
-#include "hardware.h"
-#include "FT8xx.h"
 #include <stdio.h>
+#include "hardware.h"
+
+#include "FT8xx.h"
 #include "DisplayLib.h"
 #include "motors.h"
 #include "potentiometer.h"
 #include "I2CLib.h"
-#include "Si7006.h"
+#include "temp_humidity.h"
 #include "accelerometer.h"
 #include "GPSLib.h"
 #include "Expo.h"
@@ -230,27 +231,27 @@ int main() {
 }
 
 static unsigned int initialize_system(void) {
-	// Fundamental hardware configurations
-	SYSTEMConfig(GetSystemClock(), SYS_CFG_WAIT_STATES | SYS_CFG_PCACHE);
-	DDPCONbits.JTAGEN = 0;
-	
-	// Configure debug buttons and LEDs
-	mPORTASetPinsDigitalIn(SWITCH_2 | SWITCH_3);
-	mPORTGSetPinsDigitalIn(SWITCH_4);
-	mPORTGSetPinsDigitalOut(LED_A);
-	mPORTFSetPinsDigitalOut(LED_B | LED_C);
-	ALL_LEDS_OFF();
+    // Fundamental hardware configurations
+    SYSTEMConfig(GetSystemClock(), SYS_CFG_WAIT_STATES | SYS_CFG_PCACHE);
+    DDPCONbits.JTAGEN = 0;
 
-	// Initialize subsystems
-	unsigned int error_flag = NO_ERROR;
-	error_flag |= initialize_potentiometer(POTENTIOMETER_SAMPLE_FREQ_HZ);
-	error_flag |= initialize_motors();
-	error_flag |= initialize_i2c(I2C1_GNSS_FREQ_HZ);
-	error_flag |= initialize_accelerometer();
+    // Configure debug buttons and LEDs
+    mPORTASetPinsDigitalIn(SWITCH_2 | SWITCH_3);
+    mPORTGSetPinsDigitalIn(SWITCH_4);
+    mPORTGSetPinsDigitalOut(LED_A);
+    mPORTFSetPinsDigitalOut(LED_B | LED_C);
+    ALL_LEDS_OFF();
+
+    // Initialize subsystems
+    unsigned int error_flag = NO_ERROR;
+    error_flag |= initialize_potentiometer(POTENTIOMETER_SAMPLE_FREQ_HZ);
+    error_flag |= initialize_motors();
+    error_flag |= initialize_i2c(I2C1_GNSS_FREQ_HZ);
+    error_flag |= initialize_accelerometer();
 
 //	MCU_Init(); // This one is a doozy
 
-	INTEnableSystemMultiVectoredInt();
+    INTEnableSystemMultiVectoredInt();
 
-	return error_flag;
+    return error_flag;
 }

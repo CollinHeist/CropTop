@@ -4,7 +4,7 @@ build/default/production/_ext/1472/Expo.o:  \
  ../motors.h  \
 ../potentiometer.h  \
 ../I2CLib.h  \
-../Si7006.h  \
+../temp_humidity.h  \
  ../accelerometer.h  \
 ../GPSLib.h  \
 ../Expo.h 

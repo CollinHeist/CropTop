@@ -1,11 +1,8 @@
-/* **************************************************************************
- * File name:   config_bits.h
- * Association: University of Idaho
- * Author:      Ryan Donahue
- * Dates:       Created 1/29/2018
- * Summary:     This file contains configuration bits for initializing the
- *              PIC32 hardware.              
- * *************************************************************************/
+/** 
+ *	@file 	config_bits.h
+ *	@brief	Bit configuration file. Defines bit and hardware configurations for the PIC32.
+ *	@author	Collin Heist, Ryan Donahue
+ **/
 #define _SUPPRESS_PLIB_WARNING
 #pragma config FSRSSEL  = PRIORITY_7/* Interrupt priority 7 assigned to shadow set */
 #pragma config FMIIEN   = OFF       /* RMII Ethernet PHY */

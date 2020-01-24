@@ -29,7 +29,6 @@ unsigned int initialize_i2c(unsigned int i2c_frequency) {
 	((float) i2c_frequency - actual_freq > (float) i2c_frequency * I2C_CLOCK_MAX_DEVIATION)) {
 	return ERROR;
     }
-//    I2CSetSlaveAddress(I2C1, I2C_GNSS_SLAVE_ADDRESS, 0, I2C_USE_7BIT_ADDRESS);    // Not used for some reason?
     I2CEnable(I2C1, TRUE);
     
     return NO_ERROR;

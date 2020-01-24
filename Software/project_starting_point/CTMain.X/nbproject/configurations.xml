@@ -9,15 +9,14 @@
       <itemPath>../FT8xx.h</itemPath>
       <itemPath>../GPSLib.h</itemPath>
       <itemPath>../I2CLib.h</itemPath>
-      <itemPath>../Si7006.h</itemPath>
       <itemPath>../Expo.h</itemPath>
-      <itemPath>../RTClib.h</itemPath>
       <itemPath>../Library.h</itemPath>
       <itemPath>../hardware.h</itemPath>
       <itemPath>../main.h</itemPath>
       <itemPath>../potentiometer.h</itemPath>
       <itemPath>../motors.h</itemPath>
       <itemPath>../accelerometer.h</itemPath>
+      <itemPath>../temp_humidity.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -30,16 +29,15 @@
       <itemPath>../DisplayMCU.c</itemPath>
       <itemPath>../GPSLib.c</itemPath>
       <itemPath>../I2CLib.c</itemPath>
-      <itemPath>../Si7006.c</itemPath>
       <itemPath>../Expo.c</itemPath>
       <itemPath>../main.c</itemPath>
-      <itemPath>../RTClib.c</itemPath>
       <itemPath>../DisplayAPP.c</itemPath>
       <itemPath>../EVE_Layer.c</itemPath>
       <itemPath>../DisplayAPI.c</itemPath>
       <itemPath>../potentiometer.c</itemPath>
       <itemPath>../motors.c</itemPath>
       <itemPath>../accelerometer.c</itemPath>
+      <itemPath>../temp_humidity.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

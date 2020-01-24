@@ -10,7 +10,7 @@
 #include "motors.h"
 #include "potentiometer.h"
 #include "I2CLib.h"
-#include "Si7006.h"
+#include "temp_humidity.h"
 #include "accelerometer.h"
 #include "GPSLib.h"
 #include "Expo.h"
@@ -27,9 +27,9 @@ void system_variables_update(struct system_variables *sys_vars)
     strcpy(sys_vars->latitude, "no fix");
     strcpy(sys_vars->longitude, "no fix");
     //board temperature and humidity
-    sys_vars->temp_c = Si7006_ReadTemp();
+    sys_vars->temp_c = read_temperature(CELSIUS_MODE);
     sys_vars->temp_f = (sys_vars->temp_c)*1.8+32;
-    sys_vars->humidity = Si7006_ReadHumidity();
+    sys_vars->humidity = read_humidity();
     //Tilt
     sys_vars->tilt = AccelLib_ReadTilt();
     //PIC ADC read
