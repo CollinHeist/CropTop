@@ -26,8 +26,8 @@ unsigned int initialize_i2c(unsigned int i2c_frequency) {
     // Check if the actual frequency of the I2C bus is acceptable close to what we wanted
     float actual_freq = (float) I2CSetFrequency(I2C1, GetPeripheralClock(), (UINT32) i2c_frequency);
     if ((actual_freq - (float) i2c_frequency > (float) i2c_frequency * I2C_CLOCK_MAX_DEVIATION) ||
-	((float) i2c_frequency - actual_freq > (float) i2c_frequency * I2C_CLOCK_MAX_DEVIATION)) {
-	return ERROR;
+		((float) i2c_frequency - actual_freq > (float) i2c_frequency * I2C_CLOCK_MAX_DEVIATION)) {
+		return ERROR;
     }
     I2CEnable(I2C1, TRUE);
     
@@ -39,8 +39,8 @@ unsigned int initialize_i2c(unsigned int i2c_frequency) {
  *	@param		None.
  *	@return		character that is either 1, or 0. 1 if the flags are SET, 0 if they're cleared
  **/
-char BusyI2C1() {
-    return(I2C1CONbits.SEN || I2C1CONbits.PEN || I2C1CONbits.RSEN || I2C1CONbits.RCEN || I2C1CONbits.ACKEN || I2C1STATbits.TRSTAT);
+char busy_I2C1(void) {
+    return (I2C1CONbits.SEN || I2C1CONbits.PEN || I2C1CONbits.RSEN || I2C1CONbits.RCEN || I2C1CONbits.ACKEN || I2C1STATbits.TRSTAT);
 }
 
 /**	
@@ -50,7 +50,7 @@ char BusyI2C1() {
  *	@param[in]	len: Integer corresponding to how many characters to read from the slave.
  *	@return		character that is either 0 (if no errors occurred) or non-zero if an error occurred.
  **/
-char I2C_Read(char slave_addr, char *read_array, int len) {
+char read_I2C1(char slave_addr, char *read_array, int len) {
     char error = 0;
     
     // Begin I2C transaction by addressing the slave with a READ 
@@ -63,7 +63,7 @@ char I2C_Read(char slave_addr, char *read_array, int len) {
         len--;
         *read_array = MasterReadI2C1();
         if (len == 0)
-	    return NO_ERROR;
+		    return NO_ERROR;
         AckI2C1();
         IdleI2C1();
         read_array++;
@@ -76,124 +76,113 @@ char I2C_Read(char slave_addr, char *read_array, int len) {
     return error;
 }
 
-/* **************************************************************************
- * Function:    char I2C_Write(char slave_addr, char *write_array, int len)
- * Summary:     Writes len items or null-terminated array to slave at location
-				slave_addr
- * Argument:    char slave_addr, 7-bit destination slave address
-				char *write_array, pointer to string of minimum length len
-				len, number of characters to read
- * Return:		0  - no errors
-				!0 - an error was encountered
- * **************************************************************************/
-char I2C_Write(char slave_addr, char *write_array, int len)
-{
-    char error = 0;
+/**	
+ *	@brief		Writes (len) items to slave at (slave_addr).
+ *	@param[in]	slave_addr: Character that is the 7-bit destination slave address.
+ *	@param[in]	write_array: Character pointer to the string being written over I2C.
+ *	@param[in]	len: Integer that denotes the length of the write array. 
+ *	@return		character that is either 1, or 0 if there was an error during writing.
+ **/
+char write_I2C1(char slave_addr, char *write_array, int len) {
     StartI2C1();
     IdleI2C1();
-    error |= MasterWriteI2C1(slave_addr<<1|0);
-//    while((write_array!= NULL)&&(len!=0))
-    while((len!=0))
-    {
+    char error |= MasterWriteI2C1(slave_addr << 1 | 0);
+    while (len!=0) {
         error |= MasterWriteI2C1(*write_array);
         write_array++;
         len--;
     }
+
     StopI2C1();
-    IdleI2C1(); 
+    IdleI2C1();
+
     return error;
 }
 
-/* **************************************************************************
- * Function:    char I2C_WriteRead(char slave_addr, char *write_array, char *read_array, int write_len, int read_len)
- * Summary:     Writes write_len items to slave at location slave_addr, polls
-				for a read acknowledgement, then reads read_len items into 
-				read_array from slave_addr. The function will timeout after 
-				50,000 polls for completion without acknowledgement.
- * Argument:    char slave_addr, 7-bit destination slave address
-				char *write_array, pointer to string of minimum length len
-				char *read_array, pointer to character array of length > len
-				write_len, number of characters to read
-				read_len, number of characters to read
- * Return:		0  - no errors
-				!0 - an error was encountered
- * **************************************************************************/
-char I2C_WriteRead(char slave_addr, char *write_array, char *read_array, int write_len, int read_len)
-{
+/**	
+ *	@brief		Writes write_len items from write_array to slave_addr, polls for
+ *				acknowledgement, then reads read_len items into read_array. This
+ *				function times out after I2C_READ_WRITE_TIMEOUT_COUNT polls.
+ *	@param[in]	slave_addr: Character that is the device to read from.
+ *	@param[in]	write_array: Pointer to character array that will be written to slave device.
+ *	@param[out]	read_array: Pointer to character array that will be filed with (len) bytes from the slave device.
+ *	@param[in]	write_len: Integer corresponding to how many characters to write to the slave.
+ *	@param[in]	read_len: Integer corresponding to how many character to read from the slave.
+ *	@return		character that is either 0 (if no errors occurred) or non-zero if an error occurred.
+ **/
+char read_write_I2C1(char slave_addr, char *write_array, char *read_array, int write_len, int read_len) {
     int i = 0;
     StartI2C1();
     IdleI2C1();
-    char error = MasterWriteI2C1(slave_addr<<1|0x00);
-    while((write_array!= NULL)&&(write_len!=0))
-    {
+    char error = MasterWriteI2C1(slave_addr << 1 | 0);
+    while ((write_array!= NULL) && (write_len!=0)) {
         error |= MasterWriteI2C1(*write_array);
         write_array++;
         write_len--;
     }
     RestartI2C1();
     IdleI2C1();
-    while(1)
-    {
-        MasterWriteI2C1(slave_addr<<1|0x01);
-        if(I2C1STATbits.ACKSTAT == 0)
-        {
+
+    while (1) {
+        MasterWriteI2C1(slave_addr << 1 | 1);
+        if (I2C1STATbits.ACKSTAT == 0) {
             break;
         }
-        if(i++>20000)
-        {
+
+        if (i++ > I2C_TIMEOUT_COUNT) {
             StopI2C1();
             IdleI2C1();
+
             return 1;
         }
+
         RestartI2C1();
         IdleI2C1();
     }
-    while(1)
-    {
+
+    while (1) {
         *read_array = MasterReadI2C1();
         read_array++;
 		read_len--;
-        if(read_len == 0)
-        {
+        if (read_len == 0) {
             break;
         }
         AckI2C1();
         IdleI2C1();
     }
+
     NotAckI2C1();
     IdleI2C1();
     StopI2C1();
     IdleI2C1();
+
     return error;
 }
 
-/* **************************************************************************
- * Function:    char I2C_WaitForSlaveAck(char slave_addr)
- * Summary:     Polls for a read acknowledgement from slave_addr. After 20ms 
-				without acknowledgement function will exit.
- * Argument:    char slave_addr, 7-bit destination slave address
- * Return:		0  - no acknowledgement
-				!0 - a read was acknowledged
- * Notes:		Untested
- * **************************************************************************/
-char I2C_WaitForSlaveAck(char slave_addr)
-{
+/**	
+ *	@brief		Polls for a read acknowledgement from (slave_addr). After I2C_TIMEOUT_COUNT
+ *				polls without acknowledgement, the function exits.
+ *	@param[in]	slave_addr: Character that is the device to read from.
+ *	@return		unsigned int that is either 0 (if no errors occurred) or non-zero if an error occurred.
+ **/
+unsigned int wait_for_I2C1_ack(char slave_addr) {
     int i = 0;
     StartI2C1();
     IdleI2C1();
-    while(1)
-    {
-        MasterWriteI2C1(slave_addr<<1|0x01);
-        if(I2C1STATbits.ACKSTAT == 0)
-        {
+    while (1) { 
+        MasterWriteI2C1(slave_addr << 1 | 1);
+
+        if (I2C1STATbits.ACKSTAT == 0) {
             StopI2C1();
             IdleI2C1();
-            return 1;
+
+            return NO_ERROR;
         }
-        if(i++>20000)
-        {
-            return 0;
+
+        if (i++ > I2C_TIMEOUT_COUNT) {
+            return ERROR;
         }
+
         RestartI2C1();
         IdleI2C1();
     }

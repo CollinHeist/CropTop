@@ -4,6 +4,8 @@
  *	@author	Collin Heist, Ryan Donahue
  **/
 
+/* ----------------------------------- File Inclusion ----------------------------------- */
+
 #define _SUPPRESS_PLIB_WARNING
 
 #include "config_bits.h"	// Do only once
@@ -22,6 +24,8 @@
 #include "GPSLib.h"
 #include "Expo.h"
 
+/* -------------------------- Global Variables and Structures --------------------------- */
+
 /*
  *  The graphics engine interprets commands from the MPU host via a 4 Kbyte 
  * FIFO in the FT81x memory at RAM_CMD. 
@@ -33,6 +37,8 @@
  *  are  new  commands  in  the  FIFO, and  the  graphics  engine 
  *  updates REG_CMD_READ after commands have been executed
  */
+
+/* ---------------------------------- Public Functions ---------------------------------- */
 
 int main() {
 	if (initialize_system() == ERROR)
@@ -229,6 +235,8 @@ int main() {
 	}
 }
 
+/* --------------------------------- Private Functions ---------------------------------- */
+
 static unsigned int initialize_system(void) {
     // Fundamental hardware configurations
     SYSTEMConfig(GetSystemClock(), SYS_CFG_WAIT_STATES | SYS_CFG_PCACHE);
@@ -253,3 +261,6 @@ static unsigned int initialize_system(void) {
 
     return error_flag;
 }
+
+/* ----------------------------- Interrupt Service Routines ----------------------------- */
+

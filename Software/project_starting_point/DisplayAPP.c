@@ -31,8 +31,7 @@ uint8_t lcdPclk =       2;	// Pixel Clock
 uint8_t lcdSwizzle =    0;	// Define RGB output pins
 uint8_t lcdPclkpol =    1;  // Define active edge of PCLK 
 
-void APP_Init(void)
-{
+void APP_Init(void) {
     MCU_PDlow();
     MCU_Delay_ms(20);
     MCU_PDhigh();

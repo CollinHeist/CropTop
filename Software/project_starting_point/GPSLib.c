@@ -33,7 +33,7 @@ int GPSLib_MessageCount()
 {
     char write[1] = {MSG_LEN_MSB};
     char read[2] = {0,0};
-    I2C_WriteRead(GPS_ADDR, write, read, 1, 2);
+    read_write_I2C1(GPS_ADDR, write, read, 1, 2);
     if(read[0]!=0x00)
     {
         return ((read[0]<<8)&0xFF00)|(read[1]&0xFF);
@@ -53,10 +53,10 @@ char GPSLib_Read(char* read)
 {
     char num_messages_hex[2] = {0,0};
     char write[1] = {MSG_LEN_MSB};
-    char error = I2C_WriteRead(GPS_ADDR, write, num_messages_hex, 1, 2);
+    char error = read_write_I2C1(GPS_ADDR, write, num_messages_hex, 1, 2);
     int num_messages_int = (num_messages_hex[0]<<1)|num_messages_hex[1];
     write[1] = GPS_DATA;
-    error |= I2C_WriteRead(GPS_ADDR, write, read, 1, num_messages_int);
+    error |= read_write_I2C1(GPS_ADDR, write, read, 1, num_messages_int);
     return error;
 }
 
@@ -85,7 +85,7 @@ char GPSLib_UBXWrite(unsigned char class_id,unsigned char msg_id, unsigned char*
         write[6+i] = payload[i];
     }
     GPSLib_UBXChecksum(&write[2],payload_len);
-    return I2C_Write(GPS_ADDR, write, payload_len+8);
+    return write_I2C1(GPS_ADDR, write, payload_len+8);
 }
 
 /* **************************************************************************

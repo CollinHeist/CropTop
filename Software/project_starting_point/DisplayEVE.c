@@ -8,15 +8,6 @@
 #define MEM_READ	0x00			// FT800 Host Memory Read
 
 
-//############################################################################## 
-//##############################################################################
-//                        EVE INTERFACE LAYER 
-//##############################################################################  
-//##############################################################################
-
-
-// ############### INDIVIDUAL ADDRESSING AND DATA FUNCTIONS ####################
-
 // This section has separate calls for addressing and data phases of the transaction which allows for burst writes and reads.
 
 // ------------------ Send FT81x register address for writing ------------------

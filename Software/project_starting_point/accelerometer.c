@@ -109,7 +109,7 @@ char AccelLib_SelfTest() {
  * **************************************************************************/
 char AccelLib_SingleWrite(char subreg, char write_val) {
     char write[2] = {subreg,write_val};
-    char error = I2C_Write(LIS3DHTR_ADDR, write, 2);
+    char error = write_I2C1(LIS3DHTR_ADDR, write, 2);
     return error;
 }
 
@@ -122,7 +122,7 @@ char AccelLib_SingleWrite(char subreg, char write_val) {
 char AccelLib_SingleRead(char subreg) {
     char read[1];
     char write[1] = {subreg};
-    I2C_WriteRead(LIS3DHTR_ADDR, write, read, 1, 1);
+    read_write_I2C1(LIS3DHTR_ADDR, write, read, 1, 1);
     
     return read[0];
 }
@@ -137,7 +137,7 @@ char AccelLib_SingleRead(char subreg) {
  * **************************************************************************/
 void AccelLib_ContinuousRead(char subreg, char* read, int len) {
     char write[1] = {subreg | AUTO_INCREMENT};
-    I2C_WriteRead(LIS3DHTR_ADDR, write, read, 1, len);
+    read_write_I2C1(LIS3DHTR_ADDR, write, read, 1, len);
 }
 
 /* **************************************************************************
