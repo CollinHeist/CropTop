@@ -536,6 +536,7 @@ extern "C" {
 #define REG_CRC              3154296UL
 #define REG_CSPREAD          3154024UL
 #define REG_CTOUCH_EXTENDED  3154184UL
+    
 //modified below to reflect the same as datasheet
 #define REG_CTOUCH_TOUCH0_XY 3154212UL
 #define REG_CTOUCH_TOUCH4_X  3154284UL
@@ -558,7 +559,8 @@ extern "C" {
 #define REG_HSIZE            3153972UL
 #define REG_HSYNC0           3153976UL
 #define REG_HSYNC1           3153980UL
-#define REG_ID               3153920UL
+//#define REG_ID               3153920UL
+#define REG_ID                  0x302000
 #define REG_INT_EN           3154092UL
 #define REG_INT_FLAGS        3154088UL
 #define REG_INT_MASK         3154096UL

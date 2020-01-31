@@ -6,7 +6,6 @@
                    projectFiles="true">
       <itemPath>../config_bits.h</itemPath>
       <itemPath>../FT8xx.h</itemPath>
-      <itemPath>../GPSLib.h</itemPath>
       <itemPath>../I2CLib.h</itemPath>
       <itemPath>../Expo.h</itemPath>
       <itemPath>../hardware.h</itemPath>
@@ -16,6 +15,7 @@
       <itemPath>../accelerometer.h</itemPath>
       <itemPath>../temp_humidity.h</itemPath>
       <itemPath>../display_library.h</itemPath>
+      <itemPath>../GPS.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -26,7 +26,6 @@
                    projectFiles="true">
       <itemPath>../DisplayEVE.c</itemPath>
       <itemPath>../DisplayMCU.c</itemPath>
-      <itemPath>../GPSLib.c</itemPath>
       <itemPath>../I2CLib.c</itemPath>
       <itemPath>../Expo.c</itemPath>
       <itemPath>../main.c</itemPath>
@@ -36,6 +35,7 @@
       <itemPath>../motors.c</itemPath>
       <itemPath>../accelerometer.c</itemPath>
       <itemPath>../temp_humidity.c</itemPath>
+      <itemPath>../GPS.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

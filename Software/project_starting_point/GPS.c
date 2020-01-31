@@ -9,7 +9,7 @@
 #include <plib.h>
 #include "hardware.h"
 #include "I2CLib.h"
-#include "GPSLib.h"
+#include "GPS.h"
 
 /* **************************************************************************
  * Function:    char GPSLib_Init()
@@ -49,8 +49,7 @@ int GPSLib_MessageCount()
  * Summary:     Retrieve GPS data and store in the array read.
  * Argument:    char* read, pointer to array GPS that fills with data stream
  * **************************************************************************/
-char GPSLib_Read(char* read)
-{
+char GPSLib_Read(char* read) {
     char num_messages_hex[2] = {0,0};
     char write[1] = {MSG_LEN_MSB};
     char error = read_write_I2C1(GPS_ADDR, write, num_messages_hex, 1, 2);
@@ -70,21 +69,20 @@ char GPSLib_Read(char* read)
  * Return:		0  - no I2C write errors
  *  			!0 - an I2C write error was encountered
  * **************************************************************************/
-char GPSLib_UBXWrite(unsigned char class_id,unsigned char msg_id, unsigned char* payload,unsigned short payload_len)
-{
+char GPSLib_UBXWrite(unsigned char class_id,unsigned char msg_id, unsigned char* payload,unsigned short payload_len) {
     unsigned char write[9] = {0};
     write[0] = SYNC_1;
     write[1] = SYNC_2;
     write[2] = class_id;
     write[3] = msg_id;
     write[4] = payload_len & 0xFF;
-    write[5] = (payload_len>>8) & 0xFF;
+    write[5] = (payload_len >> 8) & 0xFF;
     int i;
-    for(i = 0; i<payload_len; i++)
-    {
+    for (i = 0; i<payload_len; i++) {
         write[6+i] = payload[i];
     }
-    GPSLib_UBXChecksum(&write[2],payload_len);
+    GPSLib_UBXChecksum(&write[2], payload_len);
+    
     return write_I2C1(GPS_ADDR, write, payload_len+8);
 }
 
@@ -96,12 +94,10 @@ char GPSLib_UBXWrite(unsigned char class_id,unsigned char msg_id, unsigned char*
  * Argument:    unsigned char* data, pointer to the start of checksum data
  *				int payload_len, length of payload
  * **************************************************************************/
-void GPSLib_UBXChecksum(unsigned char* data,int payload_len)
-{
+void GPSLib_UBXChecksum(unsigned char* data,int payload_len) {
     unsigned char CK_A = 0, CK_B = 0;
     int i = 0;
-    for(i=0; i<(4+payload_len); i++)
-    {
+    for(i=0; i<(4+payload_len); i++) {
         CK_A = CK_A + data[i];
         CK_B = CK_B + CK_A;
     }

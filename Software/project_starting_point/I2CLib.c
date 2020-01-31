@@ -86,7 +86,7 @@ char read_I2C1(char slave_addr, char *read_array, int len) {
 char write_I2C1(char slave_addr, char *write_array, int len) {
     StartI2C1();
     IdleI2C1();
-    char error |= MasterWriteI2C1(slave_addr << 1 | 0);
+    char error = MasterWriteI2C1(slave_addr << 1 | 0);
     while (len!=0) {
         error |= MasterWriteI2C1(*write_array);
         write_array++;

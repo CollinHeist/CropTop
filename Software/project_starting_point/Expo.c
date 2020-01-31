@@ -12,7 +12,7 @@
 #include "I2CLib.h"
 #include "temp_humidity.h"
 #include "accelerometer.h"
-#include "GPSLib.h"
+#include "GPS.h"
 #include "Expo.h"
 
 void system_variables_update(struct system_variables *sys_vars)

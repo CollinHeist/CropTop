@@ -30,22 +30,16 @@
         #define	XC_H
 
         // MCU Layer
-        void MCU_Init(void);                                                                 
+        unsigned int initialize_display(void);
+        void set_display_SPI_frequency_10MHZ(void);
+        void set_display_SPI_frequency_20MHZ(void);
         void MCU_CSlow(void);
         void MCU_CShigh(void);
         void MCU_PDlow(void);
         void MCU_PDhigh(void);
         unsigned char MCU_SPIReadWrite(unsigned char DataToWrite);
-        void MCU_UART_Init(void);
-        void MCU_UART_Tx(unsigned char SerialTxByte);
-        unsigned char MCU_UART_Rx(void);
         void MCU_Delay_1ms(void);
-        void MCU_Delay_ms(unsigned int);
-        void MCU_Delay_1us(void);
-        void MCU_Delay_us(unsigned int);
-
-        void MCU_SetFreq10();
-        void MCU_SetFreq20();
+        void MCU_Delay_ms(unsigned int time_in_ms);
 
         // EVE Layer
         void EVE_AddrForWr(uint32_t ftAddress);

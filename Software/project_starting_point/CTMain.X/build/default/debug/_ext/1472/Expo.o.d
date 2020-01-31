@@ -1,10 +1,6 @@
-build/default/production/_ext/1472/main.o:  \
-../main.c  \
-../config_bits.h  \
- ../main.h  \
+build/default/debug/_ext/1472/Expo.o:  \
+../Expo.c  \
 ../hardware.h  \
-../FT8xx.h  \
-../display_library.h  \
 ../motors.h  \
  ../potentiometer.h  \
 ../I2CLib.h  \

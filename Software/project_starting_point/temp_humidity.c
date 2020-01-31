@@ -25,7 +25,7 @@
 float read_temperature(unsigned int temp_mode) {
     unsigned char write[1] = {Si7006_temp_no_hold_master};
     unsigned char read[2];
-    I2C_WriteRead(Si7006_addr, write, read, 1, 2);
+    read_write_I2C1(Si7006_addr, write, read, 1, 2);
    
     return (temp_mode == CELSIUS_MODE ? TEMP_CODE_TO_C(((read[0] << 8) | read[1])) : TEMP_CODE_TO_F(((read[0] << 8) | read[1])));
 //    return (temperature_mode == CELSIUS_MODE ? (((read[0] << 8) | read[1])*175.72/65536)-46.85 : ());
@@ -40,7 +40,7 @@ float read_humidity(void) {
     unsigned char write[1] = {Si7006_humidity_no_hold_master};
     unsigned char read[2];
     
-    I2C_WriteRead(Si7006_addr, write, read, 1, 2);
+    read_write_I2C1(Si7006_addr, write, read, 1, 2);
     float humidity = RH_CODE_TO_HUMIDITY(((read[0] << 8) | read[1]));
     
     // Normalize the humidity reading [0.0, 100.0]

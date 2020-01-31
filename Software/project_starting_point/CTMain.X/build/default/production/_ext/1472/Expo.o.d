@@ -6,5 +6,5 @@ build/default/production/_ext/1472/Expo.o:  \
 ../I2CLib.h  \
 ../temp_humidity.h  \
  ../accelerometer.h  \
-../GPSLib.h  \
+../GPS.h  \
 ../Expo.h 

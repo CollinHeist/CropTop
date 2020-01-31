@@ -45,8 +45,7 @@ void APP_Init(void) {
 
     // Startup may take 300ms. Wait until ready
     // TODO this should really just be a MemRead8...
-    while ((EVE_MemRead16(REG_ID) >> 8) != 0x7C);
-//    while (EVE_MemRead8(REG_ID) != 0x7C);
+    while (EVE_MemRead8(REG_ID) != 0x7C);
 
     EVE_MemWrite8(REG_PWM_DUTY, 0);
 
