@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name CropTop)(type Legacy)(uri ${KIPRJMOD}/croptop.lib)(options "")(descr ""))
+  (lib (name croptop-rescue)(type Legacy)(uri ${KIPRJMOD}/croptop-rescue.lib)(options "")(descr ""))
 )

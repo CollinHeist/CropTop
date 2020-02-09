@@ -4418,7 +4418,7 @@ F 0 "JP1" H 2950 8555 50  0000 C CNN
 F 1 "Solder Jumper" H 2950 8464 50  0000 C CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm" H 2950 8350 50  0001 C CNN
 F 3 "~" H 2950 8350 50  0001 C CNN
-F 4 "Solder Jumper" H 2950 8350 50  0001 C CNN "MPN"
+F 4 "JL-100-25-T" H 2950 8350 50  0001 C CNN "MPN"
 	1    2950 8350
 	-1   0    0    -1  
 $EndComp
