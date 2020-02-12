@@ -75,7 +75,7 @@ unsigned int motor_coast(void) {
  *	@return		unsigned int that is the error flag if a non-normalized value was entered.
  **/
 unsigned int motor_brake(void) {
-	return motor_set_duty_cycle(100, 100);
+    return motor_set_duty_cycle(100, 100);
 }
 
 /**	
@@ -84,12 +84,12 @@ unsigned int motor_brake(void) {
  *	@return		None.
  **/
 void motor_test_mode(unsigned int speed) {
-	if ((READ_SWITCH_2() != 0) && (READ_SWITCH_3() == 0))
-		motor_forward(speed);
-	else if ((READ_SWITCH_2() == 0) && (READ_SWITCH_3() == 1))
-		motor_reverse(speed);
-	else
-		motor_coast();
+    if ((read_button2() != 0) && (read_button3() == 0))
+	motor_forward(speed);
+    else if ((read_button2() == 0) && (read_button3() == 1))
+	motor_reverse(speed);
+    else
+	motor_coast();
 }
 
 /* --------------------------------- Private Functions ---------------------------------- */
@@ -101,7 +101,7 @@ void motor_test_mode(unsigned int speed) {
  **/
 static unsigned int motor_set_duty_cycle(unsigned int oc2_cycle_percent, unsigned int oc3_cycle_percent) {
     if (oc2_cycle_percent > 100 || oc3_cycle_percent > 100)
-	    return ERROR;	// Incorrect duty cycles were entered - return an error
+	return ERROR;	// Incorrect duty cycles were entered - return an error
 
     // Calculate the new PWM register values
     int new_nOC2RS = (PR2_VALUE * oc2_cycle_percent / 100) - 1;
@@ -124,17 +124,17 @@ static unsigned int motor_set_duty_cycle(unsigned int oc2_cycle_percent, unsigne
 void __ISR(_EXTERNAL_1_VECTOR, IPL1) isr_motor_fault(void) {
     // Check that it was a motor fault
     if (READ_MOTOR_FAULT_PIN()) {
-	    motor_coast();	// Stop the motor
+	motor_coast();	// Stop the motor
 
-	    // Flick a light or ideally trigger a semaphore that unblocks a warning screen
-	    mINT1ClearIntFlag();
+	// Flick a light or ideally trigger a semaphore that unblocks a warning screen
+	mINT1ClearIntFlag();
     }
 }
 
 /**	
- *	@brief		ISR for timer 2. Currently does nothing; but can have additional functionality if desired.
- *	@param		None.
- *	@return		None.
+ *  @brief  ISR for timer 2. Currently does nothing; but can have additional functionality if desired.
+ *  @param  None.
+ *  @return None.
  **/
 void __ISR(_TIMER_2_VECTOR, IPL1SOFT) isr_timer2(void) {
     mT2ClearIntFlag();

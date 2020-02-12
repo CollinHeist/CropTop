@@ -240,16 +240,12 @@ static unsigned int initialize_system(void) {
     // Fundamental hardware configurations
     SYSTEMConfig(GetSystemClock(), SYS_CFG_WAIT_STATES | SYS_CFG_PCACHE);
     DDPCONbits.JTAGEN = 0;
-
-    // Configure debug buttons and LEDs
-    mPORTASetPinsDigitalIn(SWITCH_2 | SWITCH_3);
-    mPORTGSetPinsDigitalIn(SWITCH_4);
-    mPORTGSetPinsDigitalOut(LED_A);
-    mPORTFSetPinsDigitalOut(LED_B | LED_C);
-    ALL_LEDS_OFF();
+    
+    // Initialize primary shared hardware
+    unsigned int error_flag = NO_ERROR;
+    error_flag |= initialize_shared_hardware();
 
     // Initialize subsystems
-    unsigned int error_flag = NO_ERROR;
     error_flag |= initialize_potentiometer(POTENTIOMETER_SAMPLE_FREQ_HZ);
     error_flag |= initialize_motors();
     error_flag |= initialize_i2c(I2C1_GNSS_FREQ_HZ);

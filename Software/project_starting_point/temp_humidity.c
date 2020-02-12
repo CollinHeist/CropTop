@@ -1,7 +1,7 @@
 /** 
- *	@file 	temp_humidity.c
- *	@brief	Temperature and humidity source file for the the IC Silicon Labs Si7006.
- *	@author	Collin Heist, Ryan Donahue
+ *  @file	temp_humidity.c
+ *  @brief	Temperature and humidity source file for the the IC Silicon Labs Si7006.
+ *  @authors	Collin Heist, Ryan Donahue
  **/
 
 /* ----------------------------------- File Inclusion ----------------------------------- */

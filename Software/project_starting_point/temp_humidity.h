@@ -1,8 +1,8 @@
 /** 
- *	@file 	temp_humidity.h
- *	@brief	Temperature and humidity header file for the the IC Silicon Labs Si7006.
- *  @note   Data taken from following PDF: https://www.silabs.com/documents/public/data-sheets/Si7006-A20.pdf
- *	@author	Collin Heist, Ryan Donahue
+ *	@file       temp_humidity.h
+ *	@brief      Temperature and humidity header file for the the IC Silicon Labs Si7006.
+ *  @note       Data taken from following PDF: https://www.silabs.com/documents/public/data-sheets/Si7006-A20.pdf
+ *	@authors	Collin Heist, Ryan Donahue
  **/
 #define _SUPPRESS_PLIB_WARNING
 

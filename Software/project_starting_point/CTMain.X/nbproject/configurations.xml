@@ -36,6 +36,7 @@
       <itemPath>../accelerometer.c</itemPath>
       <itemPath>../temp_humidity.c</itemPath>
       <itemPath>../GPS.c</itemPath>
+      <itemPath>../hardware.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
