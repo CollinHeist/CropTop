@@ -1,9 +1,12 @@
-/** 
- *	@file 	hardware.h
- *	@brief	Shared hardware header file. Gives useful macros for error-handling, switch operation,
- *			LED toggling, and system timings.
- *	@author	Collin Heist
- **/
+/**
+ *	File
+ *		hardware.h
+ *	Summary
+ *		Shared hardware header file. Gives useful macros for error-handling, switch operation,
+ *      LED toggling, and system timings.
+ *	Author(s)
+ *		Collin Heist
+ */
 
 #define _SUPPRESS_PLIB_WARNING
 
@@ -39,4 +42,8 @@
     inline unsigned int read_button2(void);
     inline unsigned int read_button3(void);
     inline unsigned int read_button4(void);
+    inline unsigned int read_button2(void);
+    inline void toggle_LED1(void);
+    inline void toggle_LED2(void);
+    inline void toggle_LED3(void);
 #endif

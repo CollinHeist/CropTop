@@ -10,5 +10,4 @@ build/default/production/_ext/1472/main.o:  \
 ../I2CLib.h  \
 ../temp_humidity.h  \
 ../accelerometer.h  \
- ../GPS.h  \
-../Expo.h 
+ ../GPS.h 

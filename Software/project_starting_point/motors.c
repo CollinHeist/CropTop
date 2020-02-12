@@ -1,13 +1,18 @@
-/** 
- *  @file 	motors.c
- *  @brief	Motor library source file. Implements all basic motor functionality.
- *  @authors	Collin Heist, Ryan Donahue.
- **/
+/**
+ *	File
+ *		motors.c
+ *	Summary
+ *		Motor library source file. Implements all basic motor functionality; such as moving
+ *		forward, backwards, coasting, and braking. Also has the ISR for motor faults.
+ *	Author(s)
+ *		Collin Heist, Ryan Donahue
+ */
 
 /* ----------------------------------- File Inclusion ----------------------------------- */
 
 #define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
+
 #include "hardware.h"
 #include "motors.h"
 
@@ -15,11 +20,14 @@
 
 /* ---------------------------------- Public Functions ---------------------------------- */
 
-/**	
- *  @brief	Initializes the GPIO, interrupts, and timers for motor operation.
- *  @param	None.
- *  @return	unsigned int that is the error flag if an error occurred.
- **/
+/**
+ *	Summary
+ *		Initializes the GPIO, interrupts, and timers for motor operation.
+ *	Parameters
+ *		None.
+ *	Returns
+ *		Unsigned int that is ERROR or NO_ERROR if initialization was successful.
+ */
 unsigned int initialize_motors(void) {
     // Initialize the required GPIO pins for PWM outputs
     PORTSetPinsDigitalOut(MOTOR_1_PORT, MOTOR_1_PIN);
@@ -42,66 +50,85 @@ unsigned int initialize_motors(void) {
     return NO_ERROR;
 }
 
-/**	
- *  @brief	Sets output PWM signal to move forwards.
- *  @param[in]	speed: Unsigned int the denotes at what normalized (0-100) speed to move forward at.
- *  @return	unsigned int that is the error flag if a non-normalized value was entered.
- **/
+/**
+ *	Summary
+ *		Sets output PWM signals to move forwards at the desired speed.
+ *	Parameters
+ *		speed[in]: Unsigned int that is a normalized [0-100] percentage of what speed to move at.
+ *	Returns
+ *		Unsigned int that is ERROR or NO_ERROR if an improper speed was entered.
+ */
 unsigned int motor_forward(unsigned int speed) {
     return motor_set_duty_cycle(speed, 0);
 }
 
-/**	
- *  @brief	Sets output PWM signal to move in reverse.
- *  @param[in]	speed: Unsigned int the denotes at what normalized (0-100) speed to move in reverse.
- *  @return	unsigned int that is the error flag if a non-normalized value was entered.
- **/
+/**
+ *	Summary
+ *		Sets output PWM signals to move backwards at the desired speed.
+ *	Parameters
+ *		speed[in]: Unsigned int that is a normalized [0-100] percentage of what speed to move at.
+ *	Returns
+ *		Unsigned int that is ERROR or NO_ERROR if an improper speed was entered.
+ */
 unsigned int motor_reverse(unsigned int speed) {
     return motor_set_duty_cycle(0, speed);
 }
 
-/**	
- *	@brief		Sets the output PWM signals to a high impedance state to 'coast' the motor.
- *	@param		None
- *	@return		unsigned int that is the error flag if a non-normalized value was entered.
- **/
+/**
+ *	Summary
+ *		Sets output PWM signals to high-impedance states to coast the motors.
+ *	Parameters
+ *		None.
+ *	Returns
+ *		Unsigned int that is ERROR or NO_ERROR if an improper speed was entered.
+ */
 unsigned int motor_coast(void) {
     return motor_set_duty_cycle(0, 0);
 }
 
-/**	
- *	@brief		Sets the output PWM signals to break the motor through low-side decay.
- *	@param		None
- *	@return		unsigned int that is the error flag if a non-normalized value was entered.
- **/
+/**
+ *	Summary
+ *		Sets output PWM signals to brake the motor through low-side decay.
+ *	Parameters
+ *		None.
+ *	Returns
+ *		Unsigned int that is ERROR or NO_ERROR if an improper speed was entered.
+ */
 unsigned int motor_brake(void) {
     return motor_set_duty_cycle(100, 100);
 }
 
-/**	
- *	@brief		Reads the status of SW2, SW3 to control the operation of the linear actuator.
- *	@param[in]	speed: Unsigned int that denotes at what normalized (0-100) speed to move forward / backwards at.
- *	@return		None.
- **/
-void motor_test_mode(unsigned int speed) {
+/**
+ *	Summary
+ *		Reads the status of SW2, SW3 to control the operation of the linear actuator.
+ *	Parameters
+ *		speed[in]: Unsigned int that is a normalized [0-100] percentage of what speed to move at.
+ *	Returns
+ *		Unsigned int that is ERROR or NO_ERROR if an improper speed was entered.
+ */
+unsigned int motor_test_mode(unsigned int speed) {
     if ((read_button2() != 0) && (read_button3() == 0))
-	motor_forward(speed);
+		return motor_forward(speed);
     else if ((read_button2() == 0) && (read_button3() == 1))
-	motor_reverse(speed);
+		return motor_reverse(speed);
     else
-	motor_coast();
+		return motor_coast();
 }
 
 /* --------------------------------- Private Functions ---------------------------------- */
 
-/**	
- *	@brief		Updates the PWM register values for OC2 and OC3
- *	@param[in]	speed: Unsigned int the denotes at what normalized (0-100) duty cycle value to move at. 
- *	@return		unsigned int that is the error flag if a non-normalized value was entered.
- **/
+/**
+ *	Summary
+ *		Updates the PWM register values for OC2 and OC3 - the motors' registers.
+ *	Parameters
+ *		oc2_cycle_percent[in]: Unsigned int that is a normalized [0-100] percent to scale the OC2 register by.
+ *		oc3_cycle_percent[in]: Unsigned int that is a normalized [0-100] percent to scale the OC3 register by.
+ *	Returns
+ *		Unsigned int that is ERROR or NO_ERROR if an improper speed was entered (<0 | >100).
+ */
 static unsigned int motor_set_duty_cycle(unsigned int oc2_cycle_percent, unsigned int oc3_cycle_percent) {
     if (oc2_cycle_percent > 100 || oc3_cycle_percent > 100)
-	return ERROR;	// Incorrect duty cycles were entered - return an error
+		return ERROR;	// Incorrect duty cycles were entered - return an error
 
     // Calculate the new PWM register values
     int new_nOC2RS = (PR2_VALUE * oc2_cycle_percent / 100) - 1;
@@ -114,28 +141,37 @@ static unsigned int motor_set_duty_cycle(unsigned int oc2_cycle_percent, unsigne
     return NO_ERROR;
 }
 
-/* ----------------------------- Interrupt Service Routines ----------------------------- */
-
-/**	
- *	@brief		ISR for INT1 - the DC_FAULT pin. Triggers on falling edge and beings coasting the motors.
- *	@param		None.
- *	@return		None.
- **/
-void __ISR(_EXTERNAL_1_VECTOR, IPL1) isr_motor_fault(void) {
-    // Check that it was a motor fault
-    if (READ_MOTOR_FAULT_PIN()) {
-	motor_coast();	// Stop the motor
-
-	// Flick a light or ideally trigger a semaphore that unblocks a warning screen
-	mINT1ClearIntFlag();
-    }
+static inline unsigned int read_motor_fault_pin(void) {
+	return PORTReadBits(MOTOR_FAULT_PORT, MOTOR_FAULT_PIN);
 }
 
-/**	
- *  @brief  ISR for timer 2. Currently does nothing; but can have additional functionality if desired.
- *  @param  None.
- *  @return None.
- **/
+/* ----------------------------- Interrupt Service Routines ----------------------------- */
+
+/**
+ *	Summary
+ *		ISR for INT1 - the DC_FAULT pin. Triggers on falling edge and begins coasting the motors.
+ *	Parameters
+ *		None.
+ *	Returns
+ *		None.
+ */
+void __ISR(_EXTERNAL_1_VECTOR, IPL1) isr_motor_fault(void) {
+    // Check that it was a motor fault
+    if (read_motor_fault_pin()) {
+		motor_coast();	// Stop the motor
+    }
+	
+	mINT1ClearIntFlag();
+}
+
+/**
+ *	Summary
+ *		ISR for Timer 2. Currently does nothing; but can have additional functionality if desired.
+ *	Parameters
+ *		None.
+ *	Returns
+ *		None.
+ */
 void __ISR(_TIMER_2_VECTOR, IPL1SOFT) isr_timer2(void) {
     mT2ClearIntFlag();
 }

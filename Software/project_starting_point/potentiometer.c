@@ -8,6 +8,7 @@
 
 #define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
+
 #include "hardware.h"
 #include "potentiometer.h"
 
@@ -34,11 +35,14 @@ static struct prescale_struct prescales[] = {
 
 /* ---------------------------------- Public Functions ---------------------------------- */
 
-/**	
- *	@brief		Initializes the potentiometer to sample AN9, AN10 at the desired frequency. 
- *	@param[in]	sample_frequency: Float that corresponds to what frequency AN9 and AN10 should be sampled at.
- *	@return		unsigned int that is the error flag if an error occurred trying to configure timer 3.
- **/
+/**
+ *	Summary
+ *		Initializes the potentiometer to sample AN9, AN10 at the desired frequency. 
+ *	Parameters
+ *		sample_frequency[in]: Float that corresponds to what frequency AN9 and AN10 should be sampled at.
+ *	Returns
+ *		Unsigned int that is ERROR or NO_ERROR if initialization was successful.
+ */
 unsigned int initialize_potentiometer(float sample_frequency) {
 	// Attempt to initialize timer 3 - exit if an error occurs
 	if (initialize_timer3(sample_frequency) == ERROR)
@@ -71,24 +75,29 @@ unsigned int initialize_potentiometer(float sample_frequency) {
 	return NO_ERROR;
 }
 
-/**	
- *	@brief		Reconfigures timer 3 for the desired sampling frequency.
- *	@param[in]	sample_frequency: Float that corresponds to what frequency AN9 and AN10 should be sampled at.
- *	@return		unsigned int that is the error flag if an error occurred trying to reconfigure timer 3.
- **/
+/**
+ *	Summary
+ *		Reconfigures timer 3 for the desired sampling frequency.
+ *	Parameters
+ *		sample_frequency[in]: Float that corresponds to what frequency AN9 and AN10 should be sampled at.
+ *	Returns
+ *		Unsigned int that is ERROR or NO_ERROR if initialization was successful.
+ */
 unsigned int reconfigure_timer3(float sample_frequency) {
 	CloseTimer3();								// Close T3 for reconfiguration
-	DisableIntT3;								// Disable interrupt for T3
 
 	// Reconfigure T3 and return the result
 	return initialize_timer3(sample_frequency);	
 }
 
-/**	
- *	@brief		Take a single reading of the potentiometer.
- *	@param		None.
- *	@return		unsigned int that is the ADC result of the current sample buffer.
- **/
+/**
+ *	Summary
+ *		Take a single reading of the potentiometer.
+ *	Parameters
+ *		None.
+ *	Returns
+ *		unsigned int that is the ADC result of the current sample buffer.
+ */
 unsigned int read_potentiometer(void) {
 	// Locate the offset of the most recent conversion in the idle buffer
 	int offset = 8 * (~ReadActiveBufferADC10() & 0x01);
@@ -99,11 +108,14 @@ unsigned int read_potentiometer(void) {
 
 /* --------------------------------- Private Functions ---------------------------------- */
 
-/**	
- *	@brief		Initializes timer 3 for a desired frequency. Tries using the lowest timer prescale possible.
- *	@param[in]	timer3_frequency: Float that corresponds to what frequency T3 should attempt to operate at.
- *	@return		unsigned int that is the error flag if the frequency was unattainable or an incorrect value was entered.
- **/
+/**
+ *	Summary
+ *		Initializes timer 3 for a desired frequency. Tries using the lowest timer prescale possible.
+ *	Parameters
+ *		timer3_frequency[in]: Float that corresponds to what frequency T3 should attempt to operate at.
+ *	Returns
+ *		Unsigned int that is ERROR or NO_ERROR if an impossible frequency was entered.
+ */
 static unsigned int initialize_timer3(float timer3_frequency) {
 	unsigned int index = 0;
 	
@@ -133,11 +145,14 @@ static unsigned int initialize_timer3(float timer3_frequency) {
 
 /* ----------------------------- Interrupt Service Routines ----------------------------- */
 
-/**	
- *	@brief		ISR for timer 3. Currently does nothing; but can have additional functionality if desired.
- *	@param		None.
- *	@return		None.
- **/
+/**
+ *	Summary
+ *		ISR for timer 3. Currently does nothing; but can have additional functionality if desired.
+ *	Parameters
+ *		None.
+ *	Returns
+ *		None.
+ */
 void __ISR(_TIMER_3_VECTOR, IPL2) isr_timer3(void) {
 	mT3ClearIntFlag();
 }

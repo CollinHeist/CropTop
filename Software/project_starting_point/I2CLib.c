@@ -1,13 +1,18 @@
-/** 
- *	@file 		i2c.c
- *	@brief		I2C library source file. Implements functionality of I2C module 1.
- *	@author		Collin Heist, Ryan Donahue.
- **/
+/**
+ *	File
+ *		i2c.c
+ *	Summary
+ *		I2C library source file. Implements functionality for initializing, reading to, and
+ *		writing from I2C1.
+ *	Author(s)
+ *		Collin Heist, Ryan Donahue.
+ */
 
 /* ----------------------------------- File Inclusion ----------------------------------- */
 
 #define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
+
 #include "hardware.h"
 #include "I2CLib.h"
 
@@ -15,11 +20,15 @@
 
 /* ---------------------------------- Public Functions ---------------------------------- */
 
-/**	
- *	@brief		Initializes I2C1 module to the desired frequency.
- *	@param[in]	i2c_frequency: Unsigned int that signifies what frequency the I2C clock line should operate at.
- *	@return		unsigned int that is the error flag if the frequency was achieved with an adequate amount of accuracy
- **/
+/**
+ *	Summary
+ *		Initializes I2C1 module to the desired frequency.
+ *	Parameters
+ *		i2c_frequency[in]: Unsigned int that signifies what frequency the I2C clock line
+ *			should operate at.
+ *	Returns
+ *		Unsigned int that is ERROR or NO_ERROR if initialization was successful.
+ */
 unsigned int initialize_i2c(unsigned int i2c_frequency) {
     I2CConfigure(I2C1, 0);  // Configure I2C1 with no special options
     
@@ -27,6 +36,7 @@ unsigned int initialize_i2c(unsigned int i2c_frequency) {
     float actual_freq = (float) I2CSetFrequency(I2C1, GetPeripheralClock(), (UINT32) i2c_frequency);
     if ((actual_freq - (float) i2c_frequency > (float) i2c_frequency * I2C_CLOCK_MAX_DEVIATION) ||
 		((float) i2c_frequency - actual_freq > (float) i2c_frequency * I2C_CLOCK_MAX_DEVIATION)) {
+		
 		return ERROR;
     }
     I2CEnable(I2C1, TRUE);
@@ -34,22 +44,31 @@ unsigned int initialize_i2c(unsigned int i2c_frequency) {
     return NO_ERROR;
 }
 
-/**	
- *	@brief		Reads the I2C1 busy status registers.
- *	@param		None.
- *	@return		character that is either 1, or 0. 1 if the flags are SET, 0 if they're cleared
- **/
-char busy_I2C1(void) {
+/**
+ *	Summary
+ *		Reads the I2C1 busy status registers.
+ *	Parameters
+ *		None.
+ *	Returns
+ *		Character that is either 1 or 0. 1 if any busy flags are SET, 0 is CLEAR.
+ *	Notes
+ *		This reads the SEN, PEN, RSEN, RCEN, ACKEN, and TRSTAT bits of the I2C1 controller.
+ */
+inline char busy_I2C1(void) {
     return (I2C1CONbits.SEN || I2C1CONbits.PEN || I2C1CONbits.RSEN || I2C1CONbits.RCEN || I2C1CONbits.ACKEN || I2C1STATbits.TRSTAT);
 }
 
-/**	
- *	@brief		Reads (len) items from slave device into read_array over I2C1 bus.
- *	@param[in]	slave_addr: Character that is the device to read from.
- *	@param[out]	read_array: Pointer to character array that will be filed with (len) bytes from the slave device.
- *	@param[in]	len: Integer corresponding to how many characters to read from the slave.
- *	@return		character that is either 0 (if no errors occurred) or non-zero if an error occurred.
- **/
+/**
+ *	Summary
+ *		Reads (len) items from slave device into read_array over I2C1 bus.
+ *	Parameters
+ *		slave_addr[in]: Character that is the device address to read from.
+ *		read_array[out]: Pointer to character array that will be filed with (len) bytes from
+ *			the slave device.
+ *		len[in]: Integer corresponding to how many characters to read from the slave.
+ *	Returns
+ *		Character that is either 0 (for no errors) or non-zero if errors occurred during read.
+ */
 char read_I2C1(char slave_addr, char *read_array, int len) {
     char error = 0;
     
