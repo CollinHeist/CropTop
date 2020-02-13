@@ -2096,6 +2096,8 @@ Wire Wire Line
 	13150 5650 13050 5650
 Wire Wire Line
 	13050 5650 13050 5750
+Wire Wire Line
+	9900 2450 10000 2450
 $Comp
 L Device:L_Core_Ferrite L8
 U 1 1 5F208867
@@ -2184,6 +2186,22 @@ Wire Wire Line
 	12650 5550 12650 6050
 Text GLabel 10850 5750 0    33   Input ~ 0
 ~GPS_RESET
+$Comp
+L Connector:TestPoint TP?
+U 1 1 60F3FF7D
+P 10000 2550
+AR Path="/64809F0C/60F3FF7D" Ref="TP?"  Part="1" 
+AR Path="/66A12230/60F3FF7D" Ref="TP64"  Part="1" 
+AR Path="/64807BBC/60F3FF7D" Ref="TP?"  Part="1" 
+F 0 "TP64" H 10000 2783 50  0000 C CNN
+F 1 "TestPoint" H 10058 2579 50  0001 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 10200 2550 50  0001 C CNN
+F 3 "" H 10200 2550 50  0001 C CNN
+	1    10000 2550
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10000 2550 10000 2450
 Wire Wire Line
 	10300 2550 10300 2350
 $Comp
@@ -3030,6 +3048,9 @@ Wire Wire Line
 	5950 2400 5950 2550
 NoConn ~ 10450 2550
 NoConn ~ 10450 2650
+Connection ~ 10000 2450
+Wire Wire Line
+	10000 2450 10450 2450
 Connection ~ 10300 2350
 Wire Wire Line
 	10300 2350 10450 2350
@@ -3072,6 +3093,20 @@ Connection ~ 3800 4150
 Connection ~ 5150 4150
 Wire Wire Line
 	12000 4250 12300 4250
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5E9FCD1E
+P 11200 4750
+AR Path="/64809F0C/5E9FCD1E" Ref="TP?"  Part="1" 
+AR Path="/66A12230/5E9FCD1E" Ref="TP68"  Part="1" 
+AR Path="/64807BBC/5E9FCD1E" Ref="TP?"  Part="1" 
+F 0 "TP68" H 11100 4950 50  0000 L CNN
+F 1 "TestPoint" H 11258 4779 50  0001 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 11400 4750 50  0001 C CNN
+F 3 "" H 11400 4750 50  0001 C CNN
+	1    11200 4750
+	1    0    0    -1  
+$EndComp
 NoConn ~ 13150 4750
 NoConn ~ 13150 4850
 Wire Wire Line
@@ -3085,6 +3120,8 @@ Wire Wire Line
 Wire Wire Line
 	12650 5550 13150 5550
 Wire Wire Line
+	10850 4850 11200 4850
+Wire Wire Line
 	10850 5150 10950 5150
 Wire Wire Line
 	10850 5450 10950 5450
@@ -3095,6 +3132,11 @@ Wire Wire Line
 Connection ~ 10950 5150
 Wire Wire Line
 	10950 5150 11600 5150
+Wire Wire Line
+	11200 4750 11200 4850
+Connection ~ 11200 4850
+Wire Wire Line
+	11200 4850 11600 4850
 Wire Wire Line
 	11450 6050 11450 6150
 Wire Wire Line
@@ -3206,8 +3248,4 @@ F 4 "BSS138-TP" H 12600 8650 50  0001 C CNN "MPN"
 	1    12600 8650
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	10850 4850 11600 4850
-Wire Wire Line
-	9900 2450 10450 2450
 $EndSCHEMATC

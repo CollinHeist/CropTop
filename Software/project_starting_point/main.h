@@ -1,8 +1,11 @@
-/** 
- *	@file 	main.h
- *	@brief	Main program header file. Provides basic macros for operational configurations.
- *	@author	Collin Heist
- **/
+/**
+ *	File
+ *		main.h
+ *	Summary
+ *		Main program header file. Provides basic configurations for system interfaces.
+ *	Author(s)
+ *		Collin Heist
+ */
 
 #define _SUPPRESS_PLIB_WARNING
 
@@ -10,8 +13,9 @@
 	#define __MAIN_H__
 
 	// Operational Configurations
-	#define POTENTIOMETER_SAMPLE_FREQ_HZ		(500)		// How fast (in Hz) to sample the potentiometer inputs	
-    #define I2C1_GNSS_FREQ_HZ                   (100000)    // 100kB clock line for GNSS Reciever module
+	#define POTENTIOMETER_SAMPLE_FREQ_HZ    (500)               // How fast (in Hz) to sample the potentiometer inputs	
+    #define I2C1_GNSS_FREQ_HZ               (100000)            // 100kB clock line for GNSS Reciever module
+    #define TEMPERATURE_MODE                (FAHRENHEIT_MODE)   // What result temperature values are returned in
 
 	// Function Prototypes
 	static unsigned int initialize_system(void);

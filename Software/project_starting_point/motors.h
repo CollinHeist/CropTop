@@ -1,13 +1,16 @@
-/** 
- *	@file 		motors.h
- *	@brief		Motor library header file. Provides useful macros for timer 2, PWM, and pin configurations.
- *	@authors	Collin Heist, Ryan Donahue.
- **/
+/**
+ *	File
+ *		motors.h
+ *	Summary
+ *		Motor library header file. Provides macros for Timer 2, PWM, and pin configurations.
+ *	Author(s)
+ *		Collin Heist, Ryan Donahue
+ */
 
 #define _SUPPRESS_PLIB_WARNING
 
-#ifndef __MOTORLIB_H__
-	#define __MOTORLIB_H__
+#ifndef __MOTORS_H__
+	#define __MOTORS_H__
 
 	// Timer 2 Configurations
 	#define T2_PRESCALE						(16)
@@ -26,15 +29,13 @@
 	#define MOTOR_FAULT_PIN					(BIT_8)		// DC_FAULT, INT1 is Pin 18, RE8
 	#define MOTOR_FAULT_PORT				(IOPORT_E)
 
-	// Pin Macro Functions
-	#define READ_MOTOR_FAULT_PIN()			(PORTReadBits(MOTOR_FAULT_PORT, MOTOR_FAULT_PIN))
-
 	// Function Prototypes
 	unsigned int initialize_motors(void);
 	unsigned int motor_forward(unsigned int speed);
 	unsigned int motor_reverse(unsigned int speed);
 	unsigned int motor_coast(void);
 	unsigned int motor_brake(void);
-	void motor_test_mode(unsigned int speed);
+	unsigned int motor_test_mode(unsigned int speed);
 	static unsigned int motor_set_duty_cycle(unsigned int oc2_cycle_percent, unsigned int oc3_cycle_percent);
+    static inline unsigned int read_motor_fault_pin(void);
 #endif

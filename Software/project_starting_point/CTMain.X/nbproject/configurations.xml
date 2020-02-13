@@ -7,7 +7,6 @@
       <itemPath>../config_bits.h</itemPath>
       <itemPath>../FT8xx.h</itemPath>
       <itemPath>../I2CLib.h</itemPath>
-      <itemPath>../Expo.h</itemPath>
       <itemPath>../hardware.h</itemPath>
       <itemPath>../main.h</itemPath>
       <itemPath>../potentiometer.h</itemPath>
@@ -16,6 +15,7 @@
       <itemPath>../temp_humidity.h</itemPath>
       <itemPath>../display_library.h</itemPath>
       <itemPath>../GPS.h</itemPath>
+      <itemPath>../screen_uart.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -27,7 +27,6 @@
       <itemPath>../DisplayEVE.c</itemPath>
       <itemPath>../DisplayMCU.c</itemPath>
       <itemPath>../I2CLib.c</itemPath>
-      <itemPath>../Expo.c</itemPath>
       <itemPath>../main.c</itemPath>
       <itemPath>../DisplayAPP.c</itemPath>
       <itemPath>../DisplayAPI.c</itemPath>
@@ -36,6 +35,8 @@
       <itemPath>../accelerometer.c</itemPath>
       <itemPath>../temp_humidity.c</itemPath>
       <itemPath>../GPS.c</itemPath>
+      <itemPath>../hardware.c</itemPath>
+      <itemPath>../screen_uart.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
