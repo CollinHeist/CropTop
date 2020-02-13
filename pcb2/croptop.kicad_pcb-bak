@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 109)
+    (drawings 110)
     (tracks 4498)
     (zones 0)
     (modules 368)
@@ -15931,6 +15931,9 @@
     )
   )
 
+  (gr_text "Pin 40" (at 209.169 86.4616 90) (layer F.SilkS)
+    (effects (font (size 0.381 0.381) (thickness 0.0762)))
+  )
   (gr_text "Pin 1" (at 189.6364 86.6648 90) (layer F.SilkS)
     (effects (font (size 0.381 0.381) (thickness 0.0762)))
   )
