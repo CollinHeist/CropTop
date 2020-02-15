@@ -25,16 +25,27 @@
 #include "temp_humidity.h"
 #include "accelerometer.h"
 #include "GPS.h"
+#include "screen.h"
 
 /* -------------------------- Global Variables and Structures --------------------------- */
+
+extern char screen_buffer[DMA_BUFFER_SIZE];
 
 /* ---------------------------------- Public Functions ---------------------------------- */
 
 int main() {
     if (initialize_system() == ERROR)
-		Nop(); //return;		// An error occurred while running
+		Nop(); //return 0;		// An error occurred while running
     
-	
+	unsigned int i = 0;
+	char test_string[256] = {'\0'};
+	while (1) {
+		sprintf(test_string, "test: %d\n\r\0", i++);
+		send_string_UART2(test_string);
+		software_delay_ms(500);
+		send_string_UART2(screen_buffer);
+		software_delay_ms(500);
+	}
 	return 1;
 }
 
@@ -54,7 +65,7 @@ static unsigned int initialize_system(void) {
     error_flag |= initialize_motors();
     error_flag |= initialize_i2c(I2C1_GNSS_FREQ_HZ);
 //    error_flag |= initialize_accelerometer();
-    error_flag |= initialize_display();
+    error_flag |= initialize_screen(SCREEN_UART_BAUD);
 
     INTEnableSystemMultiVectoredInt();
 

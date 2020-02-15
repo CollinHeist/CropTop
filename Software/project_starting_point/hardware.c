@@ -15,6 +15,29 @@
 
 /* -------------------------- Global Variables and Structures --------------------------- */
 
+typedef struct pin {
+	unsigned char number;
+	unsigned char is_available;
+	char port; 
+	unsigned int port_pin;
+	char use[10];
+} pin;
+
+pin available_pins[TOTAL_NUMBER_PINS] = {
+	{1, TRUE,   'G', BIT_15, ""},
+	{2, FALSE,  '\0',  0,      "VDD"},
+	{3, FALSE,  'E', BIT_5,  "SD_CS"},
+	
+	{11, FALSE, 'G', BIT_7,  "SD_MISO"},
+	{12, FALSE, 'G', BIT_8,  "SD_MOSI"},
+	
+	{49, TRUE,  'F', BIT_4,  "PMOD_TX"},
+	{50, TRUE,  'F', BIT_5,  "PMOD_RX"},
+	
+	{52, FALSE, 'F', BIT_2,  "ADI_MISO"},
+	{53, FALSE, 'F', BIT_8,  "ADI_MOSI"}
+};
+
 /* ---------------------------------- Public Functions ---------------------------------- */
 
 /**
@@ -40,6 +63,11 @@ unsigned int initialize_shared_hardware(void) {
     PORTClearBits(DEBUG_LED_3_PORT, DEBUG_LED_3_PIN);
     
     return NO_ERROR;
+}
+
+inline void software_delay_ms(unsigned int milliseconds) {
+	unsigned int i, j;
+	for (i = 0; i < milliseconds; i++) { for (j = 0; j < 8000; j++) {} }
 }
 
 /**
