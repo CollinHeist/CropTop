@@ -9,7 +9,6 @@
 #include <stdint.h>
 #include "display_library.h"
 
-//#define _SUPPRESS_PLIB_WARNING
 //#include <plib.h>
 
 // APPLICATION DEFINITIONS

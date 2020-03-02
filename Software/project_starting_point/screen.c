@@ -9,8 +9,9 @@
 
 /* ----------------------------------- File Inclusion ----------------------------------- */
 
-#define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
+#include <stdio.h>
+#include <string.h>
 
 #include "hardware.h"
 #include "screen.h"

@@ -4,7 +4,6 @@
  *  @note       Data taken from following PDF: https://www.silabs.com/documents/public/data-sheets/Si7006-A20.pdf
  *	@authors	Collin Heist, Ryan Donahue
  **/
-#define _SUPPRESS_PLIB_WARNING
 
 #ifndef __TEMP_HUMIDITY_H__
     #define __TEMP_HUMIDITY_H__

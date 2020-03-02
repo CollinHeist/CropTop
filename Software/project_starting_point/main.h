@@ -7,8 +7,6 @@
  *		Collin Heist
  */
 
-#define _SUPPRESS_PLIB_WARNING
-
 #ifndef __MAIN_H__
 	#define __MAIN_H__
 

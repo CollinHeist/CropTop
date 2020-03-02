@@ -3,7 +3,6 @@
  *	@brief	I2C library header file. Provides slave address and clock macros for I2C operations.
  *	@author	Collin Heist, Ryan Donahue.
  **/
-#define _SUPPRESS_PLIB_WARNING
 
 #ifndef __I2C_H__
     #define __I2C_H__

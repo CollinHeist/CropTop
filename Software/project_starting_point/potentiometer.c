@@ -6,7 +6,6 @@
 
 /* ----------------------------------- File Inclusion ----------------------------------- */
 
-#define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
 
 #include "hardware.h"
@@ -153,6 +152,6 @@ static unsigned int initialize_timer3(float timer3_frequency) {
  *	Returns
  *		None.
  */
-void __ISR(_TIMER_3_VECTOR, IPL2) isr_timer3(void) {
+void __ISR(_TIMER_3_VECTOR, IPL2SOFT) isr_timer3(void) {
 	mT3ClearIntFlag();
 }

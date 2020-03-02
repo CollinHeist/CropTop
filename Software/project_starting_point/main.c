@@ -9,14 +9,12 @@
 
 /* ----------------------------------- File Inclusion ----------------------------------- */
 
-#define _SUPPRESS_PLIB_WARNING
-
 #include "config_bits.h"	// Do only once
-#include "main.h"
 #include <plib.h>
 #include <stdio.h>
-#include "hardware.h"
 
+#include "hardware.h"
+#include "main.h"
 #include "FT8xx.h"
 #include "display_library.h"
 #include "motors.h"

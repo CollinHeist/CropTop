@@ -10,7 +10,6 @@
 
 /* ----------------------------------- File Inclusion ----------------------------------- */
 
-#define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
 
 #include "hardware.h"
@@ -155,7 +154,7 @@ static inline unsigned int read_motor_fault_pin(void) {
  *	Returns
  *		None.
  */
-void __ISR(_EXTERNAL_1_VECTOR, IPL1) isr_motor_fault(void) {
+void __ISR(_EXTERNAL_1_VECTOR, IPL1SOFT) isr_motor_fault(void) {
     // Check that it was a motor fault
     if (read_motor_fault_pin()) {
 		motor_coast();	// Stop the motor

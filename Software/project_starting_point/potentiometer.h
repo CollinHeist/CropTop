@@ -4,8 +4,6 @@
  *	@author	Collin Heist
  **/
 
-#define _SUPPRESS_PLIB_WARNING
-
 #ifndef __POTENTIOMETER_H__
 	#define __POTENTIOMETER_H__
 

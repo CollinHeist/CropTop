@@ -3,7 +3,7 @@
  *	@brief	Bit configuration file. Defines bit and hardware configurations for the PIC32.
  *	@author	Collin Heist, Ryan Donahue
  **/
-#define _SUPPRESS_PLIB_WARNING
+
 #ifndef __CONFIG_BITS_H__
 	#define __CONFIG_BITS_H__
 

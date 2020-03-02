@@ -3,7 +3,6 @@
  *	@brief		GPS library header file. Provides useful macros for GPS configurations.
  *	@authors	Collin Heist, Ryan Donahue.
  **/
-#define _SUPPRESS_PLIB_WARNING
 
 #ifndef __GPS_H__
     #define __GPS_H__

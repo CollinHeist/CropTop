@@ -8,8 +8,6 @@
  *		Collin Heist
  */
 
-#define _SUPPRESS_PLIB_WARNING
-
 #ifndef __HARDWARE_H__
 	#define __HARDWARE_H__
 

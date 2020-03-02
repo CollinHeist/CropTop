@@ -6,7 +6,6 @@
  * Summary:     Contains register addresses and function prototypes pertaining
 				to STmicroelectronics LIS3DHTR 3 axis accelerometers.
  * *************************************************************************/
-#define _SUPPRESS_PLIB_WARNING
 
 #ifndef __ACCELEROMETER_H__
     #define __ACCELEROMETER_H__

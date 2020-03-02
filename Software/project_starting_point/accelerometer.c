@@ -9,7 +9,7 @@
 				will be a tilt of 0 degrees. Rotation will result in an angle
 				theta from this reference plane.
  * *************************************************************************/
-#define _SUPPRESS_PLIB_WARNING
+
 #include <plib.h>
 #include "hardware.h"
 #include "I2CLib.h"

@@ -7,8 +7,6 @@
  *		Collin Heist
  */
 
-#define _SUPPRESS_PLIB_WARNING
-
 #ifndef __SCREEN_H__
 	#define __SCREEN_H__
 
@@ -23,7 +21,7 @@
 	// Function Prototypes
 	unsigned int initialize_screen(unsigned int baud);
     void send_string_UART2(char* string);
-    void send_byte_UART2(BYTE data);
+    static unsigned int send_byte_UART2(BYTE data);
     static unsigned int initialize_DMA_UART2(void);
     static void restartDMATransfer(void);
 #endif

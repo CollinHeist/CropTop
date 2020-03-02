@@ -7,8 +7,6 @@
  *		Collin Heist, Ryan Donahue
  */
 
-#define _SUPPRESS_PLIB_WARNING
-
 #ifndef __MOTORS_H__
 	#define __MOTORS_H__
 

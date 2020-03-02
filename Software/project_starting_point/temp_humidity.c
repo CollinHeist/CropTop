@@ -6,7 +6,6 @@
 
 /* ----------------------------------- File Inclusion ----------------------------------- */
 
-#define _SUPPRESS_PLIB_WARNING
 #include <plib.h>
 
 #include "hardware.h"
