@@ -33,6 +33,8 @@
     #define TOTAL_NUMBER_PINS       (100)
 
 	// System timing definitions
+	#define SOFTWARE_1MS_COUNT		(8000)
+
 	#define GetSystemClock()		(80000000ul)
 	#define GetInstructionClock()	(GetSystemClock()/2)	
 	#define GetPeripheralClock()	(GetSystemClock()/1)	

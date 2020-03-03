@@ -27,7 +27,7 @@
 
 /* -------------------------- Global Variables and Structures --------------------------- */
 
-extern char screen_buffer[DMA_BUFFER_SIZE];
+// extern char screen_buffer[DMA_BUFFER_SIZE];
 
 /* ---------------------------------- Public Functions ---------------------------------- */
 
@@ -36,13 +36,9 @@ int main() {
 		Nop(); //return 0;		// An error occurred while running
     
 	unsigned int i = 0;
-	char test_string[256] = {'\0'};
+	char test_string[64] = {'\0'};
 	while (1) {
-		sprintf(test_string, "test: %d\n\r\0", i++);
-		send_string_UART2(test_string);
-		software_delay_ms(500);
-		send_string_UART2(screen_buffer);
-		software_delay_ms(500);
+		
 	}
 	return 1;
 }
