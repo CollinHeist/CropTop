@@ -19,26 +19,28 @@
 /* -------------------------- Global Variables and Structures --------------------------- */
 
 static DmaChannel DMA_channel = DMA_CHANNEL1;		// Active DMA Channel
-static char private_DMA_buffer[DMA_BUFFER_SIZE];	// Private temporary DMA buffer to avoid conflicts
+static char private_DMA_buffer[DMA_BUFFER_SIZE];	// Private temporary DMA buffer
 static unsigned int received_flag;					// Flag for if a response has been acknowledged
-
-char screen_rx_buffer[DMA_BUFFER_SIZE];				// External screen buffer
+static char screen_rx_buffer[DMA_BUFFER_SIZE];		// User-facing screen buffer - utilized to avoid conflict with DMA
 
 /* ---------------------------------- Public Functions ---------------------------------- */
 
 unsigned int initialize_screen(unsigned int baud) {
-//	UARTConfigure(UART2, UART_ENABLE_PINS_TX_RX_ONLY);		// Standard RX and TX pins only
-//	UARTSetFifoMode(UART2, UART_INTERRUPT_ON_RX_NOT_EMPTY);	// Only interrupt on RX non-empty
-//	UARTSetLineControl(UART2, SCREEN_UART_LINE_CONTROL);
-//	UARTSetDataRate(UART2, GetPeripheralClock(), baud);
-//	UARTEnable(UART2, UART_ENABLE | UART_RX | UART_TX);
 	unsigned int brg = (unsigned int)(((float) GetPeripheralClock() / ((float) 4 * (float) baud))- (float) 0.5);
 	OpenUART2(UART_EN | UART_BRGH_FOUR | UART_NO_PAR_8BIT, UART_RX_ENABLE | UART_TX_ENABLE, brg);
-	send_string_UART2("bkcmd=2");	// Configure screen to return data only on failure
+	send_string_UART2(INIT1_RESPOND_FAILURE_ONLY);
 	
 	return initialize_DMA_UART2();
 }
 
+/*
+ *	Summary
+ *		Function to send a string out over UART2 (to the screen).
+ *	Parameters
+ *		string[in]: Character pointer that points to the first character of a null-terminated string.
+ *	Returns
+ *		None.
+ */
 void send_string_UART2(char* string) {
 	while (*string) {
 		while (send_byte_UART2(*string) == ERROR) {}	// Try and send byte until successful
@@ -112,8 +114,11 @@ void parse_screen_response(void) {
 				case STARTED_MICROSD_UPGRADE:		break;
 				case TRANSPARENT_DATA_FINISHED:		break;
 				case TRANSPARENT_DATA_READY:		break;
+                default:                            break;
 			}
 		}
+        
+        received_flag = COMMAND_NOT_RECEIVED;   // Reset flag
 	}
 }
 
@@ -197,12 +202,14 @@ static unsigned int send_byte_UART2(BYTE data) {
  */
 void __ISR(_DMA1_VECTOR, IPL3SOFT) isr_DMA_handler(void) {
 	if (DmaChnGetEvFlags(DMA_channel) & DMA_EV_ALL_EVNTS) {
-		clear_buffer(screen_rx_buffer, DMA_BUFFER_SIZE);		// Clear old contents in public buffer
-		strcpy(screen_rx_buffer, private_DMA_buffer);			// Transfer contents
-		clear_buffer(private_DMA_buffer, DMA_BUFFER_SIZE);	// Clear old contents in private buffer
-		restart_DMA_transfer();								// A valid event means the DMA must be re-enabled
+        if (private_DMA_buffer[0] != COMMAND_END_CHARACTER) {   // False-trigger because the screen sends three '\xFF'
+            clear_buffer(screen_rx_buffer, DMA_BUFFER_SIZE);    // Clear old contents in public buffer
+            copy_buffer(screen_rx_buffer, private_DMA_buffer, DMA_BUFFER_SIZE);
+            clear_buffer(private_DMA_buffer, DMA_BUFFER_SIZE);  // Clear old contents in private buffer
+            restart_DMA_transfer();								// A valid event means the DMA must be re-enabled
 
-		received_flag = COMMAND_RECEIVED;					// Set the received flag
+            received_flag = COMMAND_RECEIVED;					// Set the received flag
+        }
 	}
 
 	INTClearFlag(INT_SOURCE_DMA(DMA_channel));

@@ -5,7 +5,6 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>../config_bits.h</itemPath>
-      <itemPath>../FT8xx.h</itemPath>
       <itemPath>../I2CLib.h</itemPath>
       <itemPath>../hardware.h</itemPath>
       <itemPath>../main.h</itemPath>
@@ -13,7 +12,6 @@
       <itemPath>../motors.h</itemPath>
       <itemPath>../accelerometer.h</itemPath>
       <itemPath>../temp_humidity.h</itemPath>
-      <itemPath>../display_library.h</itemPath>
       <itemPath>../GPS.h</itemPath>
       <itemPath>../screen.h</itemPath>
     </logicalFolder>
@@ -24,12 +22,8 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>../DisplayEVE.c</itemPath>
-      <itemPath>../DisplayMCU.c</itemPath>
       <itemPath>../I2CLib.c</itemPath>
       <itemPath>../main.c</itemPath>
-      <itemPath>../DisplayAPP.c</itemPath>
-      <itemPath>../DisplayAPI.c</itemPath>
       <itemPath>../potentiometer.c</itemPath>
       <itemPath>../motors.c</itemPath>
       <itemPath>../accelerometer.c</itemPath>
@@ -284,6 +278,7 @@
         <property key="UART6" value="true"/>
         <property key="USB" value="true"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>

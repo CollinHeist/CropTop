@@ -27,17 +27,14 @@
 
 /* -------------------------- Global Variables and Structures --------------------------- */
 
-// extern char screen_buffer[DMA_BUFFER_SIZE];
-
 /* ---------------------------------- Public Functions ---------------------------------- */
 
 int main() {
     if (initialize_system() == ERROR)
 		Nop(); //return 0;		// An error occurred while running
     
-	unsigned int i = 0;
 	while (1) {
-		
+		parse_screen_response();
 	}
 	return 1;
 }
@@ -45,10 +42,6 @@ int main() {
 /* --------------------------------- Private Functions ---------------------------------- */
 
 static unsigned int initialize_system(void) {
-    // Fundamental hardware configurations
-    SYSTEMConfig(GetSystemClock(), SYS_CFG_WAIT_STATES | SYS_CFG_PCACHE);
-    DDPCONbits.JTAGEN = 0;
-    
     // Initialize primary shared hardware
     unsigned int error_flag = NO_ERROR;
     error_flag |= initialize_shared_hardware();

@@ -19,6 +19,9 @@
     #define SCREEN_UART_STOP_BITS       (UART_STOP_BITS_1)      // 1 stop bit
     #define SCREEN_UART_LINE_CONTROL    (SCREEN_UART_DATA_SIZE | SCREEN_UART_PARITY | SCREEN_UART_STOP_BITS)
 
+    // Initialization Commands
+    #define INIT1_RESPOND_FAILURE_ONLY  ("bkcmd=2\xFF\xFF\xFF")     // Only respond to commands when they've failed - reduces CPU parsing
+
 	#define COMMAND_RECEIVED			(1)
 	#define COMMAND_NOT_RECEIVED		(0)
 	#define COMMAND_END_CHARACTER		('\xFF')
@@ -66,6 +69,7 @@
 	// Function Prototypes
 	unsigned int initialize_screen(unsigned int baud);
     void send_string_UART2(char* string);
+    void parse_screen_response(void);
     static unsigned int send_byte_UART2(BYTE data);
     static unsigned int initialize_DMA_UART2(void);
     static inline void restart_DMA_transfer(void);
