@@ -42,6 +42,7 @@
 
     // Function Prototypes
     unsigned int initialize_shared_hardware(void);
+    inline void clear_buffer(char * buffer, unsigned int length);
     inline void software_delay_ms(unsigned int milliseconds);
     inline unsigned int read_button2(void);
     inline unsigned int read_button3(void);

@@ -36,7 +36,6 @@ int main() {
 		Nop(); //return 0;		// An error occurred while running
     
 	unsigned int i = 0;
-	char test_string[64] = {'\0'};
 	while (1) {
 		
 	}

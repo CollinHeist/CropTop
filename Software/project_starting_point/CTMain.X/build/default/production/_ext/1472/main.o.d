@@ -1,8 +1,8 @@
 build/default/production/_ext/1472/main.o:  \
 ../main.c  \
 ../config_bits.h  \
- ../main.h  \
-../hardware.h  \
+ ../hardware.h  \
+../main.h  \
 ../FT8xx.h  \
 ../display_library.h  \
 ../motors.h  \

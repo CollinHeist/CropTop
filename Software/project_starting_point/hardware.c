@@ -64,6 +64,11 @@ unsigned int initialize_shared_hardware(void) {
     return NO_ERROR;
 }
 
+inline void clear_buffer(char * buffer, unsigned int length) {
+    unsigned int i;
+    for (i = 0; i < length; i++) { buffer[i] = '\0'; }
+}
+
 inline void software_delay_ms(unsigned int milliseconds) {
 	unsigned int i, j;
 	for (i = 0; i < milliseconds; i++) { for (j = 0; j < SOFTWARE_1MS_COUNT; j++) {} }

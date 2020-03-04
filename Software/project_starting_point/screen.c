@@ -56,12 +56,12 @@ void send_string_UART2(char* string) {
  *		None.
  */
 void parse_screen_response(void) {
-	unsigned int temp, page_number = 0, component_id = 0, event = 0, x_coord = 0, y_coord = 0, numeric_data = 0;
+	unsigned int page_number = 0, component_id = 0, event = 0, x_coord = 0, y_coord = 0, numeric_data = 0;
 	unsigned int x_msb = 0, x_lsb = 0, y_msb = 0, y_lsb = 0, num_b0 = 0, num_b1 = 0, num_b2 = 0, num_b3 = 0;
 	char received_string[RECEIVED_BUFFER_SIZE] = {'\0'};
 
 	// Only parse the buffer if 
-	if (received_flag == screen_received_flag) {
+	if (received_flag == COMMAND_RECEIVED) {
 		// Need to check this FIRST because it has a non-unique first byte and doesn't work in switch-case
 		if (!strcmp(screen_rx_buffer, SCREEN_STARTUP)) {
 			// Screen has started or was reset
