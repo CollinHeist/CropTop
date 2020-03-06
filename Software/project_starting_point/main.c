@@ -30,9 +30,9 @@
 /* ---------------------------------- Public Functions ---------------------------------- */
 
 int main() {
-    if (initialize_system() == ERROR)
-		Nop(); //return 0;		// An error occurred while running
-    
+	if (initialize_system() == ERROR)
+		Nop();		// An error occurred while running
+	
 	while (1) {
 		parse_screen_response();
 	}
@@ -42,20 +42,20 @@ int main() {
 /* --------------------------------- Private Functions ---------------------------------- */
 
 static unsigned int initialize_system(void) {
-    // Initialize primary shared hardware
-    unsigned int error_flag = NO_ERROR;
-    error_flag |= initialize_shared_hardware();
+	// Initialize primary shared hardware
+	unsigned int error_flag = NO_ERROR;
+	error_flag |= initialize_shared_hardware();
 
-    // Initialize subsystems
-    error_flag |= initialize_potentiometer(POTENTIOMETER_SAMPLE_FREQ_HZ);
-    error_flag |= initialize_motors();
-    error_flag |= initialize_i2c(I2C1_GNSS_FREQ_HZ);
-//    error_flag |= initialize_accelerometer();
-    error_flag |= initialize_screen(SCREEN_UART_BAUD);
+	// Initialize subsystems
+	error_flag |= initialize_potentiometer(POTENTIOMETER_SAMPLE_FREQ_HZ);
+	error_flag |= initialize_motors();
+	error_flag |= initialize_I2C1(I2C1_GNSS_FREQ_HZ);
+//	error_flag |= initialize_accelerometer();
+	error_flag |= initialize_screen(SCREEN_UART_BAUD);
 
-    INTEnableSystemMultiVectoredInt();
+	INTEnableSystemMultiVectoredInt();
 
-    return error_flag;
+	return error_flag;
 }
 
 /* ----------------------------- Interrupt Service Routines ----------------------------- */

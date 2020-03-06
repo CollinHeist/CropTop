@@ -35,21 +35,6 @@ unsigned int initialize_screen(unsigned int baud) {
 
 /*
  *	Summary
- *		Function to send a string out over UART2 (to the screen).
- *	Parameters
- *		string[in]: Character pointer that points to the first character of a null-terminated string.
- *	Returns
- *		None.
- */
-void send_string_UART2(char* string) {
-	while (*string) {
-		while (send_byte_UART2(*string) == ERROR) {}	// Try and send byte until successful
-		string++;
-	}
-}
-
-/*
- *	Summary
  *		Function that parses the contents of screen_rx_buffer if the received flag has been
  *		set by the DMA ISR.
  *	Parameters
@@ -114,15 +99,32 @@ void parse_screen_response(void) {
 				case STARTED_MICROSD_UPGRADE:		break;
 				case TRANSPARENT_DATA_FINISHED:		break;
 				case TRANSPARENT_DATA_READY:		break;
-                default:                            break;
+				default:							break;
 			}
 		}
-        
-        received_flag = COMMAND_NOT_RECEIVED;   // Reset flag
+		
+		received_flag = COMMAND_NOT_RECEIVED;   // Reset flag
+	}
+}
+
+/*
+ *	Summary
+ *		Function to send a string out over UART2 (to the screen).
+ *	Parameters
+ *		string[in]: Character pointer that points to the first character of a null-terminated string.
+ *	Returns
+ *		None.
+ */
+void send_string_UART2(char* string) {
+	while (*string) {
+		while (send_byte_UART2(*string) == ERROR) {}	// Try and send byte until successful
+		string++;
 	}
 }
 
 /* --------------------------------- Private Functions ---------------------------------- */
+
+static void page_main_menu(unsigned int * temperature, unsigned int * humidity, )
 
 /*
  *	Summary
@@ -146,7 +148,7 @@ static unsigned int initialize_DMA_UART2(void) {
 	// Enable the transfer done interrupt on pattern match for all characters transferred
 	DmaChnSetEvEnableFlags(DMA_channel, DMA_EV_BLOCK_DONE);	// Transfer done interrupt on pattern match or all chars transferred
 	INTEnable(INT_SOURCE_DMA(DMA_channel), INT_ENABLED);
-	INTSetVectorPriority(INT_VECTOR_DMA(DMA_channel), INT_PRIORITY_LEVEL_3);	// Set INT priority
+	INTSetVectorPriority(INT_VECTOR_DMA(DMA_channel), INT_PRIORITY_LEVEL_3);		// Set int priority
 	INTSetVectorSubPriority(INT_VECTOR_DMA(DMA_channel), INT_SUB_PRIORITY_LEVEL_0);	// Set sub-priority
 	INTEnable(INT_SOURCE_DMA(DMA_channel), INT_ENABLED);
 	
@@ -202,14 +204,14 @@ static unsigned int send_byte_UART2(BYTE data) {
  */
 void __ISR(_DMA1_VECTOR, IPL3SOFT) isr_DMA_handler(void) {
 	if (DmaChnGetEvFlags(DMA_channel) & DMA_EV_ALL_EVNTS) {
-        if (private_DMA_buffer[0] != COMMAND_END_CHARACTER) {   // False-trigger because the screen sends three '\xFF'
-            clear_buffer(screen_rx_buffer, DMA_BUFFER_SIZE);    // Clear old contents in public buffer
-            copy_buffer(screen_rx_buffer, private_DMA_buffer, DMA_BUFFER_SIZE);
-            clear_buffer(private_DMA_buffer, DMA_BUFFER_SIZE);  // Clear old contents in private buffer
-            restart_DMA_transfer();								// A valid event means the DMA must be re-enabled
+		if (private_DMA_buffer[0] != COMMAND_END_CHARACTER) {	// False-trigger because the screen sends three '\xFF'
+			clear_buffer(screen_rx_buffer, DMA_BUFFER_SIZE);	// Clear old contents in public buffer
+			copy_buffer(screen_rx_buffer, private_DMA_buffer, DMA_BUFFER_SIZE);
+			clear_buffer(private_DMA_buffer, DMA_BUFFER_SIZE);	// Clear old contents in private buffer
+			restart_DMA_transfer();								// A valid event means the DMA must be re-enabled
 
-            received_flag = COMMAND_RECEIVED;					// Set the received flag
-        }
+			received_flag = COMMAND_RECEIVED;					// Set the received flag
+		}
 	}
 
 	INTClearFlag(INT_SOURCE_DMA(DMA_channel));

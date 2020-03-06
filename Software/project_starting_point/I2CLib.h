@@ -14,7 +14,7 @@
     #define I2C_CLOCK_MAX_DEVIATION             ((float) I2C_CLOCK_MAX_PERCENT_DEVIATION / 100.0)
 
     // Function prototypes
-    unsigned int initialize_i2c(unsigned int i2c_frequency);
+    unsigned int initialize_I2C1(unsigned int i2c_frequency);
     inline char busy_I2C1(void);
     char read_I2C1(char slave_addr, char *read_array, int len);
     char write_I2C1(char slave_addr, char *write_array, int len);

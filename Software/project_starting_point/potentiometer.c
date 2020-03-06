@@ -68,7 +68,7 @@ unsigned int initialize_potentiometer(float sample_frequency) {
 	EnableADC10();
 
     // Wait for the first conversion to complete
-	while (!mAD1GetIntFlag()) {}
+	while (!mAD1GetIntFlag());
 
 	// Return successfully
 	return NO_ERROR;

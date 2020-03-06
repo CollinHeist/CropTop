@@ -7,6 +7,17 @@
 #ifndef __GPS_H__
     #define __GPS_H__
 
+	// Configuration Macros
+	#define GPS_NUM_BYTES_ADDRESS		(0xFD)
+	#define GPS_SLAVE_ADDRESS			(0x42)
+	#define GPS_DATA_ADDRESS			(0xFF)
+
+	// Useful Bit Macros
+	#define TOP_8_BITS		(0b1111111100000000)
+	#define BOTTOM_8_BITS	(0b0000000011111111)
+
+
+
     //macros
     #define 	GPS_ADDR 	0x42
     #define 	SYNC_1 		0xb5
