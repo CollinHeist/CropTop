@@ -1,6 +1,6 @@
 /**
  *	File
- *		i2c.c
+ *		I2CLib.c
  *	Summary
  *		I2C library source file. Implements functionality for initializing, reading to, and
  *		writing from I2C1.
@@ -28,7 +28,7 @@
  *	Returns
  *		Unsigned int that is ERROR or NO_ERROR if initialization was successful.
  */
-unsigned int initialize_I2C1(unsigned int i2c_frequency) {
+unsigned int initialize_i2c(unsigned int i2c_frequency) {
 	I2CConfigure(I2C1, 0);  // Configure I2C1 with no special options
 	
 	// Check if the actual frequency of the I2C bus is acceptable close to what we wanted
@@ -128,9 +128,6 @@ char write_I2C1(char slave_addr, char *write_array, int len) {
  *	@param[in]	read_len: Integer corresponding to how many character to read from the slave.
  *	@return		character that is either 0 (if no errors occurred) or non-zero if an error occurred.
  **/
-
-// Writes [slave_addr << 1, write_array[0], ..., write_array[write_len]] Restart
-// [data_byte[0], ..., data_byte[read_len]] Stop
 char read_write_I2C1(char slave_addr, char *write_array, char *read_array, int write_len, int read_len) {
 	int i = 0;
 	StartI2C1();

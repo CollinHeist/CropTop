@@ -8,7 +8,7 @@
 	Break height allows you to change the height the test was run at
 		Might just change per-test not globally
 	Can select multiple characteristics (no break, root, stalk, recoil)
-	CHeck about Load:F, Rot.: IMU, and W-Adj.: No
+	Check about Load:F, Rot.: IMU, and W-Adj.: No
 
 IMG_1326
 	Automatically moves onto the next test (n+1)

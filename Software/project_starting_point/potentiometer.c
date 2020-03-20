@@ -13,6 +13,8 @@
 
 /* -------------------------- Global Variables and Structures --------------------------- */
 
+static unsigned int adc_mode = DEFAULT_MODE;
+
 // Structure and array used to configure timer 3 to the most appropriate setting
 // in order to achieve the desired sample frequency 
 struct prescale_struct {
@@ -40,9 +42,9 @@ static struct prescale_struct prescales[] = {
  *	Parameters
  *		sample_frequency[in]: Float that corresponds to what frequency AN9 and AN10 should be sampled at.
  *	Returns
- *		Unsigned int that is ERROR or NO_ERROR if initialization was successful.
+ *		Unsigned integer that is ERROR or NO_ERROR if initialization was successful.
  */
-unsigned int initialize_potentiometer(float sample_frequency) {
+unsigned int initialize_potentiometer(const float sample_frequency) {
 	// Attempt to initialize timer 3 - exit if an error occurs
 	if (initialize_timer3(sample_frequency) == ERROR)
 		return ERROR;
@@ -68,7 +70,7 @@ unsigned int initialize_potentiometer(float sample_frequency) {
 	EnableADC10();
 
     // Wait for the first conversion to complete
-	while (!mAD1GetIntFlag());
+	while (!mAD1GetIntFlag()) {}
 
 	// Return successfully
 	return NO_ERROR;
@@ -80,10 +82,10 @@ unsigned int initialize_potentiometer(float sample_frequency) {
  *	Parameters
  *		sample_frequency[in]: Float that corresponds to what frequency AN9 and AN10 should be sampled at.
  *	Returns
- *		Unsigned int that is ERROR or NO_ERROR if initialization was successful.
+ *		Unsigned integer that is ERROR or NO_ERROR if initialization was successful.
  */
-unsigned int reconfigure_timer3(float sample_frequency) {
-	CloseTimer3();								// Close T3 for reconfiguration
+unsigned int reconfigure_timer3(const float sample_frequency) {
+	CloseTimer3();	// Close T3 for reconfiguration
 
 	// Reconfigure T3 and return the result
 	return initialize_timer3(sample_frequency);	
@@ -95,7 +97,7 @@ unsigned int reconfigure_timer3(float sample_frequency) {
  *	Parameters
  *		None.
  *	Returns
- *		unsigned int that is the ADC result of the current sample buffer.
+ *		Unsigned integer that is the ADC result of the current sample buffer.
  */
 unsigned int read_potentiometer(void) {
 	// Locate the offset of the most recent conversion in the idle buffer
@@ -103,6 +105,19 @@ unsigned int read_potentiometer(void) {
 	
 	// Return the ADC result at that buffer location
 	return ReadADC10(offset);
+}
+
+/**
+ *	Summary
+ *		Set the return mode of the potentiometer readings.
+ *	Parameters
+ *		mode[in]: Unsigned integer that denotes how ADC readings should be returned.
+ *	Returns
+ *		None.
+ */
+void set_potentiometer_mode(unsigned int mode) {
+	mode = ((mode != MODE_VOLTS) && (mode != MODE_NEWTONS)) ? DEFAULT_MODE : mode;
+	adc_mode = mode;
 }
 
 /* --------------------------------- Private Functions ---------------------------------- */
@@ -113,9 +128,9 @@ unsigned int read_potentiometer(void) {
  *	Parameters
  *		timer3_frequency[in]: Float that corresponds to what frequency T3 should attempt to operate at.
  *	Returns
- *		Unsigned int that is ERROR or NO_ERROR if an impossible frequency was entered.
+ *		Unsigned integer that is ERROR or NO_ERROR if an impossible frequency was entered.
  */
-static unsigned int initialize_timer3(float timer3_frequency) {
+static unsigned int initialize_timer3(const float timer3_frequency) {
 	unsigned int index = 0;
 	
 	// Return if an invalid frequency was entered

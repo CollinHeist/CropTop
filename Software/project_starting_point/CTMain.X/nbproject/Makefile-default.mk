@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../I2CLib.c ../main.c ../potentiometer.c ../motors.c ../accelerometer.c ../temp_humidity.c ../GPS.c ../hardware.c ../screen.c
+SOURCEFILES_QUOTED_IF_SPACED=../I2CLib.c ../main.c ../potentiometer.c ../motors.c ../accelerometer.c ../temp_humidity.c ../GPS.c ../hardware.c ../screen.c ../RTC.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/potentiometer.o ${OBJECTDIR}/_ext/1472/motors.o ${OBJECTDIR}/_ext/1472/accelerometer.o ${OBJECTDIR}/_ext/1472/temp_humidity.o ${OBJECTDIR}/_ext/1472/GPS.o ${OBJECTDIR}/_ext/1472/hardware.o ${OBJECTDIR}/_ext/1472/screen.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1472/I2CLib.o.d ${OBJECTDIR}/_ext/1472/main.o.d ${OBJECTDIR}/_ext/1472/potentiometer.o.d ${OBJECTDIR}/_ext/1472/motors.o.d ${OBJECTDIR}/_ext/1472/accelerometer.o.d ${OBJECTDIR}/_ext/1472/temp_humidity.o.d ${OBJECTDIR}/_ext/1472/GPS.o.d ${OBJECTDIR}/_ext/1472/hardware.o.d ${OBJECTDIR}/_ext/1472/screen.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/potentiometer.o ${OBJECTDIR}/_ext/1472/motors.o ${OBJECTDIR}/_ext/1472/accelerometer.o ${OBJECTDIR}/_ext/1472/temp_humidity.o ${OBJECTDIR}/_ext/1472/GPS.o ${OBJECTDIR}/_ext/1472/hardware.o ${OBJECTDIR}/_ext/1472/screen.o ${OBJECTDIR}/_ext/1472/RTC.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1472/I2CLib.o.d ${OBJECTDIR}/_ext/1472/main.o.d ${OBJECTDIR}/_ext/1472/potentiometer.o.d ${OBJECTDIR}/_ext/1472/motors.o.d ${OBJECTDIR}/_ext/1472/accelerometer.o.d ${OBJECTDIR}/_ext/1472/temp_humidity.o.d ${OBJECTDIR}/_ext/1472/GPS.o.d ${OBJECTDIR}/_ext/1472/hardware.o.d ${OBJECTDIR}/_ext/1472/screen.o.d ${OBJECTDIR}/_ext/1472/RTC.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/potentiometer.o ${OBJECTDIR}/_ext/1472/motors.o ${OBJECTDIR}/_ext/1472/accelerometer.o ${OBJECTDIR}/_ext/1472/temp_humidity.o ${OBJECTDIR}/_ext/1472/GPS.o ${OBJECTDIR}/_ext/1472/hardware.o ${OBJECTDIR}/_ext/1472/screen.o
+OBJECTFILES=${OBJECTDIR}/_ext/1472/I2CLib.o ${OBJECTDIR}/_ext/1472/main.o ${OBJECTDIR}/_ext/1472/potentiometer.o ${OBJECTDIR}/_ext/1472/motors.o ${OBJECTDIR}/_ext/1472/accelerometer.o ${OBJECTDIR}/_ext/1472/temp_humidity.o ${OBJECTDIR}/_ext/1472/GPS.o ${OBJECTDIR}/_ext/1472/hardware.o ${OBJECTDIR}/_ext/1472/screen.o ${OBJECTDIR}/_ext/1472/RTC.o
 
 # Source Files
-SOURCEFILES=../I2CLib.c ../main.c ../potentiometer.c ../motors.c ../accelerometer.c ../temp_humidity.c ../GPS.c ../hardware.c ../screen.c
+SOURCEFILES=../I2CLib.c ../main.c ../potentiometer.c ../motors.c ../accelerometer.c ../temp_humidity.c ../GPS.c ../hardware.c ../screen.c ../RTC.c
 
 
 
@@ -161,6 +161,12 @@ ${OBJECTDIR}/_ext/1472/screen.o: ../screen.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/_ext/1472/screen.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/screen.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -D_SUPPRESS_PLIB_WARNING -MMD -MF "${OBJECTDIR}/_ext/1472/screen.o.d" -o ${OBJECTDIR}/_ext/1472/screen.o ../screen.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
+${OBJECTDIR}/_ext/1472/RTC.o: ../RTC.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
+	@${RM} ${OBJECTDIR}/_ext/1472/RTC.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1472/RTC.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/RTC.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -D_SUPPRESS_PLIB_WARNING -MMD -MF "${OBJECTDIR}/_ext/1472/RTC.o.d" -o ${OBJECTDIR}/_ext/1472/RTC.o ../RTC.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
+	
 else
 ${OBJECTDIR}/_ext/1472/I2CLib.o: ../I2CLib.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
@@ -215,6 +221,12 @@ ${OBJECTDIR}/_ext/1472/screen.o: ../screen.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/_ext/1472/screen.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1472/screen.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/screen.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -D_SUPPRESS_PLIB_WARNING -MMD -MF "${OBJECTDIR}/_ext/1472/screen.o.d" -o ${OBJECTDIR}/_ext/1472/screen.o ../screen.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
+	
+${OBJECTDIR}/_ext/1472/RTC.o: ../RTC.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
+	@${RM} ${OBJECTDIR}/_ext/1472/RTC.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1472/RTC.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/RTC.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -D_SUPPRESS_PLIB_WARNING -MMD -MF "${OBJECTDIR}/_ext/1472/RTC.o.d" -o ${OBJECTDIR}/_ext/1472/RTC.o ../RTC.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
 endif
 

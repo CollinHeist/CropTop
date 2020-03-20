@@ -14,6 +14,7 @@
       <itemPath>../temp_humidity.h</itemPath>
       <itemPath>../GPS.h</itemPath>
       <itemPath>../screen.h</itemPath>
+      <itemPath>../RTC.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -31,6 +32,7 @@
       <itemPath>../GPS.c</itemPath>
       <itemPath>../hardware.c</itemPath>
       <itemPath>../screen.c</itemPath>
+      <itemPath>../RTC.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

@@ -1,8 +1,11 @@
-/** 
- *	@file 	config_bits.h
- *	@brief	Bit configuration file. Defines bit and hardware configurations for the PIC32.
- *	@author	Collin Heist, Ryan Donahue
- **/
+/**
+ *	File
+ *		config_bits.h
+ *	Summary
+ *		Very low level hardware bit configuration - DO NOT include this more than once.
+ *	Author(s)
+ *		Collin Heist, Ryan Donahue
+ */
 
 #ifndef __CONFIG_BITS_H__
 	#define __CONFIG_BITS_H__

@@ -1,7 +1,10 @@
 /** 
- *  @file	temp_humidity.c
- *  @brief	Temperature and humidity source file for the the IC Silicon Labs Si7006.
- *  @authors	Collin Heist, Ryan Donahue
+ *	File
+ *		temp_humidity.c
+ *	Summary
+ *		Temperature and humidity source file for the the IC Silicon Labs Si7006.
+ *	Author(s)
+ *		Collin Heist, Ryan Donahue
  **/
 
 /* ----------------------------------- File Inclusion ----------------------------------- */
@@ -14,6 +17,8 @@
 
 /* -------------------------- Global Variables and Structures --------------------------- */
 
+unsigned int temperature_mode = DEFAULT_MODE;
+
 /* ---------------------------------- Public Functions ---------------------------------- */
 
 /**
@@ -24,12 +29,12 @@
  *	Returns
  *		Float that represents the current temperature in degrees F or C.
  */
-float read_temperature(unsigned int temp_mode) {
-    unsigned char write[1] = {Si7006_temp_no_hold_master};
-    unsigned char read[2];
-    read_write_I2C1(Si7006_addr, write, read, 1, 2);
-   
-    return raw_code_to_temperature(read, temp_mode);
+float read_temperature(void) {
+	unsigned char write[1] = {SI7006_TEMP_NO_HOLD_MASTER};
+	unsigned char read[2];
+	read_write_I2C1(SI7006_I2C_ADDRESS, write, read, 1, 2);
+
+	return raw_code_to_temperature(read);
 }
 
 /**
@@ -41,17 +46,44 @@ float read_temperature(unsigned int temp_mode) {
  *		Float that represents the current normalized [0-100%] humidity.
  */
 float read_humidity(void) {
-    unsigned char write[1] = {Si7006_humidity_no_hold_master};
-    unsigned char read[2];
-    
-    read_write_I2C1(Si7006_addr, write, read, 1, 2);
-    float humidity = raw_code_to_humidity(read);
-    
-    // Normalize the humidity reading [0.0, 100.0]
-    humidity = (humidity > 100.0 ? 100.0 : humidity);
-    humidity = (humidity < 0.0   ? 0.0   : humidity);
-    
-    return humidity;
+	unsigned char write[1] = {SI7006_TEMP_NO_HOLD_MASTER};
+	unsigned char read[2];
+	
+	read_write_I2C1(SI7006_I2C_ADDRESS, write, read, 1, 2);
+	float humidity = raw_code_to_humidity(read);
+	
+	// Normalize the humidity reading [0.0, 100.0]
+	humidity = (humidity > 100.0 ? 100.0 : humidity);
+	humidity = (humidity < 0.0   ? 0.0   : humidity);
+	
+	return humidity;
+}
+
+/**
+ *	Summary
+ *		Set the mode for returned temperature values (see header for macros).
+ *	Parameters
+ *		mode[in]: Unsigned integer that denotes which mode to set temperature returns in.
+ *	Returns
+ *		None.
+ *	Note
+ *		If an unknown mode is entered no error is thrown, but Fahrenheit is used by default.
+ */
+inline void set_temperature_mode(unsigned int mode) {
+	mode = ((mode == CELSIUS_MODE) || (mode == FAHRENHEIT_MODE)) ? mode : DEFAULT_MODE;
+	temperature_mode = mode;
+}
+
+/**
+ *	Summary
+ *		Function to get the current temperature mode (for string creation).
+ *	Parameters
+ *		None.
+ *	Returns
+ *		Character that is either 'F' or 'C' depending on the current mode.
+ */
+inline char get_temperature_mode(void) {
+	return (temperature_mode == CELSIUS_MODE ? 'C' : 'F');
 }
 
 /* --------------------------------- Private Functions ---------------------------------- */
@@ -65,7 +97,7 @@ float read_humidity(void) {
  *	Returns
  *		Float that represents the current normalized [0-100%] humidity.
  */
-static inline float raw_code_to_humidity(unsigned char* i2c_code) {
+static inline float raw_code_to_humidity(const unsigned char* i2c_code) {
 	unsigned int combined_code = ((i2c_code[0] << 8) | i2c_code[1]);
 	
 	return (125.0 * ((float) combined_code) / 65536.0) - 6.0;
@@ -82,7 +114,7 @@ static inline float raw_code_to_humidity(unsigned char* i2c_code) {
  *	Returns
  *		Float that represents the current temperature of the sensor.
  */
-static inline float raw_code_to_temperature(unsigned char* i2c_code, unsigned int temperature_mode) {
+static inline float raw_code_to_temperature(const unsigned char* i2c_code) {
 	unsigned int combined_code = (i2c_code[0] << 8) | i2c_code[1];
 	float temp_celsius = (175.72 * ((float) combined_code) / 65536.0) - 46.85;
 	

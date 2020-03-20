@@ -1,4 +1,5 @@
 build/default/production/_ext/1472/screen.o:  \
 ../screen.c  \
 ../hardware.h  \
- ../screen.h 
+ ../screen.h  \
+../temp_humidity.h 
