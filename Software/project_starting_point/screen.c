@@ -16,12 +16,12 @@
 #include "hardware.h"
 #include "screen.h"
 #include "temp_humidity.h"
-#include "potentiometer.h"
+#include "RTC.h"
 
 /* -------------------------- Global Variables and Structures --------------------------- */
 
 static const DmaChannel DMA_channel = DMA_CHANNEL1;	// Active DMA Channel
-static unsigned int current_baud;					// Latest BAUD setting for UART2
+
 static volatile unsigned int received_flag;			// Flag for if a response has been acknowledged
 static char screen_rx_buffer[RX_BUFFER_SIZE];		// User-facing screen buffer - utilized to avoid conflict with DMA
 
@@ -30,7 +30,7 @@ static char screen_rx_buffer[RX_BUFFER_SIZE];		// User-facing screen buffer - ut
 /*
  *	Summary
  *		Function to initialize the screen - primarily UART2 to a desired baud. Also configures
- *		U2RX interrupt to be 4-1. Then sends all initialization messages to screen.
+ *	  U2RX interrupt to be 4-1. Then sends all initialization messages to screen.
  *	Parameters
  *		baud[in]: Unsigned integer that is the desired baud rate of UART2.
  *	Returns
@@ -42,9 +42,7 @@ unsigned int initialize_screen(const unsigned int baud) {
 	mU2RXIntEnable(1);
 	mU2SetIntPriority(4);
 	mU2SetIntSubPriority(1);
-
 	send_string_UART2(INIT1_RESPOND_FAILURE_ONLY);
-	current_baud = baud;
 	
 	return NO_ERROR;
 }
@@ -79,16 +77,18 @@ void parse_screen_response(void) {
 	unsigned int x_msb = 0, x_lsb = 0, y_msb = 0, y_lsb = 0, num_b0 = 0, num_b1 = 0, num_b2 = 0, num_b3 = 0;
 	char received_string[RX_BUFFER_SIZE] = {'\0'};
 	
-	if (UART2GetErrors()) { UART2ClearAllErrors(); } 
+	// Check for UART2 errors and clear them if they arise - prevents screen errors
+	int e = UART2GetErrors();
+	if (e)
+		UART2ClearAllErrors();
 
 	// Only parse the buffer if 
 	if (received_flag == COMMAND_RECEIVED) {
 		// Need to check this FIRST because it has a non-unique first byte and doesn't work in switch-case
-		if (!strcmp(screen_rx_buffer, SCREEN_STARTUP)) {
-			// Screen has started or was reset
+		if (!strncmp(screen_rx_buffer, SCREEN_STARTUP, SCREEN_STARTUP_LENGTH)) {
+			// Screen just started or was reset
 		}
 		else {
-			// Buffer-parsing will ignore the first character in screen_rx_buffer
 			switch (screen_rx_buffer[0]) {
 				case INVALID_INSTRUCTION:			break;
 				case INSTRUCTION_SUCCESS:			break;
@@ -98,11 +98,7 @@ void parse_screen_response(void) {
 				case INVALID_FONT_ID:				break;
 				case INVALID_FILE_OPERATION:		break;
 				case INVALID_CRC:					break;
-				case INVALID_BAUD:
-					snprintf(received_string, RX_BUFFER_SIZE, "baud=%u\xFF\xFF\xFF", current_baud);
-					send_string_UART2(received_string);
-					initialize_screen(current_baud);
-					break;
+				case INVALID_BAUD:					break;
 				case INVALID_WAVEFORM_ID_CHN:		break;
 				case INVALID_VAR_NAME_OR_ATTR:		break;
 				case INVALID_VARIABLE_OPERATION:	break;
@@ -114,13 +110,13 @@ void parse_screen_response(void) {
 				case VARIABLE_NAME_TOO_LONG:		break;
 				case SERIAL_BUFFER_OVERFLOW:		break;
 				case TOUCH_EVENT:
-					sscanf(screen_rx_buffer + 1, "%d%d%d", &page_number, &component_id, &event);
+					sscanf(screen_rx_buffer + 1, "%d%d%d", &page_number, &component_id, &event);		// Skip over first command character
 					break;
 				case CURRENT_PAGE_NUMBER:
-					sscanf(screen_rx_buffer + 1, "%d", &page_number);
+					sscanf(screen_rx_buffer + 1, "%d", &page_number);								   // Skip over first command character
 					break;
 				case TOUCH_COORDINATE_AWAKE:
-					sscanf(screen_rx_buffer + 1, "%d%d%d%d%d", &x_msb, &x_lsb, &y_msb, &y_lsb, &event);
+					sscanf(screen_rx_buffer + 1, "%d%d%d%d%d", &x_msb, &x_lsb, &y_msb, &y_lsb, &event); // Skip over first command character
 					x_coord = (x_msb << 8) | x_lsb;
 					y_coord = (y_msb << 8) | y_lsb;
 					break;
@@ -128,11 +124,11 @@ void parse_screen_response(void) {
 					awake_screen();
 					break;
 				case STRING_DATA_ENCLOSED:
-					sscanf(screen_rx_buffer + 1, "%s", received_string);
+					sscanf(screen_rx_buffer + 1, "%s", received_string);								// Skip over first command character
 					parse_string_data(received_string);
 					break;
 				case NUMERIC_DATA_ENCLOSED:
-					sscanf(screen_rx_buffer + 1, "%d%d%d%d", &num_b0, &num_b1, &num_b2, &num_b3);
+					sscanf(screen_rx_buffer + 1, "%d%d%d%d", &num_b0, &num_b1, &num_b2, &num_b3);	   // Skip over first command character
 					numeric_data = num_b0 + (num_b1 << 8) + (num_b2 << 16) + (num_b3 << 24);
 					break;
 				case AUTO_ENTERED_SLEEP_MODE:		break;
@@ -160,7 +156,7 @@ void parse_screen_response(void) {
  *	Returns
  *		Unsigned integer that is ERROR or NO_ERROR if the byte was sent successfully.
  */
-static inline unsigned int send_byte_UART2(const char data) {
+static unsigned int send_byte_UART2(const BYTE data) {
 	if (UARTTransmitterIsReady(UART2)) {
 		UARTSendDataByte(UART2, data);
 
@@ -178,20 +174,10 @@ static inline unsigned int send_byte_UART2(const char data) {
  *	Returns
  *		None.
  */
-static inline void awake_screen(void) {
+static void awake_screen(void) {
 	send_string_UART2("sleep=0\xFF\xFF\xFF");
 }
 
-/*
- *	Summary
- *		Private function to parse a string return (STRING_DATA_ENCLOSED). This is generic,
- *		and should parse all string return codes listed in the header file.
- *	Parameters
- *		buffer[in]: Character pointer to the first character in the string parsed from the 
- *			screen RX buffer.
- *	Returns
- *		None.
- */
 static void parse_string_data(const char* buffer) {
 	char send_buffer[TX_BUFFER_SIZE];
 	clear_buffer(send_buffer, TX_BUFFER_SIZE);
@@ -216,7 +202,10 @@ static void parse_string_data(const char* buffer) {
 //		clear_buffer(send_buffer, TX_BUFFER_SIZE);
 		
 		// Create Time String
-		
+		unsigned int hour = 0, minute = 0, month = 0, date = 0;
+		get_datetime(&hour, &minute, &month, &date);
+		snprintf(send_buffer, TX_BUFFER_SIZE, "timeText.txt=\"%u:%u %u/%u\"\xFF\xFF\xFF", hour, minute, month, date);
+		send_string_UART2(send_buffer);
 	}
 	else if (!strcmp(buffer, REFRESH_LIVE_FEED)) {
 		// Create Temperature String
@@ -238,6 +227,10 @@ static void parse_string_data(const char* buffer) {
 //		clear_buffer(send_buffer, TX_BUFFER_SIZE);
 		
 		// Create Time String
+		unsigned int hour = 0, minute = 0, month = 0, date = 0;
+		get_datetime(&hour, &minute, &month, &date);
+		snprintf(send_buffer, TX_BUFFER_SIZE, "timeText.txt=\"%u:%u %u/%u\"\xFF\xFF\xFF", hour, minute, month, date);
+		send_string_UART2(send_buffer);
 		
 		// Create X-Load String
 		
@@ -252,10 +245,25 @@ static void parse_string_data(const char* buffer) {
 		send_string_UART2(send_buffer);
 		clear_buffer(send_buffer, TX_BUFFER_SIZE);
 	}
-	else if (!strcmp(buffer, TEMPERATURE_MODE_C)) {	set_temperature_mode(CELSIUS_MODE);		}
-	else if (!strcmp(buffer, TEMPERATURE_MODE_F)) {	set_temperature_mode(FAHRENHEIT_MODE);	}
-	else if (!strcmp(buffer, ADC_MODE_NEWTONS))	{	set_potentiometer_mode(MODE_NEWTONS);	}
-	else if (!strcmp(buffer, ADC_MODE_VOLTS)) { 	set_potentiometer_mode(MODE_VOLTS);		}
+	else if (!strncmp(buffer, TEMPERATURE_MODE, TEMPERATURE_MODE_LENGTH)) {
+		// Update the current temperature mode
+		char mode;
+		sscanf(buffer + TEMPERATURE_MODE_LENGTH + 1, "%c", &mode);  // Add 1 to account for space
+		if (mode == 'C') { set_temperature_mode(CELSIUS_MODE);	 }
+		else			 { set_temperature_mode(FAHRENHEIT_MODE);  }
+	}
+	else if (!strncmp(buffer, SET_DATETIME, SET_DATETIME_LENGTH)) {
+		// Update the datetime to the passed string
+		unsigned int hour = 0, minute = 0, month = 0, date = 0;
+		sscanf(buffer + SET_DATETIME_LENGTH + 1, "%u:%u %u/%u", &hour, &minute, &month, &date);
+		adjust_datetime(hour, minute, month, date);
+	}
+	else if (!strcmp(buffer, ADC_MODE_NEWTONS)) {
+		
+	}
+	else if (!strcmp(buffer, ADC_MODE_VOLTS)) {
+		
+	}
 	else if (!strcmp(buffer, START_TEST)) {
 		
 	}
@@ -285,7 +293,7 @@ static void parse_string_data(const char* buffer) {
  *	Summary
  *		Interrupt service routine for the UART2 vector. Handled when character is sent
  *		or received via the UART2 buffer. Stores character in private_DMA_buffer until
- *		COMMAND_END_CHARACTER ('\xFF') is detected - then received_flag is set.
+ *	  COMMAND_END_CHARACTER ('\xFF') is detected - then received_flag is set.
  *	Parameters
  *		None.
  *	Returns

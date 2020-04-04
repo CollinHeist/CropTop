@@ -149,23 +149,22 @@ int main(void)
 
     #endif
     
-    #if defined(__PIC32MX__)
-        {
-            int  value;
-    
-            value = SYSTEMConfigWaitStatesAndPB( GetSystemClock() );
-    
-            // Enable the cache for the best performance
-            CheKseg0CacheOn();
-    
-            INTEnableSystemMultiVectoredInt();
-    
-            value = OSCCON;
-            while (!(value & 0x00000020))
-            {
-                value = OSCCON;    // Wait for PLL lock to stabilize
-            }
-        }
+	#if defined(__PIC32MX__)
+		{
+			int  value;
+
+			value = SYSTEMConfigWaitStatesAndPB( GetSystemClock() );
+
+			// Enable the cache for the best performance
+			CheKseg0CacheOn();
+
+			INTEnableSystemMultiVectoredInt();
+
+			value = OSCCON;
+			while (!(value & 0x00000020)) {
+				value = OSCCON;	// Wait for PLL lock to stabilize
+			}
+		}
 
     #endif
 
@@ -275,56 +274,53 @@ int main(void)
     macro as the name of that function.
   ***************************************************************************/
 
-BOOL USB_ApplicationEventHandler( BYTE address, USB_EVENT event, void *data, DWORD size )
-{
-    switch( event )
-    {
-        case EVENT_VBUS_REQUEST_POWER:
-            // The data pointer points to a byte that represents the amount of power
-            // requested in mA, divided by two.  If the device wants too much power,
-            // we reject it.
-            return TRUE;
+BOOL USB_ApplicationEventHandler( BYTE address, USB_EVENT event, void *data, DWORD size ) {
+	switch(event) {
+		case EVENT_VBUS_REQUEST_POWER:
+			// The data pointer points to a byte that represents the amount of power
+			// requested in mA, divided by two.  If the device wants too much power,
+			// we reject it.
+			return TRUE;
 
-        case EVENT_VBUS_RELEASE_POWER:
-            // Turn off Vbus power.
-            // The PIC24F with the Explorer 16 cannot turn off Vbus through software.
+		case EVENT_VBUS_RELEASE_POWER:
+			// Turn off Vbus power.
+			// The PIC24F with the Explorer 16 cannot turn off Vbus through software.
 
-            //This means that the device was removed
-            deviceAttached = FALSE;
-            return TRUE;
-            break;
+			//This means that the device was removed
+			deviceAttached = FALSE;
+			return TRUE;
+			break;
 
-        case EVENT_HUB_ATTACH:
-            return TRUE;
-            break;
+		case EVENT_HUB_ATTACH:
+			return TRUE;
+			break;
 
-        case EVENT_UNSUPPORTED_DEVICE:
-            return TRUE;
-            break;
+		case EVENT_UNSUPPORTED_DEVICE:
+			return TRUE;
+			break;
 
-        case EVENT_CANNOT_ENUMERATE:
-            //UART2PrintString( "\r\n***** USB Error - cannot enumerate device *****\r\n" );
-            return TRUE;
-            break;
+		case EVENT_CANNOT_ENUMERATE:
+			//UART2PrintString( "\r\n***** USB Error - cannot enumerate device *****\r\n" );
+			return TRUE;
+			break;
 
-        case EVENT_CLIENT_INIT_ERROR:
-            //UART2PrintString( "\r\n***** USB Error - client driver initialization error *****\r\n" );
-            return TRUE;
-            break;
+		case EVENT_CLIENT_INIT_ERROR:
+			//UART2PrintString( "\r\n***** USB Error - client driver initialization error *****\r\n" );
+			return TRUE;
+			break;
 
-        case EVENT_OUT_OF_MEMORY:
-            //UART2PrintString( "\r\n***** USB Error - out of heap memory *****\r\n" );
-            return TRUE;
-            break;
+		case EVENT_OUT_OF_MEMORY:
+			//UART2PrintString( "\r\n***** USB Error - out of heap memory *****\r\n" );
+			return TRUE;
+			break;
 
-        case EVENT_UNSPECIFIED_ERROR:   // This should never be generated.
-            //UART2PrintString( "\r\n***** USB Error - unspecified *****\r\n" );
-            return TRUE;
-            break;
+		case EVENT_UNSPECIFIED_ERROR:   // This should never be generated.
+			//UART2PrintString( "\r\n***** USB Error - unspecified *****\r\n" );
+			return TRUE;
+			break;
 
-        default:
-            break;
-    }
+		default: break;
+	}
 
-    return FALSE;
+	return FALSE;
 }

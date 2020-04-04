@@ -18,22 +18,22 @@
 	#define FALSE					(0)
 
 	// Shared Pin Configurations
-	#define DEBUG_BTN_2_PIN			(BIT_7)	 // DEBUG_BTN_1 is Pin 92, RA7
+	#define DEBUG_BTN_2_PIN			(BIT_7)		// DEBUG_BTN_1 is Pin 92, RA7
 	#define DEBUG_BTN_2_PORT		(IOPORT_A)
-	#define DEBUG_BTN_3_PIN			(BIT_6)	 // DEBUG_BTN_2 is Pin 91, RA6
+	#define DEBUG_BTN_3_PIN			(BIT_6)		// DEBUG_BTN_2 is Pin 91, RA6
 	#define DEBUG_BTN_3_PORT		(IOPORT_A)
-	#define DEBUG_BTN_4_PIN			(BIT_0)	 // DEBUG_BTN_3 is Pin 90, RG0
+	#define DEBUG_BTN_4_PIN			(BIT_0)		// DEBUG_BTN_3 is Pin 90, RG0
 	#define DEBUG_BTN_4_PORT		(IOPORT_G)
-	#define DEBUG_LED_1_PIN			(BIT_1)	 // DEBUG_LED_1 is Pin 89, RG1
+	#define DEBUG_LED_1_PIN			(BIT_1)		// DEBUG_LED_1 is Pin 89, RG1
 	#define DEBUG_LED_1_PORT		(IOPORT_G)
-	#define DEBUG_LED_2_PIN			(BIT_1)	 // DEBUG_LED_2 is Pin 91, RA6
+	#define DEBUG_LED_2_PIN			(BIT_1)		// DEBUG_LED_2 is Pin 91, RA6
 	#define DEBUG_LED_2_PORT		(IOPORT_F)
-	#define DEBUG_LED_3_PIN			(BIT_0)	 // DEBUG_LED_3 is Pin 90, RG0
+	#define DEBUG_LED_3_PIN			(BIT_0)		// DEBUG_LED_3 is Pin 90, RG0
 	#define DEBUG_LED_3_PORT		(IOPORT_F)
-	#define TOTAL_NUMBER_PINS		(100)
 
 	// System timing definitions
 	#define SOFTWARE_1MS_COUNT		(8000)
+
 	#define GetSystemClock()		(80000000ul)
 	#define GetInstructionClock()	(GetSystemClock()/2)	
 	#define GetPeripheralClock()	(GetSystemClock()/1)	

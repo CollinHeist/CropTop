@@ -1,6 +1,6 @@
 /**
  *	File
- *		I2CLib.c
+ *		i2c.c
  *	Summary
  *		I2C library source file. Implements functionality for initializing, reading to, and
  *		writing from I2C1.
@@ -161,10 +161,9 @@ char read_write_I2C1(char slave_addr, char *write_array, char *read_array, int w
 	while (1) {
 		*read_array = MasterReadI2C1();
 		read_array++;
-		read_len--;
-		if (read_len == 0) {
+		if (read_len == 0)
 			break;
-		}
+		
 		AckI2C1();
 		IdleI2C1();
 	}

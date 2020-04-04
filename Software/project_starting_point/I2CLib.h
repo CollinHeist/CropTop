@@ -2,13 +2,14 @@
  *	File
  *		I2CLib.h
  *	Summary
- *		I2C library header file - provides slave address and clock macros for I2C operations.
+ *		I2C library header file. This provides slave address and clock macros for all I2C
+ *		operations, as well as function prototypes.
  *	Author(s)
- *		Collin Heist, Ryan Donahue.
+ *		Collin Heist
  */
 
-#ifndef __I2C_LIB_H__
-	#define __I2C_LIB_H__
+#ifndef __I2C_H__
+	#define __I2C_H__
 
 	// I2C configurations
 	#define I2C_TIMEOUT_COUNT					(20000)

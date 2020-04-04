@@ -10,7 +10,6 @@
 /* ----------------------------------- File Inclusion ----------------------------------- */
 
 #include <plib.h>
-
 #include "hardware.h"
 
 /* -------------------------- Global Variables and Structures --------------------------- */

@@ -43,7 +43,7 @@ unsigned int read_number_bytes_available(void) {
  *		Read the GPS data stored in the GNSS module.
  *	Parameters
  *		read_array[out]: Character pointer that is the buffer to be filled with the
- *			contents of the GPS.
+ *		  contents of the GPS.
  *		max_length[in]: The maximum number of bytes to fill of the read_array buffer.
  *	Returns
  *		Character that is the ack-error bits returned by read_write_I2C1.

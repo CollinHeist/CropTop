@@ -16,6 +16,8 @@
 
 #include "hardware.h"
 #include "main.h"
+#include "FT8xx.h"
+#include "display_library.h"
 #include "motors.h"
 #include "potentiometer.h"
 #include "I2CLib.h"
@@ -25,6 +27,10 @@
 #include "screen.h"
 
 /* -------------------------- Global Variables and Structures --------------------------- */
+
+// Start datetime at 12:00 on 01/01/20
+rtccTime start_time = 0x0C000000;   // 2 bytes per field: [HOUR | MINUTE | SECOND | 0x00]
+rtccDate start_date = 0x14010101;   // 2 bytes per field: [YEAR | MONTH | DATE | WEEKDAY]
 
 /* ---------------------------------- Public Functions ---------------------------------- */
 
@@ -56,7 +62,7 @@ static unsigned int initialize_system(void) {
 	error_flag |= initialize_shared_hardware();
 
 	// Initialize subsystems
-	set_temperature_mode(TEMPERATURE_MODE);
+	error_flag |= initialize_RTC(start_time, start_date);
 	error_flag |= initialize_potentiometer(POTENTIOMETER_SAMPLE_FREQ_HZ);
 	error_flag |= initialize_motors();
 	error_flag |= initialize_i2c(I2C1_GNSS_FREQ_HZ);

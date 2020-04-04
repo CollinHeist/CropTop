@@ -17,7 +17,7 @@
 
 /* -------------------------- Global Variables and Structures --------------------------- */
 
-unsigned int temperature_mode = DEFAULT_MODE;
+unsigned int temperature_mode = FAHRENHEIT_MODE;
 
 /* ---------------------------------- Public Functions ---------------------------------- */
 
@@ -30,9 +30,9 @@ unsigned int temperature_mode = DEFAULT_MODE;
  *		Float that represents the current temperature in degrees F or C.
  */
 float read_temperature(void) {
-	unsigned char write[1] = {SI7006_TEMP_NO_HOLD_MASTER};
+	unsigned char write[1] = {Si7006_temp_no_hold_master};
 	unsigned char read[2];
-	read_write_I2C1(SI7006_I2C_ADDRESS, write, read, 1, 2);
+	read_write_I2C1(Si7006_addr, write, read, 1, 2);
 
 	return raw_code_to_temperature(read);
 }
@@ -46,10 +46,10 @@ float read_temperature(void) {
  *		Float that represents the current normalized [0-100%] humidity.
  */
 float read_humidity(void) {
-	unsigned char write[1] = {SI7006_TEMP_NO_HOLD_MASTER};
+	unsigned char write[1] = {Si7006_humidity_no_hold_master};
 	unsigned char read[2];
 	
-	read_write_I2C1(SI7006_I2C_ADDRESS, write, read, 1, 2);
+	read_write_I2C1(Si7006_addr, write, read, 1, 2);
 	float humidity = raw_code_to_humidity(read);
 	
 	// Normalize the humidity reading [0.0, 100.0]
@@ -97,7 +97,7 @@ inline char get_temperature_mode(void) {
  *	Returns
  *		Float that represents the current normalized [0-100%] humidity.
  */
-static inline float raw_code_to_humidity(const unsigned char* i2c_code) {
+static inline float raw_code_to_humidity(unsigned char* i2c_code) {
 	unsigned int combined_code = ((i2c_code[0] << 8) | i2c_code[1]);
 	
 	return (125.0 * ((float) combined_code) / 65536.0) - 6.0;
@@ -114,7 +114,7 @@ static inline float raw_code_to_humidity(const unsigned char* i2c_code) {
  *	Returns
  *		Float that represents the current temperature of the sensor.
  */
-static inline float raw_code_to_temperature(const unsigned char* i2c_code) {
+static inline float raw_code_to_temperature(unsigned char* i2c_code) {
 	unsigned int combined_code = (i2c_code[0] << 8) | i2c_code[1];
 	float temp_celsius = (175.72 * ((float) combined_code) / 65536.0) - 46.85;
 	

@@ -2,7 +2,7 @@
  *	File
  *		config_bits.h
  *	Summary
- *		Very low level hardware bit configuration - DO NOT include this more than once.
+ *		Bit configuration file. Defines bit and hardware configurations for the PIC32.
  *	Author(s)
  *		Collin Heist, Ryan Donahue
  */

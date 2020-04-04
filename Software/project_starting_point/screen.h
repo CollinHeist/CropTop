@@ -2,8 +2,8 @@
  *	File
  *		screen_uart.h
  *	Summary
- *		UART interface to the screen header file. Provides macros for buffer sizes, configuration
- *		and response messages, NEXTION return codes, and function prototypes.
+ *		UART interface to the screen header file. Provides definition for the screen UART interface,
+ *		return codes from Nextion devices, as well as GUI-configured commands.
  *	Author(s)
  *		Collin Heist
  */
@@ -12,23 +12,25 @@
 	#define __SCREEN_H__
 
 	// Operational Configurations
-	#define RX_BUFFER_SIZE				(64)	// How big the buffer is for parsing screen responses
-	#define TX_BUFFER_SIZE				(64)	// How big the buffer is for sending screen messages
+	#define RX_BUFFER_SIZE				(64)
+	#define TX_BUFFER_SIZE				(64)
 
-	#define SCREEN_UART_DATA_SIZE		(UART_DATA_SIZE_8_BITS)	// 8 data bits
-	#define SCREEN_UART_PARITY			(UART_PARITY_NONE)		// No parity
-	#define SCREEN_UART_STOP_BITS		(UART_STOP_BITS_1)		// 1 stop bit
+	#define SCREEN_UART_DATA_SIZE		(UART_DATA_SIZE_8_BITS) // 8 data bits
+	#define SCREEN_UART_PARITY			(UART_PARITY_NONE)	  // No parity
+	#define SCREEN_UART_STOP_BITS		(UART_STOP_BITS_1)	  // 1 stop bit
 	#define SCREEN_UART_LINE_CONTROL	(SCREEN_UART_DATA_SIZE | SCREEN_UART_PARITY | SCREEN_UART_STOP_BITS)
 
 	// GUI-Based String Data - these are sent with "get" command within Nextion screen
 	#define REFRESH_MAIN_MENU			("refresh_main_menu")
 	#define REFRESH_LIVE_FEED			("refresh_live_feed")
-	#define TEMPERATURE_MODE_C			("temperature_mode_C")
-	#define TEMPERATURE_MODE_F			("temperature_mode_F")
+	#define TEMPERATURE_MODE			("temperature_mode")
+		#define TEMPERATURE_MODE_LENGTH	(16)
+	#define SET_DATETIME				("set_datetime")
+		#define SET_DATETIME_LENGTH		(12)
 	#define ADC_MODE_NEWTONS			("adc_mode_N")
 	#define ADC_MODE_VOLTS				("adc_mode_V")
 	#define START_TEST					("start_test")
-	#define STOP_TEST				 	("stop_test")
+	#define STOP_TEST					("stop_test")
 	#define VIEW_FIRST_FOLDER			("view_first_folder")
 	#define VIEW_NEXT_FOLDER			("view_next_folder")
 	#define EXPORT_TO_USB				("export_to_usb")
@@ -64,6 +66,7 @@
 	#define VARIABLE_NAME_TOO_LONG		('\x23')
 		// These codes are NOT affected by 'bkcmd' command
 	#define SCREEN_STARTUP				("\x00\x00\x00")
+		#define SCREEN_STARTUP_LENGTH	(3)
 	#define SERIAL_BUFFER_OVERFLOW		('\x24')
 	#define TOUCH_EVENT					('\x65')	// Data event
 		#define PRESS					(1)
@@ -84,7 +87,9 @@
 	unsigned int initialize_screen(const unsigned int baud);
 	void send_string_UART2(const char* string);
 	void parse_screen_response(void);
-	static inline unsigned int send_byte_UART2(const char data);
-	static inline void awake_screen(void);
+	static unsigned int send_byte_UART2(const BYTE data);
+	static void awake_screen(void);
 	static void parse_string_data(const char* buffer);
+	static unsigned int initialize_DMA_UART2(void);
+	static inline void restart_DMA_transfer(void);
 #endif

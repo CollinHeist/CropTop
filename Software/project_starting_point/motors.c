@@ -57,7 +57,7 @@ unsigned int initialize_motors(void) {
  *	Returns
  *		Unsigned int that is ERROR or NO_ERROR if an improper speed was entered.
  */
-inline unsigned int motor_forward(const unsigned int speed) {
+unsigned int motor_forward(unsigned int speed) {
 	return motor_set_duty_cycle(speed, 0);
 }
 
@@ -69,7 +69,7 @@ inline unsigned int motor_forward(const unsigned int speed) {
  *	Returns
  *		Unsigned int that is ERROR or NO_ERROR if an improper speed was entered.
  */
-inline unsigned int motor_reverse(const unsigned int speed) {
+unsigned int motor_reverse(unsigned int speed) {
 	return motor_set_duty_cycle(0, speed);
 }
 
@@ -81,7 +81,7 @@ inline unsigned int motor_reverse(const unsigned int speed) {
  *	Returns
  *		Unsigned int that is ERROR or NO_ERROR if an improper speed was entered.
  */
-inline unsigned int motor_coast(void) {
+unsigned int motor_coast(void) {
 	return motor_set_duty_cycle(0, 0);
 }
 
@@ -93,7 +93,7 @@ inline unsigned int motor_coast(void) {
  *	Returns
  *		Unsigned int that is ERROR or NO_ERROR if an improper speed was entered.
  */
-inline unsigned int motor_brake(void) {
+unsigned int motor_brake(void) {
 	return motor_set_duty_cycle(100, 100);
 }
 
@@ -105,7 +105,7 @@ inline unsigned int motor_brake(void) {
  *	Returns
  *		Unsigned int that is ERROR or NO_ERROR if an improper speed was entered.
  */
-unsigned int motor_test_mode(const unsigned int speed) {
+unsigned int motor_test_mode(unsigned int speed) {
 	if ((read_button2() != 0) && (read_button3() == 0))
 		return motor_forward(speed);
 	else if ((read_button2() == 0) && (read_button3() == 1))
@@ -123,9 +123,9 @@ unsigned int motor_test_mode(const unsigned int speed) {
  *		oc2_cycle_percent[in]: Unsigned int that is a normalized [0-100] percent to scale the OC2 register by.
  *		oc3_cycle_percent[in]: Unsigned int that is a normalized [0-100] percent to scale the OC3 register by.
  *	Returns
- *		Unsigned int that is ERROR or NO_ERROR if an improper speed was entered (<0 or >100).
+ *		Unsigned int that is ERROR or NO_ERROR if an improper speed was entered (<0 | >100).
  */
-static unsigned int motor_set_duty_cycle(const unsigned int oc2_cycle_percent, const unsigned int oc3_cycle_percent) {
+static unsigned int motor_set_duty_cycle(unsigned int oc2_cycle_percent, unsigned int oc3_cycle_percent) {
 	if (oc2_cycle_percent > 100 || oc3_cycle_percent > 100)
 		return ERROR;	// Incorrect duty cycles were entered - return an error
 
