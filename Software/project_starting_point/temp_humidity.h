@@ -5,7 +5,7 @@
  *		Temperature and humidity header file for the the IC Silicon Labs Si7006.
  *	Author(s)
  *		Collin Heist, Ryan Donahue
- *	Notes
+ *	Note
  *		Data taken from following PDF: https://www.silabs.com/documents/public/data-sheets/Si7006-A20.pdf
  **/
 

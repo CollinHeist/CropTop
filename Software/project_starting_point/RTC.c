@@ -33,7 +33,7 @@ unsigned int initialize_RTC(rtccTime time, rtccDate date) {
 	RtccInit();
 	// Wait for RTC to be running
 	while (RtccGetClkStat() != RTCC_CLK_ON) {}
-	RtccSetTimeDate(time, date);
+	RtccSetTimeDate(time.l, date.l);
 	
 	return NO_ERROR;
 }
@@ -48,6 +48,8 @@ unsigned int initialize_RTC(rtccTime time, rtccDate date) {
  *		date[in]: Unsigned integer [1-31] that encodes the day of month to initialize the unit to.
  *	Returns
  *		None.
+ *	Note
+ *		If an invalid number is entered for any of the fields, the RTC unit isn't updated.
  */
 void adjust_datetime(unsigned int hour, unsigned int minute, unsigned int month, unsigned int date) {
 	if (hour > 24 | minute > 60 | month == 0 | month > 12 | date == 0 | date > 31)  // Check for invalid entries
@@ -80,12 +82,15 @@ void adjust_datetime(unsigned int hour, unsigned int minute, unsigned int month,
  *		Unsigned integer that is ERROR or NO_ERROR if initialization was successful.
  */
 inline void get_datetime(unsigned int* hour, unsigned int* minute, unsigned int* month, unsigned int* date) {
-	rtccTime time;
-	rtccDate date;
+	rtccTime time_struct;
+	rtccDate date_struct;
 	
 	// Get current datetime - update the return variables
-	RtccGetTimeDate(&time, &date);
-	*hour = time.hour; *minute = time.min; *month = date.mon; *date = date.mday;
+	RtccGetTimeDate(&time_struct, &date_struct);
+	*hour = time_struct.hour;
+	*minute = time_struct.min;
+	*month = date_struct.mon;
+	*date = date_struct.mday;
 }
 
 /* --------------------------------- Private Functions ---------------------------------- */

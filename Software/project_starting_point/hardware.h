@@ -35,15 +35,15 @@
 	#define SOFTWARE_1MS_COUNT		(8000)
 
 	#define GetSystemClock()		(80000000ul)
-	#define GetInstructionClock()	(GetSystemClock()/2)	
-	#define GetPeripheralClock()	(GetSystemClock()/1)	
-	#define CORE_MS_TICK_RATE		(GetInstructionClock()/1000)
+	#define GetInstructionClock()	(GetSystemClock() / 2)	
+	#define GetPeripheralClock()	(GetSystemClock() / 1)	
+	#define CORE_MS_TICK_RATE		(GetInstructionClock() / 1000)
 
 	// Function Prototypes
 	unsigned int initialize_shared_hardware(void);
-	inline void clear_buffer(char * buffer, unsigned int length);
-	inline void copy_buffer(char * destination, char * source, unsigned int length);
-	inline void software_delay_ms(unsigned int milliseconds);
+	inline void clear_buffer(char * buffer, const unsigned int length);
+	inline void copy_buffer(char * destination, const char * source, const unsigned int length);
+	inline void software_delay_ms(const unsigned int milliseconds);
 	inline unsigned int read_button2(void);
 	inline unsigned int read_button3(void);
 	inline unsigned int read_button4(void);

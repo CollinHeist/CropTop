@@ -54,7 +54,7 @@ unsigned int initialize_shared_hardware(void) {
  *	Returns
  *		None.
  */
-inline void clear_buffer(char * buffer, unsigned int length) {
+inline void clear_buffer(char * buffer, const unsigned int length) {
 	unsigned int i;
 	for (i = 0; i < length; i++) { buffer[i] = '\0'; }
 }
@@ -73,7 +73,7 @@ inline void clear_buffer(char * buffer, unsigned int length) {
  *		for event parsing the responses from the screen. This function clears the destination
  *		buffer before any copying takes place.
  */
-inline void copy_buffer(char * destination, char * source, unsigned int length) {
+inline void copy_buffer(char * destination, const char * source, const unsigned int length) {
 	unsigned int i;												 // Indexing variable
 	clear_buffer(destination, length);							  // Clear the destination
 	for (i = 0; i < length; i++) { destination[i] = source[i]; }	// Copy loop
@@ -87,7 +87,7 @@ inline void copy_buffer(char * destination, char * source, unsigned int length) 
  *	Returns
  *		None.
  */
-inline void software_delay_ms(unsigned int milliseconds) {
+inline void software_delay_ms(const unsigned int milliseconds) {
 	unsigned int i, j;
 	for (i = 0; i < milliseconds; i++) { for (j = 0; j < SOFTWARE_1MS_COUNT; j++) {} }
 }

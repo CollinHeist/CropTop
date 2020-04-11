@@ -50,7 +50,7 @@ unsigned int initialize_i2c(unsigned int i2c_frequency) {
  *		None.
  *	Returns
  *		Character that is either 1 or 0. 1 if any busy flags are SET, 0 is CLEAR.
- *	Notes
+ *	Note
  *		This reads the SEN, PEN, RSEN, RCEN, ACKEN, and TRSTAT bits of the I2C1 controller.
  */
 inline char busy_I2C1(void) {

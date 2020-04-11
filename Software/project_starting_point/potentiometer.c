@@ -17,6 +17,8 @@
 
 /* -------------------------- Global Variables and Structures --------------------------- */
 
+static unsigned int adc_mode = DEFAULT_ADC_MODE;
+
 // Structure and array used to configure timer 3 to the most appropriate setting
 // in order to achieve the desired sample frequency 
 struct prescale_struct {
@@ -107,6 +109,12 @@ unsigned int read_potentiometer(void) {
 	
 	// Return the ADC result at that buffer location
 	return ReadADC10(offset);
+}
+
+inline void set_ADC_mode(unsigned int new_mode) {
+	// Ensure a valid mode was entered
+	new_mode = ((new_mode != ADC_MODE_NEWTONS) && (new_mode != ADC_MODE_VOLTS)) ? DEFAULT_ADC_MODE : new_mode;
+	adc_mode = new_mode;
 }
 
 /* --------------------------------- Private Functions ---------------------------------- */

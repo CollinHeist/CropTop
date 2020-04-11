@@ -16,8 +16,6 @@
 
 #include "hardware.h"
 #include "main.h"
-#include "FT8xx.h"
-#include "display_library.h"
 #include "motors.h"
 #include "potentiometer.h"
 #include "I2CLib.h"
@@ -28,12 +26,19 @@
 
 /* -------------------------- Global Variables and Structures --------------------------- */
 
-// Start datetime at 12:00 on 01/01/20
-rtccTime start_time = 0x0C000000;   // 2 bytes per field: [HOUR | MINUTE | SECOND | 0x00]
-rtccDate start_date = 0x14010101;   // 2 bytes per field: [YEAR | MONTH | DATE | WEEKDAY]
+rtccTime start_time;	// Initialized in initialize_system
+rtccDate start_date;	// Initialized in initialize_system
 
 /* ---------------------------------- Public Functions ---------------------------------- */
 
+/*
+ *	Summary
+ *		Main foreground program loop. The processing in this should be kept to a minimal.
+ *	Parameters
+ *		None.
+ *	Returns
+ *		This should never return - if it does, you've done goofed.
+ */
 int main() {
 	if (initialize_system() == ERROR)
 		Nop(); //return 0;		// An error occurred while running
@@ -61,7 +66,9 @@ static unsigned int initialize_system(void) {
 	unsigned int error_flag = NO_ERROR;
 	error_flag |= initialize_shared_hardware();
 
-	// Initialize subsystems
+	// Initialize subsystems	   Start datetime at 12:00 on 01/01/20
+	start_time.l = 0x0C000000;	// 2 bytes per field: [HOUR | MINUTE | SECOND | 0x00]
+	start_date.l = 0x14010101;	// 2 bytes per field: [YEAR | MONTH | DATE | WEEKDAY]
 	error_flag |= initialize_RTC(start_time, start_date);
 	error_flag |= initialize_potentiometer(POTENTIOMETER_SAMPLE_FREQ_HZ);
 	error_flag |= initialize_motors();

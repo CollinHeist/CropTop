@@ -12,23 +12,30 @@
 	#define __SCREEN_H__
 
 	// Operational Configurations
-	#define RX_BUFFER_SIZE				(64)
-	#define TX_BUFFER_SIZE				(64)
+	#define RX_BUFFER_SIZE				(48)	// Maximum number of characters sent by the screen in any one message
+	#define TX_BUFFER_SIZE				(32)	// Maximum number of characters sent to the screen in any one message
 
-	#define SCREEN_UART_DATA_SIZE		(UART_DATA_SIZE_8_BITS) // 8 data bits
-	#define SCREEN_UART_PARITY			(UART_PARITY_NONE)	  // No parity
-	#define SCREEN_UART_STOP_BITS		(UART_STOP_BITS_1)	  // 1 stop bit
+	#define SCREEN_UART_DATA_SIZE		(UART_DATA_SIZE_8_BITS)	// 8 data bits
+	#define SCREEN_UART_PARITY			(UART_PARITY_NONE)		// No parity
+	#define SCREEN_UART_STOP_BITS		(UART_STOP_BITS_1)		// 1 stop bit
 	#define SCREEN_UART_LINE_CONTROL	(SCREEN_UART_DATA_SIZE | SCREEN_UART_PARITY | SCREEN_UART_STOP_BITS)
 
 	// GUI-Based String Data - these are sent with "get" command within Nextion screen
+		// Length of some commands is specified to properly compute strncmp()
 	#define REFRESH_MAIN_MENU			("refresh_main_menu")
 	#define REFRESH_LIVE_FEED			("refresh_live_feed")
-	#define TEMPERATURE_MODE			("temperature_mode")
-		#define TEMPERATURE_MODE_LENGTH	(16)
+	#define SET_TEMP_MODE				("temperature_mode")
+		#define SET_TEMP_MODE_LENGTH	(16)
 	#define SET_DATETIME				("set_datetime")
 		#define SET_DATETIME_LENGTH		(12)
-	#define ADC_MODE_NEWTONS			("adc_mode_N")
-	#define ADC_MODE_VOLTS				("adc_mode_V")
+	#define SET_ADC_MODE				("adc_mode")
+		#define SET_ADC_MODE_LENGTH		(8)
+	#define BACKGROUND_COLOR			("bg_color")
+		#define BACKGROUND_COLOR_LENGTH	(8)
+	#define BOX_COLOR					("box_color")
+		#define BOX_COLOR_LENGTH		(9)
+	#define FONT_COLOR					("font_color")
+		#define FONT_COLOR_LENGTH		(10)
 	#define START_TEST					("start_test")
 	#define STOP_TEST					("stop_test")
 	#define VIEW_FIRST_FOLDER			("view_first_folder")
@@ -85,11 +92,11 @@
 
 	// Function Prototypes
 	unsigned int initialize_screen(const unsigned int baud);
-	void send_string_UART2(const char* string);
+	inline void send_string_to_screen(const char* string);
 	void parse_screen_response(void);
 	static unsigned int send_byte_UART2(const BYTE data);
-	static void awake_screen(void);
+	static void send_string_UART2(const char* string);
+	static inline void awake_screen(void);
 	static void parse_string_data(const char* buffer);
-	static unsigned int initialize_DMA_UART2(void);
-	static inline void restart_DMA_transfer(void);
+	static inline unsigned int color_from_RGB(const unsigned int red, const unsigned int green, const unsigned int blue);
 #endif

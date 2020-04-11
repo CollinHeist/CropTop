@@ -15,8 +15,11 @@
 
 #include "hardware.h"
 #include "screen.h"
-#include "temp_humidity.h"
+#include "accelerometer.h"
+#include "GPS.h"
 #include "RTC.h"
+#include "potentiometer.h"
+#include "temp_humidity.h"
 
 /* -------------------------- Global Variables and Structures --------------------------- */
 
@@ -30,7 +33,7 @@ static char screen_rx_buffer[RX_BUFFER_SIZE];		// User-facing screen buffer - ut
 /*
  *	Summary
  *		Function to initialize the screen - primarily UART2 to a desired baud. Also configures
- *	  U2RX interrupt to be 4-1. Then sends all initialization messages to screen.
+ *		U2RX interrupt to be 4-1. Then sends all initialization messages to screen.
  *	Parameters
  *		baud[in]: Unsigned integer that is the desired baud rate of UART2.
  *	Returns
@@ -49,27 +52,35 @@ unsigned int initialize_screen(const unsigned int baud) {
 
 /*
  *	Summary
- *		Function to send a string out over UART2 (to the screen).
+ *		Function to send a string to the screen.
  *	Parameters
- *		string[in]: Character pointer that points to the first character of a null-terminated string.
+ *		string[in]: Character pointer to the first character of the null-terminated
+ *			string to send to the screen. 
  *	Returns
  *		None.
+ *	Note
+ *		This is a wrapper function to send_string_UART2, and so is technically useless.
+ *		However, I think it's useful to obfuscate the UART2 detail from the user, instead
+ *		specifying that the message will go to the screen (which is more useful).
  */
-void send_string_UART2(const char* string) {
-	while (*string) {
-		while (send_byte_UART2(*string) == ERROR) {}	// Try and send byte until successful
-		string++;
-	}
+inline void send_string_to_screen(const char* string) {
+	send_string_UART2(string);
 }
 
 /*
  *	Summary
  *		Function that parses the contents of screen_rx_buffer if the received flag has been
- *		set by the DMA ISR.
+ *		set by the DMA ISR. This parses all different types of return codes from the screen,
+ *		but does not specifically handle specific functionality (like user-defined screen
+ *		messages, etc.). This function is the primary background screen 'loop', and should
+ *		thus be called as often as possible.
  *	Parameters
  *		None.
  *	Returns
  *		None.
+ *	Note
+ *		Not all screen responses can be sent by our model of screen (specifically the 
+ *		EEPROM  and CRC messages), but they're listed anyway.
  */
 void parse_screen_response(void) {
 	// Variables for parsing screen messages
@@ -77,10 +88,10 @@ void parse_screen_response(void) {
 	unsigned int x_msb = 0, x_lsb = 0, y_msb = 0, y_lsb = 0, num_b0 = 0, num_b1 = 0, num_b2 = 0, num_b3 = 0;
 	char received_string[RX_BUFFER_SIZE] = {'\0'};
 	
-	// Check for UART2 errors and clear them if they arise - prevents screen errors
-	int e = UART2GetErrors();
-	if (e)
-		UART2ClearAllErrors();
+	// Check for UART2 errors and clear them if they arise - prevents communication breakdown.
+	int e = UART2GetErrors();	// Theoretically, a message should be sent to the user when errors occur.
+	if (e)						// However, runtime is not affected (from what I've seen), and given that the screen
+		UART2ClearAllErrors();	// only *displays* data (does not process it), the worst-case is a missed message.
 
 	// Only parse the buffer if 
 	if (received_flag == COMMAND_RECEIVED) {
@@ -141,12 +152,47 @@ void parse_screen_response(void) {
 			}
 		}
 		
-		received_flag = COMMAND_NOT_RECEIVED;	// Reset flag
+		received_flag = COMMAND_NOT_RECEIVED;	// Reset flag now that the message has been parsed
 	}
+}
+
+/*
+ *	Summary
+ *		Function to update the operating BAUD of the UART2 (screen) communication.
+ *	Parameters
+ *		baud[in]: Unsigned integer that represents the new desired baud rate.
+ *	Returns
+ *		None.
+ */
+inline void set_screen_baud(const unsigned int baud) {
+	// Tell the screen to update its baud first
+	char send_buffer[TX_BUFFER_SIZE];
+	clear_buffer(send_buffer, TX_BUFFER_SIZE);
+	snprintf(send_buffer, TX_BUFFER_SIZE, "baud=%u\xFF\xFF\xFF", baud);
+	send_string_UART2(send_buffer);
+	// Update the UART2 baud operation
 }
 
 
 /* --------------------------------- Private Functions ---------------------------------- */
+
+/*
+ *	Summary
+ *		Private function to send a string out over UART2 (to the screen).
+ *	Parameters
+ *		string[in]: Character pointer that points to the first character of a null-terminated string.
+ *	Returns
+ *		None.
+ *	Note
+ *		If communication errors are persistent enough, a timeout counter should be added to the
+ *		send_byte_UART2 function call to avoid halting background operations.
+ */
+static void send_string_UART2(const char* string) {
+	while (*string) {
+		while (send_byte_UART2(*string) == ERROR) {}	// Try and send byte until successful
+		string++;
+	}
+}
 
 /*
  *	Summary
@@ -174,10 +220,27 @@ static unsigned int send_byte_UART2(const BYTE data) {
  *	Returns
  *		None.
  */
-static void awake_screen(void) {
+static inline void awake_screen(void) {
 	send_string_UART2("sleep=0\xFF\xFF\xFF");
 }
 
+/*
+ *	Summary
+ *		Private function that parses all string data from the screen. These are primarily
+ *		the "get" commands written into the GUI to communicate events between devices.
+ *	Parameters
+ *		buffer[in]: Pointer to the first character of the null-terminated string that contains
+ *			the data that is to be parsed by this function. This should match one of the 
+ *			definitions inside screen.h, as the buffer is compared to them to determine what
+ *			action to take.
+ *	Returns
+ *		None.
+ *	Note
+ *		This is a very beefy function. I decided to not partition individual command processing
+ *		into function calls because of the additional overhead. However, some processes do call
+ *		external functions from various libraries (such as reading from sensors, updating settings,
+ *		etc.).
+ */
 static void parse_string_data(const char* buffer) {
 	char send_buffer[TX_BUFFER_SIZE];
 	clear_buffer(send_buffer, TX_BUFFER_SIZE);
@@ -245,12 +308,12 @@ static void parse_string_data(const char* buffer) {
 		send_string_UART2(send_buffer);
 		clear_buffer(send_buffer, TX_BUFFER_SIZE);
 	}
-	else if (!strncmp(buffer, TEMPERATURE_MODE, TEMPERATURE_MODE_LENGTH)) {
+	else if (!strncmp(buffer, SET_TEMP_MODE, SET_TEMP_MODE_LENGTH)) {
 		// Update the current temperature mode
 		char mode;
-		sscanf(buffer + TEMPERATURE_MODE_LENGTH + 1, "%c", &mode);  // Add 1 to account for space
-		if (mode == 'C') { set_temperature_mode(CELSIUS_MODE);	 }
-		else			 { set_temperature_mode(FAHRENHEIT_MODE);  }
+		sscanf(buffer + SET_TEMP_MODE_LENGTH + 1, "%c", &mode);  // Add 1 to account for space
+		if (mode == 'C') { set_temperature_mode(CELSIUS_MODE);		}
+		else			 { set_temperature_mode(FAHRENHEIT_MODE);	}
 	}
 	else if (!strncmp(buffer, SET_DATETIME, SET_DATETIME_LENGTH)) {
 		// Update the datetime to the passed string
@@ -258,11 +321,36 @@ static void parse_string_data(const char* buffer) {
 		sscanf(buffer + SET_DATETIME_LENGTH + 1, "%u:%u %u/%u", &hour, &minute, &month, &date);
 		adjust_datetime(hour, minute, month, date);
 	}
-	else if (!strcmp(buffer, ADC_MODE_NEWTONS)) {
-		
+	else if (!strncmp(buffer, SET_ADC_MODE, SET_ADC_MODE_LENGTH)) {
+		// Update the current ADC mode
+		char mode;
+		sscanf(buffer + SET_ADC_MODE_LENGTH + 1, "%c", mode);	// Add 1 to account for space
+		if (mode == 'N') { set_ADC_mode(ADC_MODE_NEWTONS);	}
+		else			 { set_ADC_mode(ADC_MODE_VOLTS);	}
 	}
-	else if (!strcmp(buffer, ADC_MODE_VOLTS)) {
-		
+	else if (!strncmp(buffer, BACKGROUND_COLOR, BACKGROUND_COLOR_LENGTH)) {
+		// Update the global background color variable - Color is 565-bit encoding
+		unsigned int color = 0, red = 0, green = 0, blue = 0;
+		sscanf(buffer + BACKGROUND_COLOR_LENGTH + 1, "%u %u %u", &red, &green, &blue);
+		color = color_from_RGB(red, green, blue);
+		snprintf(send_buffer, TX_BUFFER_SIZE, "globalBG.val=%u\xFF\xFF\xFF", color);
+		send_string_UART2(send_buffer);
+	}
+	else if (!strncmp(buffer, BOX_COLOR, BOX_COLOR_LENGTH)) {
+		// Update the global box color variable - Color is 565-bit encoding
+		unsigned int color = 0, red = 0, green = 0, blue = 0;
+		sscanf(buffer + BOX_COLOR_LENGTH + 1, "%u %u %u", &red, &green, &blue);
+		color = color_from_RGB(red, green, blue);
+		snprintf(send_buffer, TX_BUFFER_SIZE, "globalBox.val=%u\xFF\xFF\xFF", color);
+		send_string_UART2(send_buffer);
+	}
+	else if (!strncmp(buffer, FONT_COLOR, FONT_COLOR_LENGTH)) {
+		// Update the global font color variable - Color is 565-bit encoding
+		unsigned int color = 0, red = 0, green = 0, blue = 0;
+		sscanf(buffer + FONT_COLOR_LENGTH + 1, "%u %u %u", &red, &green, &blue);
+		color = color_from_RGB(red, green, blue);
+		snprintf(send_buffer, TX_BUFFER_SIZE, "globalFont.val=%u\xFF\xFF\xFF", color);
+		send_string_UART2(send_buffer);
 	}
 	else if (!strcmp(buffer, START_TEST)) {
 		
@@ -287,13 +375,28 @@ static void parse_string_data(const char* buffer) {
 	}
 }
 
+/*
+ *	Summary
+ *		Helper function to get the final 565 color code for GUI objects from separated RGB
+ *		color channels. Bit formatting is 0bRRRRRGGGGGGBBBBB (hence 565).
+ *	Parameters
+ *		red[in]: Unsigned integer that represents the red channel. Should be limited to 5-bits.
+ *		green[in]: Unsigned integer that represents the green channel. Should be limited to 6-bits.
+ *		blue[in]: Unsigned integer that represents the blue channel. Should be limited to 5-bits.
+ *	Returns
+ *		Unsigned integer that is the full 565-bit color to be sent to the Nextion GUI.
+ */
+static inline unsigned int color_from_RGB(const unsigned int red, const unsigned int green, const unsigned int blue) {
+	return (red << 11) + (green << 5) + blue;
+}
+
 /* ----------------------------- Interrupt Service Routines ----------------------------- */
 
 /*
  *	Summary
  *		Interrupt service routine for the UART2 vector. Handled when character is sent
  *		or received via the UART2 buffer. Stores character in private_DMA_buffer until
- *	  COMMAND_END_CHARACTER ('\xFF') is detected - then received_flag is set.
+ *		COMMAND_END_CHARACTER ('\xFF') is detected - then received_flag is set.
  *	Parameters
  *		None.
  *	Returns
