@@ -10,7 +10,9 @@
 #ifndef __MAIN_H__
 	#define __MAIN_H__
 
-	// Operational Configurations
+	// Operational Configurations								// Default startup datetime is 12:00 PM on 01/01/20
+	#define DEFAULT_STARTUP_TIME			(0x0C000000)		// 2 bytes per field: [HOUR | MINUTE | SECOND | 0x00]
+	#define DEFAULT_STARTUP_DATE			(0x14010101)		// 2 bytes per field: [YEAR | MONTH | DATE | WEEKDAY]
 	#define POTENTIOMETER_SAMPLE_FREQ_HZ	(500)				// How fast (in Hz) to sample the potentiometer inputs	
 	#define I2C1_GNSS_FREQ_HZ				(100000)			// 100kB clock line for GNSS Reciever module
 	#define TEMPERATURE_MODE				(FAHRENHEIT_MODE)	// What result temperature values are returned in

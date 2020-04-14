@@ -6,4 +6,5 @@ build/default/production/_ext/1472/screen.o:  \
 ../GPS.h  \
 ../RTC.h  \
 ../potentiometer.h  \
- ../temp_humidity.h 
+ ../temp_humidity.h  \
+../tests.h 

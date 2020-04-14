@@ -56,18 +56,17 @@ void adjust_datetime(unsigned int hour, unsigned int minute, unsigned int month,
 		return;
 	
 	// Update new date and time fields
-	rtccTime new_time;
-	rtccDate new_date;
+	rtccTime new_time; rtccDate new_date;
 	
-	new_time.l = 0;							// Reset the whole structure
-	new_time.hour = hour & ONE_BYTE_MASK;	// Set the hour field
-	new_time.min = minute & ONE_BYTE_MASK;	// Set the minute field
+	new_time.l = 0;			// Reset the whole structure
+	new_time.hour = hour;	// Set the hour field
+	new_time.min = minute;	// Set the minute field
 	
-	new_date.l = 0;							// Reset the whole structure
-	new_date.mon = month & ONE_BYTE_MASK;	// Set the month field
-	new_date.mday = date & ONE_BYTE_MASK;	// Set the date field
+	new_date.l = 0;			// Reset the whole structure
+	new_date.mon = month;	// Set the month field
+	new_date.mday = date;	// Set the date field
 	
-	RtccOpen(new_time.l, new_date.l, 0);	// Set the RTCC peripheral
+	RtccOpen(new_time.l, new_date.l, 0);	// Set the RTCC peripheral to the new values
 }
 
 /*
@@ -79,7 +78,7 @@ void adjust_datetime(unsigned int hour, unsigned int minute, unsigned int month,
  *		month[out]: Pointer to an unsigned integer that will be updated with the current month.
  *		date[out]: Pointer to an unsigned integer that will be updated with the current date.
  *	Returns
- *		Unsigned integer that is ERROR or NO_ERROR if initialization was successful.
+ *		None.
  */
 inline void get_datetime(unsigned int* hour, unsigned int* minute, unsigned int* month, unsigned int* date) {
 	rtccTime time_struct;
@@ -91,6 +90,19 @@ inline void get_datetime(unsigned int* hour, unsigned int* minute, unsigned int*
 	*minute = time_struct.min;
 	*month = date_struct.mon;
 	*date = date_struct.mday;
+}
+
+/*
+ *	Summary
+ *		Function to get the current date and time inside two structures (not as separate uint fields).
+ *	Parameters
+ *		time[out]: Pointer to an rtccTime structure to fill with the current time.
+ *		date[out]: Pointer to an rtccDate structure to fill with the current date.
+ *	Returns
+ *		None.
+ */
+inline void get_datetime_rtcc(rtccTime* time, rtccDate* date) {
+	RtccGetTimeDate(time, date);
 }
 
 /* --------------------------------- Private Functions ---------------------------------- */

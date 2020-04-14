@@ -39,6 +39,12 @@
 	#define GetPeripheralClock()	(GetSystemClock() / 1)	
 	#define CORE_MS_TICK_RATE		(GetInstructionClock() / 1000)
 
+	// Data-type definitions
+		// See chapter 8 of the XC32 compiler guide http://ww1.microchip.com/downloads/en/DeviceDoc/50001686J.pdf
+	#define NUM_BYTES_SHORT			(2)
+	#define NUM_BYTES_INT			(4)
+	#define NUM_BYTES_FLOAT			(4)
+	
 	// Function Prototypes
 	unsigned int initialize_shared_hardware(void);
 	inline void clear_buffer(char * buffer, const unsigned int length);

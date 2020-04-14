@@ -74,8 +74,8 @@ inline void clear_buffer(char * buffer, const unsigned int length) {
  *		buffer before any copying takes place.
  */
 inline void copy_buffer(char * destination, const char * source, const unsigned int length) {
-	unsigned int i;												 // Indexing variable
-	clear_buffer(destination, length);							  // Clear the destination
+	unsigned int i;													// Indexing variable
+	clear_buffer(destination, length);								// Clear the destination
 	for (i = 0; i < length; i++) { destination[i] = source[i]; }	// Copy loop
 }
 

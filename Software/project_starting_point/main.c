@@ -26,9 +26,6 @@
 
 /* -------------------------- Global Variables and Structures --------------------------- */
 
-rtccTime start_time;	// Initialized in initialize_system
-rtccDate start_date;	// Initialized in initialize_system
-
 /* ---------------------------------- Public Functions ---------------------------------- */
 
 /*
@@ -62,14 +59,17 @@ int main() {
  *		Unsigned integer that is ERROR or NO_ERROR if initialization was successful.
  */
 static unsigned int initialize_system(void) {
+	rtccTime start_time;	rtccDate start_date;
+
 	// Initialize primary shared hardware
 	unsigned int error_flag = NO_ERROR;
 	error_flag |= initialize_shared_hardware();
 
-	// Initialize subsystems	   Start datetime at 12:00 on 01/01/20
-	start_time.l = 0x0C000000;	// 2 bytes per field: [HOUR | MINUTE | SECOND | 0x00]
-	start_date.l = 0x14010101;	// 2 bytes per field: [YEAR | MONTH | DATE | WEEKDAY]
+	// Initialize subsystems	   
+	start_time.l = DEFAULT_STARTUP_TIME;
+	start_date.l = DEFAULT_STARTUP_DATE;
 	error_flag |= initialize_RTC(start_time, start_date);
+	error_flag |= initialize_test_operations();
 	error_flag |= initialize_potentiometer(POTENTIOMETER_SAMPLE_FREQ_HZ);
 	error_flag |= initialize_motors();
 	error_flag |= initialize_i2c(I2C1_GNSS_FREQ_HZ);

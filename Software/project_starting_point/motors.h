@@ -35,5 +35,5 @@
 	unsigned int motor_brake(void);
 	unsigned int motor_test_mode(unsigned int speed);
 	static unsigned int motor_set_duty_cycle(unsigned int oc2_cycle_percent, unsigned int oc3_cycle_percent);
-    static inline unsigned int read_motor_fault_pin(void);
+	static inline unsigned int read_motor_fault_pin(void);
 #endif

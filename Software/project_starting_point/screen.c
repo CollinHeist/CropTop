@@ -20,6 +20,7 @@
 #include "RTC.h"
 #include "potentiometer.h"
 #include "temp_humidity.h"
+#include "tests.h"
 
 /* -------------------------- Global Variables and Structures --------------------------- */
 
@@ -158,6 +159,26 @@ void parse_screen_response(void) {
 
 /*
  *	Summary
+ *		Function to alert the user when the internal PIC memory is full and it is
+ *		time to export tests to the attached USB. Send the user to user_warnings page
+ *		and sets the next_page to testing page.
+ *	Parameters
+ *		None.
+ *	Returns
+ *		None.
+ *	Note
+ *		This function is ideally only called when a test is saved and we then reach
+ *		the end of the memory allocated for tests. To increase this memory, change
+ *		MAX_NUMBER_TESTS within tests.h. This function assumes 'testing' is page 3.
+ */
+inline void alert_user_memory_full(void) {
+	send_string_UART2("user_warnings.nextPage.val=3\xFF\xFF\xFF");	// Set the next page to 3 (testing)
+	send_string_UART2("user_warnings.messageText=\"The device's internal test storage is full - please export to USB. Subsequent results will be ignored until memory is freed.\"\xFF\xFF\xFF");
+	send_string_UART2("page user_warnings\xFF\xFF\xFF");
+}
+
+/*
+ *	Summary
  *		Function to update the operating BAUD of the UART2 (screen) communication.
  *	Parameters
  *		baud[in]: Unsigned integer that represents the new desired baud rate.
@@ -172,7 +193,6 @@ inline void set_screen_baud(const unsigned int baud) {
 	send_string_UART2(send_buffer);
 	// Update the UART2 baud operation
 }
-
 
 /* --------------------------------- Private Functions ---------------------------------- */
 
@@ -306,11 +326,10 @@ static void parse_string_data(const char* buffer) {
 		// Create CPU Time String
 		snprintf(send_buffer, TX_BUFFER_SIZE, "timeText.txt=\"%u\"\xFF\xFF\xFF", ReadCoreTimer());
 		send_string_UART2(send_buffer);
-		clear_buffer(send_buffer, TX_BUFFER_SIZE);
 	}
 	else if (!strncmp(buffer, SET_TEMP_MODE, SET_TEMP_MODE_LENGTH)) {
 		// Update the current temperature mode
-		char mode;
+		char mode = '\0';
 		sscanf(buffer + SET_TEMP_MODE_LENGTH + 1, "%c", &mode);  // Add 1 to account for space
 		if (mode == 'C') { set_temperature_mode(CELSIUS_MODE);		}
 		else			 { set_temperature_mode(FAHRENHEIT_MODE);	}
@@ -323,40 +342,49 @@ static void parse_string_data(const char* buffer) {
 	}
 	else if (!strncmp(buffer, SET_ADC_MODE, SET_ADC_MODE_LENGTH)) {
 		// Update the current ADC mode
-		char mode;
+		char mode = '\0';
 		sscanf(buffer + SET_ADC_MODE_LENGTH + 1, "%c", mode);	// Add 1 to account for space
 		if (mode == 'N') { set_ADC_mode(ADC_MODE_NEWTONS);	}
 		else			 { set_ADC_mode(ADC_MODE_VOLTS);	}
 	}
 	else if (!strncmp(buffer, BACKGROUND_COLOR, BACKGROUND_COLOR_LENGTH)) {
 		// Update the global background color variable - Color is 565-bit encoding
-		unsigned int color = 0, red = 0, green = 0, blue = 0;
+		unsigned int red = 0, green = 0, blue = 0;
 		sscanf(buffer + BACKGROUND_COLOR_LENGTH + 1, "%u %u %u", &red, &green, &blue);
-		color = color_from_RGB(red, green, blue);
-		snprintf(send_buffer, TX_BUFFER_SIZE, "globalBG.val=%u\xFF\xFF\xFF", color);
+		snprintf(send_buffer, TX_BUFFER_SIZE, "globalBG.val=%u\xFF\xFF\xFF", color_from_RGB(red, green, blue));
 		send_string_UART2(send_buffer);
 	}
 	else if (!strncmp(buffer, BOX_COLOR, BOX_COLOR_LENGTH)) {
 		// Update the global box color variable - Color is 565-bit encoding
-		unsigned int color = 0, red = 0, green = 0, blue = 0;
+		unsigned int red = 0, green = 0, blue = 0;
 		sscanf(buffer + BOX_COLOR_LENGTH + 1, "%u %u %u", &red, &green, &blue);
-		color = color_from_RGB(red, green, blue);
-		snprintf(send_buffer, TX_BUFFER_SIZE, "globalBox.val=%u\xFF\xFF\xFF", color);
+		snprintf(send_buffer, TX_BUFFER_SIZE, "globalBox.val=%u\xFF\xFF\xFF", color_from_RGB(red, green, blue));
 		send_string_UART2(send_buffer);
 	}
 	else if (!strncmp(buffer, FONT_COLOR, FONT_COLOR_LENGTH)) {
 		// Update the global font color variable - Color is 565-bit encoding
-		unsigned int color = 0, red = 0, green = 0, blue = 0;
+		unsigned int red = 0, green = 0, blue = 0;
 		sscanf(buffer + FONT_COLOR_LENGTH + 1, "%u %u %u", &red, &green, &blue);
-		color = color_from_RGB(red, green, blue);
-		snprintf(send_buffer, TX_BUFFER_SIZE, "globalFont.val=%u\xFF\xFF\xFF", color);
+		snprintf(send_buffer, TX_BUFFER_SIZE, "globalFont.val=%u\xFF\xFF\xFF", color_from_RGB(red, green, blue));
 		send_string_UART2(send_buffer);
 	}
 	else if (!strcmp(buffer, START_TEST)) {
-		
+		// Start the test procedure
+		if (check_if_memory_full() == IS_FULL) {	// Verify there is room in memory for the test
+			alert_user_memory_full();				// Send the user a warning and do not start the test
+		}
+		else {
+			// Start the test if memory is available
+			
+		}
 	}
 	else if (!strcmp(buffer, STOP_TEST)) {
-		
+		// Stop the test procedure
+	}
+	else if (!strncmp(buffer, SAVE_TEST, SAVE_TEST_LENGTH)) {
+		// Save the previously run test - parse the passed test information
+		Test current_test = parse_test_information(buffer + SAVE_TEST_LENGTH + 1);
+		save_test(current_test);
 	}
 	else if (!strcmp(buffer, VIEW_FIRST_FOLDER)) {
 		
@@ -368,7 +396,8 @@ static void parse_string_data(const char* buffer) {
 		
 	}
 	else if (!strcmp(buffer, DELETE_TEST)) {
-		
+		// Delete the data taken for the current test
+		delete_current_test_data();
 	}
 	else {
 		// Invalid parse string

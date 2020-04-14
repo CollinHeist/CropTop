@@ -17,4 +17,5 @@
 	unsigned int initialize_RTC(rtccTime time, rtccDate date);
 	void adjust_datetime(unsigned int hour, unsigned int minute, unsigned int month, unsigned int date);
 	inline void get_datetime(unsigned int* hour, unsigned int* minute, unsigned int* month, unsigned int* date);
+	inline void get_datetime_rtcc(rtccTime* time, rtccDate* date);
 #endif

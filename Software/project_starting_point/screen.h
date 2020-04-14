@@ -12,8 +12,8 @@
 	#define __SCREEN_H__
 
 	// Operational Configurations
-	#define RX_BUFFER_SIZE				(48)	// Maximum number of characters sent by the screen in any one message
-	#define TX_BUFFER_SIZE				(32)	// Maximum number of characters sent to the screen in any one message
+	#define RX_BUFFER_SIZE				(128)	// Maximum number of characters sent by the screen in any one message
+	#define TX_BUFFER_SIZE				(48)	// Maximum number of characters sent to the screen in any one message
 
 	#define SCREEN_UART_DATA_SIZE		(UART_DATA_SIZE_8_BITS)	// 8 data bits
 	#define SCREEN_UART_PARITY			(UART_PARITY_NONE)		// No parity
@@ -38,6 +38,8 @@
 		#define FONT_COLOR_LENGTH		(10)
 	#define START_TEST					("start_test")
 	#define STOP_TEST					("stop_test")
+	#define SAVE_TEST					("save_test")
+		#define SAVE_TEST_LENGTH		(9)
 	#define VIEW_FIRST_FOLDER			("view_first_folder")
 	#define VIEW_NEXT_FOLDER			("view_next_folder")
 	#define EXPORT_TO_USB				("export_to_usb")
@@ -94,6 +96,7 @@
 	unsigned int initialize_screen(const unsigned int baud);
 	inline void send_string_to_screen(const char* string);
 	void parse_screen_response(void);
+	inline void alert_user_memory_full(void);
 	static unsigned int send_byte_UART2(const BYTE data);
 	static void send_string_UART2(const char* string);
 	static inline void awake_screen(void);
