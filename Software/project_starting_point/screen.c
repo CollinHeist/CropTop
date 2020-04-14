@@ -84,11 +84,6 @@ inline void send_string_to_screen(const char* string) {
  *		EEPROM  and CRC messages), but they're listed anyway.
  */
 void parse_screen_response(void) {
-	// Variables for parsing screen messages
-	unsigned int page_number = 0, component_id = 0, event = 0, x_coord = 0, y_coord = 0, numeric_data = 0;
-	unsigned int x_msb = 0, x_lsb = 0, y_msb = 0, y_lsb = 0, num_b0 = 0, num_b1 = 0, num_b2 = 0, num_b3 = 0;
-	char received_string[RX_BUFFER_SIZE] = {'\0'};
-	
 	// Check for UART2 errors and clear them if they arise - prevents communication breakdown.
 	int e = UART2GetErrors();	// Theoretically, a message should be sent to the user when errors occur.
 	if (e)						// However, runtime is not affected (from what I've seen), and given that the screen
@@ -122,12 +117,15 @@ void parse_screen_response(void) {
 				case VARIABLE_NAME_TOO_LONG:		break;
 				case SERIAL_BUFFER_OVERFLOW:		break;
 				case TOUCH_EVENT:
+					unsigned int page_number = 0, component_id = 0, event = 0;
 					sscanf(screen_rx_buffer + 1, "%d%d%d", &page_number, &component_id, &event);		// Skip over first command character
 					break;
 				case CURRENT_PAGE_NUMBER:
+					unsigned int page_number = 0;
 					sscanf(screen_rx_buffer + 1, "%d", &page_number);								   // Skip over first command character
 					break;
 				case TOUCH_COORDINATE_AWAKE:
+					unsigned int x_msb = 0, x_lsb = 0, y_msb = 0, y_lsb = 0, event = 0, x_coord = 0, y_coord = 0;
 					sscanf(screen_rx_buffer + 1, "%d%d%d%d%d", &x_msb, &x_lsb, &y_msb, &y_lsb, &event); // Skip over first command character
 					x_coord = (x_msb << 8) | x_lsb;
 					y_coord = (y_msb << 8) | y_lsb;
@@ -136,12 +134,14 @@ void parse_screen_response(void) {
 					awake_screen();
 					break;
 				case STRING_DATA_ENCLOSED:
+					char received_string[RX_BUFFER_SIZE] = {'\0'};
 					sscanf(screen_rx_buffer + 1, "%s", received_string);								// Skip over first command character
 					parse_string_data(received_string);
 					break;
 				case NUMERIC_DATA_ENCLOSED:
+					unsigned int num_b0 = 0, num_b1 = 0, num_b2 = 0, num_b3 = 0, numeric_data = 0;
 					sscanf(screen_rx_buffer + 1, "%d%d%d%d", &num_b0, &num_b1, &num_b2, &num_b3);	   // Skip over first command character
-					numeric_data = num_b0 + (num_b1 << 8) + (num_b2 << 16) + (num_b3 << 24);
+					numeric_data = (num_b3 << 24) + (num_b2 << 16) + (num_b1 << 8) + num_b0;
 					break;
 				case AUTO_ENTERED_SLEEP_MODE:		break;
 				case AUTO_WAKE_FROM_SLEEP:			break;
@@ -191,7 +191,7 @@ inline void set_screen_baud(const unsigned int baud) {
 	clear_buffer(send_buffer, TX_BUFFER_SIZE);
 	snprintf(send_buffer, TX_BUFFER_SIZE, "baud=%u\xFF\xFF\xFF", baud);
 	send_string_UART2(send_buffer);
-	// Update the UART2 baud operation
+	// Update the PIC32's UART2 operation
 }
 
 /* --------------------------------- Private Functions ---------------------------------- */
@@ -424,8 +424,9 @@ static inline unsigned int color_from_RGB(const unsigned int red, const unsigned
 /*
  *	Summary
  *		Interrupt service routine for the UART2 vector. Handled when character is sent
- *		or received via the UART2 buffer. Stores character in private_DMA_buffer until
- *		COMMAND_END_CHARACTER ('\xFF') is detected - then received_flag is set.
+ *		or received via the UART2 buffer. Stores character in the private isr_buffer
+ *		until COMMAND_END_CHARACTER ('\xFF') is detected - then received_flag is set and
+ *		the contents of isr_buffer are copied into the public-facing screen_rx_buffer.
  *	Parameters
  *		None.
  *	Returns
