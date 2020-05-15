@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 73)
+    (drawings 72)
     (tracks 3145)
     (zones 0)
     (modules 273)
@@ -68,7 +68,7 @@
     (pad_to_mask_clearance 0)
     (solder_mask_min_width 0.25)
     (aux_axis_origin 52.324 40)
-    (grid_origin 242.4176 162.12828)
+    (grid_origin 52.324 40)
     (visible_elements 7FFFEFFF)
     (pcbplotparams
       (layerselection 0x010fc_ffffffff)
@@ -11537,7 +11537,6 @@
       (net 105 "Net-(J16-Pad5)"))
   )
 
-  (target plus (at 242.4176 162.12828) (size 5) (width 0.2) (layer Edge.Cuts))
   (gr_line (start 52.3118 44) (end 52.3118 158.1862) (layer Edge.Cuts) (width 0.2) (tstamp 5EBE006F))
   (gr_line (start 238.4298 40) (end 56.3118 40) (layer Edge.Cuts) (width 0.2) (tstamp 5EBE006C))
   (gr_line (start 242.4298 158.1862) (end 242.4298 44) (layer Edge.Cuts) (width 0.2) (tstamp 5EBE006A))
@@ -11626,7 +11625,7 @@
   (gr_line (start 172.8597 81.489996) (end 173.6217 81.489996) (layer F.SilkS) (width 0.2) (tstamp 5E98492B))
   (gr_line (start 160.1597 81.489996) (end 160.9217 81.489996) (layer F.SilkS) (width 0.2) (tstamp 5E984928))
   (gr_line (start 167.7797 81.489996) (end 168.5417 81.489996) (layer F.SilkS) (width 0.2) (tstamp 5E984925))
-  (gr_line (start 242.4176 162.1232) (end 52.2732 162.1232) (layer F.Mask) (width 4) (tstamp 5CD039C3))
+  (gr_line (start 242.4684 162.2502) (end 52.2478 162.1486) (layer F.Mask) (width 4) (tstamp 5CD039C3))
   (gr_line (start 242.4176 162.1232) (end 242.3414 40.0508) (layer F.Mask) (width 4) (tstamp 5CD039C1))
   (gr_line (start 52.324 40) (end 52.2732 162.1994) (layer F.Mask) (width 4) (tstamp 5CD039B1))
   (gr_line (start 52.2732 39.9492) (end 242.3414 40.0508) (layer F.Mask) (width 4) (tstamp 5CD039AE))

@@ -103,18 +103,6 @@ F 3 "" H 14500 2600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CropTop:Si7006-A20 U41
-U 1 1 5CA090A6
-P 14050 2350
-F 0 "U41" H 14050 2717 50  0000 C CNN
-F 1 "Si7006-A20" H 14050 2626 50  0000 C CNN
-F 2 "croptop:SI7006" H 14050 2350 50  0001 C CNN
-F 3 "https://www.silabs.com/documents/public/data-sheets/Si7006-A20.pdf" H 14050 2350 50  0001 C CNN
-F 4 "SI7006-A20-IMR" H 14050 2350 50  0001 C CNN "MPN"
-	1    14050 2350
-	1    0    0    -1  
-$EndComp
-$Comp
 L CropTop:DGND #PWR0227
 U 1 1 5CA022AE
 P 14250 5800
@@ -444,21 +432,6 @@ F 3 "" H 6250 1200 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8100 2450 8200 2450
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5CB78F40
-P 2650 2350
-AR Path="/64809F0C/5CB78F40" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5CB78F40" Ref="TP58"  Part="1" 
-F 0 "TP58" H 2650 2584 50  0000 C CNN
-F 1 "TestPoint" H 2708 2379 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 2850 2350 50  0001 C CNN
-F 3 "" H 2850 2350 50  0001 C CNN
-	1    2650 2350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2650 2350 2650 2450
 $Comp
 L CropTop:Micro_SD_Card_Det_0 J16
 U 1 1 5CBDF819
@@ -1718,22 +1691,6 @@ Wire Wire Line
 Wire Wire Line
 	2100 1850 2100 2000
 $Comp
-L Connector:TestPoint TP?
-U 1 1 5FDFF2C7
-P 3200 1200
-AR Path="/64809F0C/5FDFF2C7" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5FDFF2C7" Ref="TP59"  Part="1" 
-AR Path="/64807BBC/5FDFF2C7" Ref="TP?"  Part="1" 
-F 0 "TP59" H 3150 1400 50  0000 L CNN
-F 1 "TestPoint" H 3258 1229 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 3400 1200 50  0001 C CNN
-F 3 "" H 3400 1200 50  0001 C CNN
-	1    3200 1200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3200 1200 3200 1300
-$Comp
 L CropTop:AP22802AW5 U?
 U 1 1 5FDFF2D1
 P 2800 1400
@@ -1851,10 +1808,6 @@ Text GLabel 13250 2250 0    33   BiDi ~ 0
 ONBRD_SDA
 Text GLabel 13250 2350 0    33   Input ~ 0
 ONBRD_SCL
-Wire Wire Line
-	13250 2250 13600 2250
-Wire Wire Line
-	13250 2350 13350 2350
 $Comp
 L CropTop:DGND #PWR?
 U 1 1 5D541C15
@@ -2092,8 +2045,6 @@ Wire Wire Line
 	13150 5650 13050 5650
 Wire Wire Line
 	13050 5650 13050 5750
-Wire Wire Line
-	9900 2450 10000 2450
 $Comp
 L Device:L_Core_Ferrite L8
 U 1 1 5F208867
@@ -2132,48 +2083,6 @@ Wire Wire Line
 	12550 5750 11900 5750
 Wire Wire Line
 	12650 6050 11900 6050
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5F92792B
-P 10950 6150
-AR Path="/64809F0C/5F92792B" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5F92792B" Ref="TP67"  Part="1" 
-AR Path="/64807BBC/5F92792B" Ref="TP?"  Part="1" 
-F 0 "TP67" H 10850 6350 50  0000 L CNN
-F 1 "TestPoint" H 11008 6179 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 11150 6150 50  0001 C CNN
-F 3 "" H 11150 6150 50  0001 C CNN
-	1    10950 6150
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5F927A3B
-P 10950 4750
-AR Path="/64809F0C/5F927A3B" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5F927A3B" Ref="TP66"  Part="1" 
-AR Path="/64807BBC/5F927A3B" Ref="TP?"  Part="1" 
-F 0 "TP66" H 10850 4950 50  0000 L CNN
-F 1 "TestPoint" H 11008 4779 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 11150 4750 50  0001 C CNN
-F 3 "" H 11150 4750 50  0001 C CNN
-	1    10950 4750
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5F927CC0
-P 11200 6150
-AR Path="/64809F0C/5F927CC0" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5F927CC0" Ref="TP69"  Part="1" 
-AR Path="/64807BBC/5F927CC0" Ref="TP?"  Part="1" 
-F 0 "TP69" H 11310 6350 50  0000 R CNN
-F 1 "TestPoint" H 11258 6179 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 11400 6150 50  0001 C CNN
-F 3 "" H 11400 6150 50  0001 C CNN
-	1    11200 6150
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	12450 5150 12450 5450
 Text GLabel 10850 6050 0    33   Output ~ 0
@@ -2182,24 +2091,6 @@ Wire Wire Line
 	12650 5550 12650 6050
 Text GLabel 10850 5750 0    33   Input ~ 0
 ~GPS_RESET
-$Comp
-L Connector:TestPoint TP?
-U 1 1 60F3FF7D
-P 10000 2550
-AR Path="/64809F0C/60F3FF7D" Ref="TP?"  Part="1" 
-AR Path="/66A12230/60F3FF7D" Ref="TP64"  Part="1" 
-AR Path="/64807BBC/60F3FF7D" Ref="TP?"  Part="1" 
-F 0 "TP64" H 10000 2783 50  0000 C CNN
-F 1 "TestPoint" H 10058 2579 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 10200 2550 50  0001 C CNN
-F 3 "" H 10200 2550 50  0001 C CNN
-	1    10000 2550
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	10000 2550 10000 2450
-Wire Wire Line
-	10300 2550 10300 2350
 $Comp
 L Device:Q_NMOS_GSD Q5
 U 1 1 6149971C
@@ -2569,8 +2460,6 @@ Wire Wire Line
 Wire Wire Line
 	2500 1500 2400 1500
 Wire Wire Line
-	2400 2450 2650 2450
-Wire Wire Line
 	2400 1500 2400 2450
 Wire Wire Line
 	4000 2550 4000 2450
@@ -2719,8 +2608,6 @@ Connection ~ 11550 2050
 Wire Wire Line
 	11550 2050 11550 2150
 Wire Wire Line
-	3200 1300 3650 1300
-Wire Wire Line
 	6300 2350 6400 2350
 Connection ~ 3650 1300
 Wire Wire Line
@@ -2761,72 +2648,6 @@ Wire Wire Line
 Wire Wire Line
 	4100 1550 4100 1300
 Connection ~ 4100 1300
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5D227D71
-P 10300 2550
-AR Path="/64809F0C/5D227D71" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5D227D71" Ref="TP65"  Part="1" 
-AR Path="/64807BBC/5D227D71" Ref="TP?"  Part="1" 
-F 0 "TP65" H 10300 2783 50  0000 C CNN
-F 1 "TestPoint" H 10358 2579 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 10500 2550 50  0001 C CNN
-F 3 "" H 10500 2550 50  0001 C CNN
-	1    10300 2550
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5E1D1600
-P 13350 2200
-AR Path="/64809F0C/5E1D1600" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5E1D1600" Ref="TP71"  Part="1" 
-AR Path="/64807BBC/5E1D1600" Ref="TP?"  Part="1" 
-F 0 "TP71" H 13250 2400 50  0000 L CNN
-F 1 "TestPoint" H 13408 2229 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 13550 2200 50  0001 C CNN
-F 3 "" H 13550 2200 50  0001 C CNN
-	1    13350 2200
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5E1D1607
-P 13600 2200
-AR Path="/64809F0C/5E1D1607" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5E1D1607" Ref="TP72"  Part="1" 
-AR Path="/64807BBC/5E1D1607" Ref="TP?"  Part="1" 
-F 0 "TP72" H 13500 2400 50  0000 L CNN
-F 1 "TestPoint" H 13658 2229 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 13800 2200 50  0001 C CNN
-F 3 "" H 13800 2200 50  0001 C CNN
-	1    13600 2200
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	13350 2200 13350 2350
-Connection ~ 13350 2350
-Wire Wire Line
-	13350 2350 13700 2350
-Wire Wire Line
-	13600 2200 13600 2250
-Connection ~ 13600 2250
-Wire Wire Line
-	13600 2250 13700 2250
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5E571FC1
-P 11450 6150
-AR Path="/64809F0C/5E571FC1" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5E571FC1" Ref="TP70"  Part="1" 
-AR Path="/64807BBC/5E571FC1" Ref="TP?"  Part="1" 
-F 0 "TP70" H 11550 6350 50  0000 R CNN
-F 1 "TestPoint" H 11508 6179 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 11650 6150 50  0001 C CNN
-F 3 "" H 11650 6150 50  0001 C CNN
-	1    11450 6150
-	-1   0    0    1   
-$EndComp
 Wire Notes Line
 	10400 6650 10400 3350
 Wire Notes Line
@@ -3030,14 +2851,6 @@ Wire Wire Line
 	5950 2400 5950 2550
 NoConn ~ 10450 2550
 NoConn ~ 10450 2650
-Connection ~ 10000 2450
-Wire Wire Line
-	10000 2450 10450 2450
-Connection ~ 10300 2350
-Wire Wire Line
-	10300 2350 10450 2350
-Wire Wire Line
-	9900 2350 10300 2350
 Wire Wire Line
 	2100 1550 2100 1400
 Text GLabel 2500 4150 0    33   Output ~ 0
@@ -3053,13 +2866,7 @@ Text GLabel 6550 4150 2    33   Output ~ 0
 ~PWR_FAULT
 Wire Wire Line
 	6550 4150 6450 4150
-Wire Wire Line
-	3100 1300 3200 1300
-Connection ~ 3200 1300
-Wire Wire Line
-	3100 2450 2650 2450
 Connection ~ 3100 2450
-Connection ~ 2650 2450
 Wire Wire Line
 	4000 2450 6400 2450
 Text GLabel 2400 1300 0    33   Output ~ 0
@@ -3075,20 +2882,6 @@ Connection ~ 3800 4150
 Connection ~ 5150 4150
 Wire Wire Line
 	12000 4250 12300 4250
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5E9FCD1E
-P 11200 4750
-AR Path="/64809F0C/5E9FCD1E" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5E9FCD1E" Ref="TP68"  Part="1" 
-AR Path="/64807BBC/5E9FCD1E" Ref="TP?"  Part="1" 
-F 0 "TP68" H 11100 4950 50  0000 L CNN
-F 1 "TestPoint" H 11258 4779 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 11400 4750 50  0001 C CNN
-F 3 "" H 11400 4750 50  0001 C CNN
-	1    11200 4750
-	1    0    0    -1  
-$EndComp
 NoConn ~ 13150 4750
 NoConn ~ 13150 4850
 Wire Wire Line
@@ -3101,41 +2894,6 @@ Wire Wire Line
 	12550 5350 13150 5350
 Wire Wire Line
 	12650 5550 13150 5550
-Wire Wire Line
-	10850 4850 11200 4850
-Wire Wire Line
-	10850 5150 10950 5150
-Wire Wire Line
-	10850 5450 10950 5450
-Wire Wire Line
-	10850 5750 11200 5750
-Wire Wire Line
-	10950 4750 10950 5150
-Connection ~ 10950 5150
-Wire Wire Line
-	10950 5150 11600 5150
-Wire Wire Line
-	11200 4750 11200 4850
-Connection ~ 11200 4850
-Wire Wire Line
-	11200 4850 11600 4850
-Wire Wire Line
-	11450 6050 11450 6150
-Wire Wire Line
-	11200 5750 11200 6150
-Connection ~ 11200 5750
-Wire Wire Line
-	11200 5750 11600 5750
-Wire Wire Line
-	10850 6050 11450 6050
-Wire Wire Line
-	10950 6150 10950 5450
-Connection ~ 10950 5450
-Wire Wire Line
-	10950 5450 11600 5450
-Connection ~ 11450 6050
-Wire Wire Line
-	11450 6050 11600 6050
 $Comp
 L Device:C C?
 U 1 1 5C9EFE0A
@@ -3248,4 +3006,38 @@ Text GLabel 7350 6100 2    33   BiDi ~ 0
 PMOD_GPIO_10
 Text GLabel 7350 6350 2    33   BiDi ~ 0
 PMOD_GPIO_9
+Wire Wire Line
+	3100 1300 3650 1300
+Wire Wire Line
+	9900 2450 10450 2450
+Wire Wire Line
+	9900 2350 10450 2350
+Wire Wire Line
+	10850 5450 11600 5450
+Wire Wire Line
+	10850 5750 11600 5750
+Wire Wire Line
+	10850 6050 11600 6050
+Wire Wire Line
+	2400 2450 3100 2450
+$Comp
+L CropTop:Si7006-A20 U41
+U 1 1 5CA090A6
+P 14050 2350
+F 0 "U41" H 14050 2717 50  0000 C CNN
+F 1 "Si7006-A20" H 14050 2626 50  0000 C CNN
+F 2 "croptop:SI7006" H 14050 2350 50  0001 C CNN
+F 3 "https://www.silabs.com/documents/public/data-sheets/Si7006-A20.pdf" H 14050 2350 50  0001 C CNN
+F 4 "SI7006-A20-IMR" H 14050 2350 50  0001 C CNN "MPN"
+	1    14050 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	13250 2350 13700 2350
+Wire Wire Line
+	13250 2250 13700 2250
+Wire Wire Line
+	10850 5150 11600 5150
+Wire Wire Line
+	10850 4850 11600 4850
 $EndSCHEMATC

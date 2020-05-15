@@ -248,34 +248,6 @@ F 3 "" H 14950 1750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:TestPoint TP?
-U 1 1 5CB340DF
-P 9450 1800
-AR Path="/64809F0C/5CB340DF" Ref="TP?"  Part="1" 
-AR Path="/64807BBC/5CB340DF" Ref="TP2"  Part="1" 
-F 0 "TP2" H 9400 2000 50  0000 L CNN
-F 1 "TestPoint" H 9508 1829 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 9650 1800 50  0001 C CNN
-F 3 "" H 9650 1800 50  0001 C CNN
-	1    9450 1800
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5CB3411D
-P 14250 3400
-AR Path="/64809F0C/5CB3411D" Ref="TP?"  Part="1" 
-AR Path="/64807BBC/5CB3411D" Ref="TP9"  Part="1" 
-F 0 "TP9" H 14200 3600 50  0000 L CNN
-F 1 "TestPoint" H 14308 3429 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 14450 3400 50  0001 C CNN
-F 3 "" H 14450 3400 50  0001 C CNN
-	1    14250 3400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	14250 3400 14250 3500
-$Comp
 L Device:LED D?
 U 1 1 5CB34125
 P 15000 3750
@@ -326,40 +298,8 @@ Wire Wire Line
 Wire Wire Line
 	15000 3500 15000 3600
 Wire Wire Line
-	9450 1800 9450 1900
-Wire Wire Line
-	13900 1850 14150 1850
-Wire Wire Line
 	14950 1850 14950 1750
 Connection ~ 13900 1850
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5CB34141
-P 14150 1750
-AR Path="/64809F0C/5CB34141" Ref="TP?"  Part="1" 
-AR Path="/64807BBC/5CB34141" Ref="TP8"  Part="1" 
-F 0 "TP8" H 14050 1950 50  0000 L CNN
-F 1 "TestPoint" H 14208 1779 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 14350 1750 50  0001 C CNN
-F 3 "" H 14350 1750 50  0001 C CNN
-	1    14150 1750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	14150 1750 14150 1850
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5CB34149
-P 12550 1750
-AR Path="/64809F0C/5CB34149" Ref="TP?"  Part="1" 
-AR Path="/64807BBC/5CB34149" Ref="TP4"  Part="1" 
-F 0 "TP4" H 12500 1950 50  0000 L CNN
-F 1 "TestPoint" H 12608 1779 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 12750 1750 50  0001 C CNN
-F 3 "" H 12750 1750 50  0001 C CNN
-	1    12550 1750
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:LED D?
 U 1 1 5CB34158
@@ -412,7 +352,6 @@ F 3 "" H 10050 1800 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	10050 1800 10050 1900
-Connection ~ 14150 1850
 Wire Wire Line
 	9150 2400 9150 2600
 Wire Wire Line
@@ -728,8 +667,6 @@ F 4 "CC1206ZRY5V6BB106" H 12450 2100 50  0001 C CNN "MPN"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	12450 1850 12550 1850
-Wire Wire Line
 	13200 2150 13200 2400
 $Comp
 L Device:C C?
@@ -875,11 +812,6 @@ Wire Wire Line
 Wire Wire Line
 	14050 3600 14050 3500
 Connection ~ 14050 3500
-Wire Wire Line
-	14050 3500 14250 3500
-Connection ~ 14250 3500
-Wire Wire Line
-	14250 3500 14500 3500
 $Comp
 L Device:C C?
 U 1 1 5CB342BF
@@ -896,8 +828,6 @@ F 4 "CL05F104ZO5NNNC" H 14400 2100 50  0001 C CNN "MPN"
 $EndComp
 Wire Wire Line
 	14400 2250 14400 2400
-Wire Wire Line
-	14150 1850 14400 1850
 Wire Wire Line
 	14400 1850 14400 1950
 Connection ~ 14400 1850
@@ -1976,22 +1906,6 @@ Wire Wire Line
 Wire Wire Line
 	11350 7200 11350 7350
 $Comp
-L Connector:TestPoint TP?
-U 1 1 5CB345D6
-P 14150 6550
-AR Path="/64809F0C/5CB345D6" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5CB345D6" Ref="TP?"  Part="1" 
-AR Path="/64807BBC/5CB345D6" Ref="TP5"  Part="1" 
-F 0 "TP5" H 14050 6750 50  0000 L CNN
-F 1 "TestPoint" H 14208 6579 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 14350 6550 50  0001 C CNN
-F 3 "" H 14350 6550 50  0001 C CNN
-	1    14150 6550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	14150 6550 14150 6650
-$Comp
 L CropTop:AP22802AW5 U3
 U 1 1 5CB345DE
 P 12200 6750
@@ -2119,8 +2033,6 @@ Wire Wire Line
 Wire Wire Line
 	11350 6750 11900 6750
 Connection ~ 11800 6850
-Wire Wire Line
-	13700 6650 14150 6650
 Wire Wire Line
 	14700 6850 14700 7200
 Wire Wire Line
@@ -2628,11 +2540,6 @@ Wire Wire Line
 	5750 4000 5950 4000
 Wire Wire Line
 	12000 1850 12450 1850
-Connection ~ 12550 1850
-Wire Wire Line
-	12550 1850 12700 1850
-Wire Wire Line
-	12550 1750 12550 1850
 $Comp
 L CropTop:DGND #PWR077
 U 1 1 61DE49FD
@@ -2749,9 +2656,6 @@ Wire Wire Line
 	1000 3250 1000 3350
 Wire Wire Line
 	1000 3650 1000 3750
-Connection ~ 14150 6650
-Wire Wire Line
-	14150 6650 14800 6650
 Wire Wire Line
 	12600 6650 12500 6650
 Wire Wire Line
@@ -2878,10 +2782,10 @@ AR Path="/66A201BE/6051C257" Ref="D?"  Part="1"
 AR Path="/66A12230/6051C257" Ref="D?"  Part="1" 
 AR Path="/64807BBC/6051C257" Ref="D2"  Part="1" 
 F 0 "D2" V 2688 3433 50  0000 R CNN
-F 1 "LTSTC190KRKT" V 2597 3433 50  0000 R CNN
+F 1 "SML-D14U2WT86A" V 2597 3433 50  0000 R CNN
 F 2 "LED_SMD:LED_0603_1608Metric" H 2650 3550 50  0001 C CNN
 F 3 "" H 2650 3550 50  0001 C CNN
-F 4 "LTST-C190KRKT" V 2650 3550 50  0001 C CNN "MPN"
+F 4 "SML-D14U2WT86A" V 2650 3550 50  0001 C CNN "MPN"
 	1    2650 3550
 	0    -1   -1   0   
 $EndComp
@@ -2946,11 +2850,6 @@ Wire Wire Line
 Wire Wire Line
 	8250 1900 8450 1900
 Connection ~ 9150 1900
-Wire Wire Line
-	9150 1900 9450 1900
-Connection ~ 9450 1900
-Wire Wire Line
-	9450 1900 9650 1900
 Wire Wire Line
 	10050 1900 10750 1900
 Wire Wire Line
@@ -3254,4 +3153,100 @@ Wire Wire Line
 	3800 3000 3700 3000
 Wire Wire Line
 	3700 3100 3800 3100
+Wire Wire Line
+	12450 1850 12700 1850
+Wire Wire Line
+	14050 3500 14500 3500
+Wire Wire Line
+	13900 1850 14400 1850
+Wire Wire Line
+	9150 1900 9650 1900
+Wire Wire Line
+	13700 6650 14800 6650
+$Comp
+L Connector_Generic:Conn_01x01 J5
+U 1 1 5EC22E4D
+P 8650 6950
+F 0 "J5" H 8800 6950 50  0000 R CNN
+F 1 "Conn_01x01" V 8523 6862 50  0001 R CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 8650 6950 50  0001 C CNN
+F 3 "~" H 8650 6950 50  0001 C CNN
+	1    8650 6950
+	-1   0    0    1   
+$EndComp
+Text Notes 8400 7000 2    50   ~ 0
+Top Left
+$Comp
+L Connector_Generic:Conn_01x01 J6
+U 1 1 5EC2A03A
+P 8650 7100
+F 0 "J6" H 8800 7100 50  0000 R CNN
+F 1 "Conn_01x01" V 8523 7012 50  0001 R CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 8650 7100 50  0001 C CNN
+F 3 "~" H 8650 7100 50  0001 C CNN
+	1    8650 7100
+	-1   0    0    1   
+$EndComp
+Text Notes 8400 7150 2    50   ~ 0
+Top Right
+$Comp
+L Connector_Generic:Conn_01x01 J17
+U 1 1 5EC55204
+P 8650 7250
+F 0 "J17" H 8850 7250 50  0000 R CNN
+F 1 "Conn_01x01" V 8523 7162 50  0001 R CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 8650 7250 50  0001 C CNN
+F 3 "~" H 8650 7250 50  0001 C CNN
+	1    8650 7250
+	-1   0    0    1   
+$EndComp
+Text Notes 8400 7300 2    50   ~ 0
+Bottom Left
+$Comp
+L Connector_Generic:Conn_01x01 J18
+U 1 1 5EC804EC
+P 8650 7400
+F 0 "J18" H 8850 7400 50  0000 R CNN
+F 1 "Conn_01x01" V 8523 7312 50  0001 R CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 8650 7400 50  0001 C CNN
+F 3 "~" H 8650 7400 50  0001 C CNN
+	1    8650 7400
+	-1   0    0    1   
+$EndComp
+Text Notes 8400 7450 2    50   ~ 0
+Bottom Right\n
+$Comp
+L CropTop:DGND #PWR043
+U 1 1 5ED06B33
+P 8950 7500
+AR Path="/64807BBC/5ED06B33" Ref="#PWR043"  Part="1" 
+AR Path="/64809F0C/5ED06B33" Ref="#PWR?"  Part="1" 
+F 0 "#PWR043" H 8950 7250 50  0001 C CNN
+F 1 "DGND" H 8954 7345 50  0000 C CNN
+F 2 "" H 8950 7500 50  0001 C CNN
+F 3 "" H 8950 7500 50  0001 C CNN
+	1    8950 7500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8950 7500 8950 7400
+Wire Wire Line
+	8950 7400 8850 7400
+Wire Wire Line
+	8850 7250 8950 7250
+Wire Wire Line
+	8950 7250 8950 7400
+Connection ~ 8950 7400
+Wire Wire Line
+	8850 7100 8950 7100
+Wire Wire Line
+	8950 7100 8950 7250
+Connection ~ 8950 7250
+Wire Wire Line
+	8850 6950 8950 6950
+Wire Wire Line
+	8950 6950 8950 7100
+Connection ~ 8950 7100
+Text Notes 7600 6800 0    98   ~ 20
+Nextion Screen Mounting Holes\n
 $EndSCHEMATC

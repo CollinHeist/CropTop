@@ -317,8 +317,6 @@ Wire Wire Line
 Wire Wire Line
 	2350 3050 2150 3050
 Wire Wire Line
-	10000 4950 9900 4950
-Wire Wire Line
 	3050 3350 3050 3450
 Wire Wire Line
 	12050 6100 12050 6200
@@ -443,8 +441,6 @@ Wire Wire Line
 Wire Wire Line
 	12050 5600 12050 5800
 Wire Wire Line
-	11500 5500 11700 5500
-Wire Wire Line
 	12600 6800 12600 6900
 Wire Wire Line
 	12600 6350 12600 6500
@@ -474,23 +470,6 @@ F 5 "UWT1V101MCL1GS" H 12600 6650 50  0001 C CNN "MPN"
 	1    12600 6650
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector:TestPoint TP50
-U 1 1 5F4AA902
-P 11700 5300
-AR Path="/669AB112/5F4AA902" Ref="TP50"  Part="1" 
-AR Path="/5EC973C3/5F4AA902" Ref="TP?"  Part="1" 
-F 0 "TP50" H 11700 5500 50  0000 C CNN
-F 1 "TestPoint" H 11758 5329 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 11900 5300 50  0001 C CNN
-F 3 "" H 11900 5300 50  0001 C CNN
-	1    11700 5300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	11700 5300 11700 5500
-Wire Wire Line
-	12050 5300 12050 5400
 $Comp
 L power:+3V3 #PWR?
 U 1 1 5C762ECA
@@ -591,53 +570,10 @@ F 3 "" H 8650 8200 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8650 8200 8650 8250
-$Comp
-L Connector:TestPoint TP49
-U 1 1 5CBB2F0C
-P 11650 7250
-AR Path="/669AB112/5CBB2F0C" Ref="TP49"  Part="1" 
-AR Path="/5EC973C3/5CBB2F0C" Ref="TP?"  Part="1" 
-F 0 "TP49" H 11550 7450 50  0000 L CNN
-F 1 "TestPoint" H 11708 7279 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 11850 7250 50  0001 C CNN
-F 3 "" H 11850 7250 50  0001 C CNN
-	1    11650 7250
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP56
-U 1 1 5CC7D0C6
-P 14850 8050
-AR Path="/669AB112/5CC7D0C6" Ref="TP56"  Part="1" 
-AR Path="/5EC973C3/5CC7D0C6" Ref="TP?"  Part="1" 
-F 0 "TP56" H 14850 8250 50  0000 C CNN
-F 1 "TestPoint" H 14908 8079 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 15050 8050 50  0001 C CNN
-F 3 "" H 15050 8050 50  0001 C CNN
-	1    14850 8050
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	15150 8050 15150 8150
 Wire Wire Line
 	12450 7750 12450 7600
 Wire Wire Line
 	12550 7850 12550 7700
-$Comp
-L Connector:TestPoint TP53
-U 1 1 5CE80A23
-P 12950 7500
-AR Path="/669AB112/5CE80A23" Ref="TP53"  Part="1" 
-AR Path="/5EC973C3/5CE80A23" Ref="TP?"  Part="1" 
-F 0 "TP53" H 12950 7700 50  0000 C CNN
-F 1 "TestPoint" H 13008 7529 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 13150 7500 50  0001 C CNN
-F 3 "" H 13150 7500 50  0001 C CNN
-	1    12950 7500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	13300 7500 13300 7600
 $Comp
 L CropTop:DGND #PWR0160
 U 1 1 5D02458E
@@ -773,8 +709,6 @@ Wire Wire Line
 Wire Wire Line
 	10400 5600 10600 5600
 Wire Wire Line
-	1450 2150 1800 2150
-Wire Wire Line
 	2350 2450 2450 2450
 Wire Wire Line
 	2250 2550 2450 2550
@@ -790,51 +724,12 @@ Wire Wire Line
 	11700 7850 12550 7850
 Wire Wire Line
 	11700 8450 11800 8450
-$Comp
-L Connector:TestPoint TP51
-U 1 1 5D1EB6C9
-P 12050 5300
-AR Path="/669AB112/5D1EB6C9" Ref="TP51"  Part="1" 
-AR Path="/5EC973C3/5D1EB6C9" Ref="TP?"  Part="1" 
-F 0 "TP51" H 12050 5500 50  0000 C CNN
-F 1 "TestPoint" H 12108 5329 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 12250 5300 50  0001 C CNN
-F 3 "" H 12250 5300 50  0001 C CNN
-	1    12050 5300
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	10400 5250 10300 5250
 Wire Wire Line
 	10400 5250 10400 5500
 Wire Wire Line
 	10500 4950 10500 5400
-$Comp
-L Connector:TestPoint TP55
-U 1 1 5D39D934
-P 13300 7500
-AR Path="/669AB112/5D39D934" Ref="TP55"  Part="1" 
-AR Path="/5EC973C3/5D39D934" Ref="TP?"  Part="1" 
-F 0 "TP55" H 13300 7700 50  0000 C CNN
-F 1 "TestPoint" H 13358 7529 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 13500 7500 50  0001 C CNN
-F 3 "" H 13500 7500 50  0001 C CNN
-	1    13300 7500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP57
-U 1 1 5D3BE859
-P 15150 8050
-AR Path="/669AB112/5D3BE859" Ref="TP57"  Part="1" 
-AR Path="/5EC973C3/5D3BE859" Ref="TP?"  Part="1" 
-F 0 "TP57" H 15150 8250 50  0000 C CNN
-F 1 "TestPoint" H 15208 8079 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 15350 8050 50  0001 C CNN
-F 3 "" H 15350 8050 50  0001 C CNN
-	1    15150 8050
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2150 2450 2250 2450
 Wire Wire Line
@@ -1434,7 +1329,6 @@ F 5 "CL05F104ZO5NNNC" V 12000 7200 50  0001 C CNN "MPN"
 	1    12000 7200
 	0    -1   -1   0   
 $EndComp
-Connection ~ 11700 5500
 $Comp
 L Device:L_Core_Ferrite L?
 U 1 1 5CEDC06A
@@ -1481,23 +1375,6 @@ Wire Wire Line
 Wire Wire Line
 	10750 2550 10750 2700
 $Comp
-L Connector:TestPoint TP?
-U 1 1 5EAE9DCB
-P 12100 1900
-AR Path="/64809F0C/5EAE9DCB" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5EAE9DCB" Ref="TP?"  Part="1" 
-AR Path="/64807BBC/5EAE9DCB" Ref="TP?"  Part="1" 
-AR Path="/669AB112/5EAE9DCB" Ref="TP52"  Part="1" 
-F 0 "TP52" H 12050 2100 50  0000 L CNN
-F 1 "TestPoint" H 12158 1929 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 12300 1900 50  0001 C CNN
-F 3 "" H 12300 1900 50  0001 C CNN
-	1    12100 1900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	12100 1900 12100 2000
-$Comp
 L CropTop:AP22802AW5 U?
 U 1 1 5EAE9DD3
 P 11600 2100
@@ -1541,8 +1418,6 @@ Wire Wire Line
 Connection ~ 11200 2200
 Wire Wire Line
 	11200 2200 11100 2200
-Wire Wire Line
-	12100 2000 12300 2000
 $Comp
 L Device:C C?
 U 1 1 5EAE9DFD
@@ -1636,23 +1511,6 @@ Wire Wire Line
 Wire Wire Line
 	3650 9100 3650 9250
 $Comp
-L Connector:TestPoint TP?
-U 1 1 5F22BDA1
-P 4950 8450
-AR Path="/64809F0C/5F22BDA1" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5F22BDA1" Ref="TP?"  Part="1" 
-AR Path="/64807BBC/5F22BDA1" Ref="TP?"  Part="1" 
-AR Path="/669AB112/5F22BDA1" Ref="TP23"  Part="1" 
-F 0 "TP23" H 4950 8650 50  0000 C CNN
-F 1 "TestPoint" H 5008 8479 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 5150 8450 50  0001 C CNN
-F 3 "" H 5150 8450 50  0001 C CNN
-	1    4950 8450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4950 8450 4950 8550
-$Comp
 L CropTop:AP22802AW5 U?
 U 1 1 5F22BDA9
 P 4500 8650
@@ -1719,8 +1577,6 @@ Wire Wire Line
 	5800 8550 5800 8800
 Wire Wire Line
 	3650 8650 4000 8650
-Wire Wire Line
-	4800 8550 4950 8550
 $Comp
 L Device:C C?
 U 1 1 5FB7AC9C
@@ -1885,23 +1741,6 @@ Wire Wire Line
 Wire Wire Line
 	2100 5250 2100 5400
 $Comp
-L Connector:TestPoint TP?
-U 1 1 61E0F7EB
-P 3400 4600
-AR Path="/64809F0C/61E0F7EB" Ref="TP?"  Part="1" 
-AR Path="/66A12230/61E0F7EB" Ref="TP?"  Part="1" 
-AR Path="/64807BBC/61E0F7EB" Ref="TP?"  Part="1" 
-AR Path="/669AB112/61E0F7EB" Ref="TP22"  Part="1" 
-F 0 "TP22" H 3300 4800 50  0000 L CNN
-F 1 "TestPoint" H 3458 4629 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 3600 4600 50  0001 C CNN
-F 3 "" H 3600 4600 50  0001 C CNN
-	1    3400 4600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3400 4600 3400 4700
-$Comp
 L CropTop:AP22802AW5 U?
 U 1 1 61E0F7F3
 P 2950 4800
@@ -2058,156 +1897,6 @@ Wire Wire Line
 Wire Wire Line
 	2150 2750 2250 2750
 $Comp
-L Connector:TestPoint TP?
-U 1 1 5DEFC432
-P 1800 3150
-AR Path="/64809F0C/5DEFC432" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5DEFC432" Ref="TP?"  Part="1" 
-AR Path="/65B709D0/5DEFC432" Ref="TP?"  Part="1" 
-AR Path="/669AB112/5DEFC432" Ref="TP21"  Part="1" 
-F 0 "TP21" H 1800 3350 50  0000 C CNN
-F 1 "TestPoint" H 1858 3179 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 2000 3150 50  0001 C CNN
-F 3 "" H 2000 3150 50  0001 C CNN
-	1    1800 3150
-	1    0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5DEFC439
-P 1550 2050
-AR Path="/64809F0C/5DEFC439" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5DEFC439" Ref="TP?"  Part="1" 
-AR Path="/65B709D0/5DEFC439" Ref="TP?"  Part="1" 
-AR Path="/669AB112/5DEFC439" Ref="TP18"  Part="1" 
-F 0 "TP18" H 1550 2250 50  0000 C CNN
-F 1 "TestPoint" H 1608 2079 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 1750 2050 50  0001 C CNN
-F 3 "" H 1750 2050 50  0001 C CNN
-	1    1550 2050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5DEFC440
-P 1800 2050
-AR Path="/64809F0C/5DEFC440" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5DEFC440" Ref="TP?"  Part="1" 
-AR Path="/65B709D0/5DEFC440" Ref="TP?"  Part="1" 
-AR Path="/669AB112/5DEFC440" Ref="TP20"  Part="1" 
-F 0 "TP20" H 1800 2250 50  0000 C CNN
-F 1 "TestPoint" H 1858 2079 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 2000 2050 50  0001 C CNN
-F 3 "" H 2000 2050 50  0001 C CNN
-	1    1800 2050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5DEFC447
-P 1550 3150
-AR Path="/64809F0C/5DEFC447" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5DEFC447" Ref="TP?"  Part="1" 
-AR Path="/65B709D0/5DEFC447" Ref="TP?"  Part="1" 
-AR Path="/669AB112/5DEFC447" Ref="TP19"  Part="1" 
-F 0 "TP19" H 1550 3350 50  0000 C CNN
-F 1 "TestPoint" H 1608 3179 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 1750 3150 50  0001 C CNN
-F 3 "" H 1750 3150 50  0001 C CNN
-	1    1550 3150
-	1    0    0    1   
-$EndComp
-Wire Wire Line
-	1450 2450 1550 2450
-Wire Wire Line
-	1550 2050 1550 2450
-Connection ~ 1550 2450
-Wire Wire Line
-	1550 2450 1850 2450
-Wire Wire Line
-	1800 2050 1800 2150
-Connection ~ 1800 2150
-Wire Wire Line
-	1800 2150 1850 2150
-Wire Wire Line
-	1450 3050 1550 3050
-Wire Wire Line
-	1450 2750 1800 2750
-Wire Wire Line
-	1550 3150 1550 3050
-Connection ~ 1550 3050
-Wire Wire Line
-	1550 3050 1850 3050
-Wire Wire Line
-	1800 3150 1800 2750
-Connection ~ 1800 2750
-Wire Wire Line
-	1800 2750 1850 2750
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5E49C41C
-P 9650 4850
-AR Path="/64809F0C/5E49C41C" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5E49C41C" Ref="TP?"  Part="1" 
-AR Path="/65B709D0/5E49C41C" Ref="TP?"  Part="1" 
-AR Path="/669AB112/5E49C41C" Ref="TP36"  Part="1" 
-F 0 "TP36" H 9650 5050 50  0000 C CNN
-F 1 "TestPoint" H 9708 4879 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 9850 4850 50  0001 C CNN
-F 3 "" H 9850 4850 50  0001 C CNN
-	1    9650 4850
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5E49C423
-P 9900 4850
-AR Path="/64809F0C/5E49C423" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5E49C423" Ref="TP?"  Part="1" 
-AR Path="/65B709D0/5E49C423" Ref="TP?"  Part="1" 
-AR Path="/669AB112/5E49C423" Ref="TP40"  Part="1" 
-F 0 "TP40" H 9900 5050 50  0000 C CNN
-F 1 "TestPoint" H 9958 4879 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 10100 4850 50  0001 C CNN
-F 3 "" H 10100 4850 50  0001 C CNN
-	1    9900 4850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9650 4850 9650 5250
-Wire Wire Line
-	9900 4850 9900 4950
-Connection ~ 9900 4950
-Wire Wire Line
-	9900 4950 9550 4950
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5E6702C8
-P 9800 6000
-AR Path="/64809F0C/5E6702C8" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5E6702C8" Ref="TP?"  Part="1" 
-AR Path="/65B709D0/5E6702C8" Ref="TP?"  Part="1" 
-AR Path="/669AB112/5E6702C8" Ref="TP39"  Part="1" 
-F 0 "TP39" H 9800 6200 50  0000 C CNN
-F 1 "TestPoint" H 9858 6029 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 10000 6000 50  0001 C CNN
-F 3 "" H 10000 6000 50  0001 C CNN
-	1    9800 6000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9800 6000 9800 6100
-Wire Wire Line
-	9550 5250 9650 5250
-Connection ~ 9800 6100
-Wire Wire Line
-	9800 6100 10050 6100
-Wire Wire Line
-	9700 6100 9800 6100
-Connection ~ 9650 5250
-Wire Wire Line
-	9650 5250 10000 5250
-$Comp
 L Device:R R?
 U 1 1 604D835A
 P 6750 5050
@@ -2317,18 +2006,6 @@ Wire Wire Line
 	13050 6850 13700 6850
 Wire Wire Line
 	11400 7050 11400 7200
-$Comp
-L CropTop:DRV8825 U28
-U 1 1 5CA28C1C
-P 11150 8050
-F 0 "U28" H 11400 8800 50  0000 C CNN
-F 1 "DRV8825" H 11400 8700 50  0000 C CNN
-F 2 "Package_SO:HTSSOP-28-1EP_4.4x9.7mm_P0.65mm_EP3.4x9.5mm_Mask2.4x6.17mm_ThermalVias" H 11150 8550 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/drv8825.pdf" H 11150 8550 50  0001 C CNN
-F 4 "DRV8825PWPR" H 11150 8050 50  0001 C CNN "MPN"
-	1    11150 8050
-	1    0    0    -1  
-$EndComp
 Text GLabel 9600 7950 0    33   Input ~ 0
 STEP_MODE2
 Text GLabel 9600 7850 0    33   Input ~ 0
@@ -2349,126 +2026,7 @@ Text GLabel 9600 8450 0    33   Input ~ 0
 ~STEP_RESET
 Text GLabel 9600 8050 0    33   Input ~ 0
 STEP_DIR
-$Comp
-L Connector:TestPoint TP37
-U 1 1 5D93EE1A
-P 9700 7450
-AR Path="/669AB112/5D93EE1A" Ref="TP37"  Part="1" 
-AR Path="/5EC973C3/5D93EE1A" Ref="TP?"  Part="1" 
-F 0 "TP37" H 9700 7650 50  0000 C CNN
-F 1 "TestPoint" H 9758 7479 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 9900 7450 50  0001 C CNN
-F 3 "" H 9900 7450 50  0001 C CNN
-	1    9700 7450
-	1    0    0    -1  
-$EndComp
 NoConn ~ 10600 8250
-$Comp
-L Connector:TestPoint TP41
-U 1 1 5D97DF8D
-P 9900 7300
-AR Path="/669AB112/5D97DF8D" Ref="TP41"  Part="1" 
-AR Path="/5EC973C3/5D97DF8D" Ref="TP?"  Part="1" 
-F 0 "TP41" H 9900 7500 50  0000 C CNN
-F 1 "TestPoint" H 9958 7329 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 10100 7300 50  0001 C CNN
-F 3 "" H 10100 7300 50  0001 C CNN
-	1    9900 7300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP43
-U 1 1 5D9BB607
-P 10100 7450
-AR Path="/669AB112/5D9BB607" Ref="TP43"  Part="1" 
-AR Path="/5EC973C3/5D9BB607" Ref="TP?"  Part="1" 
-F 0 "TP43" H 10100 7650 50  0000 C CNN
-F 1 "TestPoint" H 10158 7479 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 10300 7450 50  0001 C CNN
-F 3 "" H 10300 7450 50  0001 C CNN
-	1    10100 7450
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP45
-U 1 1 5D9F8C97
-P 10300 7300
-AR Path="/669AB112/5D9F8C97" Ref="TP45"  Part="1" 
-AR Path="/5EC973C3/5D9F8C97" Ref="TP?"  Part="1" 
-F 0 "TP45" H 10300 7500 50  0000 C CNN
-F 1 "TestPoint" H 10358 7329 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 10500 7300 50  0001 C CNN
-F 3 "" H 10500 7300 50  0001 C CNN
-	1    10300 7300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP47
-U 1 1 5DA36315
-P 10500 7450
-AR Path="/669AB112/5DA36315" Ref="TP47"  Part="1" 
-AR Path="/5EC973C3/5DA36315" Ref="TP?"  Part="1" 
-F 0 "TP47" H 10500 7650 50  0000 C CNN
-F 1 "TestPoint" H 10558 7479 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 10700 7450 50  0001 C CNN
-F 3 "" H 10700 7450 50  0001 C CNN
-	1    10500 7450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9600 7550 10500 7550
-$Comp
-L Connector:TestPoint TP38
-U 1 1 5DD24D20
-P 9700 8900
-AR Path="/669AB112/5DD24D20" Ref="TP38"  Part="1" 
-AR Path="/5EC973C3/5DD24D20" Ref="TP?"  Part="1" 
-F 0 "TP38" H 9700 9100 50  0000 C CNN
-F 1 "TestPoint" H 9758 8929 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 9900 8900 50  0001 C CNN
-F 3 "" H 9900 8900 50  0001 C CNN
-	1    9700 8900
-	1    0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint TP42
-U 1 1 5DD24D27
-P 9900 9050
-AR Path="/669AB112/5DD24D27" Ref="TP42"  Part="1" 
-AR Path="/5EC973C3/5DD24D27" Ref="TP?"  Part="1" 
-F 0 "TP42" H 9900 9250 50  0000 C CNN
-F 1 "TestPoint" H 9958 9079 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 10100 9050 50  0001 C CNN
-F 3 "" H 10100 9050 50  0001 C CNN
-	1    9900 9050
-	1    0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint TP46
-U 1 1 5DD24D35
-P 10300 9050
-AR Path="/669AB112/5DD24D35" Ref="TP46"  Part="1" 
-AR Path="/5EC973C3/5DD24D35" Ref="TP?"  Part="1" 
-F 0 "TP46" H 10300 9250 50  0000 C CNN
-F 1 "TestPoint" H 10358 9079 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 10500 9050 50  0001 C CNN
-F 3 "" H 10500 9050 50  0001 C CNN
-	1    10300 9050
-	1    0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint TP48
-U 1 1 5DD24D3C
-P 10500 8900
-AR Path="/669AB112/5DD24D3C" Ref="TP48"  Part="1" 
-AR Path="/5EC973C3/5DD24D3C" Ref="TP?"  Part="1" 
-F 0 "TP48" H 10500 9100 50  0000 C CNN
-F 1 "TestPoint" H 10558 8929 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 10700 8900 50  0001 C CNN
-F 3 "" H 10700 8900 50  0001 C CNN
-	1    10500 8900
-	1    0    0    1   
-$EndComp
 Wire Wire Line
 	10200 8650 10200 8550
 Wire Wire Line
@@ -2478,80 +2036,11 @@ Wire Wire Line
 Wire Wire Line
 	10400 8650 10600 8650
 Wire Wire Line
-	10500 7450 10500 7550
-Connection ~ 10500 7550
-Wire Wire Line
-	10500 7550 10600 7550
-Wire Wire Line
-	10300 7300 10300 7650
-Wire Wire Line
-	10100 7450 10100 7750
-Wire Wire Line
-	9900 7300 9900 7850
-Wire Wire Line
-	9700 7450 9700 7950
-$Comp
-L Connector:TestPoint TP44
-U 1 1 5DD24D2E
-P 10100 8900
-AR Path="/669AB112/5DD24D2E" Ref="TP44"  Part="1" 
-AR Path="/5EC973C3/5DD24D2E" Ref="TP?"  Part="1" 
-F 0 "TP44" H 10100 9100 50  0000 C CNN
-F 1 "TestPoint" H 10158 8929 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 10300 8900 50  0001 C CNN
-F 3 "" H 10300 8900 50  0001 C CNN
-	1    10100 8900
-	1    0    0    1   
-$EndComp
-Wire Wire Line
-	9600 8050 10500 8050
-$Comp
-L Connector:TestPoint TP35
-U 1 1 5E3C85BD
-P 9500 9050
-AR Path="/669AB112/5E3C85BD" Ref="TP35"  Part="1" 
-AR Path="/5EC973C3/5E3C85BD" Ref="TP?"  Part="1" 
-F 0 "TP35" H 9500 9250 50  0000 C CNN
-F 1 "TestPoint" H 9558 9079 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 9700 9050 50  0001 C CNN
-F 3 "" H 9700 9050 50  0001 C CNN
-	1    9500 9050
-	1    0    0    1   
-$EndComp
-Wire Wire Line
-	10500 8050 10500 8900
-Connection ~ 10500 8050
-Wire Wire Line
-	10500 8050 10600 8050
-Wire Wire Line
-	10300 8150 10300 9050
-Wire Wire Line
-	10100 8350 10100 8900
-Wire Wire Line
-	9900 8450 9900 9050
-Wire Wire Line
-	9500 9050 9500 8750
-Wire Wire Line
 	5050 5400 5200 5400
 NoConn ~ 2050 9400
 NoConn ~ 2050 9500
 NoConn ~ 2850 9400
 NoConn ~ 2850 9500
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5F23FE09
-P 5300 5350
-AR Path="/64809F0C/5F23FE09" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5F23FE09" Ref="TP?"  Part="1" 
-AR Path="/64807BBC/5F23FE09" Ref="TP?"  Part="1" 
-AR Path="/669AB112/5F23FE09" Ref="TP25"  Part="1" 
-F 0 "TP25" H 5300 5550 50  0000 C CNN
-F 1 "TestPoint" H 5358 5379 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 5500 5350 50  0001 C CNN
-F 3 "" H 5500 5350 50  0001 C CNN
-	1    5300 5350
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:C C?
 U 1 1 5F34D50C
@@ -2626,38 +2115,6 @@ Wire Wire Line
 Wire Wire Line
 	5750 5500 5750 5050
 Connection ~ 5750 5050
-Wire Wire Line
-	5750 5050 5850 5050
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5F7CD285
-P 5850 5000
-AR Path="/64809F0C/5F7CD285" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5F7CD285" Ref="TP?"  Part="1" 
-AR Path="/64807BBC/5F7CD285" Ref="TP?"  Part="1" 
-AR Path="/669AB112/5F7CD285" Ref="TP27"  Part="1" 
-F 0 "TP27" H 5850 5200 50  0000 C CNN
-F 1 "TestPoint" H 5908 5029 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 6050 5000 50  0001 C CNN
-F 3 "" H 6050 5000 50  0001 C CNN
-	1    5850 5000
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5FE0C6F8
-P 1450 9000
-AR Path="/64809F0C/5FE0C6F8" Ref="TP?"  Part="1" 
-AR Path="/66A12230/5FE0C6F8" Ref="TP?"  Part="1" 
-AR Path="/64807BBC/5FE0C6F8" Ref="TP?"  Part="1" 
-AR Path="/669AB112/5FE0C6F8" Ref="TP17"  Part="1" 
-F 0 "TP17" H 1450 9200 50  0000 C CNN
-F 1 "TestPoint" H 1508 9029 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 1650 9000 50  0001 C CNN
-F 3 "" H 1650 9000 50  0001 C CNN
-	1    1450 9000
-	1    0    0    -1  
-$EndComp
 $Comp
 L Connector:TestPoint TP?
 U 1 1 5FE53ACD
@@ -2712,27 +2169,16 @@ Wire Wire Line
 Wire Wire Line
 	1950 9100 1850 9100
 Wire Wire Line
-	1550 9100 1450 9100
-Wire Wire Line
 	1200 9000 1200 9400
 Connection ~ 1200 9400
 Wire Wire Line
 	1200 9400 1550 9400
 Wire Wire Line
-	1450 9000 1450 9100
-Connection ~ 1450 9100
-Wire Wire Line
 	1950 9200 2050 9200
 Wire Wire Line
 	2050 9300 1950 9300
-Wire Wire Line
-	12950 7500 12950 7700
-Wire Wire Line
-	14850 8050 14850 8250
 Text Notes 9500 6500 0    50   ~ 0
 DRV8872\nMax Current: 3.5A\nCurrent Limit: 0.35/R
-Wire Wire Line
-	12550 7700 12950 7700
 $Comp
 L Device:C C?
 U 1 1 6065780B
@@ -2809,18 +2255,9 @@ Wire Wire Line
 	12350 7200 12350 7550
 Wire Wire Line
 	11850 7200 11750 7200
-Wire Wire Line
-	11750 7200 11750 7350
 Connection ~ 11750 7550
 Wire Wire Line
 	11750 7550 11850 7550
-Wire Wire Line
-	11650 7250 11650 7350
-Wire Wire Line
-	11650 7350 11750 7350
-Connection ~ 11750 7350
-Wire Wire Line
-	11750 7350 11750 7550
 $Comp
 L Device:C C?
 U 1 1 61862520
@@ -2903,19 +2340,6 @@ F 3 "" H 7050 2150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:TestPoint TP34
-U 1 1 61ADFA1A
-P 7250 2150
-AR Path="/669AB112/61ADFA1A" Ref="TP34"  Part="1" 
-AR Path="/5EC973C3/61ADFA1A" Ref="TP?"  Part="1" 
-F 0 "TP34" H 7250 2384 50  0000 C CNN
-F 1 "TestPoint" H 7308 2179 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 7450 2150 50  0001 C CNN
-F 3 "" H 7450 2150 50  0001 C CNN
-	1    7250 2150
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:C C?
 U 1 1 61FAA3DA
 P 12150 8800
@@ -2971,15 +2395,7 @@ Wire Wire Line
 Wire Wire Line
 	12150 8950 12150 9050
 Wire Wire Line
-	5200 5400 5300 5400
-Connection ~ 5850 5050
-Wire Wire Line
-	5850 5050 6500 5050
-Wire Wire Line
 	5050 5050 5750 5050
-Connection ~ 5300 5400
-Wire Wire Line
-	5300 5400 6400 5400
 Text Notes 3600 6400 0    98   ~ 20
 Ultrasonic Ranging Module Interface
 Text Notes 4150 4600 0    98   ~ 20
@@ -3026,10 +2442,6 @@ F 3 "" H 7150 5350 50  0001 C CNN
 	1    7150 5350
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5300 5350 5300 5400
-Wire Wire Line
-	5850 5000 5850 5050
 Wire Wire Line
 	7150 4700 7150 4950
 Wire Wire Line
@@ -3151,8 +2563,6 @@ F 3 "" H 14650 8850 50  0001 C CNN
 	1    14650 8850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	11700 5500 14100 5500
 Connection ~ 14100 5500
 Connection ~ 15000 5400
 Wire Wire Line
@@ -3200,8 +2610,6 @@ Wire Wire Line
 	14200 8600 14200 8250
 Connection ~ 14200 8250
 Wire Wire Line
-	14200 8250 14850 8250
-Wire Wire Line
 	15000 8600 15150 8600
 Wire Wire Line
 	15150 8600 15150 8150
@@ -3237,8 +2645,6 @@ Wire Wire Line
 	7100 3100 7100 2250
 Connection ~ 7100 2250
 Wire Wire Line
-	7100 2250 7250 2250
-Wire Wire Line
 	5050 2150 5050 3000
 Wire Wire Line
 	4850 3000 5050 3000
@@ -3265,11 +2671,6 @@ Wire Wire Line
 Connection ~ 6850 2400
 Wire Wire Line
 	6850 2400 7550 2400
-Wire Wire Line
-	7250 2150 7250 2250
-Connection ~ 7250 2250
-Wire Wire Line
-	7250 2250 7450 2250
 $Comp
 L Device:D_TVS D?
 U 1 1 634C0052
@@ -3441,23 +2842,6 @@ Wire Wire Line
 Wire Wire Line
 	2450 7100 2450 7250
 $Comp
-L Connector:TestPoint TP?
-U 1 1 63E368D8
-P 6900 6450
-AR Path="/64809F0C/63E368D8" Ref="TP?"  Part="1" 
-AR Path="/66A12230/63E368D8" Ref="TP?"  Part="1" 
-AR Path="/64807BBC/63E368D8" Ref="TP?"  Part="1" 
-AR Path="/669AB112/63E368D8" Ref="TP33"  Part="1" 
-F 0 "TP33" H 6900 6650 50  0000 C CNN
-F 1 "TestPoint" H 6958 6479 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 7100 6450 50  0001 C CNN
-F 3 "" H 7100 6450 50  0001 C CNN
-	1    6900 6450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6900 6450 6900 6550
-$Comp
 L CropTop:AP22802AW5 U?
 U 1 1 63E368E0
 P 3300 6650
@@ -3605,36 +2989,6 @@ F 4 "CRGCQ0402F220R" V 6750 7250 50  0001 C CNN "MPN"
 	0    1    1    0   
 $EndComp
 $Comp
-L Connector:TestPoint TP?
-U 1 1 63E36945
-P 5900 7200
-AR Path="/64809F0C/63E36945" Ref="TP?"  Part="1" 
-AR Path="/66A12230/63E36945" Ref="TP?"  Part="1" 
-AR Path="/64807BBC/63E36945" Ref="TP?"  Part="1" 
-AR Path="/669AB112/63E36945" Ref="TP29"  Part="1" 
-F 0 "TP29" H 5900 7400 50  0000 C CNN
-F 1 "TestPoint" H 5958 7229 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 6100 7200 50  0001 C CNN
-F 3 "" H 6100 7200 50  0001 C CNN
-	1    5900 7200
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 63E3696D
-P 5900 6850
-AR Path="/64809F0C/63E3696D" Ref="TP?"  Part="1" 
-AR Path="/66A12230/63E3696D" Ref="TP?"  Part="1" 
-AR Path="/64807BBC/63E3696D" Ref="TP?"  Part="1" 
-AR Path="/669AB112/63E3696D" Ref="TP28"  Part="1" 
-F 0 "TP28" H 5900 7050 50  0000 C CNN
-F 1 "TestPoint" H 5958 6879 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 6100 6850 50  0001 C CNN
-F 3 "" H 6100 6850 50  0001 C CNN
-	1    5900 6850
-	1    0    0    -1  
-$EndComp
-$Comp
 L CropTop:DGND #PWR?
 U 1 1 63E36983
 P 7150 7200
@@ -3651,8 +3005,6 @@ F 3 "" H 7150 7200 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5900 7200 5900 7250
-Wire Wire Line
-	5900 6850 5900 6900
 Wire Wire Line
 	7150 6550 7150 6800
 Wire Wire Line
@@ -3699,8 +3051,6 @@ Wire Wire Line
 	4800 6550 4800 6800
 Wire Wire Line
 	4800 7100 4800 7250
-Wire Wire Line
-	4800 6550 6900 6550
 Connection ~ 4800 6550
 Connection ~ 5800 8550
 Connection ~ 6200 8550
@@ -3716,12 +3066,6 @@ Connection ~ 2450 8350
 Wire Wire Line
 	2950 8650 3650 8650
 Connection ~ 3650 8650
-Connection ~ 4950 8550
-Connection ~ 5900 6900
-Wire Wire Line
-	5900 6900 6300 6900
-Wire Wire Line
-	5750 6900 5900 6900
 Connection ~ 5900 7250
 Wire Wire Line
 	5900 7250 6200 7250
@@ -3803,57 +3147,8 @@ Wire Wire Line
 Connection ~ 3400 9650
 Wire Wire Line
 	7150 7100 7250 7100
-Wire Wire Line
-	3400 4700 3250 4700
-Connection ~ 10300 7650
-Wire Wire Line
-	10300 7650 10600 7650
-Wire Wire Line
-	9600 7650 10300 7650
-Connection ~ 10100 7750
-Wire Wire Line
-	10100 7750 10600 7750
-Wire Wire Line
-	9600 7750 10100 7750
-Connection ~ 9900 7850
-Wire Wire Line
-	9900 7850 10600 7850
-Wire Wire Line
-	9600 7850 9900 7850
-Connection ~ 9700 7950
-Wire Wire Line
-	9700 7950 10600 7950
-Wire Wire Line
-	9600 7950 9700 7950
-Connection ~ 10300 8150
-Wire Wire Line
-	10300 8150 10600 8150
-Wire Wire Line
-	9600 8150 10300 8150
-Wire Wire Line
-	10100 8350 10600 8350
-Connection ~ 9900 8450
-Wire Wire Line
-	9900 8450 10600 8450
-Connection ~ 9500 8750
-Wire Wire Line
-	9500 8750 10400 8750
-Connection ~ 10100 8350
-Wire Wire Line
-	9700 8900 9700 8650
-Connection ~ 9700 8650
-Wire Wire Line
-	9700 8650 10200 8650
-Wire Wire Line
-	9600 8450 9900 8450
-Wire Wire Line
-	9600 8350 10100 8350
 Connection ~ 8650 8750
-Wire Wire Line
-	8650 8750 9500 8750
 Connection ~ 9000 8650
-Wire Wire Line
-	9000 8650 9700 8650
 Wire Wire Line
 	8550 8750 8650 8750
 Wire Wire Line
@@ -4046,8 +3341,6 @@ Wire Wire Line
 	5650 9850 6850 9850
 Wire Wire Line
 	1000 9400 1200 9400
-Wire Wire Line
-	1000 9100 1450 9100
 $Comp
 L Connector:Screw_Terminal_01x04 J10
 U 1 1 5F40A3BA
@@ -4056,7 +3349,7 @@ F 0 "J10" H 14629 2292 50  0000 L CNN
 F 1 "1702474" H 14629 2201 50  0000 L CNN
 F 2 "croptop:solderless_terminal" H 14550 2300 50  0001 C CNN
 F 3 "https://media.digikey.com/PDF/Data%20Sheets/Phoenix%20Contact%20PDFs/1702474.pdf" H 14550 2300 50  0001 C CNN
-F 4 "277-2338-1-ND" H 14550 2300 50  0001 C CNN "MPN"
+F 4 "1702474" H 14550 2300 50  0001 C CNN "MPN"
 	1    14550 2300
 	1    0    0    -1  
 $EndComp
@@ -4070,7 +3363,7 @@ F 0 "J11" H 14629 2792 50  0000 L CNN
 F 1 "1702474" H 14629 2701 50  0000 L CNN
 F 2 "croptop:solderless_terminal" H 14550 2800 50  0001 C CNN
 F 3 "https://media.digikey.com/PDF/Data%20Sheets/Phoenix%20Contact%20PDFs/1702474.pdf" H 14550 2800 50  0001 C CNN
-F 4 "277-2338-1-ND" H 14550 2800 50  0001 C CNN "MPN"
+F 4 "1702474" H 14550 2800 50  0001 C CNN "MPN"
 	1    14550 2800
 	1    0    0    -1  
 $EndComp
@@ -4082,7 +3375,7 @@ F 0 "J12" H 14629 3292 50  0000 L CNN
 F 1 "1702474" H 14629 3201 50  0000 L CNN
 F 2 "croptop:solderless_terminal" H 14550 3300 50  0001 C CNN
 F 3 "https://media.digikey.com/PDF/Data%20Sheets/Phoenix%20Contact%20PDFs/1702474.pdf" H 14550 3300 50  0001 C CNN
-F 4 "277-2338-1-ND" H 14550 3300 50  0001 C CNN "MPN"
+F 4 "1702474" H 14550 3300 50  0001 C CNN "MPN"
 	1    14550 3300
 	1    0    0    -1  
 $EndComp
@@ -4096,7 +3389,7 @@ F 0 "J8" H 7529 5042 50  0000 L CNN
 F 1 "1702474" H 7529 4951 50  0000 L CNN
 F 2 "croptop:solderless_terminal" H 7450 5050 50  0001 C CNN
 F 3 "https://media.digikey.com/PDF/Data%20Sheets/Phoenix%20Contact%20PDFs/1702474.pdf" H 7450 5050 50  0001 C CNN
-F 4 "277-2338-1-ND" H 7450 5050 50  0001 C CNN "MPN"
+F 4 "1702474" H 7450 5050 50  0001 C CNN "MPN"
 	1    7450 5050
 	1    0    0    -1  
 $EndComp
@@ -4108,7 +3401,7 @@ F 0 "J9" H 7529 6892 50  0000 L CNN
 F 1 "1702474" H 7529 6801 50  0000 L CNN
 F 2 "croptop:solderless_terminal" H 7450 6900 50  0001 C CNN
 F 3 "https://media.digikey.com/PDF/Data%20Sheets/Phoenix%20Contact%20PDFs/1702474.pdf" H 7450 6900 50  0001 C CNN
-F 4 "277-2338-1-ND" H 7450 6900 50  0001 C CNN "MPN"
+F 4 "1702474" H 7450 6900 50  0001 C CNN "MPN"
 	1    7450 6900
 	1    0    0    -1  
 $EndComp
@@ -4120,7 +3413,7 @@ F 0 "J7" H 7379 8642 50  0000 L CNN
 F 1 "1702474" H 7379 8551 50  0000 L CNN
 F 2 "croptop:solderless_terminal" H 7300 8650 50  0001 C CNN
 F 3 "https://media.digikey.com/PDF/Data%20Sheets/Phoenix%20Contact%20PDFs/1702474.pdf" H 7300 8650 50  0001 C CNN
-F 4 "277-2338-1-ND" H 7300 8650 50  0001 C CNN "MPN"
+F 4 "1702474" H 7300 8650 50  0001 C CNN "MPN"
 	1    7300 8650
 	1    0    0    -1  
 $EndComp
@@ -4132,7 +3425,7 @@ F 0 "J13" H 15929 6242 50  0000 L CNN
 F 1 "1702474" H 15929 6151 50  0000 L CNN
 F 2 "croptop:solderless_terminal" H 15850 6250 50  0001 C CNN
 F 3 "https://media.digikey.com/PDF/Data%20Sheets/Phoenix%20Contact%20PDFs/1702474.pdf" H 15850 6250 50  0001 C CNN
-F 4 "277-2338-1-ND" H 15850 6250 50  0001 C CNN "MPN"
+F 4 "1702474" H 15850 6250 50  0001 C CNN "MPN"
 	1    15850 6250
 	1    0    0    -1  
 $EndComp
@@ -4146,7 +3439,7 @@ F 0 "J14" H 15929 7292 50  0000 L CNN
 F 1 "1702474" H 15929 7201 50  0000 L CNN
 F 2 "croptop:solderless_terminal" H 15850 7300 50  0001 C CNN
 F 3 "https://media.digikey.com/PDF/Data%20Sheets/Phoenix%20Contact%20PDFs/1702474.pdf" H 15850 7300 50  0001 C CNN
-F 4 "277-2338-1-ND" H 15850 7300 50  0001 C CNN "MPN"
+F 4 "1702474" H 15850 7300 50  0001 C CNN "MPN"
 	1    15850 7300
 	1    0    0    -1  
 $EndComp
@@ -4244,11 +3537,6 @@ Wire Wire Line
 Wire Wire Line
 	11600 5700 11600 5800
 Connection ~ 11600 5800
-Wire Wire Line
-	4950 8550 5800 8550
-Wire Wire Line
-	3400 4700 3750 4700
-Connection ~ 3400 4700
 Connection ~ 3750 4700
 Wire Wire Line
 	2550 4700 2650 4700
@@ -4260,9 +3548,6 @@ Text GLabel 11200 2000 0    33   Output ~ 0
 ~PWR_FAULT
 Wire Wire Line
 	11200 2000 11300 2000
-Wire Wire Line
-	11900 2000 12100 2000
-Connection ~ 12100 2000
 $Comp
 L Device:R R?
 U 1 1 5EE92A70
@@ -4385,28 +3670,12 @@ Wire Wire Line
 Wire Wire Line
 	13000 8450 13400 8450
 Connection ~ 13000 8450
-Connection ~ 14850 8250
-Wire Wire Line
-	14850 8250 15400 8250
 Wire Wire Line
 	11700 8150 15150 8150
 Wire Wire Line
 	11700 7950 14100 7950
 Wire Wire Line
 	11350 5800 11600 5800
-Wire Wire Line
-	12450 7600 13300 7600
-Connection ~ 13300 7600
-Wire Wire Line
-	13300 7600 14000 7600
-Connection ~ 12050 5400
-Wire Wire Line
-	12050 5400 15000 5400
-Wire Wire Line
-	11500 5400 12050 5400
-Connection ~ 6900 6550
-Wire Wire Line
-	6900 6550 7150 6550
 Wire Wire Line
 	3600 6550 4350 6550
 Connection ~ 4350 6550
@@ -4442,9 +3711,6 @@ F 4 "SQ2319ADS-T1_GE3" V 13700 6450 50  0001 C CNN "MPN"
 	1    13700 6450
 	0    1    -1   0   
 $EndComp
-Connection ~ 12950 7700
-Wire Wire Line
-	12950 7700 14100 7700
 Wire Wire Line
 	8700 3000 9400 3000
 Wire Wire Line
@@ -4475,4 +3741,82 @@ Wire Wire Line
 	3150 9200 3150 9650
 Wire Wire Line
 	13050 6350 13500 6350
+Wire Wire Line
+	1450 2450 1850 2450
+Wire Wire Line
+	1450 2150 1850 2150
+Wire Wire Line
+	1450 3050 1850 3050
+Wire Wire Line
+	1450 2750 1850 2750
+Wire Wire Line
+	4800 8550 5800 8550
+Wire Wire Line
+	5750 6900 6300 6900
+Wire Wire Line
+	14200 8250 15400 8250
+Wire Wire Line
+	11900 2000 12300 2000
+Wire Wire Line
+	9600 7550 10600 7550
+Wire Wire Line
+	9600 8450 10600 8450
+Wire Wire Line
+	5750 5050 6500 5050
+Wire Wire Line
+	7100 2250 7450 2250
+Wire Wire Line
+	3250 4700 3750 4700
+Wire Wire Line
+	9550 5250 10000 5250
+Wire Wire Line
+	9550 4950 10000 4950
+Wire Wire Line
+	11500 5500 14100 5500
+Wire Wire Line
+	11500 5400 15000 5400
+Wire Wire Line
+	5200 5400 6400 5400
+Wire Wire Line
+	4800 6550 7150 6550
+Wire Wire Line
+	9000 8650 10200 8650
+Wire Wire Line
+	9700 6100 10050 6100
+Wire Wire Line
+	8650 8750 10400 8750
+Wire Wire Line
+	9600 7750 10600 7750
+Wire Wire Line
+	9600 8350 10600 8350
+Wire Wire Line
+	1000 9100 1550 9100
+Wire Wire Line
+	9600 7850 10600 7850
+Wire Wire Line
+	9600 7650 10600 7650
+Wire Wire Line
+	11750 7200 11750 7550
+$Comp
+L CropTop:DRV8825 U28
+U 1 1 5CA28C1C
+P 11150 8050
+F 0 "U28" H 11400 8800 50  0000 C CNN
+F 1 "DRV8825" H 11400 8700 50  0000 C CNN
+F 2 "Package_SO:HTSSOP-28-1EP_4.4x9.7mm_P0.65mm_EP3.4x9.5mm_Mask2.4x6.17mm_ThermalVias" H 11150 8550 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/drv8825.pdf" H 11150 8550 50  0001 C CNN
+F 4 "DRV8825PWPR" H 11150 8050 50  0001 C CNN "MPN"
+	1    11150 8050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9600 8050 10600 8050
+Wire Wire Line
+	12550 7700 14100 7700
+Wire Wire Line
+	12450 7600 14000 7600
+Wire Wire Line
+	9600 8150 10600 8150
+Wire Wire Line
+	9600 7950 10600 7950
 $EndSCHEMATC
