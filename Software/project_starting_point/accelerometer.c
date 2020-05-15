@@ -1,30 +1,37 @@
-/* **************************************************************************
- * File name:   AccelLib.c
- * Association: University of Idaho
- * Author:	  Ryan Donahue
- * Dates:	   Created 3/5/2018
- * Summary:	 Contains functions to operate STmicroelectronics LIS3DHTR
-				3 axis accelerometer with the goal of acquiring tilt 
-				(rotation) data of the in ZX plane. X measuring +1G and Z 0G 
-				will be a tilt of 0 degrees. Rotation will result in an angle
-				theta from this reference plane.
- * *************************************************************************/
+/**
+ *	File
+ *		accelerometer.c
+ *	Summary
+ *		Accelerometer library source file. Contains functions for the LIS3DHTR 3-Axis
+ *		accelerometer. Has the goal of acquiring tilt data in XZ plane. X measuring
+ *		+1G and Z 0G will be a tilt of 0 degrees. 
+ *	Author(s)
+ *		Collin Heist, Ryan Donahue
+ */
+
+/* ----------------------------------- File Inclusion ----------------------------------- */
 
 #include <plib.h>
-#include "hardware.h"
-#include "I2CLib.h"
-#include "accelerometer.h"
 #include <stdio.h>
 #include <math.h>
 
-/* **************************************************************************
- * Function:	char AccelLib_Init()
- * Summary:	 Disables Accelerometer SA0 pin internal pull-up, and enables
-				device for High-resolution X, Y, and Z measurements for +/- 2G
-				measurements.
- * Return:		0  - no I2C write errors
-				!0 - an I2C write error was encountered
- * **************************************************************************/
+#include "hardware.h"
+#include "accelerometer.h"
+#include "I2CLib.h"
+
+/* -------------------------- Global Variables and Structures --------------------------- */
+
+/* ---------------------------------- Public Functions ---------------------------------- */
+
+/**
+ *	Summary
+ *		Function to initialize the accelerometer. Disables SA0 pin's internal pull up, and
+ *		enables device for high-resolution XYZ measurements for +/- 2G measurements.
+ *	Parameters
+ *		None.
+ *	Returns
+ *		Unsigned int that is ERROR or NO_ERROR if an I2C write error occurred.
+ */
 unsigned int initialize_accelerometer(void) {
 	//control register values
 	#define ACC_CFG_0 (SDO_PU_DISC)
@@ -32,170 +39,174 @@ unsigned int initialize_accelerometer(void) {
 	#define ACC_CFG_4 (SCALE_2G|HIGH_RES_EN)
 	
 	// Fill control registers
-	int error = AccelLib_SingleWrite(CTRL_REG0,ACC_CFG_0);
-	error |= AccelLib_SingleWrite(CTRL_REG1,ACC_CFG_1);
-	error |= AccelLib_SingleWrite(CTRL_REG4,ACC_CFG_4);
-	error |= AccelLib_SelfTest();
+	int error = single_write_accelerometer(CTRL_REG0, ACC_CFG_0);
+	error |= single_write_accelerometer(CTRL_REG1, ACC_CFG_1);
+	error |= single_write_accelerometer(CTRL_REG4, ACC_CFG_4);
+	error |= perform_accelerometer_self_test();
 	
 	return (error ? ERROR : NO_ERROR);
 }
 
-
-/* **************************************************************************
- * Function:	char AccelLib_SelfTest()
- * Summary:	 Tests Accelerometer by applying a known actuation force to the
-				sensor and verifying STmicro specifications.
- * Return:		0  - Test passed
-				1  - Test failed
- * **************************************************************************/
-char AccelLib_SelfTest() {
-	char failed = 0;
-	float st_constant_high = 0.36;
-	float st_constant_low = 0.017;
-	float X_pretest = AccelLib_ReadX();
-	float Y_pretest = AccelLib_ReadY();
-	float Z_pretest = AccelLib_ReadZ();
-	//set self-test bits
-	AccelLib_SingleWrite(CTRL_REG4,(ACC_CFG_4|ST0_EN));
-	
-	//wait at least 8 samples
-	int i = 0;
-	while (i < 200) {
-		i++;
-	}
-	// Read sensor values
-	float X_st = -(X_pretest-AccelLib_ReadX());
-	float Y_st = -(Y_pretest-AccelLib_ReadY());
-	float Z_st = -(Z_pretest-AccelLib_ReadZ());
-	
-	//verify in range
-	if (((X_st<st_constant_low) && (X_st>st_constant_high)) ||
-	((Y_st<st_constant_low) && (Y_st>st_constant_high)) ||
-	((Z_st<st_constant_low) && (Z_st>st_constant_high))) {
-	
-	failed |= ERROR;
-	}
-	//set self-test bits
-	AccelLib_SingleWrite(CTRL_REG4,(ACC_CFG_4|ST1_EN));
-	//wait at least 8 samples
-	while (i<200) {
-		i++;
-	}
-	//read sensor values
-	X_st = X_pretest-AccelLib_ReadX();
-	Y_st = Y_pretest-AccelLib_ReadY();
-	Z_st = Z_pretest-AccelLib_ReadZ();
-	//verify in range
-	if (((X_st>st_constant_low) && (X_st<st_constant_high)) ||
-	((Y_st>st_constant_low) && (Y_st<st_constant_high)) ||
-	((Z_st>st_constant_low) && (Z_st<st_constant_high))) {
-	
-		failed |= ERROR;
-	}
-	
-	// Clear self-test
-	AccelLib_SingleWrite(CTRL_REG4,ACC_CFG_4);
-	
-	return failed;
+/**
+ *	Summary
+ *		Function to write a single value to a single subregister in the accelerometer.
+ *	Parameters
+ *		sub_register[in]: Character that is the destination address.
+ *		write_value[in]: Character that is to be writen to the subregister.
+ *	Returns
+ *		I2C error result of the write operation - should be zero.
+ */
+inline char single_write_accelerometer(const char sub_register, const char write_value) {
+	char write[2] = {sub_register, write_value};
+	return write_I2C1(LIS3DHTR_ADDR, write, 2);
 }
 
-/* **************************************************************************
- * Function:	char AccelLib_SingleWrite(char subreg, char write_val)
- * Summary:	 Write a value to a single sub register in the Accelerometer
- * Argument:	char subreg, destination address
-				char write_val, register value
- * Return:		0  - no I2C write errors
-				!0 - an I2C write error was encountered
- * **************************************************************************/
-char AccelLib_SingleWrite(char subreg, char write_val) {
-	char write[2] = {subreg,write_val};
-	char error = write_I2C1(LIS3DHTR_ADDR, write, 2);
-	return error;
-}
-
-/* **************************************************************************
- * Function:	char AccelLib_SingleRead(char subreg)
- * Summary:	 Retrieve a value from a single sub register in the Accelerometer.
- * Argument:	char subreg, destination address
- * Return:		value retrieved from subreg
- * **************************************************************************/
-char AccelLib_SingleRead(char subreg) {
+/**
+ *	Summary
+ *		Function to read a single value from a given sub regsiter in the accelerometer.
+ *	Parameters
+ *		sub_register[in]: Character that is the source address.
+ *	Returns
+ *		Value retrieved from sub_register.
+ */
+inline char single_read_accelerometer(const char sub_register) {
 	char read[1];
-	char write[1] = {subreg};
-	read_write_I2C1(LIS3DHTR_ADDR, write, read, 1, 1);
+	read_write_I2C1(LIS3DHTR_ADDR, &sub_register, read, 1, 1);
 	
 	return read[0];
 }
 
-/* **************************************************************************
- * Function:	char AccelLib_ContinuousRead(char subreg, char* read, int len)
- * Summary:	 Retrieve len values from the Accelerometer and store in the 
-				array read. Reads begin at the sub register address and auto-
-				increment
- * Argument:	char subreg, starting destination address
-				char* read, pointer to the array that will be filled
- * **************************************************************************/
-void AccelLib_ContinuousRead(char subreg, char* read, int len) {
-	char write[1] = {subreg | AUTO_INCREMENT};
-	read_write_I2C1(LIS3DHTR_ADDR, write, read, 1, len);
-}
-
-/* **************************************************************************
- * Function:	float AccelLib_ReadZ()
- * Summary:	 Reads the Accelerometer Z register then computes the value in
-				G's
- * Return:		acceleration in Z direction
- * **************************************************************************/
-float AccelLib_ReadZ() {
+/**
+ *	Summary
+ *		Function to read the Z-axis of the accelerometer.
+ *	Parameters
+ *		None.
+ *	Returns
+ *		Float that is the Z-axis register of the accelerometer (in G's).
+ */
+float read_z_accelerometer(void) {
 	unsigned char read[2];
-	AccelLib_ContinuousRead(OUT_Z_L, read, 2);
-	short out_reg = read[0]|(read[1]<<8);
-	float acc = (out_reg/16)*.001;
-	
-	return acc;
-}
-
-/* **************************************************************************
- * Function:	float AccelLib_ReadY()
- * Summary:	 Reads the Accelerometer Y register then computes the value in
-				G's
- * Return:		acceleration in Y direction
- * **************************************************************************/
-float AccelLib_ReadY() {
-	unsigned char read[2];
-	AccelLib_ContinuousRead(OUT_Y_L, read, 2);
+	continuous_read_accelerometer(OUT_Z_L, read, 2);
 	short out_reg = read[0] | (read[1] << 8);
-	float acc = (out_reg / 16) * 0.001;
 	
-	return acc;
+	return (float) ((out_reg / 16) * 0.001);
 }
 
-/* **************************************************************************
- * Function:	float AccelLib_ReadX()
- * Summary:	 Reads the Accelerometer X register then computes the value in
-				G's
- * Return:		acceleration in X direction
- * **************************************************************************/
-float AccelLib_ReadX() {
+/**
+ *	Summary
+ *		Function to read the Y-axis of the accelerometer.
+ *	Parameters
+ *		None.
+ *	Returns
+ *		Float that is the Y-axis register of the accelerometer (in G's).
+ */
+float read_y_accelerometer(void) {
 	unsigned char read[2];
-	AccelLib_ContinuousRead(OUT_X_L, read, 2);
+	continuous_read_accelerometer(OUT_Y_L, read, 2);
 	short out_reg = read[0] | (read[1] << 8);
-	float acc = (out_reg  /16) * 0.001;
-	
-	return acc;
+
+	return (float) ((out_reg / 16) * 0.001);
 }
 
-/* **************************************************************************
- * Function:	double AccelLib_ReadX()
- * Summary:	 Calculates Accelerometer tilt based on X and Z accelerations.
- * Return:		tilt in degrees
- * **************************************************************************/
-double AccelLib_ReadTilt() {
-	#define RAD2DEG (180.0 / 3.14159265)
+/**
+ *	Summary
+ *		Function to read the X-axis of the accelerometer.
+ *	Parameters
+ *		None.
+ *	Returns
+ *		Float that is the X-axis register of the accelerometer (in G's).
+ */
+float read_x_accelerometer(void) {
+	unsigned char read[2];
+	continuous_read_accelerometer(OUT_X_L, read, 2);
+	short out_reg = read[0] | (read[1] << 8);
 
-	float Z = (AccelLib_ReadZ());
-	float Y = (AccelLib_ReadY());
-	double theta = atan(Z/Y) * RAD2DEG;
-	
-	return theta;
+	return (float) ((out_reg / 16) * 0.001);
 }
+
+/**
+ *	Summary
+ *		Function to calculate the accelerometer tilt based on the X and Z accelerations.
+ *	Parameters
+ *		None.
+ *	Returns
+ *		Double that is the tilt of the accelerometer (in degrees).
+ */
+inline double read_tilt_accelerometer(void) {
+	return (double) (atan(read_z_accelerometer() / read_y_accelerometer()) * 180.0 / 3.14159265);
+}
+
+/* --------------------------------- Private Functions ---------------------------------- */
+
+static inline void delay_8_samples(void) {
+	unsigned int i;
+	for (i = 0; i < SAMPLE_DELAY_COUNT; i++) {}
+}
+
+/**
+ *	Summary
+ *		Private Function to test the accelerometer by applying a known actuation force to
+ *		the sensor and verifying the STmicro specifications.
+ *	Parameters
+ *		None.
+ *	Returns
+ *		Unsigned int that is ERROR or NO_ERROR if an I2C write error occurred.
+ */
+static char perform_accelerometer_self_test(void) {
+	char failed = 0;
+	float st_constant_high = 0.36;
+	float st_constant_low = 0.017;
+	float X_pretest = read_x_accelerometer();
+	float Y_pretest = read_y_accelerometer();
+	float Z_pretest = read_z_accelerometer();
+
+	// Set self-test bits
+	single_write_accelerometer(CTRL_REG4, (ACC_CFG_4 | ST0_EN));
+	delay_8_samples();
+	
+	// Read sensor values
+	float X_st = -(X_pretest - read_x_accelerometer());
+	float Y_st = -(Y_pretest - read_y_accelerometer());
+	float Z_st = -(Z_pretest - read_z_accelerometer());
+	
+	// Verify in range
+	if (((X_st < st_constant_low) && (X_st > st_constant_high)) || ((Y_st < st_constant_low) && (Y_st > st_constant_high)) || ((Z_st < st_constant_low) && (Z_st > st_constant_high))) {
+		failed |= ERROR;
+	}
+
+	// Set self-test bits
+	single_write_accelerometer(CTRL_REG4, (ACC_CFG_4 | ST1_EN));
+	delay_8_samples();
+
+	// Read sensor values
+	X_st = X_pretest - read_x_accelerometer();
+	Y_st = Y_pretest - read_y_accelerometer();
+	Z_st = Z_pretest - read_z_accelerometer();
+	// Verify in range
+	if (((X_st > st_constant_low) && (X_st < st_constant_high)) || ((Y_st > st_constant_low) && (Y_st < st_constant_high)) || ((Z_st > st_constant_low) && (Z_st < st_constant_high))) {
+		failed |= ERROR;
+	}
+	
+	// Clear self-test
+	single_write_accelerometer(CTRL_REG4, ACC_CFG_4);
+	
+	return failed;
+}
+
+/**
+ *	Summary
+ *		Private Function to retrieve length values from the accelerometer, starting at
+ *		sub_register, and filling the read array.
+ *	Parameters
+ *		sub_register[in]: Character that is the source address.
+ *		read[out]: Pointer to the first character in the array to read into.
+ *		length[in]: Unsigned int that is how many bytes to read from the accelerometer.
+ *	Returns
+ *		None.
+ */
+static inline void continuous_read_accelerometer(const char sub_register, char* read, const unsigned int length) {
+	char write[1] = {sub_register | AUTO_INCREMENT};
+	read_write_I2C1(LIS3DHTR_ADDR, write, read, 1, length);
+}
+
+/* ----------------------------- Interrupt Service Routines ----------------------------- */

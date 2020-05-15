@@ -29,11 +29,11 @@
 
 	// Function Prototypes
 	unsigned int initialize_motors(void);
-	unsigned int motor_forward(unsigned int speed);
-	unsigned int motor_reverse(unsigned int speed);
+	unsigned int motor_forward(const unsigned int speed);
+	unsigned int motor_reverse(const unsigned int speed);
 	unsigned int motor_coast(void);
 	unsigned int motor_brake(void);
-	unsigned int motor_test_mode(unsigned int speed);
-	static unsigned int motor_set_duty_cycle(unsigned int oc2_cycle_percent, unsigned int oc3_cycle_percent);
+	unsigned int motor_test_mode(const unsigned int speed);
+	static unsigned int motor_set_duty_cycle(const unsigned int oc2_cycle_percent, const unsigned int oc3_cycle_percent);
 	static inline unsigned int read_motor_fault_pin(void);
 #endif

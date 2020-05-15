@@ -29,7 +29,7 @@
  *	Returns
  *		Unsigned integer that is ERROR or NO_ERROR if initialization was successful.
  */
-unsigned int initialize_RTC(rtccTime time, rtccDate date) {
+unsigned int initialize_RTC(const rtccTime time, const rtccDate date) {
 	RtccInit();
 	// Wait for RTC to be running
 	while (RtccGetClkStat() != RTCC_CLK_ON) {}
@@ -51,7 +51,7 @@ unsigned int initialize_RTC(rtccTime time, rtccDate date) {
  *	Note
  *		If an invalid number is entered for any of the fields, the RTC unit isn't updated.
  */
-void adjust_datetime(unsigned int hour, unsigned int minute, unsigned int month, unsigned int date) {
+void adjust_datetime(const unsigned int hour, const unsigned int minute, const unsigned int month, const unsigned int date) {
 	if (hour > 24 | minute > 60 | month == 0 | month > 12 | date == 0 | date > 31)  // Check for invalid entries
 		return;
 	

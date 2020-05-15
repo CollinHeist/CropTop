@@ -33,6 +33,6 @@
 	float read_humidity(void);
 	inline void set_temperature_mode(unsigned int mode);
 	inline char get_temperature_mode(void);
-	static inline float raw_code_to_humidity(unsigned char* i2c_code);
-	static inline float raw_code_to_temperature(unsigned char* i2c_code);
+	static inline float raw_code_to_humidity(const unsigned char* i2c_code);
+	static inline float raw_code_to_temperature(const unsigned char* i2c_code);
 #endif

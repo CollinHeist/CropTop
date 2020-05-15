@@ -21,10 +21,9 @@
 	#define TIMER3_PS_ERROR		(-1.0)	
 
 	// Function prototypes
-	unsigned int initialize_potentiometer(float sample_frequency);
-	unsigned int reconfigure_timer3(float timer3_frequency);
+	unsigned int initialize_potentiometer(const float sample_frequency);
+	unsigned int reconfigure_timer3(const float timer3_frequency);
 	unsigned int read_potentiometer(void);
 	inline void set_ADC_mode(unsigned int new_mode);
-	static unsigned int initialize_timer3(float timer3_frequency);
+	static unsigned int initialize_timer3(const float timer3_frequency);
 #endif
-

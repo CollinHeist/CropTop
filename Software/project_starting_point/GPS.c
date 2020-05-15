@@ -43,7 +43,7 @@ unsigned int read_number_bytes_available(void) {
  *		Read the GPS data stored in the GNSS module.
  *	Parameters
  *		read_array[out]: Character pointer that is the buffer to be filled with the
- *		  contents of the GPS.
+ *			contents of the GPS.
  *		max_length[in]: The maximum number of bytes to fill of the read_array buffer.
  *	Returns
  *		Character that is the ack-error bits returned by read_write_I2C1.
@@ -59,46 +59,50 @@ char read_GPS(char* read_array, const unsigned int max_length) {
 	return read_write_I2C1(GPS_SLAVE_ADDRESS, write_array, read_array, 1, num_bytes_available);
 }
 
-/* **************************************************************************
- * Function:	char GPSLib_UBXWrite(TBD)
- * Summary:	 
- * Argument:	unsigned char class_id,
- *				unsigned char msg_id, 
- *				unsigned char* payload,
- *				unsigned short payload_len
- * Return:		0  - no I2C write errors
- *  			!0 - an I2C write error was encountered
- * **************************************************************************/
-char GPSLib_UBXWrite(unsigned char class_id,unsigned char msg_id, unsigned char* payload,unsigned short payload_len) {
+/**
+ *	Summary
+ *		Write to the GPS using the correct packet construction.
+ *	Parameters
+ *		class_id[in]: Unsigned char that is the class id for the write operation.
+ *		message_id[in]: Unsigned character that is the ID for the message.
+ *		payload[in]: Pointer to the first value in the unsigned character array to 
+ *			be written to the GPS module.
+ *		payload_len[in]: Unsigned short that is how long the payload being written is.
+ *	Returns
+ *		Character that is 0 if no I2C write errors occurred, and non-zero if a write
+ *		error occurred.
+ */
+char GPSLib_UBXWrite(const unsigned char class_id, const unsigned char message_id, const unsigned char* payload, const unsigned short payload_length) {
 	unsigned char write[9] = {0};
 	write[0] = SYNC_1;
 	write[1] = SYNC_2;
 	write[2] = class_id;
-	write[3] = msg_id;
-	write[4] = payload_len & 0xFF;
-	write[5] = (payload_len >> 8) & 0xFF;
-	int i;
-	for (i = 0; i<payload_len; i++) {
-		write[6+i] = payload[i];
-	}
+	write[3] = message_id;
+	write[4] = payload_length & 0xFF;
+	write[5] = (payload_length >> 8) & 0xFF;
 
-	GPSLib_UBXChecksum(&write[2], payload_len);
+	int i;
+	for (i = 0; i < payload_length; i++) { write[6+i] = payload[i]; }
+
+	GPSLib_UBXChecksum(&write[2], payload_length);
 	
-	return write_I2C1(GPS_ADDR, write, payload_len + 8);
+	return write_I2C1(GPS_ADDR, write, payload_length + 8);
 }
 
-/* **************************************************************************
- * Function:	void GPSLib_UBXChecksum(TBD)
- * Summary:	 For a given payload size, calling this routine computes the
- *				checksum for a UBX message and adds them to the payload data 
- *				array.
- * Argument:	unsigned char* data, pointer to the start of checksum data
- *				int payload_len, length of payload
- * **************************************************************************/
-void GPSLib_UBXChecksum(unsigned char* data, int payload_len) {
+/**
+ *	Summary
+ *		For a given payload size, this function computes the checksum for a UCX message
+ *		and adds them to the payload data array.
+ *	Parameters
+ *		data[out]: The payload to have the checksum appended onto.
+ *		payload_length[in]: The length of the payload to compute the checksum for.
+ *	Returns
+ *		None.
+ */
+void GPSLib_UBXChecksum(unsigned char* data, const int payload_length) {
 	unsigned char CK_A = 0, CK_B = 0;
-	int i = 0;
-	for (i = 0; i < (4 + payload_len); i++) {
+	int i;
+	for (i = 0; i < (4 + payload_length); i++) {
 		CK_A = CK_A + data[i];
 		CK_B = CK_B + CK_A;
 	}

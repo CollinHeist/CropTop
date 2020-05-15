@@ -434,7 +434,7 @@ static inline unsigned int color_from_RGB(const unsigned int red, const unsigned
  */
 void __ISR(_UART2_VECTOR, IPL4SOFT) isr_UART2_handler(void) {
 	static unsigned int buffer_index = 0, received_real_char_flag = FALSE;
-	static char isr_buffer[RX_BUFFER_SIZE];   // Temporary buffer
+	static char isr_buffer[RX_BUFFER_SIZE];	// Temporary buffer
 
 	if (mU2RXGetIntFlag()) {
 		char c = ReadUART2();

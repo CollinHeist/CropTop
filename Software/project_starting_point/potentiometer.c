@@ -48,7 +48,7 @@ static struct prescale_struct prescales[] = {
  *	Returns
  *		Unsigned int that is ERROR or NO_ERROR if initialization was successful.
  */
-unsigned int initialize_potentiometer(float sample_frequency) {
+unsigned int initialize_potentiometer(const float sample_frequency) {
 	// Attempt to initialize timer 3 - exit if an error occurs
 	if (initialize_timer3(sample_frequency) == ERROR)
 		return ERROR;
@@ -57,8 +57,7 @@ unsigned int initialize_potentiometer(float sample_frequency) {
 	CloseADC10();
 
 	// Configure ADC to sample AN9 and AN10
-	SetChanADC10(ADC_CH0_NEG_SAMPLEA_NVREF | ADC_CH0_POS_SAMPLEA_AN9 |
-		ADC_CH0_NEG_SAMPLEB_NVREF | ADC_CH0_POS_SAMPLEB_AN10);
+	SetChanADC10(ADC_CH0_NEG_SAMPLEA_NVREF | ADC_CH0_POS_SAMPLEA_AN9 | ADC_CH0_NEG_SAMPLEB_NVREF | ADC_CH0_POS_SAMPLEB_AN10);
 
 	// Turn module on | Integer output | Conversion triggered by T3 | Auto sample
 	// External V+/V- reference | Disable offset test | Scan mode off | 2 Samples per interval | Dual buffer mode | Alternate mode
@@ -88,7 +87,7 @@ unsigned int initialize_potentiometer(float sample_frequency) {
  *	Returns
  *		Unsigned int that is ERROR or NO_ERROR if initialization was successful.
  */
-unsigned int reconfigure_timer3(float sample_frequency) {
+unsigned int reconfigure_timer3(const float sample_frequency) {
 	CloseTimer3();								// Close T3 for reconfiguration
 
 	// Reconfigure T3 and return the result
@@ -127,7 +126,7 @@ inline void set_ADC_mode(unsigned int new_mode) {
  *	Returns
  *		Unsigned int that is ERROR or NO_ERROR if an impossible frequency was entered.
  */
-static unsigned int initialize_timer3(float timer3_frequency) {
+static unsigned int initialize_timer3(const float timer3_frequency) {
 	unsigned int index = 0;
 	
 	// Return if an invalid frequency was entered

@@ -14,8 +14,8 @@
 	#define ONE_BYTE_MASK		(0xFF)
 
 	// Function Prototypes
-	unsigned int initialize_RTC(rtccTime time, rtccDate date);
-	void adjust_datetime(unsigned int hour, unsigned int minute, unsigned int month, unsigned int date);
+	unsigned int initialize_RTC(const rtccTime time, const rtccDate date);
+	void adjust_datetime(const unsigned int hour, const unsigned int minute, const unsigned int month, const unsigned int date);
 	inline void get_datetime(unsigned int* hour, unsigned int* minute, unsigned int* month, unsigned int* date);
 	inline void get_datetime_rtcc(rtccTime* time, rtccDate* date);
 #endif

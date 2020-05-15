@@ -97,7 +97,7 @@ inline char get_temperature_mode(void) {
  *	Returns
  *		Float that represents the current normalized [0-100%] humidity.
  */
-static inline float raw_code_to_humidity(unsigned char* i2c_code) {
+static inline float raw_code_to_humidity(const unsigned char* i2c_code) {
 	unsigned int combined_code = ((i2c_code[0] << 8) | i2c_code[1]);
 	
 	return (125.0 * ((float) combined_code) / 65536.0) - 6.0;
@@ -114,7 +114,7 @@ static inline float raw_code_to_humidity(unsigned char* i2c_code) {
  *	Returns
  *		Float that represents the current temperature of the sensor.
  */
-static inline float raw_code_to_temperature(unsigned char* i2c_code) {
+static inline float raw_code_to_temperature(const unsigned char* i2c_code) {
 	unsigned int combined_code = (i2c_code[0] << 8) | i2c_code[1];
 	float temp_celsius = (175.72 * ((float) combined_code) / 65536.0) - 46.85;
 	
