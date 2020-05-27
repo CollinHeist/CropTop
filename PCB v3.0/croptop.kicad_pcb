@@ -67,9 +67,9 @@
     (pad_drill 0)
     (pad_to_mask_clearance 0)
     (solder_mask_min_width 0.25)
-    (aux_axis_origin 267.11656 172.26796)
-    (grid_origin 267.37056 170.2512)
-    (visible_elements 7FFFEFFF)
+    (aux_axis_origin 51.47564 39.70028)
+    (grid_origin 51.47564 39.70536)
+    (visible_elements 7FFFFFFF)
     (pcbplotparams
       (layerselection 0x010fc_ffffffff)
       (usegerberextensions true)
@@ -12105,7 +12105,7 @@
       (net 105 "Net-(J16-Pad5)"))
   )
 
-  (target plus (at 266.74064 171.71932) (size 5) (width 0.2) (layer Edge.Cuts))
+  (target plus (at 51.47056 39.69012) (size 5) (width 0.2) (layer Edge.Cuts))
   (gr_line (start 52.3118 44) (end 52.3118 158.1862) (layer Edge.Cuts) (width 0.2) (tstamp 5EBE006F))
   (gr_line (start 238.4298 40) (end 56.3118 40) (layer Edge.Cuts) (width 0.2) (tstamp 5EBE006C))
   (gr_line (start 242.4298 158.1862) (end 242.4298 44) (layer Edge.Cuts) (width 0.2) (tstamp 5EBE006A))
