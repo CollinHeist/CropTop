@@ -21,6 +21,8 @@ Croptop is based around a 32 bit PIC32MX795F512L microcontroller and includes th
 * User programmable LEDs
 * 14 additional GPIO
 
+The current screen and GUI utilizes the __[Nextion NX8048T070](https://nextion.tech/datasheets/nx8048t070/)__, which has an on-board graphical processor and memory. Interaction with the screen is done through a UART connection. The GUI is created using the Nextion GUI Editor, and has on-board code that can be interacted with using the Nextion-provided commands.
+
 ---
 
 ## To-Do
